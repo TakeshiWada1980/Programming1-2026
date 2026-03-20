@@ -575,26 +575,32 @@ div.sourceCode:not([data-caption]) .copy-btn {
 
 /* ------- プログラムコードの装飾 ------- */
 
-/* 演算子 */
-code span.op {
-  font-weight: bold;
-}
-
-/* インポート */
-code span.im {
-  color: #963fac;
-  font-weight: bold;
-}
-
-/* キーワード */
+/* キーワード: def, class, return, if, for, while, with, as, lambda, pass, yield... */
 code span.kw {
-  color: #316fa3;
+  color: #0033b3;
   font-weight: bold;
 }
 
-/* コメント */
-code span.co {
-  color: #098156;
+/* 制御フロー: if, elif, else, for, while, break, continue, return, try, except, finally, raise */
+code span.cf {
+  color: #0033b3;
+  font-weight: bold;
+}
+
+/* インポート: import, from */
+code span.im {
+  color: #7b36b0;
+  font-weight: bold;
+}
+
+/* 組み込み関数: print, len, range, isinstance, type, enumerate, str, int, float, list, dict, bool... */
+code span.bu {
+  color: #0070c1;
+}
+
+/* 関数名 */
+code span.fu {
+  color: #795e26;
 }
 
 /* 文字列 */
@@ -602,43 +608,129 @@ code span.st {
   color: #a31515;
 }
 
+/* 特殊文字列 (f-string の外側部分) */
+code span.ss {
+  color: #a31515;
+}
+
+/* 特殊文字 (f-string の {} 部分など) */
+code span.sc {
+  color: #24292e;
+  font-weight: bold;
+}
+
+/* Verbatim 文字列 */
+code span.vs {
+  color: #a31515;
+}
+
+/* 文字リテラル */
+code span.ch {
+  color: #a31515;
+}
+
+/* コメント */
+code span.co {
+  color: #6a9955;
+  font-style: italic;
+}
+
+/* ドキュメントコメント (docstring) */
+code span.do {
+  color: #6a9955;
+  font-style: italic;
+}
+
+/* アノテーション */
+code span.an {
+  color: #6a9955;
+}
+
+/* コメント変数 */
+code span.cv {
+  color: #6a9955;
+  font-style: italic;
+}
+
+/* 情報トークン */
+code span.in {
+  color: #6a9955;
+}
+
 /* 整数 */
 code span.dv {
-  color: #098156;
+  color: #098900;
 }
 
 /* 小数 */
 code span.fl {
-  color: #098156;
+  color: #098900;
 }
 
-/* None */
+/* 基数表記 (0xFF, 0b1010, 0o77) */
+code span.bn {
+  color: #098900;
+}
+
+/* 変数 */
 code span.va {
-  color: #316fa3;
+  color: #001080;
 }
 
-/* 小数 */
-code span.cf {
-  color: #316fa3;
+/* 定数 (True, False, None) */
+code span.cn {
+  color: #0033b3;
+}
+
+/* データ型 */
+code span.dt {
+  color: #267f99;
   font-weight: bold;
 }
 
-/* MD: 見出し */
-code span.fu {
-  color: #316fa3;
+/* 演算子 */
+code span.op {
+  color: #383a42;
   font-weight: bold;
 }
 
-/* MD: 箇条書き */
-code span.ss {
-  color: #098156;
+/* 属性 */
+code span.at {
+  color: #7b36b0;
+}
+
+/* プリプロセッサ */
+code span.pp {
+  color: #7b36b0;
+}
+
+/* 拡張 */
+code span.ex {
+  color: #0070c1;
+}
+
+/* エラートークン */
+code span.er {
+  color: #cd3131;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 警告トークン */
+code span.wa {
+  color: #af5f00;
+  font-style: italic;
+}
+
+/* アラート */
+code span.al {
+  color: #cd3131;
   font-weight: bold;
 }
 
-/* MD: コード */
-code span.in {
-  color: #a31515;
-  font-weight: bold;
+/* その他 */
+code span.ot {
+  color: #24292e;
 }
 
 /* ------- ナビゲーション ------- */
@@ -646,7 +738,7 @@ code span.in {
 #g-nav {
   position: fixed;
   z-index: 999;
-  top: -480%;
+  top: -9999px;
   left: 0;
   width: 100%;
   height: 100vh;
@@ -786,4 +878,13 @@ code span.in {
   transform: translateY(0) rotate(-45deg);
   top: 5px;
   left: 4px;
+}
+
+/* ------- 印刷時 ------- */
+
+@media print {
+  #g-nav,
+  .openbtn {
+    display: none;
+  }
 }
