@@ -10,7 +10,9 @@
       "Read(//c/Users/wada/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/3517271a-2b0a-4c5a-8c87-b2305849756c/3515c372-73dd-4cac-ba4e-4998e5cc7ba7/skills/web-artifacts-builder/**)",
       "Bash(bash scripts/init-artifact.sh syntax-highlight-preview)",
       "Bash(grep -o '<span class=\"\"\"\"[a-z]\\\\{2,3\\\\}\"\"\"\"' 'C:\\\\Users\\\\wada\\\\Documents\\\\EducationProjects\\\\Programming1-2026\\\\docs\\\\lecture01.html')",
-      "Bash(npm create:*)"
+      "Bash(npm create:*)",
+      "WebFetch(domain:cdnjs.cloudflare.com)",
+      "WebFetch(domain:api.cdnjs.com)"
     ]
   }
 }

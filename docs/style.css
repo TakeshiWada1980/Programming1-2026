@@ -123,7 +123,7 @@ footer.markdown-body p {
 .markdown-body h1::before {
   position: absolute;
   left: 0;
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 7 Free";
   content: "\f5fc";
   color: var(--main-theme-color);
 }
@@ -358,7 +358,7 @@ div.note > pre {
 }
 
 .markdown-body span.masked::before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 7 Free";
   content: "\f08e";
   margin-right: 0.4em;
   color: var(--main-masked-foreground);
@@ -446,7 +446,7 @@ div.note > pre {
 .markdown-body ul li::before {
   position: absolute;
   left: 0.1em;
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 7 Free";
   font-weight: 900;
   content: "\f0da";
   color: var(--main-theme-lt-color);
@@ -466,7 +466,7 @@ div.note > pre {
 }
 
 .note p:first-child::before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 7 Free";
   font-weight: 900;
   margin-right: 0.5em;
 }
