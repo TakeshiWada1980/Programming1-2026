@@ -1,8 +1,16 @@
 /* ------- Programming1-2023 ------- */
 html {
-  font-family: "M PLUS Rounded 1c", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    "M PLUS Rounded 1c",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
 
   --code-pg-foreground: #24292e;
   --code-pg-background: #ebebeb;
@@ -59,9 +67,9 @@ main.markdown-body p {
 }
 
 /* ------- AweSome::本体 ------- */
-.markdown-body i.fa-solid {
+/* .markdown-body i.fa-solid {
   text-indent: 0.15em;
-}
+} */
 
 /* ------- ヘッダーとフッター ------- */
 header.markdown-body {
@@ -194,7 +202,7 @@ table td {
   font-weight: bold;
   text-decoration: none;
   color: var(--main-theme-color);
-  margin: 0 0.25em;
+  margin: 0;
   cursor: pointer;
   border-bottom: 1.5px dashed;
   transition: background-color 0.5s;
@@ -202,6 +210,25 @@ table td {
 
 .markdown-body a:hover {
   color: var(--main-theme-lt-color);
+}
+
+/* ------- Awesome icon ------- */
+
+------- AweSome::本体 ------- */
+.markdown-body i.fa-solid {
+  text-indent: 0.15em;
+}
+
+.markdown-body i.fa-regular {
+  text-indent: 0.15em;
+}
+
+.markdown-body i.fa-regular {
+  margin-right: 0.6em;
+}
+
+.markdown-body i.fa-solid {
+  margin-right: 0.6em;
 }
 
 /* ------- 引用 ------- */
@@ -246,8 +273,9 @@ div.sourceCode {
 }
 
 div.sourceCode[data-caption]::before {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
-    monospace;
+  font-family:
+    "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+    Courier, monospace;
   display: block;
   padding-left: 20px;
   background: var(--code-pg-foreground);
@@ -282,10 +310,7 @@ div.sourceCode[data-caption]::before {
   }
 }
 
-/* ------- AweSome::本体 ------- */
-/* .markdown-body i.fa-solid {
-  text-indent: 0.15em;
-} */
+
 
 /* ------- プログラムコード::本体 ------- */
 
@@ -322,8 +347,10 @@ div.note > pre {
 
 .markdown-body code {
   font-weight: normal;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
-    monospace;
+  font-family:
+    "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+    Courier, monospace;
+  font-variant-ligatures: none;
   padding: 0.15em 0.4em;
   font-size: 100%;
   word-break: normal;
@@ -560,7 +587,9 @@ div.note > pre {
   font-size: 0.85em;
   color: var(--code-pg-background);
   opacity: 0.45;
-  transition: opacity 0.2s, color 0.2s;
+  transition:
+    opacity 0.2s,
+    color 0.2s;
   z-index: 1;
   line-height: 1.6;
 }
@@ -583,7 +612,7 @@ code span.kw {
 
 /* 制御フロー: if, elif, else, for, while, break, continue, return, try, except, finally, raise */
 code span.cf {
-  color: #0033b3;
+  color: #316fa3;
   font-weight: bold;
 }
 
