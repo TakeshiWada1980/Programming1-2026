@@ -1911,6 +1911,25 @@ True
           }
         });
 
+        // コピーボタンの追加
+        document.querySelectorAll("div.sourceCode").forEach(function (div) {
+          var btn = document.createElement("button");
+          btn.className = "copy-btn";
+          btn.title = "コードをコピー";
+          btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+          btn.addEventListener("click", function () {
+            var codeEl = div.querySelector("code");
+            if (!codeEl) return;
+            navigator.clipboard.writeText(codeEl.innerText).then(function () {
+              btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+              setTimeout(function () {
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+              }, 1500);
+            });
+          });
+          div.appendChild(btn);
+        });
+
         // 画像にリンクを付与
         // let images = document.querySelectorAll("figure img");
         // Array.from(images).forEach((img) => {
