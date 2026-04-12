@@ -214,21 +214,24 @@ table td {
 
 /* ------- Awesome icon ------- */
 
-------- AweSome::本体 ------- */
-.markdown-body i.fa-solid {
-  text-indent: 0.15em;
+.markdown-body i[class^="fa-"] {
+  margin-left: -0.1em;
+  margin-right: 0.5em;
 }
 
-.markdown-body i.fa-regular {
-  text-indent: 0.15em;
+.markdown-body i.fa-flip-horizontal {
+  margin-left: 0.55em;
+  margin-right: -0.1em;
 }
 
-.markdown-body i.fa-regular {
+.markdown-body p i[class^="fa-"] {
+  margin-left: -0.4em;
   margin-right: 0.6em;
 }
 
-.markdown-body i.fa-solid {
-  margin-right: 0.6em;
+.markdown-body p i.fa-flip-horizontal {
+  margin-left: 0.7em;
+  margin-right: -0.4em;
 }
 
 /* ------- 引用 ------- */
@@ -309,8 +312,6 @@ div.sourceCode[data-caption]::before {
     display: none;
   }
 }
-
-
 
 /* ------- プログラムコード::本体 ------- */
 
