@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="referrer" content="no-referrer" />
+
+    <script>
+      MathJax = {
+        chtml: {
+          displayAlign: "left",
+          displayIndent: "1em",
+        },
+      };
+    </script>
+
+     <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+type="text/javascript"></script> 
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>第03回 2I-プログラミング1</title>
+  </head>
+
+  <body>
+    <div class="openbtn"><span></span><span></span><span></span></div>
+    <nav id="g-nav">
+      <div id="g-nav-list">
+        <!-- ---------------------------------------- -->
+         <ul>
+<li><a href="#連絡事項と講義概要" id="toc-連絡事項と講義概要"><span
+class="toc-section-number">1</span> 連絡事項と講義概要</a></li>
+<li><a href="#前回の復習" id="toc-前回の復習"><span class="toc-section-number">2</span>
+前回の復習</a>
+<ul>
+<li><a href="#プログラミング学習のポイント" id="toc-プログラミング学習のポイント"><span
+class="toc-section-number">2.1</span> プログラミング学習のポイント</a></li>
+<li><a href="#文字列出力と変数について-15分" id="toc-文字列出力と変数について-15分"><span
+class="toc-section-number">2.2</span> 文字列出力と変数について
+<i class="fa-solid fa-stopwatch"></i>15分</a></li>
+</ul></li>
+<li><a href="#変数のクリア" id="toc-変数のクリア"><span class="toc-section-number">3</span>
+変数のクリア</a>
+<ul>
+<li><a href="#補足-マジックコマンド" id="toc-補足-マジックコマンド"><span
+class="toc-section-number">3.1</span> 補足: マジックコマンド</a></li>
+</ul></li>
+<li><a href="#変数の確認" id="toc-変数の確認"><span class="toc-section-number">4</span>
+変数の確認</a></li>
+<li><a href="#変数に数値を代入して取り扱う" id="toc-変数に数値を代入して取り扱う"><span
+class="toc-section-number">5</span> 変数に「数値」を代入して取り扱う</a>
+<ul>
+<li><a href="#導入" id="toc-導入"><span class="toc-section-number">5.1</span> 導入</a></li>
+<li><a href="#変数に数値を代入" id="toc-変数に数値を代入"><span
+class="toc-section-number">5.2</span> 変数に数値を代入</a></li>
+<li><a href="#文字列と数値を組み合わせて出力する場合の注意点"
+id="toc-文字列と数値を組み合わせて出力する場合の注意点"><span class="toc-section-number">5.3</span>
+文字列と数値を組み合わせて出力する場合の注意点</a></li>
+</ul></li>
+<li><a href="#googlecolabノートブックの共有設定" id="toc-googlecolabノートブックの共有設定"><span
+class="toc-section-number">6</span> GoogleColabノートブックの共有設定</a></li>
+<li><a href="#pythonで利用可能な数値リテラル" id="toc-pythonで利用可能な数値リテラル"><span
+class="toc-section-number">7</span> Pythonで利用可能な「数値リテラル」</a>
+<ul>
+<li><a href="#桁数の大きな値" id="toc-桁数の大きな値"><span class="toc-section-number">7.1</span>
+桁数の大きな値</a></li>
+<li><a href="#進数表記の値" id="toc-進数表記の値"><span class="toc-section-number">7.2</span>
+2進数表記の値</a></li>
+<li><a href="#進数表記の値-1" id="toc-進数表記の値-1"><span class="toc-section-number">7.3</span>
+16進数表記の値</a></li>
+</ul></li>
+<li><a href="#四則演算" id="toc-四則演算"><span class="toc-section-number">8</span> 四則演算</a>
+<ul>
+<li><a href="#演習-2" id="toc-演習-2"><span class="toc-section-number">8.1</span> 演習</a></li>
+</ul></li>
+<li><a href="#出力の書式指定" id="toc-出力の書式指定"><span class="toc-section-number">9</span>
+出力の書式指定</a>
+<ul>
+<li><a href="#補足1" id="toc-補足1"><span class="toc-section-number">9.1</span> 補足1</a></li>
+<li><a href="#補足2" id="toc-補足2"><span class="toc-section-number">9.2</span> 補足2</a></li>
+</ul></li>
+<li><a href="#丸め誤差" id="toc-丸め誤差"><span class="toc-section-number">10</span>
+丸め誤差</a></li>
+<li><a href="#べき乗の計算" id="toc-べき乗の計算"><span class="toc-section-number">11</span>
+べき乗の計算</a></li>
+<li><a href="#課題01" id="toc-課題01"><span class="toc-section-number">12</span> 課題01</a>
+<ul>
+<li><a href="#注意点" id="toc-注意点"><span class="toc-section-number">12.1</span> 注意点</a></li>
+<li><a href="#設問" id="toc-設問"><span class="toc-section-number">12.2</span> 設問</a></li>
+</ul></li>
+</ul> 
+        <!-- ---------------------------------------- -->
+      </div>
+    </nav>
+
+    <header class="markdown-body">
+      <p>2026-2I プログラミング1 第03回 講義資料</p>
+      <p>2026年04月27日（月）3時限</p>
+    </header>
+
+    <main class="markdown-body">
+      <!-- ---------------------------------------- -->
+      <h1 data-number="1" id="連絡事項と講義概要"><span class="header-section-number">1</span>
+      連絡事項と講義概要</h1>
+      <ul>
+      <li><strong><em>小テスト1</em></strong>
+      を実施します。<strong>鉛筆と消しゴム</strong>を準備してください。</li>
+      </ul>
+      <div class="note type-caution">
+      <p><strong>再掲：小テストを実施した授業に遅刻・欠席した場合</strong></p>
+      <p>遅刻や欠席（公欠・忌引き・出席停止を含む、理由を問わない）により、小テストを受験できず追試験を希望する者は、<strong>当該授業日を含めて2日以内に、TeamsChat
+      で追試験の実施依頼</strong> の連絡をしてください。</p>
+      <blockquote>
+      <p>例えば、4月20日（月）の授業で実施した小テストについて、追試験を依頼する場合は、4月21日（火）の23時59分までに、TeamsChat
+      で依頼の連絡を送ってください。</p>
+      </blockquote>
+      <p>実施依頼には、<strong>具体的な希望の日時 (原則として次回授業日までの平日 8:45 ～ 17:15
+      の時間帯) </strong>
+      を3案ほど添えてください。「放課後」や「先生の空いている時間」といった抽象表現は不可とします。また、感染症等により登校再開日が未定で希望日時を挙げられない場合でも、その旨と追試験希望を明記し、期限内に連絡してください。</p>
+      <p>小テストの追試験は、理由に関係なく1人あたり4回を上限とします。4回に達した後の欠席や遅刻による小テスト未受験については、0点で評価します。</p>
+      </div>
+      <ul>
+      <li>Googleに OMUID でログインして<a
+      href="https://colab.research.google.com/?hl=ja">GoogleColab</a>
+      にアクセスし、<code>PG1-第03回講義.ipynb</code>
+      というタイトルでノートブックを作成しておいてください。</li>
+      <li>本日の講義では、数値や日付を整形して出力するための「<strong>書式指定子</strong>」や、数値計算の基礎となる「四則演算・べき乗演算」、そして計算精度に影響する
+      <span class="masked">「丸め誤差」</span> について体験的に学んでいきます。
+      <ul>
+      <li>丸め誤差 (Rounding Error) については、5月1日 (金) の「情報2」の授業でも学びます。</li>
+      </ul></li>
+      </ul>
+      <h1 data-number="2" id="前回の復習"><span class="header-section-number">2</span>
+      前回の復習</h1>
+      <p><a
+      href="lecture02.html#print関数による文字列の出力">前回講義</a>の内容について、<strong>要点の「おさらい」</strong>をしておきます（少しだけ新規の内容が含まれています）。</p>
+      <h2 data-number="2.1" id="プログラミング学習のポイント"><span
+      class="header-section-number">2.1</span> プログラミング学習のポイント</h2>
+      <p>本授業は、<strong>1週間の間隔をあけて実施</strong>
+      されます。これはプログラミング学習としては、かなり効率が悪いのですが、マス教育
+      (集団一斉進行型授業)
+      の運営上の制約によるものであって、不満を言っても変えられるものではありません。</p>
+      <ul>
+      <li>2年生に進級し、知能情報コース配属されて、そろそろ1ヶ月が経過しようとしていますが、その間にどれだけプログラミングの勉強をして、どれだけの知識やスキルが身に付いたでしょうか？
+      <ul>
+      <li>もし、授業<strong>だけ</strong>で学んだとすれば「約3時間」の実績です。<u>約1ヶ月で3時間😅</u></li>
+      <li>一方で、主体的に毎日90分 (1.5時間) 学んでいれば、現在までに (4月1日～27日
+      までの期間に)、本科目の1年分の授業時間に相当する「学び」ができたことになります。昨年度の第27回講義では
+      <a href="https://takeshiwada1980.github.io/Programming1-2025/lecture27.html">こんなこと</a>
+      をやっています。</li>
+      </ul></li>
+      </ul>
+      <p>ゲームやSNSで溶けていく時間や、クラブ活動に置き換えてみれば「1日90分」という時間確保は、さほど決して難しい話ではありません。</p>
+      <p>実際、<strong>プログラミングのガチ勢</strong>
+      (＝コンテスト参加や、ゲームやアプリを個人開発している系)
+      は、1日に軽く2時間超のプログラミングを積み重ねています。このような人達が、2年後、3年後にインターンシップや就職の選考で競い合う相手となってきます。</p>
+      <p>それに備える経験を積むにはどうしたらよいでしょうか？</p>
+      <ul>
+      <li>ゲームフィケーションなどを取り込んで学習のモチベーションを高めていくこと、<strong>学習意欲が自然と湧いてくるような環境や仕掛けを構築すること</strong>がポイントになります。</li>
+      <li>「<u>総合課題実習1</u>」「高専祭展示」「<u>プログラミング研究会
+      (部員募集中！)</u>」「コンテストやハッカソン」「もくもく会」「サークル・同好会・勉強会
+      (クラスメイトと勝手に自由に結成) 」など、自分に適した枠組みを上手に活用してください。</li>
+      </ul>
+      <p>とはいえ、価値観、時間の使い方、家庭の事情は人それぞれなので、授業外で学びを強制することはできませんが。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>先生が「ゲームフィケーションなどを取り込んでプログラミング学習のモチベーションを高めていくような工夫もありだよ」って言ってました。ゲームフィケーションってなんですか？</p>
+      </blockquote>
+      <blockquote>
+      <p>「もくもく会」とは何ですか？</p>
+      </blockquote>
+      <h2 data-number="2.2" id="文字列出力と変数について-15分"><span
+      class="header-section-number">2.2</span> 文字列出力と変数について
+      <i class="fa-solid fa-stopwatch"></i>15分</h2>
+      <p>ここからは、技術的な内容の復習となります。</p>
+      <p>以下、ノートブックに「<strong>コードセル</strong>」を追加し、指示に従いプログラムを記述し、実際に実行して、その動作を確認してください。</p>
+      <ul>
+      <li>各演習の解答例は<a
+      href="https://colab.research.google.com/drive/1s9zTjqYhuLpQfjfADtCG7mGj50bn7sSN?usp=sharing">こちら</a></li>
+      </ul>
+      <h3 data-number="2.2.1" id="文字列の出力-2分"><span class="header-section-number">2.2.1</span>
+      📝文字列の出力 (⌛2分)</h3>
+      <p>次のプログラムについて [✨期待する実行結果] が得られるように書き換えてください。</p>
+      <div class="sourceCode" id="cb1" data-caption="前回復習：文字列リテラルの出力"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">print</span>() <span class="co"># ■■ この文を書き換える ■■</span></span></code></pre></div>
+      <p>▼▼ [✨期待する実行結果] ▼▼</p>
+      <pre><code>An eye for an eye, a tooth for a tooth - Code of Hammurabi</code></pre>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>プログラミングの文脈で、文字列リテラルの「リテラル」って何でした？先週、先々週も同じ事を聞いた気がするのですが。ちゃんと記憶に残るように解説して😠</p>
+      </blockquote>
+      <h3 data-number="2.2.2" id="変数と組み合わせた文字列の出力-4分"><span
+      class="header-section-number">2.2.2</span> 📝変数と組み合わせた文字列の出力 (⌛4分)</h3>
+      <p>次のプログラムについて、[✨期待する実行結果]
+      が得られるように書き換えてください。「f文字列」を使用するバージョンと、「<code>+</code>演算子」を使用するバージョンの<strong>両方</strong>を作成してください。</p>
+      <div class="sourceCode" id="cb3" data-caption="前回復習：変数と組み合わせた文字列の出力"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb3-2"><a href="#cb3-2"></a>word1 <span class="op">=</span> <span class="st">&#39;eye&#39;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>word2 <span class="op">=</span> <span class="st">&#39;tooth&#39;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="bu">print</span>() <span class="co"># ■■ この文を書き換える (+演算子バージョン) ■■</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="bu">print</span>() <span class="co"># ■■ この文を書き換える (f文字列バージョン) ■■</span></span></code></pre></div>
+      <p>[✨期待する実行結果]</p>
+      <pre><code>An eye for an eye, a tooth for a tooth - Code of Hammurabi</code></pre>
+      <h3 data-number="2.2.3" id="引用符を含む文字列の出力-3分"><span
+      class="header-section-number">2.2.3</span> 📝引用符を含む文字列の出力 (⌛3分)</h3>
+      <p>次のプログラムについて、[✨期待する実行結果] が得られるように書き換えてください。実行結果に
+      <strong>ダブルクォーテーション (半角)</strong> と
+      <strong>シングルクォーテーション/アポストロフィ (半角)</strong>
+      の両方が含まれる点に注意してください。</p>
+      <div class="sourceCode" id="cb5" data-caption="前回復習：引用符を含む文字列の出力"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb5-2"><a href="#cb5-2"></a>word1 <span class="op">=</span> <span class="st">&#39;eye&#39;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>word2 <span class="op">=</span> <span class="st">&#39;tooth&#39;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="bu">print</span>() <span class="co"># ■■ この文を書き換える ■■</span></span></code></pre></div>
+      <p>[✨期待する実行結果]</p>
+      <pre><code>&quot;An eye for an eye, a tooth for a tooth&quot; - Hammurabi&#39;s Code</code></pre>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>「ダブルクォーテーション」と「ダブルクォート」って、どっちが正しい表現なの？</p>
+      </blockquote>
+      <h3 data-number="2.2.4" id="改行を含む文字列の出力-1分"><span
+      class="header-section-number">2.2.4</span> 📝改行を含む文字列の出力 (⌛1分)</h3>
+      <p>次のプログラムについて、[✨期待する実行結果]
+      が得られるように書き換えてください。この際、<strong>第04行目</strong>の <code>print</code>
+      文の変更だけで目的の処理を完結させてください (1個の <code>print</code> だけで処理する)。</p>
+      <div class="sourceCode" id="cb7" data-caption="前回復習：改行を含む文字列の出力"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb7-2"><a href="#cb7-2"></a>word1 <span class="op">=</span> <span class="st">&#39;eye&#39;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>word2 <span class="op">=</span> <span class="st">&#39;tooth&#39;</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="bu">print</span>() <span class="co"># ■■ この文を書き換える ■■</span></span></code></pre></div>
+      <p>[✨期待する実行結果]</p>
+      <pre><code>&quot;An eye for an eye, a tooth for a tooth&quot; 
+  - Hammurabi&#39;s Code</code></pre>
+      <h3 data-number="2.2.5" id="print関数に複数の引数を与えた場合の挙動-2分"><span
+      class="header-section-number">2.2.5</span> 📝print関数に複数の引数を与えた場合の挙動
+      (⌛2分)</h3>
+      <p>まずは、次のプログラムを実行して、その動作を確認してください。つづいて、[✨期待する実行結果]
+      が得られるように書き換えてください。</p>
+      <div class="sourceCode" id="cb9" data-caption="前回復習：改行を含む文字列の出力"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(<span class="st">&#39;Python&#39;</span>,<span class="st">&#39;C/C++&#39;</span>,<span class="st">&#39;Java&#39;</span>,<span class="st">&#39;PHP&#39;</span>,sep<span class="op">=</span><span class="st">&#39;😇&#39;</span>)</span></code></pre></div>
+      <p>[✨期待する実行結果]</p>
+      <pre><code>Python と C/C++ と Java と PHP</code></pre>
+      <p>出力には「と」の前後に半角スペースが含まれることに注意してください。sep は <span
+      class="masked">&lt;Separator</span> の略でした。</p>
+      <div class="note type-senior">
+      <p><strong>中級者向け: ANSIエスケープシーケンスによる文字列装飾</strong></p>
+      <p><a
+      href="https://www.google.com/search?q=python+ansiエスケープシーケンス">ANSIエスケープシーケンス</a>を利用して、次の
+      [✨期待する実行結果] のような <strong>装飾付き文字列</strong> (青文字、青背景の白文字)
+      が得られるようなプログラムを記述してください。</p>
+      <p>[✨期待する実行結果]</p>
+      <figure>
+      <img src="figs/03/string-color-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      </div>
+      <h1 data-number="3" id="変数のクリア"><span class="header-section-number">3</span>
+      変数のクリア</h1>
+      <p>(ここからが今回の講義の内容になります)</p>
+      <p>GoogleColab において、あるコードセルで定義（作成）した「<strong>変数</strong>」は、なんと
+      <span
+      class="masked">他のコードセルにも引き継がれます</span>。実際に手を動かして試して確認してみましょう。</p>
+      <h3 data-number="3.0.1" id="実験"><span class="header-section-number">3.0.1</span> 実験</h3>
+      <p>コードセルを新規作成して次のプログラムをコピペして実行します。コードセルの「実行」には
+      <i class="fa-solid fa-circle-play"></i> アイコンの押下ではなく、積極的に <span
+      class="masked"><code>Ctrl+Enter</code></span> のショートカットキーを使用してください。</p>
+      <div class="sourceCode" id="cb11" data-caption="pg1.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>word <span class="op">=</span> <span class="st">&#39;無駄!&#39;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="bu">print</span>(word<span class="op">*</span><span class="dv">10</span>)</span></code></pre></div>
+      <p>次に、<strong>別のコードセルを新規作成して</strong>、次の <code>pg2.py</code>
+      の内容をコピペして実行します。<code>pg2.py</code> の <strong>第01行目</strong>
+      では、あえて変数名の <a href="https://www.google.com/search?q=タイポとは">タイポ</a>
+      をしています。つまり、変数名を <code>word</code> ではなく <code>wrod</code>
+      にタイプミスしています。</p>
+      <div class="sourceCode" id="cb12" data-caption="pg2.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>wrod <span class="op">=</span> <span class="st">&#39;オラ&#39;</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="bu">print</span>(word<span class="op">*</span><span class="dv">8</span>)</span></code></pre></div>
+      <p>上記プログラムを実行すると、<strong>第01行目</strong> で文字列をセットしている変数名
+      <code>wrod</code> と、<strong>第02行目</strong> で参照している変数名 <code>word</code>
+      が違うので <span class="masked"><code>NameError: name 'word' is not defined</code>
+      のようなエラーがでるだろう</span> と期待しますが、実際の結果はそうはなりません。</p>
+      <p>次のような実行結果が得られたはずです。</p>
+      <pre><code>無駄!無駄!無駄!無駄!無駄!無駄!無駄!無駄!</code></pre>
+      <p>(なお、元ネタは <a
+      href="https://www.google.com/search?q=ジョジョの奇妙な冒険+無駄無駄&amp;tbm=isch">ジョジョの奇妙な冒険</a>です。)</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>プログラミングの文脈で「タイポ」とは何ですか？</p>
+      </blockquote>
+      <h3 data-number="3.0.2" id="解説"><span class="header-section-number">3.0.2</span> 解説</h3>
+      <p>先に実行したセルで作成された変数 <code>word</code>
+      が内部的に残っているので<strong>エラーは発生しない</strong>ものの、<span
+      class="masked">意図した結果が得られない</span> という状況になります。</p>
+      <p>今回は、<strong>変数名に間違いがあることに気づいているため</strong>に問題ありません。しかし、間違いに気づいていないときに「エラーは発生しないものの、意図した結果が得られない」という状況は、非常に厄介なものとなります。実際、このようなことで何時間も悩んだり、プログラミング学習に挫折したりする初心者も珍しくありません。</p>
+      <p>Colabにおいて、コードセルを抜けても <strong>変数が生き残っていること</strong>
+      は非常に便利な機能なのですが、状況によっては望ましくありません。そのような状況で役立つのが、<strong>変数をオールクリアする</strong>ための
+      <code>%reset -f</code> になります。既に<a
+      href="lecture01.html#文字列の扱いと出力">第01回の講義資料</a>から登場しています。</p>
+      <p>実際に、<code>%reset -f</code>
+      の働きを確認してみましょう。さきほどのコードセルを次のように書き換え (つまり
+      <code>%reset -f</code> を追記し) 、実行してみてください。</p>
+      <div class="sourceCode" id="cb14" data-caption="pg2a.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb14-2"><a href="#cb14-2"></a>wrod <span class="op">=</span> <span class="st">&#39;オラ&#39;</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="bu">print</span>(word<span class="op">*</span><span class="dv">8</span>)</span></code></pre></div>
+      <p>今度は、無事に <strong>エラーが発生する</strong>
+      ようになりました。エラーが発生することで「<strong>不具合の原因がどこにあるかのヒント</strong>」が得られるようになりました。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>先生が「プログラミングでは、エラーが出るよりも、エラーが発生せずに意図した結果にならないほうがやっかい」と言ってたんですけど、どういうことですか？</p>
+      </blockquote>
+      <h3 data-number="3.0.3" id="演習"><span class="header-section-number">3.0.3</span> 📝演習</h3>
+      <p><code>%reset -f</code> を <code>%reset</code>
+      に書き換えて実行し、どのように動作が変わるかを確認してください。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>GoogleColabで <code>%reset -f</code> と <code>%reset</code>
+      の違いがわかりません。解説してください。</p>
+      </blockquote>
+      <div class="note type-tips">
+      <p><strong>コマンドのオプション</strong></p>
+      <p>一般にコマンドの「<strong>オプション</strong>」の <code>-f</code>
+      は「<strong>force</strong>
+      (強制する)」を意味します。例えば、Linuxにおけるファイル削除のコマンド <code>rm</code>
+      は、通常「本当に削除してよいか」の旨の確認がされますが <code>rm -f</code>
+      のようにオプションをつけると「確認なし」で削除が実行されます。</p>
+      <p>よって、次のような <code>-f</code>
+      オプションをつけたコマンドを安易に実行しないように<strong>十分に注意</strong>してください。</p>
+      <pre><code>sudo rm -rf / --no-preserve-root</code></pre>
+      <p>OS (Linux) が吹っ飛びます。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p><code>sudo rm -rf / --no-preserve-root</code>
+      というコマンドの意味を解説してください。滅びの呪文という噂を聞きました。</p>
+      </blockquote>
+      </div>
+      <h2 data-number="3.1" id="補足-マジックコマンド"><span
+      class="header-section-number">3.1</span> 補足: マジックコマンド</h2>
+      <p>GoogleColab のコードセルのなかで <code>%</code>
+      から開始する文を<strong><em>マジックコマンド</em></strong>といいます。<strong>マジックコマンド</strong>は、Python
+      の文・機能ではなく、GoogleColab (Jupyter) 固有の機能であり、(Colab以外の) ローカルの
+      Python開発環境 では使用できません。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>GoogleColab で利用可能なマジックコマンドを教えてください。便利なものから順番に。</p>
+      </blockquote>
+      <h1 data-number="4" id="変数の確認"><span class="header-section-number">4</span>
+      変数の確認</h1>
+      <p>GoogleColab では、<strong>参照可能な変数 (定義されている変数)</strong> を <code>%who</code>
+      というマジックコマンドで確認することができます。</p>
+      <p>実際に確認してみましょう。コードセルを新規作成して、次のプログラムを実行してください。</p>
+      <div class="sourceCode" id="cb16"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>apple <span class="op">=</span> <span class="st">&#39;りんご&#39;</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>banana <span class="op">=</span> <span class="st">&#39;バナナ&#39;</span></span></code></pre></div>
+      <p>次に、<strong>別のコードセルを新規作成し</strong>、そこで次のマジックコマンドを実行してください。</p>
+      <div class="sourceCode" id="cb17"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="op">%</span>who</span></code></pre></div>
+      <p>現時点で定義済みの変数が表示されます。また、<code>%whos</code>、<code>%who_ls</code>
+      のマジックコマンドについても動作を確認してみてください。</p>
+      <p>その後、<code>%reset -f</code> を実行後、再度、各マジックコマンド
+      (<code>%who</code>や<code>%whos</code>) を実行して結果を確認してみてください。</p>
+      <h1 data-number="5" id="変数に数値を代入して取り扱う"><span
+      class="header-section-number">5</span> 変数に「数値」を代入して取り扱う</h1>
+      <h2 data-number="5.1" id="導入"><span class="header-section-number">5.1</span> 導入</h2>
+      <p>ここまでは「変数」に<strong>文字列</strong> (文字列リテラル)
+      を代入するプログラムを扱ってきました (<a
+      href="https://www.google.com/search?q=リテラル">リテラルとは？</a>)。</p>
+      <p>その際、注意すべきことは、次のように <span
+      class="masked">文字列をダブルクォーテーション、または、シングルクォーテーションで囲んで扱う
+      (表現する)</span> ということでした。</p>
+      <div class="sourceCode" id="cb18" data-caption="どのようなとき引用符で囲むべきなのか？"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb18-2"><a href="#cb18-2"></a>apple <span class="op">=</span> <span class="st">&#39;りんご&#39;</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>banana <span class="op">=</span> <span class="st">&quot;バナナ&quot;</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>toeic_score <span class="op">=</span> <span class="st">&#39;350&#39;</span> <span class="co"># 文字列としての350</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="bu">print</span>( <span class="st">&quot;apple = &quot;</span> <span class="op">+</span> apple )</span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="bu">print</span>( <span class="ss">f&#39;3-banana =&gt; </span><span class="sc">{</span>banana <span class="op">*</span> <span class="dv">3</span><span class="sc">}</span><span class="ss">&#39;</span> )</span>
+<span id="cb18-7"><a href="#cb18-7"></a><span class="bu">print</span>( <span class="ss">f&#39;TOEICスコア倍増! 目指せ</span><span class="sc">{</span>toeic_score <span class="op">*</span> <span class="dv">2</span><span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># 出力に着目</span></span></code></pre></div>
+      <p>特に、上記を実行した際、<strong>第07行目</strong>
+      の文によって出力される文字列に注意してください
+      (どのような結果になるか、予想の上、実行してみてください)。ここで変数 <code>toeic_score</code>
+      に格納されている「350」は「<strong>数値</strong>」ではなく <span class="masked">文字列</span>
+      であるため、期待する結果が得られません。</p>
+      <p>これは、<strong>f文字列</strong>の内部の特有の振る舞いではなく、次のようにプログラムを書いた場合でも同じです
+      (期待する文字列「目指せ700」が出力されません)。</p>
+      <div class="sourceCode" id="cb19" data-caption="期待する結果が得られない例"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb19-2"><a href="#cb19-2"></a>toeic_score <span class="op">=</span> <span class="st">&#39;350&#39;</span> <span class="co"># 文字列としての350</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>toeic_double_score <span class="op">=</span> toeic_score <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="bu">print</span>( <span class="st">&#39;目指せ&#39;</span> <span class="op">+</span> toeic_double_score )</span></code></pre></div>
+      <h2 data-number="5.2" id="変数に数値を代入"><span class="header-section-number">5.2</span>
+      変数に数値を代入</h2>
+      <p>ここからは、変数に<strong>数値</strong> (<span
+      class="math inline">\(\neq\)</span><strong>文字列</strong>)
+      を代入することを考えていきます。</p>
+      <div class="note type-senior">
+      <p><strong>中級者向け: 厳密には代入ではなくバインド(束縛)</strong></p>
+      <p>前回も解説したように「整数値を変数に代入する」という表現は<strong>厳密には正しくありません</strong>
+      (束縛する（バインドする）という表現が正しいです)。ただし、ここでは初心者向けに厳密さをある程度犠牲にして分かりやすさを重視して表現していることをご理解ください。</p>
+      <p>詳しくは <a
+      href="https://www.oyama-ct.ac.jp/tso/workshop/python/python03.html">小山高専・技術支援室</a>
+      を参照してください。</p>
+      </div>
+      <p>変数に<strong><em>数値</em></strong> (<span
+      class="math inline">\(\neq\)</span><strong>文字列</strong>) を代入するときは、次のように <span
+      class="masked">シングル/ダブルクォーテーションでは「囲まず」</span> にイコール <code>=</code>
+      の右辺に数値を与えます。</p>
+      <div class="sourceCode" id="cb20" data-caption="「数値」としての 350 を変数に格納"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb20-2"><a href="#cb20-2"></a>toeic_score <span class="op">=</span> <span class="dv">350</span> <span class="co"># &quot;350&quot; や &#39;350&#39; にしないこと</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="bu">print</span>( <span class="ss">f&#39;TOEICスコア倍増! 目指せ</span><span class="sc">{</span>toeic_score <span class="op">*</span> <span class="dv">2</span><span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <p>また、<code>pi=3.14</code> のように <strong>小数部を含む実数</strong>
+      を変数に代入することもできます。</p>
+      <p>なお、次のように <strong>f文字列</strong>
+      に埋め込まず、<strong>print関数の引数に直接変数を与えて</strong>、その内容を出力すること
+      (表示すること) もできます。</p>
+      <div class="sourceCode" id="cb21"
+      data-caption="f文字列を使わずに print に直接変数を与える例"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb21-2"><a href="#cb21-2"></a>toeic_score <span class="op">=</span> <span class="dv">350</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>toeic_double_score <span class="op">=</span> toeic_score <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="bu">print</span>( toeic_score ) <span class="co"># print関数の引数に、直接、変数を与えている</span></span>
+<span id="cb21-5"><a href="#cb21-5"></a><span class="bu">print</span>( toeic_score, toeic_double_score )</span></code></pre></div>
+      <p>上記の <strong>第05行目</strong> のように、<code>print</code> に
+      <strong>複数の変数をカンマ区切りで与えたとき</strong>
+      の挙動についても把握しておいてください。</p>
+      <p>また、次のように、<code>print</code> に対して、計算式を与えることもできます。</p>
+      <div class="sourceCode" id="cb22"
+      data-caption="printの引数（ひきすう）に直接的に計算式を与える"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="bu">print</span>( <span class="dv">350</span> <span class="op">*</span> <span class="dv">2</span> )</span></code></pre></div>
+      <h2 data-number="5.3" id="文字列と数値を組み合わせて出力する場合の注意点"><span
+      class="header-section-number">5.3</span> 文字列と数値を組み合わせて出力する場合の注意点</h2>
+      <p>f文字列を使わずに、<code>+</code>
+      演算子を使って「数値」と「文字列」を組み合わせるときは、以下の点に注意してください。</p>
+      <p>まず、f文字列であれば、以下のように問題なく「文字列」と「数値」を組み合わせることができます。</p>
+      <div class="sourceCode" id="cb23"
+      data-caption="f文字列を使った「文字列」と「数値」の組み合わせ"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb23-2"><a href="#cb23-2"></a>toeic_score <span class="op">=</span> <span class="dv">350</span> <span class="co"># 変数に格納されるのは「文字列」ではなく「数値」</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="bu">print</span>( <span class="ss">f&#39;私のTOEICスコアは </span><span class="sc">{</span>toeic_score<span class="sc">}</span><span class="ss"> です。&#39;</span>)</span></code></pre></div>
+      <p>次に、以下のプログラムをのように <code>+</code>
+      演算子を使って「文字列」と「数値」を結合しようとすると、<code>TypeError: can only concatenate str (not "int") to str</code>
+      というが発生します。実際に確認してみてください。</p>
+      <div class="sourceCode" id="cb24"
+      data-caption="+演算子による「文字列」と「数値」の結合（失敗する例）"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb24-2"><a href="#cb24-2"></a>toeic_score <span class="op">=</span> <span class="dv">350</span> <span class="co"># 変数に格納されるのは「文字列」ではなく「数値」</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="bu">print</span>( <span class="st">&#39;私のTOEICスコアは &#39;</span> <span class="op">+</span> toeic_score <span class="op">+</span> <span class="st">&#39; です。&#39;</span>)</span></code></pre></div>
+      <p>このエラーは「文字列」と「数値」という
+      <strong>異なる種類のものを「加算」しようとしたために発生</strong> します。<code>+</code>
+      演算子は、基本的に「文字列同士」や「数値同士」のように同種のものにしか適用できません。</p>
+      <p>この問題を解決するためには、次のように <code>str</code> 関数を使用して、変数
+      <code>toeic_score</code> に格納された「数値」を <span class="masked">文字列に変換</span>
+      したうえで、<code>+</code> 演算子を適用する必要があります。<code>str</code> 関数は、String
+      (文字列) に由来します。</p>
+      <div class="sourceCode" id="cb25"
+      data-caption="+演算子による「文字列」と「数値」の結合（正常終了）"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb25-2"><a href="#cb25-2"></a>toeic_score <span class="op">=</span> <span class="dv">350</span> <span class="co"># 変数に格納されるのは「文字列」ではなく「数値」</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="bu">print</span>( <span class="st">&#39;私のTOEICスコアは&#39;</span> <span class="op">+</span> <span class="bu">str</span>(toeic_score) <span class="op">+</span> <span class="st">&#39;です。&#39;</span>)</span></code></pre></div>
+      <h3 data-number="5.3.1" id="定着確認1"><span class="header-section-number">5.3.1</span>
+      定着確認1</h3>
+      <p>次のプログラムは、実行時にエラーが発生します。このエラーの原因を特定し、プログラムを修正して正しく実行できるようにしてください。</p>
+      <div class="sourceCode" id="cb26"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb26-2"><a href="#cb26-2"></a>name <span class="op">=</span> <span class="st">&#39;ヨシヒコ&#39;</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>age <span class="op">=</span> <span class="dv">16</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="bu">print</span>(<span class="st">&#39;それは&#39;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&#39;が&#39;</span> <span class="op">+</span> age <span class="op">+</span> <span class="st">&#39;歳になる誕生日のことであった。&#39;</span>)</span></code></pre></div>
+      <h3 data-number="5.3.2" id="定着確認2"><span class="header-section-number">5.3.2</span>
+      定着確認2</h3>
+      <p>次のプログラムは、実行時にエラーが発生します。このエラーの原因を特定し、プログラムを修正して正しく実行できるようにしてください。</p>
+      <div class="sourceCode" id="cb27"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb27-2"><a href="#cb27-2"></a>future <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>age <span class="op">=</span> <span class="dv">16</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a><span class="bu">print</span>(future <span class="op">+</span> <span class="st">&#39;年後、お主が &#39;</span> <span class="op">+</span> age <span class="op">+</span> future <span class="op">+</span> <span class="st">&#39; 歳になるとき、&#39;</span>, end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="bu">print</span>(<span class="st">&#39;魔王が復活するとの古き言い伝えがあるのじゃ。&#39;</span>)</span></code></pre></div>
+      <h1 data-number="6" id="googlecolabノートブックの共有設定"><span
+      class="header-section-number">6</span> GoogleColabノートブックの共有設定</h1>
+      <p>GoogleColab のノートブックは、次の手順で公開範囲を変更して、<strong>共有リンク
+      (URL)</strong> を得ることができます。今後、<strong>課題 (宿題)
+      として「Colabの共有リンク」を提出してもらうことがあります</strong>。</p>
+      <p>ノートブックを作成後、画面右上の「<strong>共有</strong>」を選択します。</p>
+      <figure>
+      <img src="figs/03/colab-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>初期状態では「自分だけ」が閲覧・編集ができるノートブックになっています。以下、以下の手順で、大阪公大の組織アカウントを持っている人が閲覧できるように設定変更します。</p>
+      <p>「<strong>一般的なアクセス</strong>」の項目を「制限付き」から「<strong>大阪公立大学</strong>」に変更します。</p>
+      <figure>
+      <img src="figs/03/colab-02.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>以上の設定により、大阪公大の組織アカウントのユーザーが閲覧可 (編集は不可)
+      なノートブックになりました。「<strong>リンクをコピー</strong>」のボタンを押下すると、クリップボードに
+      <strong>共有リンク (URL)</strong> が取得できます。</p>
+      <figure>
+      <img src="figs/03/colab-03.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h3 data-number="6.0.1" id="演習-1"><span class="header-section-number">6.0.1</span> 演習</h3>
+      <p>現在のノートブック (<code>PG1-第03回講義.ipynb</code>) の公開範囲 (閲覧)
+      を、大阪公大の組織アカウントに設定して、その <strong>共有リンク (URL)</strong> を Teams の
+      <code>PG1-課題01</code> に提出してください。</p>
+      <figure>
+      <img src="figs/03/teams-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <ul>
+      <li>ノートブックの内容を変更したり、名前を変更したりしても 共有リンク (URL)
+      は影響を受けません。</li>
+      <li>ノートブックをGoogleDrive内でフォルダ移動しても 共有リンク (URL) は影響を受けません。</li>
+      <li>ブラウザのアドレスバーに表示される URL と、「リンクをコピー」で取得できる URL
+      は違うので注意してください🚨
+      <ul>
+      <li>ブラウザのアドレスバーに表示される URL ではノートブックが適切に共有されません。</li>
+      </ul></li>
+      </ul>
+      <h1 data-number="7" id="pythonで利用可能な数値リテラル"><span
+      class="header-section-number">7</span> Pythonで利用可能な「数値リテラル」</h1>
+      <p>Pythonでは、<code>toeic_score = 350</code> や <code>pi=3.14</code>
+      以外にも、次のような<strong>数値リテラル (数値の表記)</strong>
+      を使って変数に値を代入することができます。</p>
+      <h2 data-number="7.1" id="桁数の大きな値"><span class="header-section-number">7.1</span>
+      桁数の大きな値</h2>
+      <p><strong>桁数の大きな値</strong> (例えば、300,000,000 = 3億)
+      は、次のように与えることができます。</p>
+      <div class="sourceCode" id="cb28" data-caption="桁数の大きな数値のリテラル表現"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb28-2"><a href="#cb28-2"></a>x1 <span class="op">=</span> <span class="dv">300000000</span> <span class="co"># ノーマルな方法(ミスしやすい)</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="bu">print</span>(<span class="ss">f&#39;x1 = </span><span class="sc">{</span>x1<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb28-4"><a href="#cb28-4"></a></span>
+<span id="cb28-5"><a href="#cb28-5"></a>x2 <span class="op">=</span> <span class="dv">300_000_000</span>  <span class="co"># アンダーバーを数値区切りに利用</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="bu">print</span>(<span class="ss">f&#39;x2 = </span><span class="sc">{</span>x2<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb28-7"><a href="#cb28-7"></a></span>
+<span id="cb28-8"><a href="#cb28-8"></a>x3 <span class="op">=</span> <span class="fl">3e+8</span> <span class="co">#「3e+8」は「3×10^8」の意味</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a><span class="bu">print</span>(<span class="ss">f&#39;x3 = </span><span class="sc">{</span>x3<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <p><span class="math inline">\(5\mu\ \left(=5\times10^{-6}\right)\)</span>
+      は、次のような数値リテラルとなります。</p>
+      <div class="sourceCode" id="cb29" data-caption="5uの数値リテラル"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb29-2"><a href="#cb29-2"></a>x4 <span class="op">=</span> <span class="fl">5e-6</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="bu">print</span>(<span class="ss">f&#39;x4 = </span><span class="sc">{</span>x4<span class="sc">:f}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <p>上記、<strong>第03行目</strong> の <code>:f</code> は<span
+      class="masked">「書式指定子」</span>というものになります。詳細は<a
+      href="lecture03.html#出力の書式指定">後述</a>。</p>
+      <h2 data-number="7.2" id="進数表記の値"><span class="header-section-number">7.2</span>
+      2進数表記の値</h2>
+      <p><strong>2進数表記の値</strong> ( <strong>Binary</strong>: バイナリ ) は、次のように先頭に
+      <code>0b</code> を付けて与えることができます (先頭に付ける文字を <strong>prefix
+      (プレフィックス)</strong> や 接頭辞/接頭辞 と表現します)
+      。また、10進数の場合と同様に、任意の位置 (好きな位置) に <code>_</code>
+      を入れることができます。</p>
+      <div class="sourceCode" id="cb30" data-caption="2進数のリテラル表現"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb30-2"><a href="#cb30-2"></a>x1 <span class="op">=</span> <span class="bn">0b1010</span> <span class="co"># 1010 =&gt; 8 + 2 = 10</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="bu">print</span>(<span class="ss">f&#39;x1 = </span><span class="sc">{</span>x1<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb30-4"><a href="#cb30-4"></a></span>
+<span id="cb30-5"><a href="#cb30-5"></a>x2 <span class="op">=</span> <span class="bn">0b_1010</span> <span class="co"># 1010 =&gt; 8 + 2 = 10</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a><span class="bu">print</span>(<span class="ss">f&#39;x2 = </span><span class="sc">{</span>x2<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb30-7"><a href="#cb30-7"></a></span>
+<span id="cb30-8"><a href="#cb30-8"></a>x3 <span class="op">=</span> <span class="bn">0b_0011_1010</span> <span class="co"># 0011 1010 =&gt; 32+16+8+2=58</span></span>
+<span id="cb30-9"><a href="#cb30-9"></a><span class="bu">print</span>(<span class="ss">f&#39;x3 = </span><span class="sc">{</span>x3<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <div class="note type-tips">
+      <p><strong>注意</strong></p>
+      <p>第01講義、第02回講義でも注意しましたが、解説を受ける / 解説を読む
+      だけではなく、必ず手を動かして自分自身で「<strong>試してみること</strong>」「<strong>検証してみること</strong>」が大事です。また「<strong>例外はないのか?
+      について考えてみること</strong>」も大切です。</p>
+      <ul>
+      <li>参考: <a
+      href="https://www.google.com/search?q=ラーニングピラミッド&amp;tbm=isch">ラーニングピラミッド</a></li>
+      </ul>
+      <p>例えば、プレフィックスであれば「<code>0B</code>
+      のような大文字でもよいのか」「<code>00B</code>のようなゼロ2連続でもよいのか」、
+      数値区切りのアンダーバーであれば「<strong>2個連続で使えるのか</strong>」「<strong>数値リテラルの先頭や末尾でも使えるのか</strong>」「<strong>プレフィックスの途中で</strong>
+      <code>0_b_1100</code> <strong>のように使えるのか</strong>」のようなことが発想ができ、<span
+      class="masked">結果を予想し、それを試して、規則性などを見いだせる</span> ようになってください
+      (このようなことができる人が最終的に高いスキルを習得できます)。</p>
+      <p>同時に、いま学んでいることが「<strong>日常の生活や教科学習では、どのように利用できそうか</strong>」「<span
+      class="masked">自分がつくりたいモノ (例えばゲーム)
+      にどのように利用できそうか</span>」という視点も常に持つようにしてください。</p>
+      </div>
+      <h2 data-number="7.3" id="進数表記の値-1"><span class="header-section-number">7.3</span>
+      16進数表記の値</h2>
+      <p><strong>16進数</strong>( <strong>Hexadecimal</strong>: ヘクサデシマル )
+      は、次のように与えることができます。16進数の「A」から「F」は、<span
+      class="masked">大文字でも小文字でも</span> どちらでも表記できます。</p>
+      <div class="sourceCode" id="cb31" data-caption="16進数のリテラル表現"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb31-2"><a href="#cb31-2"></a>x1 <span class="op">=</span> <span class="bn">0xFF</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="bu">print</span>(<span class="ss">f&#39;x1 = </span><span class="sc">{</span>x1<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb31-4"><a href="#cb31-4"></a></span>
+<span id="cb31-5"><a href="#cb31-5"></a>x2 <span class="op">=</span> <span class="bn">0xff</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a><span class="bu">print</span>(<span class="ss">f&#39;x2 = </span><span class="sc">{</span>x2<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb31-7"><a href="#cb31-7"></a></span>
+<span id="cb31-8"><a href="#cb31-8"></a>x3 <span class="op">=</span> <span class="bn">0x_ffEE6a</span> <span class="co"># 大文字と小文字の混合</span></span>
+<span id="cb31-9"><a href="#cb31-9"></a><span class="bu">print</span>(<span class="ss">f&#39;x3 = </span><span class="sc">{</span>x3<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <h1 data-number="8" id="四則演算"><span class="header-section-number">8</span> 四則演算</h1>
+      <p>「<strong>整数</strong>」または「<strong>小数を含む実数</strong>」が数値が格納された変数に対しては、次のように<strong>四則演算</strong>をすることができます。</p>
+      <div class="sourceCode" id="cb32"
+      data-caption="数値の加算・減算・乗算・除算・剰余計算・整数除算"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb32-2"><a href="#cb32-2"></a>a, b <span class="op">=</span> (<span class="dv">7</span>, <span class="dv">2</span>) <span class="co"># a=7 と b=2 を1行で記述</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a></span>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="co"># 加算</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>x <span class="op">=</span> a <span class="op">+</span> b   <span class="co">#「x1=a+b」のようにスペースを含めず記述も可</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a><span class="bu">print</span>(<span class="ss">f&#39;(1) </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">+</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb32-7"><a href="#cb32-7"></a></span>
+<span id="cb32-8"><a href="#cb32-8"></a><span class="co"># 減算</span></span>
+<span id="cb32-9"><a href="#cb32-9"></a>x <span class="op">=</span> a <span class="op">-</span> b </span>
+<span id="cb32-10"><a href="#cb32-10"></a><span class="bu">print</span>(<span class="ss">f&#39;(2) </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">-</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb32-11"><a href="#cb32-11"></a></span>
+<span id="cb32-12"><a href="#cb32-12"></a><span class="co"># 乗算</span></span>
+<span id="cb32-13"><a href="#cb32-13"></a>x <span class="op">=</span> a <span class="op">*</span> b  <span class="co"># 乗算(掛け算)。「*」はアスタリスクと読む。</span></span>
+<span id="cb32-14"><a href="#cb32-14"></a><span class="bu">print</span>(<span class="ss">f&#39;(3) </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">*</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb32-15"><a href="#cb32-15"></a></span>
+<span id="cb32-16"><a href="#cb32-16"></a><span class="co"># 除算</span></span>
+<span id="cb32-17"><a href="#cb32-17"></a>x <span class="op">=</span> a <span class="op">/</span> b  <span class="co"># 除算(割り算)</span></span>
+<span id="cb32-18"><a href="#cb32-18"></a><span class="bu">print</span>(<span class="ss">f&#39;(4) </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb32-19"><a href="#cb32-19"></a></span>
+<span id="cb32-20"><a href="#cb32-20"></a>x <span class="op">=</span> a <span class="op">%</span> b  <span class="co"># 何を計算しているか検証せよ。</span></span>
+<span id="cb32-21"><a href="#cb32-21"></a><span class="bu">print</span>(<span class="ss">f&#39;(5) </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">%</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb32-22"><a href="#cb32-22"></a></span>
+<span id="cb32-23"><a href="#cb32-23"></a>x <span class="op">=</span> a <span class="op">//</span> b  <span class="co"># 何を計算しているか検証せよ。</span></span>
+<span id="cb32-24"><a href="#cb32-24"></a><span class="bu">print</span>(<span class="ss">f&#39;(6) </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">//</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">=</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <p>上記の <strong>第20行目</strong> と <strong>第23行目</strong>
+      については、変数の値を変更しながら「何を計算しているのか」を検証してください。特に、変数に格納される値が
+      <span class="masked">「小数」や「負数」</span>
+      となったときに、どのような挙動を示すのか、実験と確認をしてください。</p>
+      <figure>
+      <img src="figs/03/img-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>Python の剰余計算で、たとえば <code>-7 % 2</code> が <code>1</code>
+      となり、<code>7 % (-2)</code> が <code>-1</code> となり、<code>-7 % (-2)</code> が
+      <code>-1</code> となる理屈を分かりやすく解説してください。</p>
+      </blockquote>
+      <figure>
+      <img src="figs/03/img-02.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>「ダブルクォーテーション」と「ダブルクォート」って、どっちが正しい表現なの？</p>
+      </blockquote>
+      <h2 data-number="8.1" id="演習-2"><span class="header-section-number">8.1</span> 演習</h2>
+      <p>変数 <code>a</code> に10、変数 <code>b</code> に5、変数 <code>c</code>
+      に2を代入して次の値を計算してください。さらに、正しく計算できているかどうかを、周囲の学生と突き合わせて検証してください。</p>
+      <p>なお、<span class="math inline">\(3(x+1)(x+2)\)</span> のような計算は
+      <code>3*(x+1)*(x+2)</code> のように <span
+      class="masked">「<code>*</code>」を明示する必要</span> があることに注意してください。</p>
+      <p><span class="math display">\[ (1)\ \ \ 6ab^{2} \]</span></p>
+      <p><span class="math display">\[ (2)\ \ \ -3(a+b)\{(a+c)-(b+c^2)\} \]</span></p>
+      <p><span class="math display">\[ (3)\ \ \ -\frac{3b^2}{6a+2c} \]</span></p>
+      <ul>
+      <li>解答例は<a
+      href="https://colab.research.google.com/drive/1DvuY_YJzmNRVEKKHmqtMDzoau_-uhsYi?usp=sharing">こちら</a></li>
+      </ul>
+      <div class="note type-caution">
+      <p><strong>注意</strong></p>
+      <p>ChatGPTなどの生成AIの登場により「<strong>(正当性の保証はないものの)
+      とりあえずの答えをだすこと</strong>」は、ほぼ誰でも可能な時代となりました。そのうえで、重要なことのひとつとして「<strong>解の検証</strong>」が挙げられます。</p>
+      <p>「情報1」や「情報2」の授業でも伝えているように
+      <strong>技術者には自分自身で解の妥当性を検証し、それに責任を負うことが求められる</strong>
+      ことを意識し、その習慣づけをしてください。</p>
+      </div>
+      <h1 data-number="9" id="出力の書式指定"><span class="header-section-number">9</span>
+      出力の書式指定</h1>
+      <p>変数に格納した数値を、<strong>文字列として出力する際</strong>、次のように <strong><em>書式
+      (フォーマット)</em></strong> を指定することができます。f文字列のなかで、<code>:</code>
+      に続けて「<strong>書式指定子</strong>」というものを記述します。</p>
+      <p><strong>★印の書式指定子は多用するので必ず覚えてください。</strong></p>
+      <div class="sourceCode" id="cb33" data-caption="書式指定子"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb33-2"><a href="#cb33-2"></a>a <span class="op">=</span> <span class="dv">45000</span> <span class="co"># 整数値</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>)       <span class="co"># 書式指定なし</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:,}</span><span class="ss">&#39;</span>)     <span class="co"># カンマ区切り指定 ★</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:7}</span><span class="ss">&#39;</span>)     <span class="co"># 幅指定・右詰め指定 ★</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:.2f}</span><span class="ss">&#39;</span>)   <span class="co"># 小数点以下桁数指定 ★</span></span>
+<span id="cb33-7"><a href="#cb33-7"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:b}</span><span class="ss">&#39;</span>)     <span class="co"># 2進数 1+4+8+32</span></span>
+<span id="cb33-8"><a href="#cb33-8"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:_b}</span><span class="ss">&#39;</span>)    <span class="co"># 2進数 区切り文字あり</span></span>
+<span id="cb33-9"><a href="#cb33-9"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:09_b}</span><span class="ss">&#39;</span>)  <span class="co"># 2進数 ゼロ埋め・出力桁数指定</span></span>
+<span id="cb33-10"><a href="#cb33-10"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:x}</span><span class="ss">&#39;</span>)     <span class="co"># 16進数 13+32</span></span>
+<span id="cb33-11"><a href="#cb33-11"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:X}</span><span class="ss">&#39;</span>)     <span class="co"># 16進数 大文字</span></span>
+<span id="cb33-12"><a href="#cb33-12"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:04X}</span><span class="ss">&#39;</span>)   <span class="co"># 16進数 ゼロ埋め</span></span></code></pre></div>
+      <p>次に、小数を含む場合の例を示します。</p>
+      <p>特に <strong>第04行目</strong> のように桁数を指定するときは、<span
+      class="masked">四捨五入されるのか、切り捨てられるのか、切り上げられるのか、それともそれ以外なのか、</span>
+      を予想し、検証してください。</p>
+      <div class="sourceCode" id="cb34" data-caption="書式指定子はどのように数値を丸めるのか"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb34-2"><a href="#cb34-2"></a>a <span class="op">=</span> <span class="fl">0.62184</span> <span class="co"># 実数</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>)      <span class="co"># 書式指定なし</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:.3f}</span><span class="ss">&#39;</span>)  <span class="co"># 小数点以下の桁数指定 ★</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:.4f}</span><span class="ss">&#39;</span>)  <span class="co"># 小数点以下の桁数指定 ★</span></span>
+<span id="cb34-6"><a href="#cb34-6"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:e}</span><span class="ss">&#39;</span>)    <span class="co"># 指数表示 ★</span></span>
+<span id="cb34-7"><a href="#cb34-7"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:.3e}</span><span class="ss">&#39;</span>)  <span class="co"># 指数表示+桁数指定</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:.3E}</span><span class="ss">&#39;</span>)  <span class="co"># 指数表示</span></span>
+<span id="cb34-9"><a href="#cb34-9"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:%}</span><span class="ss">&#39;</span>)    <span class="co"># パーセント ★</span></span>
+<span id="cb34-10"><a href="#cb34-10"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">:.1%}</span><span class="ss">&#39;</span>)  <span class="co"># パーセント+桁数指定</span></span></code></pre></div>
+      <p>このほかにも<strong>多数の書式</strong>が存在します。必要に応じて「<a
+      href="https://www.google.com/search?q=python+f文字列+書式指定">python f文字列
+      書式指定</a>」などでウェブ検索して適用できるようになっておく必要があります。</p>
+      <p>頻繁に使用する書式以外は、暗記する必要はありませんが、その存在を意識して必要に応じて利用できるようになっておいてください。</p>
+      <h2 data-number="9.1" id="補足1"><span class="header-section-number">9.1</span> 補足1</h2>
+      <p>単位のSI接頭辞(SI接頭語)に関連した変換は、次のようにできます。</p>
+      <div class="sourceCode" id="cb35" data-caption="SI接頭辞の処理"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb35-2"><a href="#cb35-2"></a>length <span class="op">=</span> <span class="dv">42195</span> <span class="co"># ここでは 42195メートルの意味</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>length<span class="sc">:,}</span><span class="ss">(m)は、</span><span class="sc">{</span>length<span class="op">*</span><span class="fl">1e-3</span><span class="sc">}</span><span class="ss">(km)です&#39;</span>)</span>
+<span id="cb35-4"><a href="#cb35-4"></a><span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>length<span class="sc">:,}</span><span class="ss">(m)は、</span><span class="sc">{</span>length<span class="op">/</span><span class="dv">1000</span><span class="sc">}</span><span class="ss">(km)です&#39;</span>)</span></code></pre></div>
+      <p>実行結果</p>
+      <pre><code>42,195(m)は、42.195(km)です
+42,195(m)は、42.195(km)です</code></pre>
+      <h2 data-number="9.2" id="補足2"><span class="header-section-number">9.2</span> 補足2</h2>
+      <p><strong>f文字列</strong>は、print関数の引数として使用することが多いですが、以下の
+      <strong>第04行目</strong> のように独立して使用することもできます。</p>
+      <div class="sourceCode" id="cb37" data-caption="f文字列はprintの外部でも利用可能"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb37-2"><a href="#cb37-2"></a>month <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>day <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a>date <span class="op">=</span> <span class="ss">f&#39;</span><span class="sc">{</span>month<span class="sc">:02}</span><span class="ss">月</span><span class="sc">{</span>day<span class="sc">:02}</span><span class="ss">日&#39;</span> <span class="co"># printとは関係なく独立して利用可能</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a><span class="bu">print</span>(<span class="ss">f&#39;こんにちは。きょうは</span><span class="sc">{</span>date<span class="sc">}</span><span class="ss">です。&#39;</span>)</span></code></pre></div>
+      <h1 data-number="10" id="丸め誤差"><span class="header-section-number">10</span> 丸め誤差</h1>
+      <p>「情報2」の<strong>第03回授業</strong>
+      で学習するように、<strong>10進数表記では有限小数となる数値が、2進数表記では無限循環小数になる</strong>ことがあります。</p>
+      <blockquote>
+      <p>例: 0.2（10進数）= 0.00110011001100…（2進数）</p>
+      </blockquote>
+      <p>また、コンピュータのメモリ (記憶領域)
+      が有限であることから、<strong>コンピュータで小数を扱う場合は</strong> <span
+      class="masked">丸め誤差</span> が生じます。これは Python
+      でも同様で、金融計算を扱う場合には、特に注意する必要があります。</p>
+      <div class="sourceCode" id="cb38" data-caption="丸め誤差が発生する例"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb38-2"><a href="#cb38-2"></a>x <span class="op">=</span> <span class="fl">2.40</span> <span class="op">-</span> <span class="fl">2.25</span>   <span class="co"># 計算結果は 0.15 のはず</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="bu">print</span>(<span class="ss">f&#39;x = </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <p>実行結果は、次のようになります。</p>
+      <pre><code>x = 0.1499999999999999</code></pre>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>Python で <code>2.40 - 2.25</code> を計算すると、<code>1.5</code> ではなく
+      <code>0.1499999999999999</code> となってしまうのは何故ですか？</p>
+      </blockquote>
+      <blockquote>
+      <p>情報学科の高専2年生が無理なく理解できるように「丸め誤差」について解説してください。</p>
+      </blockquote>
+      <div class="note type-senior">
+      <p><strong>中級者向け: decimalモジュール</strong></p>
+      <p><a href="https://docs.python.org/ja/3/library/decimal.html">decimalモジュール</a>
+      を使用することで、計算に「0.1」や「0.2」を含む場合も、誤差なく正確な計算が可能になります。ただし、通常の計算にdecimalモジュールを使うことには<strong>相応のデメリット</strong>があります
+      (考え、調べて、検証してみましょう)。</p>
+      <div class="sourceCode" id="cb40" data-caption="Decimalモジュールの使用例"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="im">from</span> decimal <span class="im">import</span> Decimal</span>
+<span id="cb40-3"><a href="#cb40-3"></a>x <span class="op">=</span> Decimal(<span class="st">&#39;2.4&#39;</span>)<span class="op">-</span>Decimal(<span class="st">&#39;2.25&#39;</span>)</span>
+<span id="cb40-4"><a href="#cb40-4"></a><span class="bu">print</span>(<span class="ss">f&#39;x = </span><span class="sc">{</span>x<span class="sc">:.20f}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      </div>
+      <h1 data-number="11" id="べき乗の計算"><span class="header-section-number">11</span>
+      べき乗の計算</h1>
+      <p><strong>べき乗</strong>の計算 (例えば <span class="math inline">\(2^{10}\)</span> や <span
+      class="math inline">\(5^{-2}\)</span> などの計算) には <code>**</code>
+      演算子を使用します。なお、Excelではべき乗の計算に <code>^</code>
+      を使用しますが、それと混同しないようにしてください。Python では <code>^</code>
+      演算子は、ビット単位の排他的論理和 (XOR) の計算に使われれます。</p>
+      <div class="sourceCode" id="cb41" data-caption="べき乗の計算"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb41-2"><a href="#cb41-2"></a>a, b <span class="op">=</span> (<span class="dv">2</span>, <span class="dv">6</span>)  <span class="co"># a=2 と b=6 を1行で記述する方法</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a>x <span class="op">=</span> a <span class="op">**</span> b   <span class="co"># aのb乗（2の6乗）を計算</span></span>
+<span id="cb41-4"><a href="#cb41-4"></a><span class="bu">print</span>(x)</span></code></pre></div>
+      <p>上記では変数を経由していますが、次のように変数を使わずに同じ出力を得ることもできます。</p>
+      <div class="sourceCode" id="cb42"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb42-2"><a href="#cb42-2"></a>x <span class="op">=</span> <span class="dv">16</span> <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb42-3"><a href="#cb42-3"></a><span class="bu">print</span>(x) <span class="co"># =&gt; 256</span></span></code></pre></div>
+      <div class="sourceCode" id="cb43"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="bu">print</span>(<span class="dv">16</span><span class="op">**</span><span class="dv">3</span>) <span class="co"># =&gt; 4096</span></span></code></pre></div>
+      <p>また、<code>**</code> 演算子を使用することで <strong>平方根</strong>
+      や、3乗根、4乗根を求めることもできます。利用頻度が高いので覚えておいてください。</p>
+      <p><span class="math display">\[ \sqrt{256} = 256^{1/2} = 256^{0.5} = 16\]</span></p>
+      <div class="sourceCode" id="cb44" data-caption="2の平方根を求める"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb44-2"><a href="#cb44-2"></a>a, b <span class="op">=</span> <span class="dv">2</span>, <span class="fl">0.5</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a>x <span class="op">=</span> a <span class="op">**</span> b   <span class="co"># aのb乗。0.5乗＝1/2乗＝平方根</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a><span class="bu">print</span>(x) <span class="co"># =&gt; 1.4142135623730951</span></span></code></pre></div>
+      <h1 data-number="12" id="課題01"><span class="header-section-number">12</span> 課題01</h1>
+      <p><code>PG1-第03回講義.ipynb</code>
+      の<strong>先頭</strong>に「テキストセル」を作成し、次の内容を貼り付け、氏名と出席番号を自分のものに書き換えてください。その後、それにつづけて「コードセル」を追加して、以下の「設問1」から「設問5」に取り組んでください。</p>
+      <pre><code># **プログラミング1 課題01**
+
+- 出席番号: 99
+- 氏名: 高専 太郎 
+- 課題01の取組み時間: 約XXX分</code></pre>
+      <ul>
+      <li><p><strong><em>提出期限</em></strong> : 2026年05月10日 (日) 23時00分
+      (これ以降に確認・評価します)</p>
+      <ul>
+      <li>事前相談なく、提出期限を168時間（＝1週間・7日間）超過して提出されたもの（再提出を含む）は、未提出と同じく「0点」となります。</li>
+      </ul></li>
+      <li><p><strong><em>取組みの目安となる時間</em></strong> : <strong>90分</strong></p></li>
+      <li><p><strong><em>評価</em></strong> :</p>
+      <ul>
+      <li>「8点」を標準として「10点満点」で評価します。
+      <ul>
+      <li>前期中間、前期末、後期中間、学年末の成績評価の際には「重み」が付けられます
+      (例えば、課題01は1倍、課題02は1.5倍して総合するなど)。</li>
+      </ul></li>
+      <li>課題の採点後は、修正版の再提出・追提出があっても原則として再評価はしません。</li>
+      <li>共有範囲 (閲覧可)
+      が「大阪公立大学」に設定されていない場合は0点。指摘を受けて修正しても「3点減」とします。<a
+      href="lecture03.html#googlecolabノートブックの共有設定">解説した内容</a>に従って適切に設定してください。</li>
+      </ul></li>
+      <li><p><strong><em>提出物・提出先</em></strong> : GoogleColab ノートブック
+      <code>PG1-第03回講義.ipynb</code> の <strong><u>共有リンク (URL)</u></strong> を Teams
+      の指定位置に提出してください。</p>
+      <ul>
+      <li><code>.ipynb</code> の <u>ファイル本体を提出するわけではない</u>
+      ので注意してください。</li>
+      <li>提出後 (提出期限後)
+      も、<u>採点がフィードバックされるまでは&gt;ノートブックの内容を変更・更新して問題ありません</u>。</li>
+      </ul></li>
+      </ul>
+      <figure>
+      <img src="figs/03/teams-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="12.1" id="注意点"><span class="header-section-number">12.1</span> 注意点</h2>
+      <p>次に示す指示に従っていない場合は「減点」となります。</p>
+      <ul>
+      <li>ノートブックのタイトルは <code>PG1-第03回講義.ipynb</code>
+      としてください。英数字と記号はすべて半角としてスペースを含めないでください。</li>
+      <li>ノートブックの先頭から順番に、以下のように配置してください。
+      <ol type="1">
+      <li>出席番号や氏名を記載したテキストセル</li>
+      <li>設問1のコードセル (実行結果付き)</li>
+      <li>設問2のコードセル ( 〃 )</li>
+      <li>設問3のコードセル ( 〃 )</li>
+      <li>設問4のコードセル ( 〃 )</li>
+      <li>設問5のテキストセル (マークダウンで問題文を記述)</li>
+      <li>設問5のコードセル (実行結果付き)</li>
+      <li>(授業のなかで取り組んだ演習やメモなど)</li>
+      </ol></li>
+      <li>設問1～5のコードセルの先頭には必ず <code>%reset -f</code> を記載してください。</li>
+      <li>コードセルの実行結果は消さずに残してください。</li>
+      <li>出席番号は、<strong>本年度の出席番号</strong>を半角で記入してください。1～9番の学生はゼロ埋めしてください。例えば、2番の学生は
+      <code>02</code> のようにしてください。</li>
+      <li>氏名は姓と名の間に半角スペースをいれてください。</li>
+      <li>課題01の取組み時間は、必ず記入してください。<code>約XXX分</code>
+      のまま残さないでください。</li>
+      <li>設問5は、テキストセル (特に数式) の体裁も評価に含みます。</li>
+      </ul>
+      <h2 data-number="12.2" id="設問"><span class="header-section-number">12.2</span> 設問</h2>
+      <p>以下の各設問は「<strong>情報2</strong>」の第03回講義 (5月1日)
+      の内容とリンクしています。</p>
+      <h3 data-number="12.2.1" id="設問1"><span class="header-section-number">12.2.1</span>
+      📝設問1</h3>
+      <p>CPUのクロック周波数が <span class="math inline">\(2.1(\mathrm{GHz})\)</span>
+      のとき、そのクロック周期が何秒になるかを計算してください。なお、SI接頭語 ( us / ns / ps )
+      を用いた <code>XXXX(ps)</code> のような形式の出力としてください。</p>
+      <div class="sourceCode" id="cb46" data-caption="設問1"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># 設問1</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb46-3"><a href="#cb46-3"></a>clock_freq <span class="op">=</span> <span class="fl">2.1e+9</span></span></code></pre></div>
+      <p>▼▼ 出力例 ▼▼</p>
+      <pre><code>周波数 2.1(GHz) のクロックの周期は XXXX(ps)</code></pre>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>SI接頭語とは何ですか？</p>
+      </blockquote>
+      <h3 data-number="12.2.2" id="設問2"><span class="header-section-number">12.2.2</span>
+      📝設問2</h3>
+      <p>電気信号が伝わる速さは「光速」とほぼ同じで約 <span class="math inline">\(3\times
+      10^{8}(\mathrm{m/s})\)</span> となります。</p>
+      <p>CPUのクロック周波数が <span class="math inline">\(2.8 (\mathrm{GHz})\)</span>
+      のとき、そのクロック周期に相当する時間のなかで電気信号が進む距離を <code>XXX.X (cm)</code>
+      の形式で出力してください。f文字列の書式指定子を利用し、<u>小数第2位を四捨五入して、小数第1位までを出力</u>してください。</p>
+      <div class="sourceCode" id="cb48" data-caption="設問2"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># 設問2</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb48-3"><a href="#cb48-3"></a>clock_freq <span class="op">=</span> <span class="fl">2.8e+9</span></span></code></pre></div>
+      <p>▼▼ 出力例 ▼▼</p>
+      <pre><code>CPUのクロック周波数が 2.8(GHz) とき、1周期に電気信号が進む距離は XXX.X (cm)</code></pre>
+      <p>中級者は <a
+      href="https://colab.research.google.com/notebooks/forms.ipynb">ColabのForms機能</a>
+      を使って、クロック周波数をスライダーを用いて変更できるようにしてくだささい。</p>
+      <h3 data-number="12.2.3" id="設問3"><span class="header-section-number">12.2.3</span>
+      📝設問3</h3>
+      <p>次の16進数を、2進数と10進数に変換してください。f文字列の「書式指定子」を利用してください。</p>
+      <p><span class="math display">\[(1)\ \ \ (\mathrm{FFFF}\ \mathrm{FC00})_{16}\]</span> <span
+      class="math display">\[(2)\ \ \ (\mathrm{1000}\ \mathrm{0101})_{16}\]</span></p>
+      <div class="sourceCode" id="cb50" data-caption="設問3"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a><span class="co"># 設問3</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb50-3"><a href="#cb50-3"></a>n1 <span class="op">=</span> <span class="bn">0x_FFFF_FC00</span></span></code></pre></div>
+      <p>▼▼ 出力例 ▼▼</p>
+      <pre><code>(1)  2進数: XXXXX
+    10進数: XXXXX
+(2)  2進数: XXXXX
+    10進数: XXXXX</code></pre>
+      <p>🚀 中級者は、2進数を <code>1111 1111 1111 1111 1111 1100 0000 0000</code>
+      のように4桁区切り、10進数を <code>4,294,966,272</code>
+      のようにカンマ区切りで出力してみてください。</p>
+      <h3 data-number="12.2.4" id="設問4"><span class="header-section-number">12.2.4</span>
+      📝設問4</h3>
+      <p>次の2進数を16進数に変換してください。f文字列の「書式指定子」を利用してください。</p>
+      <p><span class="math display">\[(1)\ \ \ (0011\ 0101\ 1010)_{2}\]</span> <span
+      class="math display">\[(2)\ \ \ (1001\ 0110\ 0011)_{2}\]</span></p>
+      <div class="sourceCode" id="cb52" data-caption="設問4"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># 設問3</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb52-3"><a href="#cb52-3"></a>n1 <span class="op">=</span> <span class="bn">0b_0011_0101_1010</span></span></code></pre></div>
+      <p>▼▼ 出力例 ▼▼</p>
+      <pre><code>(1) 16進数: XXXXX
+(2) 16進数: XXXXX</code></pre>
+      <h3 data-number="12.2.5" id="設問5"><span class="header-section-number">12.2.5</span>
+      📝設問5</h3>
+      <p><strong>現在までに学習した「数学」または「物理」に関する問題 (主に計算問題)</strong> を
+      <strong>テキストセル</strong> に記述してください。さらに、その問題を Python
+      を使って解いてください (問題を解くためのプログラムをコードセルをに記述してください)。</p>
+      <ul>
+      <li>本授業で習っていない構文やライブラリを使用して解いても問題ありません
+      (<u>理解・検証したうえで使用するなら、むしろ推奨です</u>)。</li>
+      </ul>
+      <p>GoogleColab のテキストセルはマークダウン形式で記述可能であり、そこでは以下のように
+      <strong>LaTeX形式で数式記述</strong> が可能です。</p>
+      <figure>
+      <img src="figs/03/colab-04.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>Google Colab
+      のテキストセル（Markdown）において、数式を記述するための基本的な書き方を解説してください。特に、文章中に埋め込む「インライン数式」と、改行して中央に表示する「独立した数式（ディスプレイ数式）」の違いと書き方を、それぞれ具体例を使って説明してください。</p>
+      </blockquote>
+      <!-- ---------------------------------------- -->
+    </main>
+
+    <footer class="markdown-body">
+      <p><a href="https://takeshiwada1980.github.io/PG1-2026/">講義資料のIndexに移動</a></p>
+    </footer>
+
+    <script>
+      window.onload = function () {
+        // ナビゲーション関連
+        let openBtn = document.getElementsByClassName("openbtn")[0];
+        let navPnl = document.getElementById("g-nav");
+        openBtn.onclick = () => {
+          openBtn.classList.toggle("active");
+          navPnl.classList.toggle("panelactive");
+        };
+
+        let items = navPnl.getElementsByTagName("a");
+        Array.from(items).forEach((item) => {
+          item.onclick = () => {
+            openBtn.classList.toggle("active");
+            navPnl.classList.toggle("panelactive");
+          };
+        });
+
+        // マスク処理
+        let maskedSpans = document.getElementsByClassName("masked");
+        Array.from(maskedSpans).forEach((span) => {
+          span.onclick = () => {
+            span.classList.toggle("open");
+          };
+        });
+
+        // data-startfrom 属性の行番号カウンタのリセット
+        document.querySelectorAll("div.sourceCode").forEach(function (div) {
+          var startFrom = div.getAttribute("data-startfrom");
+          if (startFrom != null) {
+            div.style.counterReset = "pg-line " + (startFrom - 1);
+          }
+        });
+
+        // コピーボタンの追加
+        document.querySelectorAll("div.sourceCode").forEach(function (div) {
+          var btn = document.createElement("button");
+          btn.className = "copy-btn";
+          btn.title = "コードをコピー";
+          btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+          btn.addEventListener("click", function () {
+            var codeEl = div.querySelector("code");
+            if (!codeEl) return;
+            navigator.clipboard.writeText(codeEl.innerText).then(function () {
+              btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+              setTimeout(function () {
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+              }, 1500);
+            });
+          });
+          div.appendChild(btn);
+        });
+
+        // 画像にリンクを付与
+        // let images = document.querySelectorAll("figure img");
+        // Array.from(images).forEach((img) => {
+        //   img.onclick = () => {
+        //     location.href = img.getAttribute("src");
+        //   };
+        // });
+      };
+    </script>
+  </body>
+</html>
