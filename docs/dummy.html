@@ -18,7 +18,7 @@
       };
     </script>
 
-    $if(math)$ $math$ $endif$
+    
 
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link
@@ -34,7 +34,7 @@
     />
     <link rel="stylesheet" href="style.css" />
 
-    <title>$title$</title>
+    <title>第XX回 2I-プログラミング1</title>
   </head>
 
   <body>
@@ -42,24 +42,46 @@
     <nav id="g-nav">
       <div id="g-nav-list">
         <!-- ---------------------------------------- -->
-        $if(table-of-contents)$ $table-of-contents$ $endif$
+         <ul>
+<li><a href="#dummy" id="toc-dummy"><span class="toc-section-number">1</span> dummy</a></li>
+</ul> 
         <!-- ---------------------------------------- -->
       </div>
     </nav>
 
     <header class="markdown-body">
-      <p>$var.header-title$</p>
-      <p>$var.header-date$</p>
+      <p>2026-2I プログラミング1 第XX回 講義資料</p>
+      <p>2026年04月13日 (月) 3時限〔旧5-6時限〕</p>
     </header>
 
     <main class="markdown-body">
       <!-- ---------------------------------------- -->
-      $body$
+      <h1 data-number="1" id="dummy"><span class="header-section-number">1</span> dummy</h1>
+      <p>ああああああああああ。<strong>強調文字</strong>、<strong><em>大強調文字</em></strong>、<code>インラインcode</code>、<a
+      href="https://yahoo.co.jp">link装飾</a>。フリップ形式で <span
+      class="masked">マスクしている</span> クリックするとマスクが外れる。</p>
+      <div class="note type-caution">
+      <p><strong>あああああ</strong></p>
+      <p>ああああああああああ。<strong>強調文字</strong>、<strong><em>大強調文字</em></strong>、<code>インラインcode</code>、[link装飾(https://yahoo.co.jp)。フリップ形式で
+      <span class="masked">マスクしている</span> クリックするとマスクが外れる。</p>
+      </div>
+      <div class="note type-tips">
+      <p><strong>あああああ</strong></p>
+      <p>ああああああああああ。<strong>強調文字</strong>、<strong><em>大強調文字</em></strong>、<code>インラインcode</code>、<a
+      href="https://yahoo.co.jp">link装飾</a>。フリップ形式で <span
+      class="masked">マスクしている</span> クリックするとマスクが外れる。</p>
+      </div>
+      <div class="note type-senior">
+      <p><strong>あああああ</strong></p>
+      <p>ああああああああああ。<strong>強調文字</strong>、<strong><em>大強調文字</em></strong>、<code>インラインcode</code>、<a
+      href="https://yahoo.co.jp">link装飾</a>。フリップ形式で <span
+      class="masked">マスクしている</span> クリックするとマスクが外れる。</p>
+      </div>
       <!-- ---------------------------------------- -->
     </main>
 
     <footer class="markdown-body">
-      <p><a href="$base-url$">講義資料のIndexに移動</a></p>
+      <p><a href="https://takeshiwada1980.github.io/Programming1-2026/">講義資料のIndexに移動</a></p>
     </footer>
 
     <script>

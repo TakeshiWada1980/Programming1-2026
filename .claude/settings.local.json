@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "permissions": {
     "allow": [
       "WebFetch(domain:www.garrickadenbuie.com)",
@@ -12,7 +15,9 @@
       "Bash(grep -o '<span class=\"\"\"\"[a-z]\\\\{2,3\\\\}\"\"\"\"' 'C:\\\\Users\\\\wada\\\\Documents\\\\EducationProjects\\\\Programming1-2026\\\\docs\\\\lecture01.html')",
       "Bash(npm create:*)",
       "WebFetch(domain:cdnjs.cloudflare.com)",
-      "WebFetch(domain:api.cdnjs.com)"
+      "WebFetch(domain:api.cdnjs.com)",
+      "Bash(pandoc source/dummy.md -o docs/dummy.html -d pandoc-make.yaml)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }
