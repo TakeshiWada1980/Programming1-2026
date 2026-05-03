@@ -1,4 +1,4 @@
-from: markdown
+from: markdown+fenced_divs
 to: html
 template: template.html
 html-math-method:
@@ -10,4 +10,4 @@ columns: 100
 standalone: true
 shift-heading-level-by: -1
 variables:
-  base-url: "https://takeshiwada1980.github.io/PG1-2026/"
+  base-url: "https://takeshiwada1980.github.io/Programming1-2026/"

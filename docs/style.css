@@ -485,6 +485,185 @@ div.note > pre {
   font-size: 85%;
 }
 
+/* ------- 吹き出し ------- */
+
+.markdown-body div.balloon {
+  --balloon-border-color: #5b98ff;
+  --balloon-accent-color: #d9e7ff;
+  --balloon-shadow-color: rgba(91, 152, 255, 0.12);
+  display: grid;
+  grid-template-columns: minmax(96px, 140px) minmax(0, 1fr);
+  gap: 0px;
+  align-items: start;
+  margin: 1.2em 0 1.4em;
+}
+
+.markdown-body div.balloon.balloon-no-avatar {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.markdown-body .balloon-figure {
+  align-self: start;
+  width: min(100%, 132px);
+}
+
+.markdown-body .balloon-avatar {
+  width: 100%;
+  overflow: hidden;
+  /* border: 2px solid var(--balloon-border-color); */
+  border-radius: 8px;
+  /* background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 10px 24px var(--balloon-shadow-color); */
+}
+
+.markdown-body .balloon-avatar img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.markdown-body .balloon-body {
+  --balloon-stroke-width: 2px;
+  --balloon-radius: 18px;
+  --balloon-tail-width: 26px;
+  --balloon-tail-top: 18px;
+  --balloon-tail-base: 20px;
+  --balloon-tail-tip-inset: 3px;
+  position: relative;
+  min-width: 0;
+  width: 97%;
+  max-width: none;
+  padding-left: var(--balloon-tail-width);
+  padding-top: 0;
+}
+
+@media (max-width: 767px) {
+  .markdown-body .balloon-body {
+    width: 92%;
+  }
+}
+
+.markdown-body .balloon-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  /* filter: drop-shadow(0 10px 24px var(--balloon-shadow-color)); */
+  z-index: 0;
+}
+
+.markdown-body .balloon-frame-shape {
+  fill: #ffffff;
+  stroke: var(--balloon-border-color);
+  stroke-width: var(--balloon-stroke-width);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  shape-rendering: geometricPrecision;
+}
+
+.markdown-body .balloon-bubble {
+  position: relative;
+  min-height: 68px;
+  z-index: 1;
+}
+
+.markdown-body .balloon-no-avatar .balloon-body {
+  padding-left: 0;
+}
+
+.markdown-body .balloon-no-avatar .balloon-frame {
+  display: none;
+}
+
+.markdown-body .balloon-content {
+  padding: 0.85em 1.15em;
+}
+
+.markdown-body .balloon-content > :first-child {
+  margin-top: 0;
+}
+
+.markdown-body .balloon-content > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body .balloon-content p {
+  margin-block-start: 0.45em;
+  margin-block-end: 0.45em;
+  text-indent: 0;
+}
+
+.markdown-body .balloon-content ul,
+.markdown-body .balloon-content ol {
+  margin-bottom: 0;
+}
+
+.markdown-body .tone-blue {
+  --balloon-border-color: #5b98ff;
+  --balloon-accent-color: #d9e7ff;
+  --balloon-shadow-color: rgba(91, 152, 255, 0.12);
+}
+
+.markdown-body .tone-green {
+  --balloon-border-color: #3ca978;
+  --balloon-accent-color: #daf4e8;
+  --balloon-shadow-color: rgba(60, 169, 120, 0.12);
+}
+
+.markdown-body .tone-orange {
+  --balloon-border-color: #ee8b41;
+  --balloon-accent-color: #ffe8d4;
+  --balloon-shadow-color: rgba(238, 139, 65, 0.14);
+}
+
+.markdown-body .tone-pink {
+  --balloon-border-color: #e071a5;
+  --balloon-accent-color: #ffe1ee;
+  --balloon-shadow-color: rgba(224, 113, 165, 0.14);
+}
+
+.markdown-body .tone-gray {
+  --balloon-border-color: #8895a7;
+  --balloon-accent-color: #ecf0f5;
+  --balloon-shadow-color: rgba(136, 149, 167, 0.14);
+}
+
+@media (max-width: 767px) {
+  .markdown-body div.balloon {
+    grid-template-columns: minmax(72px, 96px) minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .markdown-body .balloon-figure {
+    width: min(100%, 92px);
+  }
+
+  .markdown-body .balloon-avatar {
+    border-radius: 11px;
+  }
+
+  .markdown-body .balloon-body {
+    --balloon-radius: 15px;
+    --balloon-tail-width: 22px;
+    --balloon-tail-top: 16px;
+    --balloon-tail-base: 18px;
+    --balloon-tail-tip-inset: 2px;
+    max-width: 100%;
+    padding-top: 0;
+  }
+
+  .markdown-body .balloon-bubble {
+    min-height: 60px;
+  }
+
+  .markdown-body .balloon-content {
+    padding: 0.75em 0.95em;
+  }
+}
+
 /* ------- ノート共通 ------- */
 
 .markdown-body div.note {

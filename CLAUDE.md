@@ -80,14 +80,6 @@ var:
 ---
 ```
 
-## 公開フロー
-
-1. `source/lectureXX.md` を編集する
-2. Pandoc でビルドし、`docs/lectureXX.html` を生成する
-3. `docs/` 以下を `git add` してコミットする
-4. GitHub にプッシュする
-5. GitHub Pages により `docs/` 以下が公開される
-
 ## 補足
 
 - `.gitignore` により、`.vscode/` はリポジトリに含まれない

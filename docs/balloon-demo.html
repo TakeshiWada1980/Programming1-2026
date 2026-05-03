@@ -18,7 +18,7 @@
       };
     </script>
 
-    $if(math)$ $math$ $endif$
+    
 
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link
@@ -34,7 +34,7 @@
     />
     <link rel="stylesheet" href="style.css" />
 
-    <title>$title$</title>
+    <title>吹き出しコンポーネント確認</title>
   </head>
 
   <body>
@@ -42,24 +42,49 @@
     <nav id="g-nav">
       <div id="g-nav-list">
         <!-- ---------------------------------------- -->
-        $if(table-of-contents)$ $table-of-contents$ $endif$
+         <ul>
+<li><a href="#raw-html-記法" id="toc-raw-html-記法"><span class="toc-section-number">1</span> raw
+HTML 記法</a></li>
+<li><a href="#fenced-div-記法" id="toc-fenced-div-記法"><span class="toc-section-number">2</span>
+fenced div 記法</a></li>
+<li><a href="#画像なしフォールバック" id="toc-画像なしフォールバック"><span
+class="toc-section-number">3</span> 画像なしフォールバック</a></li>
+</ul> 
         <!-- ---------------------------------------- -->
       </div>
     </nav>
 
     <header class="markdown-body">
-      <p>$var.header-title$</p>
-      <p>$var.header-date$</p>
+      <p>2026-2I プログラミング1 吹き出しコンポーネント確認</p>
+      <p>確認用サンプル</p>
     </header>
 
     <main class="markdown-body">
       <!-- ---------------------------------------- -->
-      $body$
+      <p>以下は、講義資料用の <code>balloon</code> コンポーネントの表示確認サンプルです。</p>
+      <h1 data-number="1" id="raw-html-記法"><span class="header-section-number">1</span> raw HTML
+      記法</h1>
+      <div class="balloon char-01 face-01 tone-blue">
+      <code>:hover</code> は、マウスカーソルが要素の上にある間だけ適用される CSS の状態です。
+      </div>
+      <h1 data-number="2" id="fenced-div-記法"><span class="header-section-number">2</span> fenced
+      div 記法</h1>
+      <div class="balloon char-01 face-02 tone-green">
+      <p><code>:hover</code>
+      は、マウスカーソルが対象要素の上にある間だけ適用される疑似クラスです。</p>
+      <p>ボタンやリンクに視覚的な反応をつけたいときによく使います。</p>
+      </div>
+      <h1 data-number="3" id="画像なしフォールバック"><span class="header-section-number">3</span>
+      画像なしフォールバック</h1>
+      <div class="balloon tone-gray">
+      <p><code>char-XX</code> や <code>face-YY</code>
+      を指定しない場合は、キャラ画像なしで本文だけを表示します。</p>
+      </div>
       <!-- ---------------------------------------- -->
     </main>
 
     <footer class="markdown-body">
-      <p><a href="$base-url$">講義資料のIndexに移動</a></p>
+      <p><a href="https://takeshiwada1980.github.io/PG1-2026/">講義資料のIndexに移動</a></p>
     </footer>
 
     <script>
