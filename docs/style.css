@@ -12,23 +12,23 @@ html {
     "Segoe UI Emoji",
     "Segoe UI Symbol";
 
-  --code-pg-foreground: #24292e;
-  --code-pg-background: #ebebeb;
-
-  --code-ln-foreground: #a8a8a8;
-
-  --code-out-foreground: #ebebeb;
-  --code-out-background: #012456;
-
-  --main-foreground: #24292e;
-  --main-theme-color: #0366d6;
+  /* --- 本文 --- */
+  --main-foreground:     #24292e;
+  --main-background:     #ebebeb;
+  --main-theme-color:    #0366d6;
   --main-theme-lt-color: #47a4f5;
 
-  --main-background: #ebebeb;
+  /* --- プログラムコード --- */
+  --code-pg-foreground:  #24292e; /* インラインcode・ハイライトブロック 文字色 */
+  --code-pg-background:  #ebebeb; /* インラインcode・ハイライトブロック 背景色 */
+  --code-ln-foreground:  #a8a8a8; /* 行番号 */
+  --code-out-foreground: #ebebeb; /* 出力ブロック 文字色 */
+  --code-out-background: #012456; /* 出力ブロック 背景色 */
 
-  --main-masked-foreground: #888888;
-  --main-masked-background: #ebebeb;
-  --main-masked-bordercolor: #fff57c;
+  /* --- マスク（フリップ） --- */
+  --main-masked-foreground:  #888888; /* アイコン色（閉時） */
+  --main-masked-background:  #ebebeb; /* 枠線色（開時） */
+  --main-masked-bordercolor: #fff57c; /* ピル背景・枠線色（閉時） */
 }
 
 /* ------- 共通 ------- */
@@ -65,11 +65,6 @@ main.markdown-body p {
   margin-block-end: 0.7em;
   text-indent: 0.7em;
 }
-
-/* ------- AweSome::本体 ------- */
-/* .markdown-body i.fa-solid {
-  text-indent: 0.15em;
-} */
 
 /* ------- ヘッダーとフッター ------- */
 header.markdown-body p {
@@ -668,173 +663,196 @@ div.note > pre {
   text-indent: 0;
 }
 
-/* ------- ノート Type-caution（注意事項）: rose 系 ------- */
+/* ------- ノート: type-caution（注意事項）------- */
+/*
+ * Tailwind rose カラー  https://tailwindcss.com/docs/colors
+ *   エリア背景    rose-100  #ffe4e6
+ *   枠線          rose-300  #fda4af
+ *   em 背景       rose-400  #fb7185
+ *   アクセント    rose-600  #e11d48  ← アイコン・strong・link・マスクアイコン
+ *   link hover    rose-700  #be123c
+ *   code 背景     rose-200  #fecdd3 / code 文字  rose-700  #be123c
+ */
 
+/* エリア */
 .markdown-body div.type-caution {
   border: 2px solid #fda4af; /* rose-300 */
   background: #ffe4e6;       /* rose-100 */
 }
 
+/* アイコン（段落先頭） */
 .type-caution p:first-child::before {
   content: "\f071";
   color: #e11d48; /* rose-600 */
 }
 
+/* 強調文字 **text** */
 .type-caution strong {
   color: #e11d48; /* rose-600 */
 }
 
+/* 大強調文字 ***text***（em のピル背景）
+   yellow と異なりピル背景が濃いため、ピル内テキストは白で統一 */
+.type-caution em { background-color: #fb7185; } /* rose-400 */
+.type-caution em strong,
+.type-caution strong em { color: #ffffff; }
+
+/* インラインcode */
 .type-caution code {
   background: #fecdd3; /* rose-200 */
-  color: #be123c;      /* rose-700 */
+  color:      #be123c; /* rose-700 */
 }
-
-/* ------- ノート Type-senior（上級者）: purple 系 ------- */
-
-.markdown-body div.type-senior {
-  border: 2px solid #d8b4fe; /* purple-300 */
-  background: #f3e8ff;       /* purple-100 */
-}
-
-.type-senior p:first-child::before {
-  content: "\f6e2";
-  color: #9333ea; /* purple-600 */
-}
-
-.type-senior strong {
-  color: #9333ea; /* purple-600 */
-}
-
-.type-senior code {
-  background: #e9d5ff; /* purple-200 */
-  color: #7e22ce;      /* purple-700 */
-}
-
-.type-senior ul li::before {
-  color: #9333ea; /* purple-600 */
-}
-
-/* ------- ノート Type-tips（補足情報）: yellow 系 ------- */
-
-.markdown-body div.type-tips {
-  border: 2px solid #facc15; /* yellow-400 */
-  background: #fef9c3;       /* yellow-100 */
-}
-
-.type-tips p:first-child::before {
-  content: "\f5ad";
-  color: #a16207; /* yellow-700 */
-}
-
-.type-tips strong {
-  color: #a16207; /* yellow-700 */
-}
-
-.type-tips code {
-  background: #fef08a; /* yellow-200 */
-  color: #854d0e;      /* yellow-800 */
-}
-
-.type-tips ul li::before {
-  color: #a16207; /* yellow-700 */
-}
-
-/* ------- ノート内インライン装飾オーバーライド ------- */
-/*
- * ノート領域の背景色と馴染むよう、グローバル定義の
- * リンク・大強調文字（em）・マスクの色をノートタイプ別に上書きする。
- * グローバル定義（.markdown-body a, .markdown-body em, span.masked）は変更しない。
- */
-
-/* ---- type-caution 内のインライン装飾 (rose) ---- */
 
 /* リンク */
 .type-caution a       { color: #e11d48; } /* rose-600 */
 .type-caution a:hover { color: #be123c; } /* rose-700 */
 
-/* 大強調文字（***text*** → em のピル背景を rose 系に） */
-.type-caution em { background-color: #fb7185; } /* rose-400 */
-/* ピル内の strong は rose 背景上で読めるよう白に統一 */
-.type-caution em strong,
-.type-caution strong em { color: #ffffff; }
-
-/* マスク（閉じた状態のピル背景・ボーダーを rose 系に） */
+/* マスク（閉）: ピル背景・枠線・アイコン */
 .type-caution span.masked {
   background-color: #fda4af; /* rose-300 */
   border-color:     #fda4af; /* rose-300 */
 }
-/* マスクアイコン（::before の灰色をノート色に合わせる） */
 .type-caution span.masked::before { color: #e11d48; } /* rose-600 */
-/* マスク開いた状態：文字色（strong と同色）・枠線・アイコンをノート色系統に */
+
+/* マスク（開）: 文字色・枠線・アイコン */
 .type-caution span.masked.open { color: #e11d48; border-color: #fecdd3; } /* rose-600 / rose-200 */
 .type-caution span.masked.open::before { color: #fda4af; } /* rose-300 */
 
 /* blockquote 左ボーダー */
 .type-caution blockquote { border-left-color: #fda4af; } /* rose-300 */
 
-/* u（下線ハイライト）: 通常は gradient、blockquote 内は border-bottom */
+/* u（下線）: 通常は gradient ハイライト、blockquote 内は border-bottom */
 .type-caution u            { background: linear-gradient(transparent 72%, #fecdd3 28%); } /* rose-200 */
 .type-caution blockquote u { border-color: #fda4af; } /* rose-300 */
 
-/* ---- type-tips 内のインライン装飾 (yellow) ---- */
+/* ------- ノート: type-tips（補足・ヒント）------- */
+/*
+ * Tailwind yellow カラー  https://tailwindcss.com/docs/colors
+ *   エリア背景    yellow-100  #fef9c3
+ *   枠線          yellow-400  #facc15
+ *   em 背景       yellow-400  #facc15 / em 文字  yellow-900  #713f12
+ *   アクセント    yellow-700  #a16207  ← アイコン・strong・link・マスクアイコン
+ *   link hover    yellow-800  #854d0e
+ *   code 背景     yellow-200  #fef08a / code 文字  yellow-800  #854d0e
+ *   ※ yellow 系はピル背景が淡いため、em 内テキストは白ではなく yellow-900 を使用
+ */
+
+/* エリア */
+.markdown-body div.type-tips {
+  border: 2px solid #facc15; /* yellow-400 */
+  background: #fef9c3;       /* yellow-100 */
+}
+
+/* アイコン */
+.type-tips p:first-child::before {
+  content: "\f5ad";
+  color: #a16207; /* yellow-700 */
+}
+
+/* 強調文字 */
+.type-tips strong {
+  color: #a16207; /* yellow-700 */
+}
+
+/* 大強調文字（yellow ピルは白文字だとコントラスト不足のため yellow-900 を使用） */
+.type-tips em { background-color: #facc15; color: #713f12; } /* yellow-400 / yellow-900 */
+.type-tips em strong,
+.type-tips strong em { color: #713f12; } /* yellow-900 */
+
+/* インラインcode */
+.type-tips code {
+  background: #fef08a; /* yellow-200 */
+  color:      #854d0e; /* yellow-800 */
+}
 
 /* リンク */
 .type-tips a       { color: #a16207; } /* yellow-700 */
 .type-tips a:hover { color: #854d0e; } /* yellow-800 */
 
-/* 大強調文字（em のピル背景を yellow 系に） */
-/* yellow 系ピル上の白は低コントラストのため、テキストは yellow-900 を使用 */
-.type-tips em { background-color: #facc15; color: #713f12; } /* yellow-400 / yellow-900 */
-.type-tips em strong,
-.type-tips strong em { color: #713f12; } /* yellow-900 */
-
-/* マスク（閉じた状態のピル背景・ボーダーを yellow 系に） */
+/* マスク（閉） */
 .type-tips span.masked {
   background-color: #fde047; /* yellow-300 */
   border-color:     #fde047; /* yellow-300 */
 }
-/* マスクアイコン（::before の灰色をノート色に合わせる） */
 .type-tips span.masked::before { color: #a16207; } /* yellow-700 */
-/* マスク開いた状態：文字色（strong と同色）・枠線・アイコンをノート色系統に */
+
+/* マスク（開） */
 .type-tips span.masked.open { color: #a16207; border-color: #fef08a; } /* yellow-700 / yellow-200 */
 .type-tips span.masked.open::before { color: #fde047; } /* yellow-300 */
 
 /* blockquote 左ボーダー */
 .type-tips blockquote { border-left-color: #facc15; } /* yellow-400 */
 
-/* u（下線ハイライト）: 通常は gradient、blockquote 内は border-bottom */
+/* u（下線） */
 .type-tips u            { background: linear-gradient(transparent 72%, #fef08a 28%); } /* yellow-200 */
 .type-tips blockquote u { border-color: #facc15; } /* yellow-400 */
 
-/* ---- type-senior 内のインライン装飾 (purple) ---- */
+/* リスト記号 */
+.type-tips ul li::before { color: #a16207; } /* yellow-700 */
+
+/* ------- ノート: type-senior（上級者向け）------- */
+/*
+ * Tailwind purple カラー  https://tailwindcss.com/docs/colors
+ *   エリア背景    purple-100  #f3e8ff
+ *   枠線          purple-300  #d8b4fe
+ *   em 背景       purple-400  #c084fc
+ *   アクセント    purple-600  #9333ea  ← アイコン・strong・link・マスクアイコン
+ *   link hover    purple-700  #7e22ce
+ *   code 背景     purple-200  #e9d5ff / code 文字  purple-700  #7e22ce
+ */
+
+/* エリア */
+.markdown-body div.type-senior {
+  border: 2px solid #d8b4fe; /* purple-300 */
+  background: #f3e8ff;       /* purple-100 */
+}
+
+/* アイコン */
+.type-senior p:first-child::before {
+  content: "\f6e2";
+  color: #9333ea; /* purple-600 */
+}
+
+/* 強調文字 */
+.type-senior strong {
+  color: #9333ea; /* purple-600 */
+}
+
+/* 大強調文字 */
+.type-senior em { background-color: #c084fc; } /* purple-400 */
+.type-senior em strong,
+.type-senior strong em { color: #ffffff; }
+
+/* インラインcode */
+.type-senior code {
+  background: #e9d5ff; /* purple-200 */
+  color:      #7e22ce; /* purple-700 */
+}
 
 /* リンク */
 .type-senior a       { color: #9333ea; } /* purple-600 */
 .type-senior a:hover { color: #7e22ce; } /* purple-700 */
 
-/* 大強調文字（em のピル背景を purple 系に） */
-.type-senior em { background-color: #c084fc; } /* purple-400 */
-/* ピル内の strong は purple 背景上で読めるよう白に統一 */
-.type-senior em strong,
-.type-senior strong em { color: #ffffff; }
-
-/* マスク（閉じた状態のピル背景・ボーダーを purple 系に） */
+/* マスク（閉） */
 .type-senior span.masked {
   background-color: #d8b4fe; /* purple-300 */
   border-color:     #d8b4fe; /* purple-300 */
 }
-/* マスクアイコン（::before の灰色をノート色に合わせる） */
 .type-senior span.masked::before { color: #9333ea; } /* purple-600 */
-/* マスク開いた状態：文字色（strong と同色）・枠線・アイコンをノート色系統に */
+
+/* マスク（開） */
 .type-senior span.masked.open { color: #9333ea; border-color: #e9d5ff; } /* purple-600 / purple-200 */
 .type-senior span.masked.open::before { color: #d8b4fe; } /* purple-300 */
 
 /* blockquote 左ボーダー */
 .type-senior blockquote { border-left-color: #d8b4fe; } /* purple-300 */
 
-/* u（下線ハイライト）: 通常は gradient、blockquote 内は border-bottom */
+/* u（下線） */
 .type-senior u            { background: linear-gradient(transparent 72%, #e9d5ff 28%); } /* purple-200 */
 .type-senior blockquote u { border-color: #d8b4fe; } /* purple-300 */
+
+/* リスト記号 */
+.type-senior ul li::before { color: #9333ea; } /* purple-600 */
 
 /* ------- コピーボタン ------- */
 
