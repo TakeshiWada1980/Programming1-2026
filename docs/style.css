@@ -13,21 +13,21 @@ html {
     "Segoe UI Symbol";
 
   /* --- 本文 --- */
-  --main-foreground:     #24292e;
-  --main-background:     #ebebeb;
-  --main-theme-color:    #0366d6;
+  --main-foreground: #24292e;
+  --main-background: #ebebeb;
+  --main-theme-color: #0366d6;
   --main-theme-lt-color: #47a4f5;
 
   /* --- プログラムコード --- */
-  --code-pg-foreground:  #24292e; /* インラインcode・ハイライトブロック 文字色 */
-  --code-pg-background:  #ebebeb; /* インラインcode・ハイライトブロック 背景色 */
-  --code-ln-foreground:  #a8a8a8; /* 行番号 */
+  --code-pg-foreground: #24292e; /* インラインcode・ハイライトブロック 文字色 */
+  --code-pg-background: #ebebeb; /* インラインcode・ハイライトブロック 背景色 */
+  --code-ln-foreground: #a8a8a8; /* 行番号 */
   --code-out-foreground: #ebebeb; /* 出力ブロック 文字色 */
   --code-out-background: #012456; /* 出力ブロック 背景色 */
 
   /* --- マスク（フリップ） --- */
-  --main-masked-foreground:  #888888; /* アイコン色（閉時） */
-  --main-masked-background:  #ebebeb; /* 枠線色（開時） */
+  --main-masked-foreground: #888888; /* アイコン色（閉時） */
+  --main-masked-background: #ebebeb; /* 枠線色（開時） */
   --main-masked-bordercolor: #fff57c; /* ピル背景・枠線色（閉時） */
 }
 
@@ -101,7 +101,7 @@ footer.markdown-body p {
 
 .markdown-body u {
   text-decoration: none;
-  background: linear-gradient(transparent 72%, #b8e3ff 28%);
+  background: linear-gradient(transparent 70%, rgba(184, 227, 255, 0.7) 30%);
 }
 
 /* ------- 見出し ------- */
@@ -455,9 +455,9 @@ div.note > pre {
 .markdown-body ul > li::before {
   position: absolute;
   left: 0.1em;
-  font-family: 'Font Awesome 7 Free';
+  font-family: "Font Awesome 7 Free";
   font-weight: 900;
-  content: '\f0da';
+  content: "\f0da";
   color: var(--main-theme-lt-color);
 }
 
@@ -473,7 +473,7 @@ div.note > pre {
   --balloon-accent-color: #d9e7ff;
   --balloon-shadow-color: rgba(91, 152, 255, 0.12);
   display: grid;
-  grid-template-columns: minmax(96px, 140px) minmax(0, 1fr);
+  grid-template-columns: minmax(96px, 128px) minmax(0, 1fr);
   gap: 0;
   align-items: start;
   margin: 1.2em 0 1.4em;
@@ -485,14 +485,14 @@ div.note > pre {
 
 .markdown-body .balloon-figure {
   align-self: start;
-  width: min(100%, 132px);
+  width: min(100%, 128px);
 }
 
 .markdown-body .balloon-avatar {
   width: 100%;
   overflow: hidden;
   /* border: 2px solid var(--balloon-border-color); */
-  border-radius: 8px;
+  border-radius: 20px;
   /* background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
   box-shadow: 0 10px 24px var(--balloon-shadow-color); */
 }
@@ -505,8 +505,8 @@ div.note > pre {
 
 .markdown-body .balloon-body {
   --balloon-stroke-width: 2px;
-  --balloon-radius: 18px;
-  --balloon-tail-width: 26px;
+  --balloon-radius: 12px;
+  --balloon-tail-width: 20px;
   --balloon-tail-top: 18px;
   --balloon-tail-base: 20px;
   --balloon-tail-tip-inset: 3px;
@@ -582,31 +582,37 @@ div.note > pre {
   margin-bottom: 0;
 }
 
-.markdown-body .tone-blue {
+.markdown-body div.balloon.tone-blue {
   --balloon-border-color: #5b98ff;
   --balloon-accent-color: #d9e7ff;
   --balloon-shadow-color: rgba(91, 152, 255, 0.12);
 }
 
-.markdown-body .tone-green {
+.markdown-body div.balloon.tone-green {
   --balloon-border-color: #3ca978;
   --balloon-accent-color: #daf4e8;
   --balloon-shadow-color: rgba(60, 169, 120, 0.12);
 }
 
-.markdown-body .tone-orange {
+.markdown-body div.balloon.tone-orange {
   --balloon-border-color: #ee8b41;
   --balloon-accent-color: #ffe8d4;
   --balloon-shadow-color: rgba(238, 139, 65, 0.14);
 }
 
-.markdown-body .tone-pink {
+.markdown-body div.balloon.tone-yellow {
+  --balloon-border-color: #facc15;
+  --balloon-accent-color: #fef3c7;
+  --balloon-shadow-color: rgba(250, 204, 21, 0.14);
+}
+
+.markdown-body div.balloon.tone-pink {
   --balloon-border-color: #e071a5;
   --balloon-accent-color: #ffe1ee;
   --balloon-shadow-color: rgba(224, 113, 165, 0.14);
 }
 
-.markdown-body .tone-gray {
+.markdown-body div.balloon.tone-gray {
   --balloon-border-color: #8895a7;
   --balloon-accent-color: #ecf0f5;
   --balloon-shadow-color: rgba(136, 149, 167, 0.14);
@@ -619,7 +625,7 @@ div.note > pre {
   }
 
   .markdown-body .balloon-figure {
-    width: min(100%, 92px);
+    width: min(100%, 96px);
   }
 
   .markdown-body .balloon-avatar {
@@ -677,7 +683,7 @@ div.note > pre {
 /* エリア */
 .markdown-body div.type-caution {
   border: 2px solid #fda4af; /* rose-300 */
-  background: #ffe4e6;       /* rose-100 */
+  background: #ffe4e6; /* rose-100 */
 }
 
 /* アイコン（段落先頭） */
@@ -693,37 +699,58 @@ div.note > pre {
 
 /* 大強調文字 ***text***（em のピル背景）
    yellow と異なりピル背景が濃いため、ピル内テキストは白で統一 */
-.type-caution em { background-color: #fb7185; } /* rose-400 */
+.type-caution em {
+  background-color: #fb7185;
+} /* rose-400 */
 .type-caution em strong,
-.type-caution strong em { color: #ffffff; }
+.type-caution strong em {
+  color: #ffffff;
+}
 
 /* インラインcode */
 .type-caution code {
   background: #fecdd3; /* rose-200 */
-  color:      #be123c; /* rose-700 */
+  color: #be123c; /* rose-700 */
 }
 
 /* リンク */
-.type-caution a       { color: #e11d48; } /* rose-600 */
-.type-caution a:hover { color: #be123c; } /* rose-700 */
+.type-caution a {
+  color: #e11d48;
+} /* rose-600 */
+.type-caution a:hover {
+  color: #be123c;
+} /* rose-700 */
 
 /* マスク（閉）: ピル背景・枠線・アイコン */
 .type-caution span.masked {
   background-color: #fda4af; /* rose-300 */
-  border-color:     #fda4af; /* rose-300 */
+  border-color: #fda4af; /* rose-300 */
 }
-.type-caution span.masked::before { color: #e11d48; } /* rose-600 */
+.type-caution span.masked::before {
+  color: #e11d48;
+} /* rose-600 */
 
 /* マスク（開）: 文字色・枠線・アイコン */
-.type-caution span.masked.open { color: #e11d48; border-color: #fecdd3; } /* rose-600 / rose-200 */
-.type-caution span.masked.open::before { color: #fda4af; } /* rose-300 */
+.type-caution span.masked.open {
+  color: #e11d48;
+  border-color: #fecdd3;
+} /* rose-600 / rose-200 */
+.type-caution span.masked.open::before {
+  color: #fda4af;
+} /* rose-300 */
 
 /* blockquote 左ボーダー */
-.type-caution blockquote { border-left-color: #fda4af; } /* rose-300 */
+.type-caution blockquote {
+  border-left-color: #fda4af;
+} /* rose-300 */
 
 /* u（下線）: 通常は gradient ハイライト、blockquote 内は border-bottom */
-.type-caution u            { background: linear-gradient(transparent 72%, #fecdd3 28%); } /* rose-200 */
-.type-caution blockquote u { border-color: #fda4af; } /* rose-300 */
+.type-caution u {
+  background: linear-gradient(transparent 72%, #fecdd3 28%);
+} /* rose-200 */
+.type-caution blockquote u {
+  border-color: #fda4af;
+} /* rose-300 */
 
 /* ------- ノート: type-tips（補足・ヒント）------- */
 /*
@@ -740,7 +767,7 @@ div.note > pre {
 /* エリア */
 .markdown-body div.type-tips {
   border: 2px solid #facc15; /* yellow-400 */
-  background: #fef9c3;       /* yellow-100 */
+  background: #fef9c3; /* yellow-100 */
 }
 
 /* アイコン */
@@ -755,40 +782,64 @@ div.note > pre {
 }
 
 /* 大強調文字（yellow ピルは白文字だとコントラスト不足のため yellow-900 を使用） */
-.type-tips em { background-color: #facc15; color: #713f12; } /* yellow-400 / yellow-900 */
+.type-tips em {
+  background-color: #facc15;
+  color: #713f12;
+} /* yellow-400 / yellow-900 */
 .type-tips em strong,
-.type-tips strong em { color: #713f12; } /* yellow-900 */
+.type-tips strong em {
+  color: #713f12;
+} /* yellow-900 */
 
 /* インラインcode */
 .type-tips code {
   background: #fef08a; /* yellow-200 */
-  color:      #854d0e; /* yellow-800 */
+  color: #854d0e; /* yellow-800 */
 }
 
 /* リンク */
-.type-tips a       { color: #a16207; } /* yellow-700 */
-.type-tips a:hover { color: #854d0e; } /* yellow-800 */
+.type-tips a {
+  color: #a16207;
+} /* yellow-700 */
+.type-tips a:hover {
+  color: #854d0e;
+} /* yellow-800 */
 
 /* マスク（閉） */
 .type-tips span.masked {
   background-color: #fde047; /* yellow-300 */
-  border-color:     #fde047; /* yellow-300 */
+  border-color: #fde047; /* yellow-300 */
 }
-.type-tips span.masked::before { color: #a16207; } /* yellow-700 */
+.type-tips span.masked::before {
+  color: #a16207;
+} /* yellow-700 */
 
 /* マスク（開） */
-.type-tips span.masked.open { color: #a16207; border-color: #fef08a; } /* yellow-700 / yellow-200 */
-.type-tips span.masked.open::before { color: #fde047; } /* yellow-300 */
+.type-tips span.masked.open {
+  color: #a16207;
+  border-color: #fef08a;
+} /* yellow-700 / yellow-200 */
+.type-tips span.masked.open::before {
+  color: #fde047;
+} /* yellow-300 */
 
 /* blockquote 左ボーダー */
-.type-tips blockquote { border-left-color: #facc15; } /* yellow-400 */
+.type-tips blockquote {
+  border-left-color: #facc15;
+} /* yellow-400 */
 
 /* u（下線） */
-.type-tips u            { background: linear-gradient(transparent 72%, #fef08a 28%); } /* yellow-200 */
-.type-tips blockquote u { border-color: #facc15; } /* yellow-400 */
+.type-tips u {
+  background: linear-gradient(transparent 72%, #fef08a 28%);
+} /* yellow-200 */
+.type-tips blockquote u {
+  border-color: #facc15;
+} /* yellow-400 */
 
 /* リスト記号 */
-.type-tips ul li::before { color: #a16207; } /* yellow-700 */
+.type-tips ul li::before {
+  color: #a16207;
+} /* yellow-700 */
 
 /* ------- ノート: type-senior（上級者向け）------- */
 /*
@@ -804,7 +855,7 @@ div.note > pre {
 /* エリア */
 .markdown-body div.type-senior {
   border: 2px solid #d8b4fe; /* purple-300 */
-  background: #f3e8ff;       /* purple-100 */
+  background: #f3e8ff; /* purple-100 */
 }
 
 /* アイコン */
@@ -819,40 +870,63 @@ div.note > pre {
 }
 
 /* 大強調文字 */
-.type-senior em { background-color: #c084fc; } /* purple-400 */
+.type-senior em {
+  background-color: #c084fc;
+} /* purple-400 */
 .type-senior em strong,
-.type-senior strong em { color: #ffffff; }
+.type-senior strong em {
+  color: #ffffff;
+}
 
 /* インラインcode */
 .type-senior code {
   background: #e9d5ff; /* purple-200 */
-  color:      #7e22ce; /* purple-700 */
+  color: #7e22ce; /* purple-700 */
 }
 
 /* リンク */
-.type-senior a       { color: #9333ea; } /* purple-600 */
-.type-senior a:hover { color: #7e22ce; } /* purple-700 */
+.type-senior a {
+  color: #9333ea;
+} /* purple-600 */
+.type-senior a:hover {
+  color: #7e22ce;
+} /* purple-700 */
 
 /* マスク（閉） */
 .type-senior span.masked {
   background-color: #d8b4fe; /* purple-300 */
-  border-color:     #d8b4fe; /* purple-300 */
+  border-color: #d8b4fe; /* purple-300 */
 }
-.type-senior span.masked::before { color: #9333ea; } /* purple-600 */
+.type-senior span.masked::before {
+  color: #9333ea;
+} /* purple-600 */
 
 /* マスク（開） */
-.type-senior span.masked.open { color: #9333ea; border-color: #e9d5ff; } /* purple-600 / purple-200 */
-.type-senior span.masked.open::before { color: #d8b4fe; } /* purple-300 */
+.type-senior span.masked.open {
+  color: #9333ea;
+  border-color: #e9d5ff;
+} /* purple-600 / purple-200 */
+.type-senior span.masked.open::before {
+  color: #d8b4fe;
+} /* purple-300 */
 
 /* blockquote 左ボーダー */
-.type-senior blockquote { border-left-color: #d8b4fe; } /* purple-300 */
+.type-senior blockquote {
+  border-left-color: #d8b4fe;
+} /* purple-300 */
 
 /* u（下線） */
-.type-senior u            { background: linear-gradient(transparent 72%, #e9d5ff 28%); } /* purple-200 */
-.type-senior blockquote u { border-color: #d8b4fe; } /* purple-300 */
+.type-senior u {
+  background: linear-gradient(transparent 72%, #e9d5ff 28%);
+} /* purple-200 */
+.type-senior blockquote u {
+  border-color: #d8b4fe;
+} /* purple-300 */
 
 /* リスト記号 */
-.type-senior ul li::before { color: #9333ea; } /* purple-600 */
+.type-senior ul li::before {
+  color: #9333ea;
+} /* purple-600 */
 
 /* ------- コピーボタン ------- */
 

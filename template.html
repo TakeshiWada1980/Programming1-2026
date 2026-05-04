@@ -233,11 +233,19 @@
             avatar.className = "balloon-avatar";
 
             var image = document.createElement("img");
-            image.src = "figs/balloon/" + charClass + "/" + faceClass + ".png";
+            var avatarBasePath = "figs/balloon/" + charClass + "/" + faceClass;
+            var triedGifAvatar = false;
+            image.src = avatarBasePath + ".png";
             image.alt = "";
             image.loading = "lazy";
             image.decoding = "async";
             image.addEventListener("error", function () {
+              if (!triedGifAvatar) {
+                triedGifAvatar = true;
+                image.src = avatarBasePath + ".gif";
+                return;
+              }
+
               div.classList.add("balloon-no-avatar");
               if (figure.parentNode) {
                 figure.remove();
