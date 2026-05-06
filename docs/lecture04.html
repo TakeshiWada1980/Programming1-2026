@@ -104,7 +104,9 @@ class="toc-section-number">7.5</span> 絶対座標で移動・相対位置指示
 </ul></li>
 <li><a href="#課題02" id="toc-課題02"><span class="toc-section-number">8</span> 課題02</a>
 <ul>
-<li><a href="#補足-1" id="toc-補足-1"><span class="toc-section-number">8.1</span> 補足</a></li>
+<li><a href="#注意点" id="toc-注意点"><span class="toc-section-number">8.1</span> 注意点</a></li>
+<li><a href="#中級者向け" id="toc-中級者向け"><span class="toc-section-number">8.2</span>
+中級者向け</a></li>
 </ul></li>
 </ul> 
         <!-- ---------------------------------------- -->
@@ -215,8 +217,9 @@ class="toc-section-number">7.5</span> 絶対座標で移動・相対位置指示
       <pre><code>🧡🧡🧡
  </code></pre>
       <p>つまり、<span class="math inline">\(10\)</span> の位の値を「🧡」で表現し、<span
-      class="math inline">\(1\)</span>
-      の位の値を「🤍」で表現してHPを表現することにしました。これを実装してください。</p>
+      class="math inline">\(1\)</span> の位の値を「🤍」で表現してHPを表現することにしました (HPは
+      <span class="math inline">\(0\)</span> 〜 <span class="math inline">\(99\)</span>
+      の整数値を想定)。これを実装してください。</p>
       <div class="sourceCode" id="cb4" data-caption="演習1 (ヒント)"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># 演習1</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
@@ -300,6 +303,11 @@ class="toc-section-number">7.5</span> 絶対座標で移動・相対位置指示
       <code>name = input('名前を入力してください &gt;&gt; ')</code>
       のように1行にまとめて記述できるかを、書き換えて実際に確かめてください。</li>
       </ul>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>Python の <code>input()</code>
+      は、なぜ数値を入力しても文字列として受け取るのですか？初心者にも分かるように、キーボード入力や標準入力の仕組みと関係づけて説明してください。</p>
+      </blockquote>
       <div class="note type-senior">
       <p><strong>中級者向け: 非ノートブック環境で実行した場合</strong></p>
       <p>GoogleColab や Jupyter ではなく、<strong>通常のコンソール環境</strong> (非ノートブック環境)
@@ -310,7 +318,7 @@ class="toc-section-number">7.5</span> 絶対座標で移動・相対位置指示
       <h2 data-number="2.1" id="演習2-目標4分"><span class="header-section-number">2.1</span>
       📝演習2 (⌛目標4分)</h2>
       <p>名前 <code>name</code>、年齢 <code>age</code>、性別 <code>sex</code>
-      を標準入力から受け取り、<code>高専太郎(20歳・男性)</code>
+      を標準入力から受け取り、<code>高専 太郎(20歳・男性)</code>
       のような文字列を出力するプログラムを作成してください。</p>
       <div class="balloon char-01 face-01 tone-pink">
       <p>授業中は演習の時間が限られてるから、既出の再利用できるコードはコピペしてOK。どんどん活用して演習を進めて。</p>
@@ -372,10 +380,16 @@ class="toc-section-number">7.5</span> 絶対座標で移動・相対位置指示
       <li>計算式 <code>x = v*t + 0.5*a*t**2</code> を <code>x = v*t + t**2*0.5*a</code>
       に書き換えると (第2項の順序を変更すると) 、どのようになるか検証してください。</li>
       </ul>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>Python の <code>int()</code> と <code>float()</code>
+      の違いを説明してください。特に、<code>int('18')</code>、<code>int('18.0')</code>、<code>float('18')</code>、<code>float('18.0')</code>
+      がそれぞれどうなるか、理由も含めて教えてください。</p>
+      </blockquote>
       <div class="note type-tips">
       <p><strong>三連引用符</strong></p>
       <p><code>'''</code> と <code>'''</code>
-      で囲んだ<strong>三連引用符</strong>を使用すると、<strong>長文や改行付の文字列リテラル</strong>の記述が簡単になります。<strong>三連引用符</strong>のなかでは
+      で囲んだ<strong>三連引用符</strong>を使用すると、<strong>長文や改行付きの文字列リテラル</strong>の記述が簡単になります。<strong>三連引用符</strong>のなかでは
       <span class="masked">改行やスペース</span> がそのまま有効になります。<code>"""</code> と
       <code>"""</code> による囲みでも有効です。</p>
       <p>次のように変数に格納して使用することもできます (<a
@@ -399,7 +413,7 @@ class="toc-section-number">7.5</span> 絶対座標で移動・相対位置指示
       <div class="note type-senior">
       <p><strong>中級者向け: デフォルト値の設定</strong></p>
       <p>次のようにすることで、<code>input()</code>
-      の戻り値が空文字だったときのデフォルト値を設定することができます。</p>
+      の戻り値が「<strong>空文字</strong>」だったときのデフォルト値を設定することができます。</p>
       <div class="sourceCode" id="cb11"
       data-caption="文字列を実数値に変換するプログラム例（デフォルト値の設定あり）"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
@@ -447,6 +461,11 @@ class="toc-section-number">7.5</span> 絶対座標で移動・相対位置指示
       のショートカットキーで、アクティブ行 (＝カーソルがある) の「<strong>コメントアウト</strong>
       (コメント化) 」「<strong>アンコメント</strong> (コメント解除) 」を切り替え可能です。</p>
       <p>また、範囲選択しておけば、複数行をまとめてコメントアウト／アンコメントすることも可能です。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>Python
+      の「コメント文」と「コメントアウト」の違いを説明してください。特に、プログラムの説明を書く場合と、デバッグのために一部のコードを一時的に無効化する場合の使い分けを知りたいです。</p>
+      </blockquote>
       <h2 data-number="5.1" id="計算式をテストするとき"><span
       class="header-section-number">5.1</span> 計算式をテストするとき</h2>
       <p>今回の講義では「標準入力」を取り上げましたが、ノートブック開発環境においては
@@ -458,7 +477,7 @@ class="toc-section-number">7.5</span> 絶対座標で移動・相対位置指示
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="bu">print</span>(<span class="st">&#39;&#39;&#39;時刻0において速度 v (m/s) の物体が、</span></span>
 <span id="cb13-3"><a href="#cb13-3"></a><span class="st">一定の加速度 a (m/s^2) を保ちながら</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="st">t秒間の間に進む 距離x(m) を求めます。</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="st">t秒間に進む 距離x(m) を求めます。</span></span>
 <span id="cb13-5"><a href="#cb13-5"></a><span class="st">&#39;&#39;&#39;</span>)</span>
 <span id="cb13-6"><a href="#cb13-6"></a><span class="co"># v = float(input(&#39;速度 v (m/s) を入力してください &gt;&gt; &#39;))</span></span>
 <span id="cb13-7"><a href="#cb13-7"></a><span class="co"># a = float(input(&#39;加速度 a (m/s^2) を入力してください &gt;&gt; &#39;))</span></span>
@@ -476,7 +495,7 @@ class="toc-section-number">7.5</span> 絶対座標で移動・相対位置指示
       をコメントアウトすることで、ユーザからの入力を受け取ります。</p>
       <div class="note type-senior">
       <p><strong>中級者向け: フォーム機能</strong></p>
-      <p>Google Colab. の環境では <strong>フォーム</strong>
+      <p>GoogleColab の環境では <strong>フォーム</strong>
       という機能を使って入力を与えることもできます。</p>
       <p>次のコードを実行して、その動作を確認してみてください。</p>
       <div class="sourceCode" id="cb14" data-caption="フォームの利用例"><pre
@@ -500,7 +519,7 @@ class="toc-section-number">7.5</span> 絶対座標で移動・相対位置指示
 <span id="cb15-2"><a href="#cb15-2"></a><span class="co">#@markdown # 物理学習支援ツール</span></span>
 <span id="cb15-3"><a href="#cb15-3"></a><span class="co">#@markdown 時刻 $0$ において速度 $v$ ($\mathrm{m/s}$) の物体が、</span></span>
 <span id="cb15-4"><a href="#cb15-4"></a><span class="co">#@markdown 一定の加速度 $a$ ($\mathrm{m/s^{2}}$) を保ちながら</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a><span class="co">#@markdown $t$秒間の間に進む 距離$x$($\mathrm{m}$) を求めます。</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="co">#@markdown $t$秒間に進む 距離$x$($\mathrm{m}$) を求めます。</span></span>
 <span id="cb15-6"><a href="#cb15-6"></a></span>
 <span id="cb15-7"><a href="#cb15-7"></a><span class="co">#@markdown 速度 $v$ ($\mathrm{m/s}$) を入力してください </span></span>
 <span id="cb15-8"><a href="#cb15-8"></a>v <span class="op">=</span> <span class="fl">1.5</span>    <span class="co">#@param {type:&quot;number&quot;}</span></span>
@@ -544,14 +563,20 @@ Hello World.</code></pre>
 <span id="cb19-2"><a href="#cb19-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">7</span>): <span class="co"># 変数 n を未使用</span></span>
 <span id="cb19-3"><a href="#cb19-3"></a>  <span class="bu">print</span>(<span class="st">&#39;Hello World.&#39;</span>)</span></code></pre></div>
       <ul>
-      <li>現時点で、ループ変数 <code>i</code>
-      がどのような働きをするかは無視して問題ありません。ウェブで調べるか、AIに解説させればすぐに解説は見つかりますが…</li>
+      <li>現時点では <i><strong>ループ変数</strong> <code>i</code>
+      がどのような働きをするかは無視して問題ありません</i>。次回以降に解説します。</li>
       <li>一般に Pythonでは、インデントに <span class="masked">半角スペースを「4個」</span>
       を使用します。しかし、この授業に限っては
-      <strong>講義資料の可読性を保つためにを半角スペースを「2個」使って</strong>
+      <strong>講義資料の可読性を保つために半角スペースを「2個」使って</strong>
       インデントを表現します。</li>
       <li>インデントは「全角文字スペース」では機能しません。実際に全角スペースを使ってインデントを与えると、どのようなエラーが発生するかを確認してください。</li>
       </ul>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>Python の <code>for i in range(5):</code> の <code>i</code> は何ですか？今回は
+      <code>i</code> を使わずに繰返しだけしたいのですが、それでも <code>i</code>
+      が必要になる理由を初学者向けに説明してください。</p>
+      </blockquote>
       <h2 data-number="6.1" id="演習4-目標4分"><span class="header-section-number">6.1</span>
       📝演習4 (⌛目標4分)</h2>
       <p>繰り返し構文を利用して、次のような文字列出力を得るプログラムを記述してください。</p>
@@ -571,7 +596,7 @@ BBBB</code></pre>
       <p>繰り返し構文に到達したので、その応用として <strong>タートルグラフィックス</strong>
       で遊んでみます。</p>
       <p><a
-      href="https://www.google.com/search?q=タートルグラフィックス+例">タートルグラフィクスの例 (
+      href="https://www.google.com/search?q=タートルグラフィックス+例">タートルグラフィックスの例 (
       Google画像検索 )</a></p>
       <p>タートルグラフィックス (Turtle Graphics)
       は、プログラミング言語で簡単な「<strong>図形</strong>」や「<strong>アニメーション</strong>」を描画するためのひとつの手法です。Turtle
@@ -600,19 +625,29 @@ BBBB</code></pre>
       <p>独立したコードセルを作成して、以下を実行してください。以降、<strong>ノートブックを再開するたびに
       (GoogleColabに再接続するたびに) 実行</strong>してください。</p>
       <pre><code>!pip install ColabTurtle</code></pre>
-      <p>上記はPythonのプログラムではなく、Colab.を実行している <strong>仮想マシン (Linux)
-      に対する直接的な命令 (コマンド)</strong> になります。このコマンドは、Pythonの
-      <strong><em>パッケージ管理システムである pip</em></strong> を使って、<span
-      class="masked">ColabTurtleというライブラリを仮想マシンにインストールする</span>ために実行しています。</p>
-      <p><br />
-      </p>
+      <div class="note type-caution">
+      <p><strong>注意</strong></p>
+      <p>Colab
+      では、ノートブックを閉じたり、一定時間操作しなかったりすると、接続先のランタイムがリセットされることがあります。その場合、一度インストールしたライブラリも再度インストールが必要になるため、<strong>ノートブックを開き直したときは、最初にこのセルを実行してください</strong>。</p>
+      </div>
+      <p>上記の <code>!pip install ColabTurtle</code> は Python
+      プログラムではなく、Colab.を実行している <strong>仮想マシン (Linux) に対する直接的な命令
+      (コマンド)</strong> になります。このコマンドは、Pythonの <u>パッケージ管理システムである
+      pip</u> を使って、<span
+      class="masked">ColabTurtleというライブラリを仮想マシンにインストールする</span>
+      ために実行しています。</p>
       <p>▼ 実行結果 ▼</p>
       <figure>
       <img src="figs/04/colab-07.png" alt="img" />
       <figcaption aria-hidden="true">img</figcaption>
       </figure>
-      <p><br />
-      </p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>GoogleColab を使って Python
+      プログラミングを勉強しています。「<code>!pip install ColabTurtle</code> は Python
+      プログラムではなく、Colab.を実行している 仮想マシン (Linux) に対する直接的な命令 (コマンド)
+      になります」と説明されたのですが、全然分かりません。初学者向けに解説してください。</p>
+      </blockquote>
       <p>この「ColabTurtle」は、Google Colab 上でも動作するように <a
       href="https://pypi.org/project/PythonTurtle/">Turtle Graphics</a>
       を実装したライブラリで、簡単な図形やアニメーションを描画するために使われます。</p>
@@ -620,7 +655,7 @@ BBBB</code></pre>
       <li><a href="https://github.com/tolgaatam/ColabTurtle?tab=readme-ov-file#api">Turtle for
       Google Colab notebooks の リファレンス</a>
       <ul>
-      <li>必ず内容を確認してください。<strong><em>課題02</em></strong>
+      <li>必ず内容を確認してください。<a href="#課題02">課題02</a>
       に取り組む際に必要になります。</li>
       </ul></li>
       </ul>
@@ -631,7 +666,7 @@ BBBB</code></pre>
 <span id="cb22-2"><a href="#cb22-2"></a><span class="im">import</span> ColabTurtle.Turtle <span class="im">as</span> t</span>
 <span id="cb22-3"><a href="#cb22-3"></a>t.initializeTurtle(initial_speed<span class="op">=</span><span class="dv">5</span>,initial_window_size<span class="op">=</span>(<span class="dv">400</span>,<span class="dv">400</span>))</span>
 <span id="cb22-4"><a href="#cb22-4"></a>t.bgcolor(<span class="dv">240</span>,<span class="dv">240</span>,<span class="dv">240</span>) <span class="co"># 背景白 RGB で指定</span></span></code></pre></div>
-      <p><strong>第02行目</strong> では <code>ColabTurtle.Turtle</code> という モジュール
+      <p><strong>第02行目</strong> では <code>ColabTurtle.Turtle</code> というモジュール
       (ライブラリ) を <strong>インポート</strong> して、<code>t</code>
       という略称で扱うことを指示しています。もともとインポートとは「輸入」の意味ですが、ここでは「<strong>自分のプログラムのなかにXXXというライブラリを取り込む</strong>」のようなイメージでとらえてください。</p>
       <p><strong>第03行目</strong> では、<code>t</code> (＝ColabTurtle.Turtle の略名) の
@@ -644,16 +679,16 @@ BBBB</code></pre>
       </ul>
       <p>このような指示が与えられたとき、例えば…</p>
       <ul>
-      <li><span class="masked">マイナスの値を与えるとどうなるのか
-      (エラーが発生することは予想できるが、どのようなエラー文がでるのか) </span></li>
-      <li><span class="masked">整数値ではなく実数値を与えるとどうなるのか</span></li>
-      <li><span class="masked"><code>initializeTurtle(initial_speed=5)</code>
-      のように省略するとどうなるか</span></li>
+      <li>マイナスの値を与えるとどうなるのか🤔
+      <ul>
+      <li>エラーが発生することは予想できるが、どのようなエラー文が出るのか</li>
+      </ul></li>
+      <li>整数値ではなく実数値を与えるとどうなるのか🤔</li>
+      <li><code>initializeTurtle(initial_speed=5)</code> のように省略するとどうなるか🤔</li>
       </ul>
       <p>…といったことを考えて
       (＝好奇心を持って、興味を持って、疑問を持って)、実際に手を動かして実行して確認できる人が、<strong>最終的には高度なプログラミングスキルを習得できます</strong>。</p>
-      <p>コピペして実行するという作業 (これだけなら小学2年生でもできてしまう！)
-      <strong>だけ</strong>では十分な成長は期待できません。</p>
+      <p>コピペして実行するという作業<strong>だけ</strong>では十分な成長は期待できません。</p>
       <h3 data-number="7.2.1" id="補足"><span class="header-section-number">7.2.1</span> 補足</h3>
       <p>上記のプログラムは <strong>第02行目</strong> で <code>as t</code>
       を使わずに以下のように書くこともできます。このようにすると「可読性」が下がり、タイプミスしやすくなるというデメリットがあります。</p>
@@ -665,6 +700,12 @@ BBBB</code></pre>
       <p>例えば、<strong>第02行目</strong> で <code>import ColabTurtle.Turtle as tur</code>
       としたら、<strong>第03行目</strong>
       はどのように記述するべきでしょうか。考えて実際に手を動かして実行してみてください。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>Python の <code>import ColabTurtle.Turtle as t</code>
+      は何をしている命令ですか？<code>import</code>、モジュール、<code>as t</code>
+      の意味を、初心者向けに分けて説明してください。</p>
+      </blockquote>
       <h2 data-number="7.3" id="絶対位置座標を与えてカメを移動させる"><span
       class="header-section-number">7.3</span> 絶対位置座標を与えてカメを移動させる</h2>
       <p>次のプログラムを実行して結果を確認してください。</p>
@@ -696,6 +737,11 @@ BBBB</code></pre>
       class="masked">引数に描画領域の範囲外の値を与えるとどうなるのか</span>」「<span
       class="masked"><code>goto</code>
       メソッドの引数に実数値を与えるとどうなるのか</span>」のような好奇心を持てるようになってください。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>ColabTurtle
+      の座標系について説明してください。原点の位置、x座標とy座標の向き、数学で習う座標との違いを初学者向けに整理してください。</p>
+      </blockquote>
       <h2 data-number="7.4" id="ペンの上下形状色を操作する背景色を設定する"><span
       class="header-section-number">7.4</span> ペンの上下/形状/色を操作する、背景色を設定する</h2>
       <p>次のプログラムを実行して結果を確認してください。また、<code>shape</code>
@@ -721,7 +767,7 @@ BBBB</code></pre>
 <span id="cb26-14"><a href="#cb26-14"></a>t.up() <span class="co"># ペンを持ち上げる</span></span>
 <span id="cb26-15"><a href="#cb26-15"></a>t.goto(<span class="dv">50</span>,<span class="dv">30</span>)</span>
 <span id="cb26-16"><a href="#cb26-16"></a></span>
-<span id="cb26-17"><a href="#cb26-17"></a>t.down() <span class="co"># ペンを下す</span></span>
+<span id="cb26-17"><a href="#cb26-17"></a>t.down() <span class="co"># ペンを下ろす</span></span>
 <span id="cb26-18"><a href="#cb26-18"></a>t.goto(<span class="dv">50</span><span class="op">+</span><span class="dv">300</span>,<span class="dv">30</span>)</span>
 <span id="cb26-19"><a href="#cb26-19"></a></span>
 <span id="cb26-20"><a href="#cb26-20"></a>t.hideturtle() <span class="co"># ペン先を非表示</span></span></code></pre></div>
@@ -775,6 +821,11 @@ BBBB</code></pre>
       class="masked">90度方向（6時方向）を向かせる</span>
       ための命令になります。<code>t.right()</code> と <code>t.face()</code>
       を使い分けられるようになっておいてください。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>Python の ColabTurtle の <code>right(90)</code> と <code>face(90)</code>
+      の違いを教えてください。「現在の向きを基準にする」と「絶対的な向きを指定する」の違いが分かりません😭</p>
+      </blockquote>
       <div class="note type-tips">
       <p><strong>1行に複数の文を記述する方法</strong></p>
       <p>Pythonでは原則として１行に1文を記述しますが、<strong>セミコロン</strong> <code>;</code>
@@ -829,8 +880,8 @@ BBBB</code></pre>
       <ul>
       <li>変数、繰り返し構文を利用すれば「<strong>N角形</strong>」に拡張できることに気づきますか、また、実際に実装できますか。</li>
       </ul>
-      <h3 data-number="7.5.3" id="演習5-目標9分"><span class="header-section-number">7.5.3</span>
-      演習5 (<i class="fa-solid fa-stopwatch"></i> 目標9分)</h3>
+      <h3 data-number="7.5.3" id="演習5-目標12分"><span class="header-section-number">7.5.3</span>
+      📝演習5 (⌛目標12分)</h3>
       <ul>
       <li><code>p2.py</code> を「変数」や「繰返し構文」を使って書き直してください。</li>
       <li><code>p3.py</code> を「変数」や「繰返し構文」を使って書き直してください。</li>
@@ -838,7 +889,7 @@ BBBB</code></pre>
       </ul>
       <h2 data-number="7.6" id="演習6-課題02"><span class="header-section-number">7.6</span> 演習6
       (課題02)</h2>
-      <p>タートルグラフィックスを使って、以下の条件でラインアートを作成してください。</p>
+      <p>タートルグラフィックスを使って、以下の条件で「ラインアート」を作成してください。</p>
       <ul>
       <li>描画領域のサイズは <code>(400,400)</code> または <code>(800,400)</code> とすること。</li>
       <li>移動速度は <code>initial_speed=13</code> (最速) とすること。</li>
@@ -849,9 +900,24 @@ BBBB</code></pre>
       (プログラムの内容は理解していないけど)」</li>
       </ul></li>
       </ul>
-      <h3 data-number="7.6.1" id="演習6の過年度の作成例"><span
-      class="header-section-number">7.6.1</span> 演習6の過年度の作成例</h3>
+      <h3 data-number="7.6.1" id="過年度の作成例"><span class="header-section-number">7.6.1</span>
+      過年度の作成例</h3>
       <ul>
+      <li>2025年度
+      <ul>
+      <li><a
+      href="https://colab.research.google.com/drive/12nP9lBtVLszUe8EwKTaz4WMzIj2Uop2R?usp=sharing">学生作品
+      (タートルグラフィックス) ①</a></li>
+      <li><a
+      href="https://colab.research.google.com/drive/1ujR2QgQCSki4HNtdNu8HH2WfEpmQt-Mb?usp=sharing">学生作品
+      (タートルグラフィックス) ②</a></li>
+      <li><a
+      href="https://colab.research.google.com/drive/1xxKZ1GBrcIQC7G37zRQ4tyvr93Ax55R0?usp=sharing">学生作品
+      (タートルグラフィックス) ③</a></li>
+      <li><a
+      href="https://colab.research.google.com/drive/1dXghldT-EhW0jT7odJhv8t1mnOfqnCXn?usp=sharing">学生作品
+      (タートルグラフィックス) ④</a></li>
+      </ul></li>
       <li>2024年度
       <ul>
       <li><a
@@ -881,60 +947,94 @@ BBBB</code></pre>
       </ul></li>
       </ul>
       <h1 data-number="8" id="課題02"><span class="header-section-number">8</span> 課題02</h1>
-      <p>上記の「<strong>演習6</strong>」について、今回の講義で作成したノートブック
-      <code>PG1-第04回講義.ipynb</code> のなかで取組み、Teams
-      の指定位置に提出してください。<code>.ipynb</code>
-      ファイルを提出するわけではないので注意してください。</p>
-      <ul>
-      <li>Colabノートブックの共有設定は<a
-      href="lecture03.html#googlecolabノートブックの共有設定">第03回講義</a>で解説済みです。</li>
-      </ul>
-      <p>提出に際しては、必ず、<strong>ノートブックの</strong> <strong><em>先頭</em></strong>
-      に以下の内容のテキストセルを作成し、それにつづけて「演習6」のコードセルを配置してください。コードセルの先頭には
-      <code>%reset -f</code> を配置してください。</p>
-      <p>▼ テキストセルに記述する内容</p>
+      <p><code>PG1-第04回講義.ipynb</code> の共有範囲を「<strong>大阪公立大学
+      (閲覧可)</strong>」に設定してください。共有の設定手順は<a
+      href="lecture03.html#googlecolabノートブックの共有設定">第03回講義</a>で解説済みです。</p>
+      <p>ノートブックの <strong><em>先頭</em></strong>
+      に「テキストセル」を作成し、次の内容を貼り付け、氏名と出席番号を自分のものに書き換えてください。それにつづけて「ColabTurtleライブラリをインストールするコードセル」「<strong>演習6</strong>のコードセル」の順に配置してください。</p>
       <pre><code># **プログラミング1 課題02**
 
-- 氏名: 高専太郎 
 - 出席番号: 99
-- この課題の取り組み時間: **105分**</code></pre>
-      <p>▼ 作成例</p>
-      <figure>
-      <img src="figs/04/colab-03.png" alt="img" />
-      <figcaption aria-hidden="true">img</figcaption>
-      </figure>
+- 氏名: 高専 太郎 
+- 課題02の取組み時間: 約XXX分</code></pre>
       <ul>
-      <li><strong><em>評価</em></strong> : 標準 (＝指示した最低限のことができている)
-      を「<strong>7.5点</strong>」として <strong>10点満点</strong>
-      で評価します。評価対象は「<strong>演習6</strong>」だけです。「演習1」から「演習5」は評価の対象以外です。
+      <li><p><strong><em>提出期限</em></strong> : 2026年05月24日 (日) 23時00分
+      (これ以降に確認・評価します)</p>
       <ul>
-      <li>0点～7.5点の範囲は絶対評価で点数をつけます。</li>
-      <li>7.5点～10点の範囲はクラスのなかでの相対評価で点数をつけます。</li>
+      <li>事前相談なく、提出期限を168時間（＝1週間・7日間）超過して提出されたもの（再提出を含む）は、未提出と同じく「0点」となります。</li>
       </ul></li>
-      <li><strong><em>取り組み時間の目安</em></strong> : <strong>90分以上</strong></li>
-      <li><strong><em>期限</em></strong> : 2025年5月24日(日) 23時00分
+      <li><p><strong><em>取組みの目安となる時間</em></strong> : <strong>120分</strong></p></li>
+      <li><p><strong><em>評価</em></strong> :</p>
       <ul>
-      <li>提出後も、Teamsで採点がフィードバックされるまではノートブックの内容を変更して問題ありません。</li>
+      <li>「8点」を標準として「10点満点」で評価します。
+      <ul>
+      <li>前期中間、前期末、後期中間、学年末の成績評価の際には「重み」が付けられます
+      (例えば、課題01は1倍、課題02は1.5倍して総合するなど)。</li>
       </ul></li>
-      <li>提出物 (納品物) として <strong>品質 (クオリティ)</strong>
+      <li>課題の採点後は、修正版の再提出・追提出があっても原則として再評価はしません。</li>
+      <li>共有範囲 (閲覧可)
+      が「大阪公立大学」もしくは「リンクを知っている全員」に設定されていない場合は「0点」となります。指摘を受けて修正しても「3点減」とします。</li>
+      </ul></li>
+      <li><p><strong><em>提出物・提出先</em></strong> : GoogleColab ノートブック
+      <code>PG1-第04回講義.ipynb</code> の <strong><u>共有リンク (URL)</u></strong> を Teams
+      の指定位置に提出してください。手順は <a href="figs/03/teams-01.png">第03回講義で解説済み</a>
+      です。</p>
+      <ul>
+      <li><code>.ipynb</code> の <u>ファイル本体を提出するわけではない</u>
+      ので注意してください。</li>
+      <li>提出後 (提出期限後)
+      も、<u>採点がフィードバックされるまではノートブックの内容を変更・更新して問題ありません</u>。</li>
+      </ul></li>
+      </ul>
+      <h2 data-number="8.1" id="注意点"><span class="header-section-number">8.1</span> 注意点</h2>
+      <p>次に示す指示に従っていない場合は「減点」となります。</p>
+      <ul>
+      <li>ノートブックのタイトルは <code>PG1-第04回講義.ipynb</code>
+      としてください。英数字と記号はすべて半角としてスペースを含めないでください。</li>
+      <li>ノートブックの先頭から順番に、以下 (<a href="figs/04/kadai-02-sample.png">見本</a>)
+      のようにセルを配置してください。
+      <ol type="1">
+      <li>出席番号や氏名を記載したテキストセル</li>
+      <li><code>!pip install ColabTurtle</code> を記述したコードセル</li>
+      <li><strong>演習6</strong> に取り組んだコードセル (実行結果付き)</li>
+      <li>(授業のなかで取り組んだ「演習」や「メモ」など)</li>
+      </ol></li>
+      <li>コードセルの実行結果は消さずに残してください。</li>
+      <li>先頭のテキストセルでは以下に注意してください。
+      <ul>
+      <li>出席番号は、<strong>本年度の出席番号</strong>を半角で記入してください。1～9番の学生はゼロ埋めしてください。例えば、2番の学生は
+      <code>02</code> のようにしてください。</li>
+      <li>氏名は姓と名の間に半角スペースをいれてください。</li>
+      <li>取り組み時間は、必ず記入してください。<code>約XXX分</code> のまま残さないでください。</li>
+      </ul></li>
+      <li>演習6のコードセルでは、先頭には必ず <code>%reset -f</code> を記載してください</li>
+      </ul>
+      <h3 data-number="8.1.1" id="意識して欲しいこと"><span
+      class="header-section-number">8.1.1</span> 意識して欲しいこと</h3>
+      <ul>
+      <li><p>提出物 (納品物) として <strong>品質 (クオリティ)</strong>
       を強く意識して作成してください。これらの提出物は、今後、就職やインターンシップ等の応募・選考に使用する
-      <strong>ポートフォリオ (自身のスキルを示す作品集)</strong> の素材となります。
+      <strong>ポートフォリオ (自身のスキルを示す作品集)</strong> の素材となります。</p>
       <ul>
       <li>在学中の学習成果物として採用担当者に見せられないようなもの
       (やっつけ仕事の適当なプログラム) を作成しないでください。</li>
-      <li>将来、ソフトウェアエンジニアとして仕事することを目指している学生が、本格的にプログラミング学習を始めて1カ月半が経過、その学習成果として提出するもの（能力やセンスを応募先に評価してもらうもの）として意識して取り組んでください。</li>
-      <li>課題として提出されたコードと出力は、知能情報コースの教員と学生に共有します。また、今後の広報活動
-      (コースガイダンス、体験入学)
-      などに使用する場合があります。予め了承の上、提出してください。</li>
+      <li>将来、ソフトウェアエンジニアを目指している学生が、本格的にプログラミング学習を始めて1カ月半が経過、その学習成果として提出するもの（能力やセンスを応募先に評価してもらうもの）として意識して取り組んでください。</li>
       </ul></li>
+      <li><p>課題として提出されたコードと出力は、知能情報コースの教員と学生に共有します。また、今後の広報活動
+      (コースガイダンス、体験入学)
+      などに使用する場合があります。予め了承の上、提出してください。</p></li>
+      <li><p>取り組みにあたっては、生成AIを利用しても構いませんが、<strong>生成AIが出力したコードについて構造や処理内容を十分に理解せぬまま提出することがないようにしてください</strong>。</p></li>
       </ul>
-      <h2 data-number="8.1" id="補足-1"><span class="header-section-number">8.1</span> 補足</h2>
+      <div class="balloon char-01 face-01 tone-pink">
+      <p>この課題では「現在の自分の理解や実力を示したコード」「処理の意味や構造を説明でき、自分自身でも再び書けるコード」が求められています。</p>
+      </div>
+      <h2 data-number="8.2" id="中級者向け"><span class="header-section-number">8.2</span>
+      中級者向け</h2>
       <div class="note type-senior">
       <p><strong>中級者向け: 再帰処理とタートルグラフィックスの組み合わせ例</strong></p>
       <p>今後、<strong>関数
-      (再帰処理)</strong>、<strong>条件分岐の構文</strong>、<strong>randomライブラリ</strong>、mathライブラリなどを学習していけば、次のようなプログラムを内容を理解して書けるようになっていきます。興味のある学生は<a
+      (再帰処理)</strong>、<strong>条件分岐の構文</strong>、<strong>randomライブラリ</strong>、mathライブラリなどを学習していけば、次のようなプログラムの内容を理解して書けるようになっていきます。興味のある学生は<a
       href="https://www.google.com/search?q=フラクタル図形&amp;tbm=isch">フラクタル図形</a>で検索してみてください。</p>
-      </div>
       <div class="sourceCode" id="cb34" data-caption="フラクタル図形"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb34-2"><a href="#cb34-2"></a><span class="im">import</span> ColabTurtle.Turtle <span class="im">as</span> t</span>
@@ -982,10 +1082,12 @@ BBBB</code></pre>
 <span id="cb34-44"><a href="#cb34-44"></a>generate_branch(init_length,init_width,<span class="dv">0</span>)</span>
 <span id="cb34-45"><a href="#cb34-45"></a>t.color(<span class="op">*</span><span class="bu">map</span>(<span class="kw">lambda</span> p:<span class="bu">int</span>(p<span class="op">*</span><span class="dv">255</span>),cm(color_offset)[:<span class="dv">3</span>]))</span>
 <span id="cb34-46"><a href="#cb34-46"></a>t.back(init_length)</span></code></pre></div>
+      <p>実行例</p>
       <figure>
       <img src="figs/04/colab-04.png" alt="img" />
       <figcaption aria-hidden="true">img</figcaption>
       </figure>
+      </div>
       <!-- ---------------------------------------- -->
     </main>
 

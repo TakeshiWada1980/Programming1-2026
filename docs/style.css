@@ -21,6 +21,7 @@ html {
   /* --- プログラムコード --- */
   --code-pg-foreground: #24292e; /* インラインcode・ハイライトブロック 文字色 */
   --code-pg-background: #ebebeb; /* インラインcode・ハイライトブロック 背景色 */
+  --code-quote-background: #f6f8fa; /* 引用内インラインcode 背景色 */
   --code-ln-foreground: #a8a8a8; /* 行番号 */
   --code-out-foreground: #ebebeb; /* 出力ブロック 文字色 */
   --code-out-background: #012456; /* 出力ブロック 背景色 */
@@ -342,6 +343,10 @@ div.note > pre {
   border-radius: 5px;
   white-space: pre-wrap;
   overflow-wrap: break-word;
+}
+
+.markdown-body blockquote code {
+  background-color: var(--code-quote-background);
 }
 
 .markdown-body pre code {
