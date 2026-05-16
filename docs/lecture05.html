@@ -363,6 +363,14 @@ $$ \sum_{k=1}^{n}(a_{k}\pm b_{k})=\sum_{k=1}^{n}(a_{k})\pm \sum_{k=1}^{n}(b_{k})
 <span id="cb14-15"><a href="#cb14-15"></a>    <span class="bu">print</span>(<span class="st">&#39;あたり&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
 <span id="cb14-16"><a href="#cb14-16"></a></span>
 <span id="cb14-17"><a href="#cb14-17"></a>  <span class="bu">print</span>(<span class="st">&#39;」です。&#39;</span>)</span></code></pre></div>
+      <div class="note type-tips">
+      <p><strong>補足</strong></p>
+      <p><code>randint(1,6)</code> の戻り値は <strong>1, 2, 3, 4, 5, 6
+      のいずれか</strong>です。引数の表記 <code>[1,6]</code>
+      は数学の<strong>閉区間</strong>の記法で、両端の値（1 と
+      6）を<strong>含む</strong>ことを意味します。<code>range(1,6)</code> が終端の 6
+      を<strong>含まない</strong>（半開区間）のとは対照的なので、混同しないよう注意してください。</p>
+      </div>
       <p>なお、Python 以外の言語、例えば C/C++言語 (Arduino言語を含む) などでは、<span
       class="masked">条件式を <code>(</code> と <code>)</code>
       で囲みますが、Python言語では囲まない</span> ので注意してください。</p>
@@ -523,6 +531,12 @@ $$ \sum_{k=1}^{n}(a_{k}\pm b_{k})=\sum_{k=1}^{n}(a_{k})\pm \sum_{k=1}^{n}(b_{k})
       </div>
       <h2 data-number="6.5" id="elif節"><span class="header-section-number">6.5</span> elif節</h2>
       <p><code>elif</code> は、次のような処理をしたい場合に利用します。</p>
+      <ul>
+      <li><strong><code>elif</code></strong> は <strong>“else if”</strong>
+      を短縮したキーワードで、「エルイフ」と読みます。「前の条件が成立しなかった場合に、次の条件を評価する」という処理を表します。</li>
+      <li><code>elif</code> / <code>else</code>
+      の重要な性質として、<strong>いずれかのブロックが実行されたら残りは一切評価・実行されません</strong>。これが、下の「<code>elif</code>を使用しない実装」と処理が大きく変わる根本的な理由です。</li>
+      </ul>
       <div class="sourceCode" id="cb23" data-caption="elifを使用した実装"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb23-2"><a href="#cb23-2"></a>score <span class="op">=</span> <span class="dv">85</span></span>
@@ -639,7 +653,8 @@ $$ \sum_{k=1}^{n}(a_{k}\pm b_{k})=\sum_{k=1}^{n}(a_{k})\pm \sum_{k=1}^{n}(b_{k})
 <span id="cb28-6"><a href="#cb28-6"></a><span class="cf">else</span> :</span>
 <span id="cb28-7"><a href="#cb28-7"></a>  <span class="bu">print</span>(<span class="st">&#39;点Aは原点以外に存在します&#39;</span>)</span></code></pre></div>
       <p>上記と同じ処理をするプログラムは、次のように <strong>条件分岐構文のネストでも構成</strong>
-      することもできます。ただし、可読性・保守性に問題があることを実感してください。</p>
+      することもできます。ただし、可読性・保守性に問題があること (処理上の盲点に気づきづらいこと)
+      を実感してください。</p>
       <div class="sourceCode" id="cb29"
       data-caption="AND条件を使用せずに同じ処理するプログラム.py"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
@@ -650,6 +665,13 @@ $$ \sum_{k=1}^{n}(a_{k}\pm b_{k})=\sum_{k=1}^{n}(a_{k})\pm \sum_{k=1}^{n}(b_{k})
 <span id="cb29-6"><a href="#cb29-6"></a>    <span class="bu">print</span>(<span class="st">&#39;点Aは原点上に存在します&#39;</span>)</span>
 <span id="cb29-7"><a href="#cb29-7"></a><span class="cf">else</span> :</span>
 <span id="cb29-8"><a href="#cb29-8"></a>  <span class="bu">print</span>(<span class="st">&#39;点Aは原点以外に存在します&#39;</span>)</span></code></pre></div>
+      <div class="balloon char-01 face-01 tone-yellow">
+      <p>else が、どの if に対応するかに注意してください。</p>
+      <p>上のプログラムでは else: は<strong>外側の if x==0:</strong>
+      に対応しています（インデントの深さが揃っているためです）。</p>
+      <p>内側の if y==0: には else がないため、x==0 かつ y!=0 のとき（つまり点 A が Y
+      軸上・原点以外のとき）は<strong>どちらの print も実行されません</strong>。</p>
+      </div>
       <p><code>and</code> 演算子では、<code>x==0 and y==0 and z==0</code> のように
       <strong>3つ以上の条件</strong> についての <strong>AND (論理積)</strong>
       をとることもできます。</p>
@@ -788,6 +810,12 @@ $$ \sum_{k=1}^{n}(a_{k}\pm b_{k})=\sum_{k=1}^{n}(a_{k})\pm \sum_{k=1}^{n}(b_{k})
       <p><strong>bool型</strong> は、<code>True</code> または <code>False</code>
       の2値から構成される値です。int型 (整数型) や float型 (浮動小数点数型) と同様に変数に格納
       (バインド) することができます。</p>
+      <div class="balloon char-01 face-05 tone-blue">
+      <p>Python の <code>True</code> と <code>False</code> は<strong>先頭が大文字</strong>です。</p>
+      <p>C言語・Java・JavaScript などでは true / false (小文字) を使いますが、Python で true や
+      false と書くと<strong>変数名として解釈され NameError
+      が発生</strong>します。大文字・小文字を正確に区別して記述してください。</p>
+      </div>
       <p>そのため、次のように利用することもできます。</p>
       <div class="sourceCode" id="cb37"
       data-caption="条件の評価結果を変数に格納してから条件判定を行う例"><pre
