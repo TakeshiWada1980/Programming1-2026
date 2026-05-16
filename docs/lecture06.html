@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="referrer" content="no-referrer" />
+
+    <script>
+      MathJax = {
+        chtml: {
+          displayAlign: "left",
+          displayIndent: "1em",
+        },
+      };
+    </script>
+
+     <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+type="text/javascript"></script> 
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>第06回 2I-プログラミング1</title>
+  </head>
+
+  <body>
+    <div class="openbtn"><span></span><span></span><span></span></div>
+    <nav id="g-nav">
+      <div id="g-nav-list">
+        <!-- ---------------------------------------- -->
+         <ul>
+<li><a href="#準備と講義概要" id="toc-準備と講義概要"><span class="toc-section-number">1</span>
+準備と講義概要</a>
+<ul>
+<li><a href="#課題02-タートルグラフィックスの作品集"
+id="toc-課題02-タートルグラフィックスの作品集"><span class="toc-section-number">1.1</span> 「課題02
+タートルグラフィックス🐢」の作品集</a></li>
+</ul></li>
+<li><a href="#課題03" id="toc-課題03"><span class="toc-section-number">2</span> 課題03</a></li>
+<li><a href="#演習1" id="toc-演習1"><span class="toc-section-number">3</span>
+<strong>演習1</strong></a>
+<ul>
+<li><a href="#仕様" id="toc-仕様"><span class="toc-section-number">3.1</span> 仕様</a></li>
+<li><a href="#実行例" id="toc-実行例"><span class="toc-section-number">3.2</span> 実行例</a></li>
+<li><a href="#ヒントと注意点" id="toc-ヒントと注意点"><span class="toc-section-number">3.3</span>
+ヒントと注意点</a></li>
+</ul></li>
+<li><a href="#演習2" id="toc-演習2"><span class="toc-section-number">4</span> 演習2</a>
+<ul>
+<li><a href="#仕様-1" id="toc-仕様-1"><span class="toc-section-number">4.1</span> 仕様</a></li>
+<li><a href="#実行例-1" id="toc-実行例-1"><span class="toc-section-number">4.2</span>
+実行例</a></li>
+<li><a href="#ヒントと注意点-1" id="toc-ヒントと注意点-1"><span
+class="toc-section-number">4.3</span> ヒントと注意点</a></li>
+</ul></li>
+<li><a href="#演習3" id="toc-演習3"><span class="toc-section-number">5</span>
+<strong>演習3</strong></a>
+<ul>
+<li><a href="#仕様-2" id="toc-仕様-2"><span class="toc-section-number">5.1</span> 仕様</a></li>
+<li><a href="#実行例1" id="toc-実行例1"><span class="toc-section-number">5.2</span> 実行例1</a></li>
+<li><a href="#実行例2" id="toc-実行例2"><span class="toc-section-number">5.3</span> 実行例2</a></li>
+<li><a href="#ヒントと注意点-2" id="toc-ヒントと注意点-2"><span
+class="toc-section-number">5.4</span> ヒントと注意点</a></li>
+</ul></li>
+<li><a href="#演習4" id="toc-演習4"><span class="toc-section-number">6</span> 演習4</a>
+<ul>
+<li><a href="#仕様-3" id="toc-仕様-3"><span class="toc-section-number">6.1</span> 仕様</a></li>
+<li><a href="#実行例-2" id="toc-実行例-2"><span class="toc-section-number">6.2</span>
+実行例</a></li>
+<li><a href="#ヒントと注意点-3" id="toc-ヒントと注意点-3"><span
+class="toc-section-number">6.3</span> ヒントと注意点</a></li>
+</ul></li>
+</ul> 
+        <!-- ---------------------------------------- -->
+      </div>
+    </nav>
+
+    <header class="markdown-body">
+      <p>2026-2I プログラミング1 第06回 講義資料</p>
+      <p>2026年05月22日（月）3時限</p>
+    </header>
+
+    <main class="markdown-body">
+      <!-- ---------------------------------------- -->
+      <h1 data-number="1" id="準備と講義概要"><span class="header-section-number">1</span>
+      準備と講義概要</h1>
+      <ul>
+      <li><p>小テスト2 を実施します。鉛筆と消しゴムを準備してください。</p></li>
+      <li><p><a href="https://colab.research.google.com/?hl=ja">GoogleColab</a>
+      にログインしておいてください。</p>
+      <ul>
+      <li><code>PG1-第06回講義.ipynb</code>
+      という名前で「GoogleColabノートブック」を作成しておいてください。</li>
+      </ul></li>
+      <li><p>今回の講義では、ここまでに学んだ「変数」「条件分岐構文」「繰返し構文」「f文字列」などを総合した演習課題に取り組んでもらいます。自身の定着度合いを評価する指標としてください。</p>
+      <ul>
+      <li>学習内容が十分に定着していないと感じた場合は、学習方法を根本的に見直してください。</li>
+      </ul></li>
+      </ul>
+      <h2 data-number="1.1" id="課題02-タートルグラフィックスの作品集"><span
+      class="header-section-number">1.1</span> 「課題02 タートルグラフィックス🐢」の作品集</h2>
+      <!-- あとで作品を挿入する -->
+      <h1 data-number="2" id="課題03"><span class="header-section-number">2</span> 課題03</h1>
+      <p>以下の「<strong>演習1</strong>」から「<strong>演習4</strong>」について、<code>PG1-第06回講義.ipynb</code>
+      のなかで取組み、共有設定の上、Teams の指定位置に提出してください。<code>.ipynb</code>
+      ファイルを提出するわけではないので注意してください。</p>
+      <p>提出に際しては、必ず、<strong>ノートブックの</strong> <strong><em>先頭</em></strong>
+      に以下の内容のテキストセルを作成し、それにつづけて各演習のコードセルを配置してください。各コードセルの先頭には
+      <code>%reset -f</code> を配置してください。</p>
+      <p>▼ テキストセルに記述する内容</p>
+      <pre><code># **プログラミング1 課題03**
+
+- 氏名: 高専太郎 
+- 出席番号: 99
+- この課題の取り組み時間: **180分**</code></pre>
+      <p>必ず、課題に要した時間を明記してください。</p>
+      <ul>
+      <li><strong><em>評価</em></strong> : 標準 (＝演習1～4の全てに取り組んでいる)
+      を「<strong>8点</strong>」として <strong>10点満点</strong> で評価します。
+      <ul>
+      <li>課題の採点後は、修正版の再提出・追提出があっても原則として再評価はしません。</li>
+      <li>Colabノートブックの共有設定は<a
+      href="lecture03.html#googlecolabノートブックの共有設定">第03回講義</a>で解説済みです。
+      <ul>
+      <li>適切に共有されていない場合 (提出された共有リンクからプログラムを確認できない場合)
+      <strong>0点で評価します</strong>。再評価はしません。</li>
+      </ul></li>
+      </ul></li>
+      <li><strong><em>取り組み時間の目安</em></strong> : <strong>180分以上</strong>
+      <ul>
+      <li>本課題は
+      <strong><em>生成AIを直接的に利用すること（AIにコードを生成させること）を想定しない演習</em></strong>
+      です。
+      <ul>
+      <li>自然言語で自分の理解や解釈が適切かを生成AIに確認してもらう 👉 OK
+      (これは問題なし、学びの効果大)</li>
+      <li>自然言語で自分の疑問を生成AIに尋ねる 👉 OK (これも問題なし、学びの効果大)</li>
+      <li>直接的にプログラムコードを書いてもらう（あるいは修正してもらう） <br>👉
+      <strong>NG</strong>。今回の課題では原則として使用しない。</li>
+      </ul></li>
+      </ul></li>
+      <li><strong><em>期限</em></strong> : <strong>2026年6月14日 (日)</strong> 23時00分
+      <ul>
+      <li>提出後も、Teamsで採点がフィードバックされるまではノートブックの内容を変更して問題ありません。</li>
+      </ul></li>
+      </ul>
+      <h1 data-number="3" id="演習1"><span class="header-section-number">3</span>
+      <strong>演習1</strong></h1>
+      <p>ソフトウェアエンジニアを目指すW君（高専2年生）は、プログラミングのスキルアップのために友人と共にゲームづくりに取り組んでいる。</p>
+      <p>いま、見下ろし型のフィールド画面を持ったRPGを作成している。いま、ゲームアイテムとして、使用時に…</p>
+      <blockquote>
+      <p>💀「西に125、南に92進めば幽霊船にであえるだろう」</p>
+      </blockquote>
+      <p>…のように、<strong>自キャラの現在位置</strong>から<strong>幽霊船</strong>までの距離を表示する<a
+      href="https://wikiwiki.jp/dqdic3rd/【ふなのりのほね】">アイテム</a>を実装する必要が生じた。</p>
+      <h2 data-number="3.1" id="仕様"><span class="header-section-number">3.1</span> 仕様</h2>
+      <ul>
+      <li>ゲームのフィードとして、<span class="math inline">\(0 \le X \le 511\)</span>、<span
+      class="math inline">\(0 \le Y \le 511\)</span> の大きさのXYの2次元平面を考える。</li>
+      <li>X軸は<strong>右方向</strong>を正として、その方位を<strong>東</strong>とする。
+      <ul>
+      <li><span class="math inline">\(X=511\)</span>から東に1だけ動くと <span
+      class="math inline">\(X=0\)</span> に移動し、<span
+      class="math inline">\(X=0\)</span>から西に1だけ動くと <span
+      class="math inline">\(X=511\)</span> に移動する。</li>
+      </ul></li>
+      <li>Y軸は<strong>下方向</strong>を正とする、その方位を<strong>南</strong>とする。
+      <ul>
+      <li><span class="math inline">\(Y=511\)</span>から南に1だけ動くと <span
+      class="math inline">\(Y=0\)</span> に移動し、<span
+      class="math inline">\(Y=0\)</span>から北に1だけ動くと <span
+      class="math inline">\(Y=511\)</span> に移動する。</li>
+      </ul></li>
+      <li>自キャラの座標は、変数 <code>x1</code>, <code>y1</code> に格納されているものとする。</li>
+      <li>幽霊船の座標は <code>x2</code>, <code>y2</code> に格納されているものとする。</li>
+      <li>座標と移動量は、いずれも整数値のみを扱うものとする。</li>
+      <li>東西のどちらからでも移動量が同じ場合は、東移動を優先してメッセージを出力する。<br />
+      </li>
+      <li>南北のどちらからでも移動量が同じ場合は、南移動を優先してメッセージを出力する。</li>
+      </ul>
+      <h2 data-number="3.2" id="実行例"><span class="header-section-number">3.2</span> 実行例</h2>
+      <ul>
+      <li>自キャラの座標が <span class="math inline">\((20,10)\)</span>、幽霊船の座標が <span
+      class="math inline">\((30,5)\)</span> のとき</li>
+      </ul>
+      <pre><code>💀「東に10、北に5進めば幽霊船にであえるだろう」</code></pre>
+      <ul>
+      <li>自キャラの座標が <span class="math inline">\((2,510)\)</span>、幽霊船の座標が <span
+      class="math inline">\((511,1)\)</span> のとき</li>
+      </ul>
+      <pre><code>💀「西に3、南に3進めば幽霊船にであえるだろう」</code></pre>
+      <ul>
+      <li>自キャラの座標が <span class="math inline">\((100,40)\)</span>、幽霊船の座標が <span
+      class="math inline">\((100,60)\)</span> のとき</li>
+      </ul>
+      <pre><code>💀「南に20進めば幽霊船にであえるだろう」</code></pre>
+      <ul>
+      <li>自キャラの座標が <span class="math inline">\((10,150)\)</span>、幽霊船の座標が <span
+      class="math inline">\((300,150)\)</span> のとき</li>
+      </ul>
+      <pre><code>💀「西に222進めば幽霊船にであえるだろう」</code></pre>
+      <ul>
+      <li>自キャラの座標と幽霊船の座標が同じときに使用すれば、以下を表示する。</li>
+      </ul>
+      <pre><code>💀「幽霊船にであえたようじゃな」</code></pre>
+      <h2 data-number="3.3" id="ヒントと注意点"><span class="header-section-number">3.3</span>
+      ヒントと注意点</h2>
+      <ul>
+      <li>南北のみに移動するケース、東西のみに移動するケースにおいて句点「、」の出力に注意してください。</li>
+      <li>基本的なプログラムなので、Geminiなどの生成AIは、十分に悩んで手を尽くしてから使用してください。最初から生成AIに頼ると、演習を通じて得られる学びと経験は半分からゼロになってしまいます。
+      <ul>
+      <li>自分が理解していないコードは、絶対に解答しないでください。以下の「<strong>演習2</strong>」から「<strong>演習4</strong>」についても同じです。</li>
+      </ul></li>
+      <li>まずは、以下のコードをつづけて記述してみてください。</li>
+      </ul>
+      <div class="sourceCode" id="cb7" data-caption="演習1"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb7-2"><a href="#cb7-2"></a>x1, y1 <span class="op">=</span> <span class="dv">20</span>, <span class="dv">10</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>x2, y2 <span class="op">=</span> <span class="dv">30</span>, <span class="dv">5</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="cf">assert</span> <span class="dv">0</span> <span class="op">&lt;=</span> x1 <span class="op">&lt;=</span> <span class="dv">511</span> <span class="kw">and</span> <span class="dv">0</span> <span class="op">&lt;=</span> y1 <span class="op">&lt;=</span> <span class="dv">511</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="cf">assert</span> <span class="dv">0</span> <span class="op">&lt;=</span> x2 <span class="op">&lt;=</span> <span class="dv">511</span> <span class="kw">and</span> <span class="dv">0</span> <span class="op">&lt;=</span> y2 <span class="op">&lt;=</span> <span class="dv">511</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="bu">print</span>(<span class="ss">f&#39;キャラ位置 -&gt; X:</span><span class="sc">{</span>x1<span class="sc">:3}</span><span class="ss">  Y:</span><span class="sc">{</span>y1<span class="sc">:3}</span><span class="ss">&#39;</span>)</span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="bu">print</span>(<span class="ss">f&#39;幽霊船位置 -&gt; X:</span><span class="sc">{</span>x2<span class="sc">:3}</span><span class="ss">  Y:</span><span class="sc">{</span>y2<span class="sc">:3}</span><span class="ss">&#39;</span>)</span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="bu">print</span>()</span>
+<span id="cb7-10"><a href="#cb7-10"></a></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a></span></code></pre></div>
+      <div class="note type-senior">
+      <p><strong>中級者向け</strong></p>
+      <p>上記では、参考として「基本的な書き換え範囲」を示していますが、それにとらわれずに、関数、クラス、例外処理、条件式（三項演算子）などを利用して記述してください。テキストセルに明記すれば、<strong>仕様や設定を拡張変更しても問題ありません</strong>
+      (以降の「演習2」～「演習4」についても同様)。</p>
+      </div>
+      <h1 data-number="4" id="演習2"><span class="header-section-number">4</span> 演習2</h1>
+      <p>ソフトウェアエンジニアを目指すW君 (高専2年生)
+      は、プログラミングのスキルアップのために友人とゲームづくりに取り組んでいる。</p>
+      <p>いま、見下ろし型の2Dゲームを作成している。</p>
+      <div class="note type-tips">
+      <p>演習1では、キャラは <strong>上下左右（十字方向）にのみ移動</strong>
+      できるものとして扱いましたが、ここではより自然な移動を実現するため、<strong>任意の方向への直線移動ができる</strong>
+      ものとします。</p>
+      </div>
+      <p>そのなかで、「キャラの現在位置」と「キャラの移動目標の位置」が与えられたとき、目標に向かって
+      <strong>等速（＝1単位距離/秒）で直線移動</strong> した場合の、<strong><span
+      class="math inline">\(t\)</span> 秒後のキャラの位置</strong> を求める必要が生じた。</p>
+      <h2 data-number="4.1" id="仕様-1"><span class="header-section-number">4.1</span> 仕様</h2>
+      <ul>
+      <li>キャラの現在位置 (座標) を (<code>x1</code>、<code>y1</code>) とする。</li>
+      <li>キャラの移動目標の位置 (座標) を (<code>x2</code>、<code>y2</code>) とする。</li>
+      <li><code>t</code> 秒後のキャラ位置 (座標) を (<code>x3</code>、<code>y3</code>) とする。</li>
+      <li>座標 <code>x</code> <code>y</code> は任意の実数、時間 <code>t</code>
+      は非負の実数とする。</li>
+      <li>移動速度は <strong>1単位距離/秒</strong> とする。
+      <ul>
+      <li>2秒間に2単位距離、8秒間に8単位距離だけ移動する。</li>
+      </ul></li>
+      <li>キャラが目標位置に到達したら、その位置に留まるものとする。</li>
+      <li>キャラの位置と目標位置が同じ場合であっても、適切に処理できること。
+      <ul>
+      <li><code>ZeroDivisionError</code> が発生しないようにすること。</li>
+      </ul></li>
+      </ul>
+      <h2 data-number="4.2" id="実行例-1"><span class="header-section-number">4.2</span> 実行例</h2>
+      <ul>
+      <li>キャラの座標が <span class="math inline">\((0,0)\)</span>、移動目標の座標が <span
+      class="math inline">\((10,10)\)</span> 、時間 <span class="math inline">\(t\)</span> が <span
+      class="math inline">\(8\)</span> であれば…</li>
+      </ul>
+      <pre><code>(0.0, 0.0) から (10.0, 10.0) を目標に、
+速度1で移動するキャラの 8.0 秒後の位置は (5.7, 5.7)</code></pre>
+      <ul>
+      <li>キャラの座標が <span class="math inline">\((-7,2)\)</span>、移動目標の座標が <span
+      class="math inline">\((5,-8)\)</span> 、時間 <span class="math inline">\(t\)</span> が <span
+      class="math inline">\(2\)</span> であれば…</li>
+      </ul>
+      <pre><code>(-7.0, 2.0) から (5.0, -8.0) を目標に、
+速度1で移動するキャラの 2.0 秒後の位置は (-5.5, 0.7)</code></pre>
+      <ul>
+      <li>キャラの座標が <span class="math inline">\((2,10)\)</span>、移動目標の座標が <span
+      class="math inline">\((-3,11)\)</span> 、時間 <span class="math inline">\(t\)</span> が <span
+      class="math inline">\(8\)</span> であれば…</li>
+      </ul>
+      <pre><code>(2.0, 10.0) から (-3.0, 11.0) を目標に、
+速度1で移動するキャラの 8.0 秒後の位置は (-3.0, 11.0)</code></pre>
+      <ul>
+      <li>キャラの座標が <span class="math inline">\((4,4)\)</span>、移動目標の座標が <span
+      class="math inline">\((4,4)\)</span> 、時間 <span class="math inline">\(t\)</span> が <span
+      class="math inline">\(2.3\)</span> であれば…</li>
+      </ul>
+      <pre><code>(4.0, 4.0) から (4.0, 4.0) を目標に、
+速度1で移動するキャラの 2.3 秒後の位置は (4.0, 4.0)</code></pre>
+      <h2 data-number="4.3" id="ヒントと注意点-1"><span class="header-section-number">4.3</span>
+      ヒントと注意点</h2>
+      <ul>
+      <li>現在、「<strong>線形代数</strong>」で学んでいるベクトルの知識を十分に利用して実装してください。
+      <ul>
+      <li>自キャラの位置から目標位置への方向ベクトルを考え、<span
+      class="masked">その単位ベクトルに時間を掛けたものが移動量</span> になります。</li>
+      </ul></li>
+      </ul>
+      <div class="sourceCode" id="cb12" data-caption="演習2"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="im">import</span> math</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># キャラの現在位置（座標）</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>x1, y1 <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="co"># キャラの移動目標の位置（座標）</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a>x2, y2 <span class="op">=</span> <span class="dv">10</span>, <span class="dv">10</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="co"># t秒数の位置を計算</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a>t<span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a></span>
+<span id="cb12-13"><a href="#cb12-13"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
+<span id="cb12-14"><a href="#cb12-14"></a></span>
+<span id="cb12-15"><a href="#cb12-15"></a>x3, y3 <span class="op">=</span> <span class="fl">5.7</span>, <span class="fl">5.7</span></span>
+<span id="cb12-16"><a href="#cb12-16"></a></span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="co"># ▲▲▲ 基本的な書き換え範囲（ここまで）</span></span>
+<span id="cb12-18"><a href="#cb12-18"></a></span>
+<span id="cb12-19"><a href="#cb12-19"></a><span class="co"># 出力</span></span>
+<span id="cb12-20"><a href="#cb12-20"></a><span class="bu">print</span>(<span class="ss">f&#39;(</span><span class="sc">{</span>x1<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>y1<span class="sc">:.1f}</span><span class="ss">) から (</span><span class="sc">{</span>x2<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>y2<span class="sc">:.1f}</span><span class="ss">) を目標に、&#39;</span>)</span>
+<span id="cb12-21"><a href="#cb12-21"></a><span class="bu">print</span>(<span class="ss">f&#39;速度1で移動するキャラの </span><span class="sc">{</span>t<span class="sc">:.1f}</span><span class="ss"> 秒後の位置は (</span><span class="sc">{</span>x3<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>y3<span class="sc">:.1f}</span><span class="ss">)&#39;</span>)</span></code></pre></div>
+      <h1 data-number="5" id="演習3"><span class="header-section-number">5</span>
+      <strong>演習3</strong></h1>
+      <p>ソフトウェアエンジニアを目指すW君（高専2年生）は、プログラミングのスキルアップのために友人とゲームづくりに取り組んでいる。</p>
+      <p>いま、2Dゲームを作成しているなかで、任意の2点 (点1と点2)
+      の座標を与えたときに、それを基に<strong>次のような「H」型の図形</strong>を描画するための「座標計算」が必要となった。</p>
+      <p><strong>例: 点1として <span class="math inline">\((1,-4)\)</span>、点2として <span
+      class="math inline">\((-5,-1.5)\)</span>
+      を与えたときに画面に描画したい「H」の図形)</strong></p>
+      <figure>
+      <img src="figs/06/p3-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="5.1" id="仕様-2"><span class="header-section-number">5.1</span> 仕様</h2>
+      <ul>
+      <li>任意の2点を与えたとき、それを両端とする線分 (図の青線) を描き、各端点から長さが <span
+      class="math inline">\(1\)</span> の垂直線（図内の2本の赤線）を描くための
+      <strong>4点の座標</strong> (<code>x1a</code>, <code>y1a</code>)、(<code>x1b</code>,
+      <code>y1b</code>)、(<code>x2a</code>, <code>y2a</code>)、(<code>x2b</code>, <code>y2b</code>)
+      を計算する処理を実装したい。
+      <ul>
+      <li>任意の2点を、点1 (<code>x1</code>, <code>y1</code>) および点2 (<code>x2</code>,
+      <code>y2</code>) とする。</li>
+      <li>点1（<code>x1</code>, <code>y1</code>）を中点として長さ <span
+      class="math inline">\(1\)</span> の垂直線の端点を点1a（<code>x1a</code>,
+      <code>y1a</code>）と点1b（<code>x1b</code>, <code>y1b</code>）とする。</li>
+      <li>点2（<code>x2</code>, <code>y2</code>）を中点として長さ <span
+      class="math inline">\(1\)</span> の垂直線の端点を点2a（<code>x2a</code>,
+      <code>y2a</code>）と点2b（<code>x2b</code>, <code>y2b</code>）とする。</li>
+      </ul></li>
+      <li>点1 と 点2 には、異なる座標が与えられることが保証されているものとする。</li>
+      </ul>
+      <figure>
+      <img src="figs/06/p3-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong>期待する出力の例</strong></p>
+      <pre><code>点1の座標は (1.00,-4.00)
+  これを中点とする長さ1の垂直線の両端座標は (1.19,-3.54) と (0.81,-4.46)
+点2の座標は (-5.00,-1.50)
+  これを中点とする長さ1の垂直線の両端座標は (-4.81,-1.04) と (-5.19,-1.96)</code></pre>
+      <h2 data-number="5.2" id="実行例1"><span class="header-section-number">5.2</span> 実行例1</h2>
+      <ul>
+      <li><code>(3,4)</code> と <code>(1,0)</code> を与えたとき</li>
+      </ul>
+      <pre><code>点1の座標は (3.00,4.00)
+  これを中点とする長さ1の垂直線の両端座標は (2.55,4.22) と (3.45,3.78)
+点2の座標は (1.00,0.00)
+  これを中点とする長さ1の垂直線の両端座標は (0.55,0.22) と (1.45,-0.22)</code></pre>
+      <p>(参考) 図の描画は、提供したコードをそのまま利用してください。</p>
+      <figure>
+      <img src="figs/06/p3-02.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="5.3" id="実行例2"><span class="header-section-number">5.3</span> 実行例2</h2>
+      <ul>
+      <li><code>(2,3)</code> と <code>(-5,3)</code> を与えたとき…</li>
+      </ul>
+      <pre><code>点1の座標は (2.00,3.00)
+  これを中点とする長さ1の垂直線の両端座標は (2.00,3.50) と (2.00,2.50)
+点2の座標は (-5.00,3.00)
+  これを中点とする長さ1の垂直線の両端座標は (-5.00,3.50) と (-5.00,2.50)</code></pre>
+      <p>(参考)</p>
+      <figure>
+      <img src="figs/06/p3-03.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="5.4" id="ヒントと注意点-2"><span class="header-section-number">5.4</span>
+      ヒントと注意点</h2>
+      <ul>
+      <li>現在、「<strong>線形代数</strong>」で学んでいるベクトルの知識を十分に利用して実装してください。
+      <ul>
+      <li>点1から点2に向かうベクトルを考え、それに <strong>垂直な単位ベクトル</strong>
+      を求めて利用することがポイントです (線形代数の教科書 p.31)。</li>
+      </ul></li>
+      <li>まずは、次のコードを GoogleColab に貼り付けて動作させることからはじめてください。</li>
+      </ul>
+      <div class="sourceCode" id="cb16" data-caption="演習3"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="im">import</span> math</span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="im">import</span> matplotlib.patheffects <span class="im">as</span> pe</span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="im">from</span> matplotlib_inline.backend_inline <span class="im">import</span> set_matplotlib_formats</span>
+<span id="cb16-7"><a href="#cb16-7"></a>set_matplotlib_formats(<span class="st">&#39;svg&#39;</span>)</span>
+<span id="cb16-8"><a href="#cb16-8"></a>plt.rcParams[<span class="st">&#39;mathtext.fontset&#39;</span>] <span class="op">=</span> <span class="st">&#39;cm&#39;</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a></span>
+<span id="cb16-10"><a href="#cb16-10"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a></span>
+<span id="cb16-12"><a href="#cb16-12"></a><span class="co"># 任意の2点（点1と点2）の座標を与える</span></span>
+<span id="cb16-13"><a href="#cb16-13"></a>x1, y1 <span class="op">=</span>   <span class="dv">1</span>,   <span class="op">-</span><span class="dv">4</span></span>
+<span id="cb16-14"><a href="#cb16-14"></a>x2, y2 <span class="op">=</span>  <span class="op">-</span><span class="dv">5</span>, <span class="op">-</span><span class="fl">1.5</span></span>
+<span id="cb16-15"><a href="#cb16-15"></a></span>
+<span id="cb16-16"><a href="#cb16-16"></a><span class="co"># 点1と点2が同一座標ではないことを簡易チェック</span></span>
+<span id="cb16-17"><a href="#cb16-17"></a><span class="cf">assert</span> x1 <span class="op">!=</span> x2 <span class="kw">or</span> y1 <span class="op">!=</span> y2, <span class="st">&#39;点1と点2は異なる座標である必要があります（仕様違反）&#39;</span></span>
+<span id="cb16-18"><a href="#cb16-18"></a></span>
+<span id="cb16-19"><a href="#cb16-19"></a><span class="co"># 次の 4点（点1a、点1b、点2a、点2b）の座標をプログラムにより求める</span></span>
+<span id="cb16-20"><a href="#cb16-20"></a>x1a, y1a <span class="op">=</span> <span class="fl">1.19</span>,<span class="op">-</span><span class="fl">3.54</span></span>
+<span id="cb16-21"><a href="#cb16-21"></a>x1b, y1b <span class="op">=</span> <span class="fl">0.81</span>,<span class="op">-</span><span class="fl">4.46</span></span>
+<span id="cb16-22"><a href="#cb16-22"></a>x2a, y2a <span class="op">=</span> <span class="op">-</span><span class="fl">4.81</span>,<span class="op">-</span><span class="fl">1.04</span></span>
+<span id="cb16-23"><a href="#cb16-23"></a>x2b, y2b <span class="op">=</span> <span class="op">-</span><span class="fl">5.19</span>,<span class="op">-</span><span class="fl">1.96</span></span>
+<span id="cb16-24"><a href="#cb16-24"></a></span>
+<span id="cb16-25"><a href="#cb16-25"></a><span class="co"># ▲▲▲ 基本的な書き換え範囲（ここまで）</span></span>
+<span id="cb16-26"><a href="#cb16-26"></a></span>
+<span id="cb16-27"><a href="#cb16-27"></a><span class="bu">print</span>(<span class="ss">f&#39;点1の座標は (</span><span class="sc">{</span>x1<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y1<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb16-28"><a href="#cb16-28"></a><span class="bu">print</span>(<span class="ss">f&#39;  これを中点とする長さ1の垂直線の両端座標は (</span><span class="sc">{</span>x1a<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y1a<span class="sc">:.2f}</span><span class="ss">) と (</span><span class="sc">{</span>x1b<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y1b<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb16-29"><a href="#cb16-29"></a><span class="bu">print</span>(<span class="ss">f&#39;点2の座標は (</span><span class="sc">{</span>x2<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y2<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb16-30"><a href="#cb16-30"></a><span class="bu">print</span>(<span class="ss">f&#39;  これを中点とする長さ1の垂直線の両端座標は (</span><span class="sc">{</span>x2a<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y2a<span class="sc">:.2f}</span><span class="ss">) と (</span><span class="sc">{</span>x2b<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y2b<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb16-31"><a href="#cb16-31"></a></span>
+<span id="cb16-32"><a href="#cb16-32"></a></span>
+<span id="cb16-33"><a href="#cb16-33"></a><span class="co"># 以下、適切な座標計算ができているかを確認するための処理です。</span></span>
+<span id="cb16-34"><a href="#cb16-34"></a><span class="co"># 現時点では深く内容を理解する必要はありません。</span></span>
+<span id="cb16-35"><a href="#cb16-35"></a></span>
+<span id="cb16-36"><a href="#cb16-36"></a><span class="kw">def</span> lower_int(x):</span>
+<span id="cb16-37"><a href="#cb16-37"></a>  <span class="cf">return</span> <span class="bu">int</span>(x) <span class="op">-</span> (<span class="dv">0</span> <span class="cf">if</span> x <span class="op">==</span> <span class="bu">int</span>(x) <span class="cf">else</span> <span class="dv">1</span>)</span>
+<span id="cb16-38"><a href="#cb16-38"></a></span>
+<span id="cb16-39"><a href="#cb16-39"></a><span class="kw">def</span> upper_int(x):</span>
+<span id="cb16-40"><a href="#cb16-40"></a>    <span class="cf">return</span> <span class="bu">int</span>(x) <span class="op">+</span> (<span class="dv">0</span> <span class="cf">if</span> x <span class="op">==</span> <span class="bu">int</span>(x) <span class="cf">else</span> <span class="dv">1</span>)</span>
+<span id="cb16-41"><a href="#cb16-41"></a></span>
+<span id="cb16-42"><a href="#cb16-42"></a><span class="kw">def</span> render_graph():</span>
+<span id="cb16-43"><a href="#cb16-43"></a></span>
+<span id="cb16-44"><a href="#cb16-44"></a>  fig, axes<span class="op">=</span>plt.subplots(ncols<span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>), facecolor<span class="op">=</span><span class="st">&#39;white&#39;</span>)</span>
+<span id="cb16-45"><a href="#cb16-45"></a>  <span class="cf">for</span> i,ax <span class="kw">in</span> <span class="bu">enumerate</span>(axes) :</span>
+<span id="cb16-46"><a href="#cb16-46"></a></span>
+<span id="cb16-47"><a href="#cb16-47"></a>    ax.axvline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb16-48"><a href="#cb16-48"></a>    ax.axhline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb16-49"><a href="#cb16-49"></a></span>
+<span id="cb16-50"><a href="#cb16-50"></a>    ax.plot([x1,x2],[y1,y2],c<span class="op">=</span><span class="st">&#39;tab:blue&#39;</span>)</span>
+<span id="cb16-51"><a href="#cb16-51"></a></span>
+<span id="cb16-52"><a href="#cb16-52"></a>    <span class="cf">if</span> i<span class="op">==</span><span class="dv">1</span> :</span>
+<span id="cb16-53"><a href="#cb16-53"></a>      ax.plot([x1a,x1b],[y1a,y1b],c<span class="op">=</span><span class="st">&#39;tab:red&#39;</span>)</span>
+<span id="cb16-54"><a href="#cb16-54"></a>      ax.plot([x2a,x2b],[y2a,y2b],c<span class="op">=</span><span class="st">&#39;tab:red&#39;</span>)</span>
+<span id="cb16-55"><a href="#cb16-55"></a></span>
+<span id="cb16-56"><a href="#cb16-56"></a>    ax.set_aspect(<span class="st">&#39;equal&#39;</span>)</span>
+<span id="cb16-57"><a href="#cb16-57"></a>    margin <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb16-58"><a href="#cb16-58"></a>    ax.set_xlim( lower_int(<span class="bu">min</span>(x1a,x1b,x2a,x2b)<span class="op">-</span>margin),</span>
+<span id="cb16-59"><a href="#cb16-59"></a>                upper_int(<span class="bu">max</span>(x1a,x1b,x2a,x2b)<span class="op">+</span>margin ))</span>
+<span id="cb16-60"><a href="#cb16-60"></a>    ax.set_ylim( lower_int(<span class="bu">min</span>(y1a,y1b,y2a,y2b)<span class="op">-</span>margin),</span>
+<span id="cb16-61"><a href="#cb16-61"></a>                upper_int(<span class="bu">max</span>(y1a,y1b,y2a,y2b)<span class="op">+</span>margin ))</span>
+<span id="cb16-62"><a href="#cb16-62"></a>    ax.set_axisbelow(<span class="va">True</span>)</span>
+<span id="cb16-63"><a href="#cb16-63"></a>    ax.set_xticks(np.arange(ax.get_xlim()[<span class="dv">0</span>],ax.get_xlim()[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>))</span>
+<span id="cb16-64"><a href="#cb16-64"></a>    ax.set_yticks(np.arange(ax.get_ylim()[<span class="dv">0</span>],ax.get_ylim()[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>))</span>
+<span id="cb16-65"><a href="#cb16-65"></a></span>
+<span id="cb16-66"><a href="#cb16-66"></a>    ax.tick_params(direction<span class="op">=</span><span class="st">&#39;inout&#39;</span>)</span>
+<span id="cb16-67"><a href="#cb16-67"></a>    ax.grid()</span>
+<span id="cb16-68"><a href="#cb16-68"></a>  plt.tight_layout()</span>
+<span id="cb16-69"><a href="#cb16-69"></a>  plt.show()</span>
+<span id="cb16-70"><a href="#cb16-70"></a></span>
+<span id="cb16-71"><a href="#cb16-71"></a>render_graph()</span></code></pre></div>
+      <div class="note type-senior">
+      <p><strong>中級者向け</strong></p>
+      <p>図は <a href="https://matplotlib.org/stable/gallery/index.html">Matplotlib</a>
+      というライブラリを利用して描画しています。本授業では<a
+      href="https://takeshiwada1980.github.io/Programming1-2024/lecture11.html#斜方投射のシミュレーションと可視化">第11回講義</a>以降で正式に扱います。</p>
+      <p>この演習で要求されている処理は、NumPy の <code>ndarray</code> という行列 (ベクトル)
+      を扱うオブジェクトを使用することで、極めてスマートに実装できます。本授業では、NumPy は<a
+      href="https://takeshiwada1980.github.io/Programming1-2024/lecture17.html#numpy">第17回講義</a>以降で正式に取り上げる予定です。意欲のある学生は、ぜひ
+      NumPy を利用して本演習に取り組んでください。</p>
+      </div>
+      <h1 data-number="6" id="演習4"><span class="header-section-number">6</span> 演習4</h1>
+      <p>ソフトウェアエンジニアを目指すW君（高専2年生）は、プログラミングのスキルアップのために友人と共にゲームづくりに取り組んでいる。</p>
+      <p>いま、見下ろし型の2Dシューティングゲームを作成している。自キャラは、自分の位置から<strong>扇形の範囲攻撃ができる武器</strong>を装備しており、その攻撃に対する<strong>敵キャラの当たり判定</strong>をして「<strong>Hit!</strong>」あるいは「<strong>Miss.</strong>」の文字列を出力したい。</p>
+      <ul>
+      <li>XYの2次元平面を考える。</li>
+      <li>X軸は<strong>右方向</strong>を正とする。</li>
+      <li>Y軸は<strong>上方向</strong>を正とする。</li>
+      <li>方向（方位）は、一般的な2Dゲームと同様に画面の上方向を<strong>北</strong>としてそれを
+      <span class="math inline">\(0^\circ\)</span>、<strong>東</strong>を <span
+      class="math inline">\(90^\circ\)</span>、<strong>西</strong>を<span
+      class="math inline">\(-90^\circ\)</span>、<strong>南</strong>を <span
+      class="math inline">\(-180^\circ\)</span> or <span class="math inline">\(180^\circ\)</span>
+      とする。</li>
+      <li>武器には「<strong>射程距離</strong>」「<strong>攻撃方向</strong>」「<strong>拡がり角</strong>」の3つのパラメータが設定される。</li>
+      <li>扇形の攻撃範囲内に敵キャラが存在する場合は「<strong>Hit!</strong>」、そうではない場合は「<strong>Miss.</strong>」を出力したい。</li>
+      </ul>
+      <h3 data-number="6.0.1" id="例1"><span class="header-section-number">6.0.1</span> 例1：</h3>
+      <p>▼ 入力 ▼</p>
+      <pre><code># 自キャラ位置（下図の青点）
+x1 = 5.0
+y1 = -10.0
+
+# 敵キャラ位置（下図の赤点）
+x2 = 15
+y2 = 10
+
+# 射程距離、攻撃方向、拡がり角
+bw_range = 15
+bw_direction = 45
+bw_spread_angle = 70</code></pre>
+      <p>▼ 期待する出力 ▼</p>
+      <pre><code>Miss.</code></pre>
+      <p>(参考)</p>
+      <figure>
+      <img src="figs/06/p4-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="6.1" id="仕様-3"><span class="header-section-number">6.1</span> 仕様</h2>
+      <ul>
+      <li>キャラの位置 (座標) を (<code>x1</code>, <code>y1</code>) とする。</li>
+      <li>敵キャラの位置 (座標) を (<code>x2</code>, <code>y2</code>) とする。</li>
+      <li>XとYの座標は <span class="math inline">\(-128\)</span> 以上 <span
+      class="math inline">\(127\)</span> 以下の実数で与えられる。</li>
+      <li>射程距離 (<code>bw_range</code>) は <span class="math inline">\(0.5\)</span> 以上 <span
+      class="math inline">\(50\)</span> 以下の実数で与えられる。</li>
+      <li>攻撃方向 (<code>bw_direction</code>) は <span class="math inline">\(-180\)</span> 以上
+      <span class="math inline">\(180\)</span> 以下の度数法（deg）の実数で与えられる。</li>
+      <li>拡がり角 (<code>bw_spread_angle</code>) は <span class="math inline">\(5\)</span> 以上
+      <span class="math inline">\(270\)</span> 以下の度数法（deg）の実数で与えられる。</li>
+      </ul>
+      <h2 data-number="6.2" id="実行例-2"><span class="header-section-number">6.2</span> 実行例</h2>
+      <p><strong>例2</strong>：「<strong>Hit!</strong>」</p>
+      <figure>
+      <img src="figs/06/p4-02.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong>例3</strong>：「<strong>Hit!</strong>」</p>
+      <figure>
+      <img src="figs/06/p4-03.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong>例4</strong>：「<strong>Miss.</strong>」</p>
+      <figure>
+      <img src="figs/06/p4-04.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="6.3" id="ヒントと注意点-3"><span class="header-section-number">6.3</span>
+      ヒントと注意点</h2>
+      <ul>
+      <li><p>紙面上で問題を理解したうえで、コーディングに取り組んでください。</p></li>
+      <li><p>扇形の攻撃範囲内に敵が存在するか否かは「自キャラと敵キャラとの距離」、「自キャラから敵キャラに向かうベクトルの角度」「扇形の開始角度と終了角度」の情報を使って判定可能です
+      (紙面上で考えてみてください)。</p></li>
+      <li><p><code>print</code>
+      関数を使って変数の内容を出力し、それが紙面上での手計算と一致するかを確認しながら進めることをお勧めします
+      (そのようにすることで、結果的には短時間で開発できます)。</p></li>
+      <li><p>敵方向が <span class="math inline">\(-170^\circ\)</span> で、攻撃方向が <span
+      class="math inline">\(175^\circ\)</span>、拡がり角が <span
+      class="math inline">\(60^\circ\)</span> のようなケースに注意してください。</p></li>
+      <li><p>まずは、次のコードを GoogleColab に貼り付けて動作させることからはじめてください。</p>
+      <ul>
+      <li>あらかじめ独立したコードセルで <code>!pip install japanize_matplotlib</code>
+      を実行しておいてください。</li>
+      </ul></li>
+      </ul>
+      <div class="sourceCode" id="cb19" data-caption="演習4"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="im">import</span> math</span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="im">import</span> japanize_matplotlib</span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="im">import</span> matplotlib.patheffects <span class="im">as</span> pe</span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="im">from</span> matplotlib <span class="im">import</span> patches</span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="im">from</span> matplotlib_inline.backend_inline <span class="im">import</span> set_matplotlib_formats</span>
+<span id="cb19-8"><a href="#cb19-8"></a>set_matplotlib_formats(<span class="st">&#39;svg&#39;</span>)</span>
+<span id="cb19-9"><a href="#cb19-9"></a>plt.rcParams[<span class="st">&#39;mathtext.fontset&#39;</span>] <span class="op">=</span> <span class="st">&#39;cm&#39;</span></span>
+<span id="cb19-10"><a href="#cb19-10"></a></span>
+<span id="cb19-11"><a href="#cb19-11"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
+<span id="cb19-12"><a href="#cb19-12"></a></span>
+<span id="cb19-13"><a href="#cb19-13"></a><span class="co"># 自キャラ位置</span></span>
+<span id="cb19-14"><a href="#cb19-14"></a>x1 <span class="op">=</span> <span class="fl">5.5</span></span>
+<span id="cb19-15"><a href="#cb19-15"></a>y1 <span class="op">=</span> <span class="op">-</span><span class="fl">10.0</span></span>
+<span id="cb19-16"><a href="#cb19-16"></a></span>
+<span id="cb19-17"><a href="#cb19-17"></a><span class="co"># 敵キャラ位置</span></span>
+<span id="cb19-18"><a href="#cb19-18"></a>x2 <span class="op">=</span> <span class="fl">15.2</span></span>
+<span id="cb19-19"><a href="#cb19-19"></a>y2 <span class="op">=</span> <span class="fl">10.6</span></span>
+<span id="cb19-20"><a href="#cb19-20"></a></span>
+<span id="cb19-21"><a href="#cb19-21"></a><span class="co"># 射程距離、攻撃方向、拡がり角</span></span>
+<span id="cb19-22"><a href="#cb19-22"></a>bw_range <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb19-23"><a href="#cb19-23"></a>bw_direction <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb19-24"><a href="#cb19-24"></a>bw_spread_angle <span class="op">=</span> <span class="dv">70</span></span>
+<span id="cb19-25"><a href="#cb19-25"></a></span>
+<span id="cb19-26"><a href="#cb19-26"></a><span class="co"># 判定処理</span></span>
+<span id="cb19-27"><a href="#cb19-27"></a><span class="bu">print</span>(<span class="st">&#39;Miss.&#39;</span>)</span>
+<span id="cb19-28"><a href="#cb19-28"></a></span>
+<span id="cb19-29"><a href="#cb19-29"></a><span class="co"># ▲▲▲ 基本的な書き換え範囲（ここまで）</span></span>
+<span id="cb19-30"><a href="#cb19-30"></a></span>
+<span id="cb19-31"><a href="#cb19-31"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">128</span> <span class="op">&lt;=</span> x1 <span class="op">&lt;=</span> <span class="dv">127</span>  </span>
+<span id="cb19-32"><a href="#cb19-32"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">128</span> <span class="op">&lt;=</span> y1 <span class="op">&lt;=</span> <span class="dv">127</span>  </span>
+<span id="cb19-33"><a href="#cb19-33"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">128</span> <span class="op">&lt;=</span> x2 <span class="op">&lt;=</span> <span class="dv">127</span>  </span>
+<span id="cb19-34"><a href="#cb19-34"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">128</span> <span class="op">&lt;=</span> y2 <span class="op">&lt;=</span> <span class="dv">127</span>  </span>
+<span id="cb19-35"><a href="#cb19-35"></a><span class="cf">assert</span> <span class="fl">0.5</span> <span class="op">&lt;=</span> bw_range <span class="op">&lt;=</span> <span class="dv">50</span></span>
+<span id="cb19-36"><a href="#cb19-36"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">180</span> <span class="op">&lt;=</span> bw_direction <span class="op">&lt;=</span> <span class="dv">180</span></span>
+<span id="cb19-37"><a href="#cb19-37"></a><span class="cf">assert</span> <span class="dv">5</span> <span class="op">&lt;=</span> bw_spread_angle <span class="op">&lt;=</span> <span class="dv">270</span></span>
+<span id="cb19-38"><a href="#cb19-38"></a></span>
+<span id="cb19-39"><a href="#cb19-39"></a><span class="co"># 以下、適切に「当たり判定」ができているかを確認するための処理です。</span></span>
+<span id="cb19-40"><a href="#cb19-40"></a><span class="co"># 現時点では深く理解する必要はありません</span></span>
+<span id="cb19-41"><a href="#cb19-41"></a></span>
+<span id="cb19-42"><a href="#cb19-42"></a><span class="kw">def</span> render_graph():</span>
+<span id="cb19-43"><a href="#cb19-43"></a></span>
+<span id="cb19-44"><a href="#cb19-44"></a>  xp <span class="op">=</span> x1<span class="op">+</span>math.cos(math.radians(<span class="op">-</span>bw_direction<span class="op">+</span><span class="dv">90</span>))<span class="op">*</span>bw_range</span>
+<span id="cb19-45"><a href="#cb19-45"></a>  yp <span class="op">=</span> y1<span class="op">+</span>math.sin(math.radians(<span class="op">-</span>bw_direction<span class="op">+</span><span class="dv">90</span>))<span class="op">*</span>bw_range</span>
+<span id="cb19-46"><a href="#cb19-46"></a></span>
+<span id="cb19-47"><a href="#cb19-47"></a>  fig,ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>), facecolor<span class="op">=</span><span class="st">&#39;white&#39;</span>, dpi<span class="op">=</span><span class="dv">96</span>)</span>
+<span id="cb19-48"><a href="#cb19-48"></a>  ax.scatter(x1,y1,c<span class="op">=</span><span class="st">&#39;tab:blue&#39;</span>,s<span class="op">=</span><span class="dv">80</span>)</span>
+<span id="cb19-49"><a href="#cb19-49"></a></span>
+<span id="cb19-50"><a href="#cb19-50"></a>  ax.plot([x1,xp],[y1,yp],ls<span class="op">=</span><span class="st">&#39;--&#39;</span>,lw<span class="op">=</span><span class="fl">0.75</span>)</span>
+<span id="cb19-51"><a href="#cb19-51"></a>  ax.set_aspect(<span class="st">&#39;equal&#39;</span>, adjustable<span class="op">=</span><span class="st">&#39;box&#39;</span>)</span>
+<span id="cb19-52"><a href="#cb19-52"></a>  margin <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb19-53"><a href="#cb19-53"></a>  ax.set_xlim( <span class="bu">min</span>(x1,x2)<span class="op">-</span>margin, <span class="bu">max</span>(x1,x2)<span class="op">+</span>margin )</span>
+<span id="cb19-54"><a href="#cb19-54"></a>  ax.set_ylim( <span class="bu">min</span>(y1,y2)<span class="op">-</span>margin, <span class="bu">max</span>(y1,y2)<span class="op">+</span>margin )</span>
+<span id="cb19-55"><a href="#cb19-55"></a></span>
+<span id="cb19-56"><a href="#cb19-56"></a>  sector <span class="op">=</span> patches.Wedge((x1,y1),bw_range,</span>
+<span id="cb19-57"><a href="#cb19-57"></a>                        <span class="op">-</span>bw_direction <span class="op">-</span> bw_spread_angle<span class="op">/</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">90</span>,</span>
+<span id="cb19-58"><a href="#cb19-58"></a>                        <span class="op">-</span>bw_direction <span class="op">+</span> bw_spread_angle<span class="op">/</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">90</span>,</span>
+<span id="cb19-59"><a href="#cb19-59"></a>                        width<span class="op">=</span>bw_range, alpha<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb19-60"><a href="#cb19-60"></a>  ax.add_patch(sector)</span>
+<span id="cb19-61"><a href="#cb19-61"></a></span>
+<span id="cb19-62"><a href="#cb19-62"></a>  ax.scatter(x2,y2,c<span class="op">=</span><span class="st">&#39;tab:red&#39;</span>)</span>
+<span id="cb19-63"><a href="#cb19-63"></a>  t <span class="op">=</span> ax.text(<span class="fl">0.02</span>, <span class="fl">0.98</span>, <span class="ss">f&#39;射程距離 : </span><span class="sc">{</span>bw_range<span class="sc">}</span><span class="ch">\n</span><span class="ss">攻撃方向 : </span><span class="sc">{</span>bw_direction<span class="sc">}</span><span class="ss">°</span><span class="ch">\n</span><span class="ss">拡がり角 : </span><span class="sc">{</span>bw_spread_angle<span class="sc">}</span><span class="ss">°&#39;</span>,</span>
+<span id="cb19-64"><a href="#cb19-64"></a>          va<span class="op">=</span><span class="st">&#39;top&#39;</span>, ha<span class="op">=</span><span class="st">&#39;left&#39;</span>, transform<span class="op">=</span>ax.transAxes)</span>
+<span id="cb19-65"><a href="#cb19-65"></a>  t.set_path_effects([pe.Stroke(linewidth<span class="op">=</span><span class="dv">4</span>,foreground<span class="op">=</span><span class="st">&#39;white&#39;</span>),pe.Normal()])</span>
+<span id="cb19-66"><a href="#cb19-66"></a></span>
+<span id="cb19-67"><a href="#cb19-67"></a>  ax.grid()</span>
+<span id="cb19-68"><a href="#cb19-68"></a>  ax.set_axisbelow(<span class="va">True</span>)</span>
+<span id="cb19-69"><a href="#cb19-69"></a>  ax.tick_params(direction<span class="op">=</span><span class="st">&#39;inout&#39;</span>)</span>
+<span id="cb19-70"><a href="#cb19-70"></a>  plt.show()</span>
+<span id="cb19-71"><a href="#cb19-71"></a></span>
+<span id="cb19-72"><a href="#cb19-72"></a>render_graph()</span></code></pre></div>
+      <!-- ---------------------------------------- -->
+    </main>
+
+    <footer class="markdown-body">
+      <p><a href="https://takeshiwada1980.github.io/Programming1-2026/">講義資料のIndexに移動</a></p>
+    </footer>
+
+    <script>
+      window.onload = function () {
+        // ナビゲーション関連
+        let openBtn = document.getElementsByClassName("openbtn")[0];
+        let navPnl = document.getElementById("g-nav");
+        openBtn.onclick = () => {
+          openBtn.classList.toggle("active");
+          navPnl.classList.toggle("panelactive");
+        };
+
+        let items = navPnl.getElementsByTagName("a");
+        Array.from(items).forEach((item) => {
+          item.onclick = () => {
+            openBtn.classList.toggle("active");
+            navPnl.classList.toggle("panelactive");
+          };
+        });
+
+        // マスク処理
+        let maskedSpans = document.getElementsByClassName("masked");
+        Array.from(maskedSpans).forEach((span) => {
+          span.onclick = () => {
+            span.classList.toggle("open");
+          };
+        });
+
+        // 吹き出しコンポーネントの補完
+        function updateBalloonFrame(body) {
+          var svg = body.querySelector(":scope > .balloon-frame");
+          var path = body.querySelector(":scope > .balloon-frame .balloon-frame-shape");
+          if (!svg || !path) return;
+
+          var rect = body.getBoundingClientRect();
+          var style = getComputedStyle(body);
+          var width = Math.max(1, Math.ceil(rect.width));
+          var height = Math.max(1, Math.ceil(rect.height));
+
+          var stroke = parseFloat(style.getPropertyValue("--balloon-stroke-width")) || 2;
+          var radius = parseFloat(style.getPropertyValue("--balloon-radius")) || 18;
+          var tailWidth = parseFloat(style.getPropertyValue("--balloon-tail-width")) || 26;
+          var tailTop = parseFloat(style.getPropertyValue("--balloon-tail-top")) || 18;
+          var tailBase = parseFloat(style.getPropertyValue("--balloon-tail-base")) || 20;
+          var tailTipInset =
+            parseFloat(style.getPropertyValue("--balloon-tail-tip-inset")) || 3;
+          var s2 = stroke * 0.5;
+          var left = tailWidth + s2;
+          var top = s2;
+          var right = width - s2;
+          var bottom = height - s2;
+          var safeRadius = Math.min(radius, (right - left) * 0.5, (bottom - top) * 0.5);
+          var baseTop = Math.max(
+            top + safeRadius + 4,
+            Math.min(bottom - safeRadius - tailBase - 4, tailTop),
+          );
+          var baseBottom = Math.min(bottom - safeRadius - 4, baseTop + tailBase);
+          var tipX = Math.max(s2, tailTipInset);
+          var tipY = (baseTop + baseBottom) * 0.5;
+          var d = [
+            "M",
+            left + safeRadius,
+            top,
+            "H",
+            right - safeRadius,
+            "A",
+            safeRadius,
+            safeRadius,
+            0,
+            0,
+            1,
+            right,
+            top + safeRadius,
+            "V",
+            bottom - safeRadius,
+            "A",
+            safeRadius,
+            safeRadius,
+            0,
+            0,
+            1,
+            right - safeRadius,
+            bottom,
+            "H",
+            left + safeRadius,
+            "A",
+            safeRadius,
+            safeRadius,
+            0,
+            0,
+            1,
+            left,
+            bottom - safeRadius,
+            "V",
+            baseBottom,
+            "L",
+            tipX,
+            tipY,
+            "L",
+            left,
+            baseTop,
+            "V",
+            top + safeRadius,
+            "A",
+            safeRadius,
+            safeRadius,
+            0,
+            0,
+            1,
+            left + safeRadius,
+            top,
+            "Z",
+          ].join(" ");
+
+          svg.setAttribute("viewBox", "0 0 " + width + " " + height);
+          path.setAttribute("d", d);
+        }
+
+        document.querySelectorAll("div.balloon").forEach(function (div) {
+          if (div.querySelector(":scope > .balloon-body")) return;
+
+          var hasContent = Array.from(div.childNodes).some(function (node) {
+            return node.nodeType !== Node.TEXT_NODE || node.textContent.trim() !== "";
+          });
+          if (!hasContent) return;
+
+          var classNames = Array.from(div.classList);
+          var charClass = classNames.find(function (name) {
+            return /^char-\d\d/.test(name) && name.length === 7;
+          });
+          var faceClass = classNames.find(function (name) {
+            return /^face-\d\d/.test(name) && name.length === 7;
+          });
+
+          var contentNodes = Array.from(div.childNodes);
+          var body = document.createElement("div");
+          body.className = "balloon-body";
+
+          var frame = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg",
+          );
+          frame.setAttribute("aria-hidden", "true");
+          frame.classList.add("balloon-frame");
+
+          var framePath = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "path",
+          );
+          framePath.classList.add("balloon-frame-shape");
+          frame.appendChild(framePath);
+
+          var bubble = document.createElement("div");
+          bubble.className = "balloon-bubble";
+
+          var content = document.createElement("div");
+          content.className = "balloon-content";
+          contentNodes.forEach(function (node) {
+            content.appendChild(node);
+          });
+
+          bubble.appendChild(content);
+          body.appendChild(frame);
+          body.appendChild(bubble);
+
+          if (charClass && faceClass) {
+            var figure = document.createElement("div");
+            figure.className = "balloon-figure";
+
+            var avatar = document.createElement("div");
+            avatar.className = "balloon-avatar";
+
+            var image = document.createElement("img");
+            var avatarBasePath = "figs/balloon/" + charClass + "/" + faceClass;
+            var triedGifAvatar = false;
+            image.src = avatarBasePath + ".png";
+            image.alt = "";
+            image.loading = "lazy";
+            image.decoding = "async";
+            image.addEventListener("error", function () {
+              if (!triedGifAvatar) {
+                triedGifAvatar = true;
+                image.src = avatarBasePath + ".gif";
+                return;
+              }
+
+              div.classList.add("balloon-no-avatar");
+              if (figure.parentNode) {
+                figure.remove();
+              }
+            });
+
+            avatar.appendChild(image);
+            figure.appendChild(avatar);
+            div.appendChild(figure);
+          } else {
+            div.classList.add("balloon-no-avatar");
+          }
+
+          div.appendChild(body);
+          updateBalloonFrame(body);
+
+          if (window.ResizeObserver) {
+            var observer = new ResizeObserver(function () {
+              updateBalloonFrame(body);
+            });
+            observer.observe(body);
+          }
+        });
+
+        // data-startfrom 属性の行番号カウンタのリセット
+        document.querySelectorAll("div.sourceCode").forEach(function (div) {
+          var startFrom = div.getAttribute("data-startfrom");
+          if (startFrom != null) {
+            div.style.counterReset = "pg-line " + (startFrom - 1);
+          }
+        });
+
+        // コピーボタンの追加
+        document.querySelectorAll("div.sourceCode").forEach(function (div) {
+          var btn = document.createElement("button");
+          btn.className = "copy-btn";
+          btn.title = "コードをコピー";
+          btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+          btn.addEventListener("click", function () {
+            var codeEl = div.querySelector("code");
+            if (!codeEl) return;
+            navigator.clipboard.writeText(codeEl.innerText).then(function () {
+              btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+              setTimeout(function () {
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+              }, 1500);
+            });
+          });
+          div.appendChild(btn);
+        });
+
+      };
+    </script>
+  </body>
+</html>
