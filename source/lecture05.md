@@ -1,7 +1,7 @@
 ---
 var:
   header-title: "2026-2I プログラミング1 第05回 講義資料"
-  header-date: "2026年05月15日（月）3時限"
+  header-date: "2026年05月18日（月）3時限"
 ---
 
 # 第05回 2I-プログラミング1
@@ -9,8 +9,8 @@ var:
 ## 準備と講義概要
 
 - [GoogleColab](https://colab.research.google.com/?hl=ja) にログインしておいてください。
-  - `PG1-第05回講義.ipynb` という名前で「GoogleColabノートブック」を作成しておいてください。今回はノートブックの提出は**ありません**。
-  - 本日講義の演習の実行例などは [こちら](https://colab.research.google.com/drive/1Jeknip29RTOsnztqrnWytCqqquyrHYSF?usp=sharing) (GoogleColab) を参照ください。
+  - `PG1-第05回講義.ipynb` という名前で「GoogleColabノートブック」を作成しておいてください。<u>今回はノートブックの提出は**ありません**</u>。
+  - 本日講義の演習の実行例 (解答例) などは [こちら](https://colab.research.google.com/drive/1Jeknip29RTOsnztqrnWytCqqquyrHYSF?usp=sharing) (GoogleColab) を参照ください。
 
 - [課題02](lecture04.html#課題02) について忘れずに取り組み、提出してください。
   - 提出期限は **5月24日 (日) 23時00分** です。
@@ -663,7 +663,8 @@ else :
 
 `数値範囲条件の与え方1.py` について、フォーム機能を利用して「温度 `temp`」がスライダーで与えられるようにしてください。また、スライダーが変更されると自動実行されるようにしてください。
 
-- [フォーム機能](https://colab.research.google.com/notebooks/forms.ipynb?ref=dataschool.io#scrollTo=eFN7-fUKs-Bu)
+- [Colabのフォーム機能](https://colab.research.google.com/notebooks/forms.ipynb)
+  - 
 
 #### 演習5 (⌛12分)
 
@@ -715,6 +716,10 @@ var1=True, var2=False
 上記の実行結果から分かるように、比較演算子を使った条件式は、`True` または `False` という <span class="masked">bool型 (ブール型、ブーリアン型、真偽値型) の値</span> になります。
 
 **bool型** は、`True` または `False` の2値から構成される値です。int型 (整数型) や float型 (浮動小数点数型) と同様に変数に格納 (バインド) することができます。
+
+- 文字列を int 型 (整数型) に変換する関数は [前回講義](https://takeshiwada1980.github.io/Programming1-2026/lecture04.html#文字列を整数値に変換する-int関数) で学習済みです。
+- 文字列を float 型 (浮動小数点数型) に変換する関数は [前回講義](https://takeshiwada1980.github.io/Programming1-2026/lecture04.html#文字列を実数値に変換する-float関数) で学習済みです。
+– 参考: [バインドとは？](https://www.oyama-ct.ac.jp/tso/workshop/python/python03.html) @中級者向け
 
 ::: {.balloon .char-01 .face-05 .tone-blue}
 
