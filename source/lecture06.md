@@ -16,6 +16,12 @@ var:
 - 今回の講義では、ここまでに学んだ「変数」「条件分岐構文」「繰返し構文」「f文字列」などを **総合した演習課題** に取り組んでもらいます。自身の定着度合いを評価する指標としてください。
   - 学習内容が十分に定着していないと感じた場合は、学習方法を根本的に見直してください。
 
+## 課題2の作品共有
+
+- [学生作品 (タートルグラフィックス) ①](https://colab.research.google.com/drive/1ItiHdGlgIJgn9WUeGt-855r-XodNKmMd?usp=sharing)
+- [学生作品 (タートルグラフィックス) ②](https://colab.research.google.com/drive/1KYN1A62L6cUA6duYmDgH4r9l92cisMjA?usp=sharing)
+- [学生作品 (タートルグラフィックス) ③](https://colab.research.google.com/drive/1NaIs4TwTNHTk5vsPFKyjUuBRG2unFSKn?usp=sharing)
+- [学生作品 (タートルグラフィックス) ④](https://colab.research.google.com/drive/112-LryNaKr-AiP39ry4zvD7xgw7KWm9k?usp=sharing)
 
 ## 課題03
 
