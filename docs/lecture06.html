@@ -125,14 +125,27 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
       </div>
       <p>提出に際しては、ノートブックの <strong><em>先頭</em></strong>
       に次の内容の「テキストセル」を作成し、氏名と出席番号を自分のものに書き換えてください。それにつづけて、必要があればライブラリをインストールするコードセル、「演習1」のコードセル、「演習2」のコードセル、「演習3」のコードセル・・・の順に配置してください。</p>
-      <ul>
-      <li>各セルの先頭には、かならず <code>%reset -f</code> を配置してください。</li>
-      </ul>
       <pre><code># **プログラミング1 課題03**
 
 - 出席番号: 99
 - 氏名: 高専 太郎 
 - 課題03の取組み時間: 約XXX分</code></pre>
+      <ul>
+      <li>各セルの先頭には、<code># 演習1</code> のようなコメントにつづけて <code>%reset -f</code>
+      を配置してください。</li>
+      </ul>
+      <pre><code># 演習1
+%reset -f
+
+</code></pre>
+      <pre><code># 演習2
+%reset -f
+
+</code></pre>
+      <pre><code># 演習3
+%reset -f
+
+</code></pre>
       <ul>
       <li><p><strong><em>提出期限</em></strong> : 2026年06月14日 (日) 23時00分
       (これ以降に確認・評価します)</p>
@@ -372,19 +385,19 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
       </ul></li>
       <li>まずは、以下のコードをつづけて記述してみてください。</li>
       </ul>
-      <div class="sourceCode" id="cb7" data-caption="演習1"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb7-2"><a href="#cb7-2"></a>x1, y1 <span class="op">=</span> <span class="dv">20</span>, <span class="dv">10</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>x2, y2 <span class="op">=</span> <span class="dv">30</span>, <span class="dv">5</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="cf">assert</span> <span class="dv">0</span> <span class="op">&lt;=</span> x1 <span class="op">&lt;=</span> <span class="dv">511</span> <span class="kw">and</span> <span class="dv">0</span> <span class="op">&lt;=</span> y1 <span class="op">&lt;=</span> <span class="dv">511</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="cf">assert</span> <span class="dv">0</span> <span class="op">&lt;=</span> x2 <span class="op">&lt;=</span> <span class="dv">511</span> <span class="kw">and</span> <span class="dv">0</span> <span class="op">&lt;=</span> y2 <span class="op">&lt;=</span> <span class="dv">511</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="bu">print</span>(<span class="ss">f&#39;キャラ位置 -&gt; X:</span><span class="sc">{</span>x1<span class="sc">:3}</span><span class="ss">  Y:</span><span class="sc">{</span>y1<span class="sc">:3}</span><span class="ss">&#39;</span>)</span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="bu">print</span>(<span class="ss">f&#39;幽霊船位置 -&gt; X:</span><span class="sc">{</span>x2<span class="sc">:3}</span><span class="ss">  Y:</span><span class="sc">{</span>y2<span class="sc">:3}</span><span class="ss">&#39;</span>)</span>
-<span id="cb7-9"><a href="#cb7-9"></a><span class="bu">print</span>()</span>
-<span id="cb7-10"><a href="#cb7-10"></a></span>
-<span id="cb7-11"><a href="#cb7-11"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
-<span id="cb7-12"><a href="#cb7-12"></a></span></code></pre></div>
+      <div class="sourceCode" id="cb10" data-caption="演習1"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb10-2"><a href="#cb10-2"></a>x1, y1 <span class="op">=</span> <span class="dv">20</span>, <span class="dv">10</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>x2, y2 <span class="op">=</span> <span class="dv">30</span>, <span class="dv">5</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="cf">assert</span> <span class="dv">0</span> <span class="op">&lt;=</span> x1 <span class="op">&lt;=</span> <span class="dv">511</span> <span class="kw">and</span> <span class="dv">0</span> <span class="op">&lt;=</span> y1 <span class="op">&lt;=</span> <span class="dv">511</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="cf">assert</span> <span class="dv">0</span> <span class="op">&lt;=</span> x2 <span class="op">&lt;=</span> <span class="dv">511</span> <span class="kw">and</span> <span class="dv">0</span> <span class="op">&lt;=</span> y2 <span class="op">&lt;=</span> <span class="dv">511</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="bu">print</span>(<span class="ss">f&#39;キャラ位置 -&gt; X:</span><span class="sc">{</span>x1<span class="sc">:3}</span><span class="ss">  Y:</span><span class="sc">{</span>y1<span class="sc">:3}</span><span class="ss">&#39;</span>)</span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="bu">print</span>(<span class="ss">f&#39;幽霊船位置 -&gt; X:</span><span class="sc">{</span>x2<span class="sc">:3}</span><span class="ss">  Y:</span><span class="sc">{</span>y2<span class="sc">:3}</span><span class="ss">&#39;</span>)</span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="bu">print</span>()</span>
+<span id="cb10-10"><a href="#cb10-10"></a></span>
+<span id="cb10-11"><a href="#cb10-11"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a></span></code></pre></div>
       <div class="note type-senior">
       <p><strong>中級者向け</strong></p>
       <p>上記では、参考として「基本的な書き換え範囲」を示していますが、それにとらわれずに、関数、クラス、例外処理、条件式（三項演算子）などを利用して記述してください。テキストセルに明記すれば、<strong>仕様や設定を拡張変更しても問題ありません</strong>
@@ -457,28 +470,28 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
       class="masked">その単位ベクトルに時間を掛けたものが移動量</span> になります。</li>
       </ul></li>
       </ul>
-      <div class="sourceCode" id="cb12" data-caption="演習2"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="im">import</span> math</span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># キャラの現在位置（座標）</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>x1, y1 <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a></span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="co"># キャラの移動目標の位置（座標）</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a>x2, y2 <span class="op">=</span> <span class="dv">10</span>, <span class="dv">10</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a></span>
-<span id="cb12-10"><a href="#cb12-10"></a><span class="co"># t秒後の位置を計算</span></span>
-<span id="cb12-11"><a href="#cb12-11"></a>t<span class="op">=</span> <span class="dv">8</span></span>
-<span id="cb12-12"><a href="#cb12-12"></a></span>
-<span id="cb12-13"><a href="#cb12-13"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
-<span id="cb12-14"><a href="#cb12-14"></a></span>
-<span id="cb12-15"><a href="#cb12-15"></a>x3, y3 <span class="op">=</span> <span class="fl">5.7</span>, <span class="fl">5.7</span></span>
-<span id="cb12-16"><a href="#cb12-16"></a></span>
-<span id="cb12-17"><a href="#cb12-17"></a><span class="co"># ▲▲▲ 基本的な書き換え範囲（ここまで）</span></span>
-<span id="cb12-18"><a href="#cb12-18"></a></span>
-<span id="cb12-19"><a href="#cb12-19"></a><span class="co"># 出力</span></span>
-<span id="cb12-20"><a href="#cb12-20"></a><span class="bu">print</span>(<span class="ss">f&#39;(</span><span class="sc">{</span>x1<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>y1<span class="sc">:.1f}</span><span class="ss">) から (</span><span class="sc">{</span>x2<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>y2<span class="sc">:.1f}</span><span class="ss">) を目標に、&#39;</span>)</span>
-<span id="cb12-21"><a href="#cb12-21"></a><span class="bu">print</span>(<span class="ss">f&#39;速度1で移動するキャラの </span><span class="sc">{</span>t<span class="sc">:.1f}</span><span class="ss"> 秒後の位置は (</span><span class="sc">{</span>x3<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>y3<span class="sc">:.1f}</span><span class="ss">)&#39;</span>)</span></code></pre></div>
+      <div class="sourceCode" id="cb15" data-caption="演習2"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="im">import</span> math</span>
+<span id="cb15-3"><a href="#cb15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="co"># キャラの現在位置（座標）</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>x1, y1 <span class="op">=</span> <span class="dv">0</span>, <span class="dv">0</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a></span>
+<span id="cb15-7"><a href="#cb15-7"></a><span class="co"># キャラの移動目標の位置（座標）</span></span>
+<span id="cb15-8"><a href="#cb15-8"></a>x2, y2 <span class="op">=</span> <span class="dv">10</span>, <span class="dv">10</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a></span>
+<span id="cb15-10"><a href="#cb15-10"></a><span class="co"># t秒後の位置を計算</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a>t<span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb15-12"><a href="#cb15-12"></a></span>
+<span id="cb15-13"><a href="#cb15-13"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a></span>
+<span id="cb15-15"><a href="#cb15-15"></a>x3, y3 <span class="op">=</span> <span class="fl">5.7</span>, <span class="fl">5.7</span></span>
+<span id="cb15-16"><a href="#cb15-16"></a></span>
+<span id="cb15-17"><a href="#cb15-17"></a><span class="co"># ▲▲▲ 基本的な書き換え範囲（ここまで）</span></span>
+<span id="cb15-18"><a href="#cb15-18"></a></span>
+<span id="cb15-19"><a href="#cb15-19"></a><span class="co"># 出力</span></span>
+<span id="cb15-20"><a href="#cb15-20"></a><span class="bu">print</span>(<span class="ss">f&#39;(</span><span class="sc">{</span>x1<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>y1<span class="sc">:.1f}</span><span class="ss">) から (</span><span class="sc">{</span>x2<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>y2<span class="sc">:.1f}</span><span class="ss">) を目標に、&#39;</span>)</span>
+<span id="cb15-21"><a href="#cb15-21"></a><span class="bu">print</span>(<span class="ss">f&#39;速度1で移動するキャラの </span><span class="sc">{</span>t<span class="sc">:.1f}</span><span class="ss"> 秒後の位置は (</span><span class="sc">{</span>x3<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>y3<span class="sc">:.1f}</span><span class="ss">)&#39;</span>)</span></code></pre></div>
       <div class="balloon char-01 face-01 tone-pink">
       <p>特に、キャラの現在位置と移動目標の位置が同じ場合にエラーが発生しないことを確認してください。また、t
       の値を十分に大きくした場合でも、キャラが移動目標の位置を通り過ぎるのではなく、目標位置で停止することを確認してください。</p>
@@ -559,78 +572,78 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
       </ul></li>
       <li>まずは、次のコードを GoogleColab に貼り付けて動作させることからはじめてください。</li>
       </ul>
-      <div class="sourceCode" id="cb16" data-caption="演習3"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="im">import</span> math</span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb16-5"><a href="#cb16-5"></a><span class="im">import</span> matplotlib.patheffects <span class="im">as</span> pe</span>
-<span id="cb16-6"><a href="#cb16-6"></a><span class="im">from</span> matplotlib_inline.backend_inline <span class="im">import</span> set_matplotlib_formats</span>
-<span id="cb16-7"><a href="#cb16-7"></a>set_matplotlib_formats(<span class="st">&#39;svg&#39;</span>)</span>
-<span id="cb16-8"><a href="#cb16-8"></a>plt.rcParams[<span class="st">&#39;mathtext.fontset&#39;</span>] <span class="op">=</span> <span class="st">&#39;cm&#39;</span></span>
-<span id="cb16-9"><a href="#cb16-9"></a></span>
-<span id="cb16-10"><a href="#cb16-10"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
-<span id="cb16-11"><a href="#cb16-11"></a></span>
-<span id="cb16-12"><a href="#cb16-12"></a><span class="co"># 任意の2点（点1と点2）の座標を与える</span></span>
-<span id="cb16-13"><a href="#cb16-13"></a>x1, y1 <span class="op">=</span>   <span class="dv">1</span>,   <span class="op">-</span><span class="dv">4</span></span>
-<span id="cb16-14"><a href="#cb16-14"></a>x2, y2 <span class="op">=</span>  <span class="op">-</span><span class="dv">5</span>, <span class="op">-</span><span class="fl">1.5</span></span>
-<span id="cb16-15"><a href="#cb16-15"></a></span>
-<span id="cb16-16"><a href="#cb16-16"></a><span class="co"># 点1と点2が同一座標ではないことを簡易チェック</span></span>
-<span id="cb16-17"><a href="#cb16-17"></a><span class="cf">assert</span> x1 <span class="op">!=</span> x2 <span class="kw">or</span> y1 <span class="op">!=</span> y2, <span class="st">&#39;点1と点2は異なる座標である必要があります（仕様違反）&#39;</span></span>
-<span id="cb16-18"><a href="#cb16-18"></a></span>
-<span id="cb16-19"><a href="#cb16-19"></a><span class="co"># 次の 4点（点1a、点1b、点2a、点2b）の座標をプログラムにより求める</span></span>
-<span id="cb16-20"><a href="#cb16-20"></a>x1a, y1a <span class="op">=</span> <span class="fl">1.19</span>,<span class="op">-</span><span class="fl">3.54</span></span>
-<span id="cb16-21"><a href="#cb16-21"></a>x1b, y1b <span class="op">=</span> <span class="fl">0.81</span>,<span class="op">-</span><span class="fl">4.46</span></span>
-<span id="cb16-22"><a href="#cb16-22"></a>x2a, y2a <span class="op">=</span> <span class="op">-</span><span class="fl">4.81</span>,<span class="op">-</span><span class="fl">1.04</span></span>
-<span id="cb16-23"><a href="#cb16-23"></a>x2b, y2b <span class="op">=</span> <span class="op">-</span><span class="fl">5.19</span>,<span class="op">-</span><span class="fl">1.96</span></span>
-<span id="cb16-24"><a href="#cb16-24"></a></span>
-<span id="cb16-25"><a href="#cb16-25"></a><span class="co"># ▲▲▲ 基本的な書き換え範囲（ここまで）</span></span>
-<span id="cb16-26"><a href="#cb16-26"></a></span>
-<span id="cb16-27"><a href="#cb16-27"></a><span class="bu">print</span>(<span class="ss">f&#39;点1の座標は (</span><span class="sc">{</span>x1<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y1<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
-<span id="cb16-28"><a href="#cb16-28"></a><span class="bu">print</span>(<span class="ss">f&#39;  これを中点とする長さ1の垂直線の両端座標は (</span><span class="sc">{</span>x1a<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y1a<span class="sc">:.2f}</span><span class="ss">) と (</span><span class="sc">{</span>x1b<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y1b<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
-<span id="cb16-29"><a href="#cb16-29"></a><span class="bu">print</span>(<span class="ss">f&#39;点2の座標は (</span><span class="sc">{</span>x2<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y2<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
-<span id="cb16-30"><a href="#cb16-30"></a><span class="bu">print</span>(<span class="ss">f&#39;  これを中点とする長さ1の垂直線の両端座標は (</span><span class="sc">{</span>x2a<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y2a<span class="sc">:.2f}</span><span class="ss">) と (</span><span class="sc">{</span>x2b<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y2b<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
-<span id="cb16-31"><a href="#cb16-31"></a></span>
-<span id="cb16-32"><a href="#cb16-32"></a></span>
-<span id="cb16-33"><a href="#cb16-33"></a><span class="co"># 以下、適切な座標計算ができているかを確認するための処理です。</span></span>
-<span id="cb16-34"><a href="#cb16-34"></a><span class="co"># 現時点では深く内容を理解する必要はありません。</span></span>
-<span id="cb16-35"><a href="#cb16-35"></a></span>
-<span id="cb16-36"><a href="#cb16-36"></a><span class="kw">def</span> lower_int(x):</span>
-<span id="cb16-37"><a href="#cb16-37"></a>  <span class="cf">return</span> <span class="bu">int</span>(x) <span class="op">-</span> (<span class="dv">0</span> <span class="cf">if</span> x <span class="op">==</span> <span class="bu">int</span>(x) <span class="cf">else</span> <span class="dv">1</span>)</span>
-<span id="cb16-38"><a href="#cb16-38"></a></span>
-<span id="cb16-39"><a href="#cb16-39"></a><span class="kw">def</span> upper_int(x):</span>
-<span id="cb16-40"><a href="#cb16-40"></a>    <span class="cf">return</span> <span class="bu">int</span>(x) <span class="op">+</span> (<span class="dv">0</span> <span class="cf">if</span> x <span class="op">==</span> <span class="bu">int</span>(x) <span class="cf">else</span> <span class="dv">1</span>)</span>
-<span id="cb16-41"><a href="#cb16-41"></a></span>
-<span id="cb16-42"><a href="#cb16-42"></a><span class="kw">def</span> render_graph():</span>
-<span id="cb16-43"><a href="#cb16-43"></a></span>
-<span id="cb16-44"><a href="#cb16-44"></a>  fig, axes<span class="op">=</span>plt.subplots(ncols<span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>), facecolor<span class="op">=</span><span class="st">&#39;white&#39;</span>)</span>
-<span id="cb16-45"><a href="#cb16-45"></a>  <span class="cf">for</span> i,ax <span class="kw">in</span> <span class="bu">enumerate</span>(axes) :</span>
-<span id="cb16-46"><a href="#cb16-46"></a></span>
-<span id="cb16-47"><a href="#cb16-47"></a>    ax.axvline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb16-48"><a href="#cb16-48"></a>    ax.axhline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb16-49"><a href="#cb16-49"></a></span>
-<span id="cb16-50"><a href="#cb16-50"></a>    ax.plot([x1,x2],[y1,y2],c<span class="op">=</span><span class="st">&#39;tab:blue&#39;</span>)</span>
-<span id="cb16-51"><a href="#cb16-51"></a></span>
-<span id="cb16-52"><a href="#cb16-52"></a>    <span class="cf">if</span> i<span class="op">==</span><span class="dv">1</span> :</span>
-<span id="cb16-53"><a href="#cb16-53"></a>      ax.plot([x1a,x1b],[y1a,y1b],c<span class="op">=</span><span class="st">&#39;tab:red&#39;</span>)</span>
-<span id="cb16-54"><a href="#cb16-54"></a>      ax.plot([x2a,x2b],[y2a,y2b],c<span class="op">=</span><span class="st">&#39;tab:red&#39;</span>)</span>
-<span id="cb16-55"><a href="#cb16-55"></a></span>
-<span id="cb16-56"><a href="#cb16-56"></a>    ax.set_aspect(<span class="st">&#39;equal&#39;</span>)</span>
-<span id="cb16-57"><a href="#cb16-57"></a>    margin <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb16-58"><a href="#cb16-58"></a>    ax.set_xlim( lower_int(<span class="bu">min</span>(x1a,x1b,x2a,x2b)<span class="op">-</span>margin),</span>
-<span id="cb16-59"><a href="#cb16-59"></a>                upper_int(<span class="bu">max</span>(x1a,x1b,x2a,x2b)<span class="op">+</span>margin ))</span>
-<span id="cb16-60"><a href="#cb16-60"></a>    ax.set_ylim( lower_int(<span class="bu">min</span>(y1a,y1b,y2a,y2b)<span class="op">-</span>margin),</span>
-<span id="cb16-61"><a href="#cb16-61"></a>                upper_int(<span class="bu">max</span>(y1a,y1b,y2a,y2b)<span class="op">+</span>margin ))</span>
-<span id="cb16-62"><a href="#cb16-62"></a>    ax.set_axisbelow(<span class="va">True</span>)</span>
-<span id="cb16-63"><a href="#cb16-63"></a>    ax.set_xticks(np.arange(ax.get_xlim()[<span class="dv">0</span>],ax.get_xlim()[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>))</span>
-<span id="cb16-64"><a href="#cb16-64"></a>    ax.set_yticks(np.arange(ax.get_ylim()[<span class="dv">0</span>],ax.get_ylim()[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>))</span>
-<span id="cb16-65"><a href="#cb16-65"></a></span>
-<span id="cb16-66"><a href="#cb16-66"></a>    ax.tick_params(direction<span class="op">=</span><span class="st">&#39;inout&#39;</span>)</span>
-<span id="cb16-67"><a href="#cb16-67"></a>    ax.grid()</span>
-<span id="cb16-68"><a href="#cb16-68"></a>  plt.tight_layout()</span>
-<span id="cb16-69"><a href="#cb16-69"></a>  plt.show()</span>
-<span id="cb16-70"><a href="#cb16-70"></a></span>
-<span id="cb16-71"><a href="#cb16-71"></a>render_graph()</span></code></pre></div>
+      <div class="sourceCode" id="cb19" data-caption="演習3"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="im">import</span> math</span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="im">import</span> matplotlib.patheffects <span class="im">as</span> pe</span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="im">from</span> matplotlib_inline.backend_inline <span class="im">import</span> set_matplotlib_formats</span>
+<span id="cb19-7"><a href="#cb19-7"></a>set_matplotlib_formats(<span class="st">&#39;svg&#39;</span>)</span>
+<span id="cb19-8"><a href="#cb19-8"></a>plt.rcParams[<span class="st">&#39;mathtext.fontset&#39;</span>] <span class="op">=</span> <span class="st">&#39;cm&#39;</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a></span>
+<span id="cb19-10"><a href="#cb19-10"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
+<span id="cb19-11"><a href="#cb19-11"></a></span>
+<span id="cb19-12"><a href="#cb19-12"></a><span class="co"># 任意の2点（点1と点2）の座標を与える</span></span>
+<span id="cb19-13"><a href="#cb19-13"></a>x1, y1 <span class="op">=</span>   <span class="dv">1</span>,   <span class="op">-</span><span class="dv">4</span></span>
+<span id="cb19-14"><a href="#cb19-14"></a>x2, y2 <span class="op">=</span>  <span class="op">-</span><span class="dv">5</span>, <span class="op">-</span><span class="fl">1.5</span></span>
+<span id="cb19-15"><a href="#cb19-15"></a></span>
+<span id="cb19-16"><a href="#cb19-16"></a><span class="co"># 点1と点2が同一座標ではないことを簡易チェック</span></span>
+<span id="cb19-17"><a href="#cb19-17"></a><span class="cf">assert</span> x1 <span class="op">!=</span> x2 <span class="kw">or</span> y1 <span class="op">!=</span> y2, <span class="st">&#39;点1と点2は異なる座標である必要があります（仕様違反）&#39;</span></span>
+<span id="cb19-18"><a href="#cb19-18"></a></span>
+<span id="cb19-19"><a href="#cb19-19"></a><span class="co"># 次の 4点（点1a、点1b、点2a、点2b）の座標をプログラムにより求める</span></span>
+<span id="cb19-20"><a href="#cb19-20"></a>x1a, y1a <span class="op">=</span> <span class="fl">1.19</span>,<span class="op">-</span><span class="fl">3.54</span></span>
+<span id="cb19-21"><a href="#cb19-21"></a>x1b, y1b <span class="op">=</span> <span class="fl">0.81</span>,<span class="op">-</span><span class="fl">4.46</span></span>
+<span id="cb19-22"><a href="#cb19-22"></a>x2a, y2a <span class="op">=</span> <span class="op">-</span><span class="fl">4.81</span>,<span class="op">-</span><span class="fl">1.04</span></span>
+<span id="cb19-23"><a href="#cb19-23"></a>x2b, y2b <span class="op">=</span> <span class="op">-</span><span class="fl">5.19</span>,<span class="op">-</span><span class="fl">1.96</span></span>
+<span id="cb19-24"><a href="#cb19-24"></a></span>
+<span id="cb19-25"><a href="#cb19-25"></a><span class="co"># ▲▲▲ 基本的な書き換え範囲（ここまで）</span></span>
+<span id="cb19-26"><a href="#cb19-26"></a></span>
+<span id="cb19-27"><a href="#cb19-27"></a><span class="bu">print</span>(<span class="ss">f&#39;点1の座標は (</span><span class="sc">{</span>x1<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y1<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb19-28"><a href="#cb19-28"></a><span class="bu">print</span>(<span class="ss">f&#39;  これを中点とする長さ1の垂直線の両端座標は (</span><span class="sc">{</span>x1a<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y1a<span class="sc">:.2f}</span><span class="ss">) と (</span><span class="sc">{</span>x1b<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y1b<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb19-29"><a href="#cb19-29"></a><span class="bu">print</span>(<span class="ss">f&#39;点2の座標は (</span><span class="sc">{</span>x2<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y2<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb19-30"><a href="#cb19-30"></a><span class="bu">print</span>(<span class="ss">f&#39;  これを中点とする長さ1の垂直線の両端座標は (</span><span class="sc">{</span>x2a<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y2a<span class="sc">:.2f}</span><span class="ss">) と (</span><span class="sc">{</span>x2b<span class="sc">:.2f}</span><span class="ss">,</span><span class="sc">{</span>y2b<span class="sc">:.2f}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb19-31"><a href="#cb19-31"></a></span>
+<span id="cb19-32"><a href="#cb19-32"></a></span>
+<span id="cb19-33"><a href="#cb19-33"></a><span class="co"># 以下、適切な座標計算ができているかを確認するための処理です。</span></span>
+<span id="cb19-34"><a href="#cb19-34"></a><span class="co"># 現時点では深く内容を理解する必要はありません。</span></span>
+<span id="cb19-35"><a href="#cb19-35"></a></span>
+<span id="cb19-36"><a href="#cb19-36"></a><span class="kw">def</span> lower_int(x):</span>
+<span id="cb19-37"><a href="#cb19-37"></a>  <span class="cf">return</span> <span class="bu">int</span>(x) <span class="op">-</span> (<span class="dv">0</span> <span class="cf">if</span> x <span class="op">==</span> <span class="bu">int</span>(x) <span class="cf">else</span> <span class="dv">1</span>)</span>
+<span id="cb19-38"><a href="#cb19-38"></a></span>
+<span id="cb19-39"><a href="#cb19-39"></a><span class="kw">def</span> upper_int(x):</span>
+<span id="cb19-40"><a href="#cb19-40"></a>    <span class="cf">return</span> <span class="bu">int</span>(x) <span class="op">+</span> (<span class="dv">0</span> <span class="cf">if</span> x <span class="op">==</span> <span class="bu">int</span>(x) <span class="cf">else</span> <span class="dv">1</span>)</span>
+<span id="cb19-41"><a href="#cb19-41"></a></span>
+<span id="cb19-42"><a href="#cb19-42"></a><span class="kw">def</span> render_graph():</span>
+<span id="cb19-43"><a href="#cb19-43"></a></span>
+<span id="cb19-44"><a href="#cb19-44"></a>  fig, axes<span class="op">=</span>plt.subplots(ncols<span class="op">=</span><span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">4</span>), facecolor<span class="op">=</span><span class="st">&#39;white&#39;</span>)</span>
+<span id="cb19-45"><a href="#cb19-45"></a>  <span class="cf">for</span> i,ax <span class="kw">in</span> <span class="bu">enumerate</span>(axes) :</span>
+<span id="cb19-46"><a href="#cb19-46"></a></span>
+<span id="cb19-47"><a href="#cb19-47"></a>    ax.axvline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb19-48"><a href="#cb19-48"></a>    ax.axhline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb19-49"><a href="#cb19-49"></a></span>
+<span id="cb19-50"><a href="#cb19-50"></a>    ax.plot([x1,x2],[y1,y2],c<span class="op">=</span><span class="st">&#39;tab:blue&#39;</span>)</span>
+<span id="cb19-51"><a href="#cb19-51"></a></span>
+<span id="cb19-52"><a href="#cb19-52"></a>    <span class="cf">if</span> i<span class="op">==</span><span class="dv">1</span> :</span>
+<span id="cb19-53"><a href="#cb19-53"></a>      ax.plot([x1a,x1b],[y1a,y1b],c<span class="op">=</span><span class="st">&#39;tab:red&#39;</span>)</span>
+<span id="cb19-54"><a href="#cb19-54"></a>      ax.plot([x2a,x2b],[y2a,y2b],c<span class="op">=</span><span class="st">&#39;tab:red&#39;</span>)</span>
+<span id="cb19-55"><a href="#cb19-55"></a></span>
+<span id="cb19-56"><a href="#cb19-56"></a>    ax.set_aspect(<span class="st">&#39;equal&#39;</span>)</span>
+<span id="cb19-57"><a href="#cb19-57"></a>    margin <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb19-58"><a href="#cb19-58"></a>    ax.set_xlim( lower_int(<span class="bu">min</span>(x1a,x1b,x2a,x2b)<span class="op">-</span>margin),</span>
+<span id="cb19-59"><a href="#cb19-59"></a>                upper_int(<span class="bu">max</span>(x1a,x1b,x2a,x2b)<span class="op">+</span>margin ))</span>
+<span id="cb19-60"><a href="#cb19-60"></a>    ax.set_ylim( lower_int(<span class="bu">min</span>(y1a,y1b,y2a,y2b)<span class="op">-</span>margin),</span>
+<span id="cb19-61"><a href="#cb19-61"></a>                upper_int(<span class="bu">max</span>(y1a,y1b,y2a,y2b)<span class="op">+</span>margin ))</span>
+<span id="cb19-62"><a href="#cb19-62"></a>    ax.set_axisbelow(<span class="va">True</span>)</span>
+<span id="cb19-63"><a href="#cb19-63"></a>    ax.set_xticks(np.arange(ax.get_xlim()[<span class="dv">0</span>],ax.get_xlim()[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>))</span>
+<span id="cb19-64"><a href="#cb19-64"></a>    ax.set_yticks(np.arange(ax.get_ylim()[<span class="dv">0</span>],ax.get_ylim()[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>))</span>
+<span id="cb19-65"><a href="#cb19-65"></a></span>
+<span id="cb19-66"><a href="#cb19-66"></a>    ax.tick_params(direction<span class="op">=</span><span class="st">&#39;inout&#39;</span>)</span>
+<span id="cb19-67"><a href="#cb19-67"></a>    ax.grid()</span>
+<span id="cb19-68"><a href="#cb19-68"></a>  plt.tight_layout()</span>
+<span id="cb19-69"><a href="#cb19-69"></a>  plt.show()</span>
+<span id="cb19-70"><a href="#cb19-70"></a></span>
+<span id="cb19-71"><a href="#cb19-71"></a>render_graph()</span></code></pre></div>
       <div class="note type-senior">
       <p><strong>中級者向け</strong></p>
       <p>図は <a href="https://matplotlib.org/stable/gallery/index.html">Matplotlib</a>
@@ -774,79 +787,79 @@ bw_spread_angle = 250</code></pre>
       を実行しておいてください。</li>
       </ul></li>
       </ul>
-      <div class="sourceCode" id="cb25" data-caption="演習4"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="im">import</span> math</span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="im">import</span> japanize_matplotlib</span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb25-5"><a href="#cb25-5"></a><span class="im">import</span> matplotlib.patheffects <span class="im">as</span> pe</span>
-<span id="cb25-6"><a href="#cb25-6"></a><span class="im">from</span> matplotlib <span class="im">import</span> patches</span>
-<span id="cb25-7"><a href="#cb25-7"></a><span class="im">from</span> matplotlib_inline.backend_inline <span class="im">import</span> set_matplotlib_formats</span>
-<span id="cb25-8"><a href="#cb25-8"></a>set_matplotlib_formats(<span class="st">&#39;svg&#39;</span>)</span>
-<span id="cb25-9"><a href="#cb25-9"></a>plt.rcParams[<span class="st">&#39;mathtext.fontset&#39;</span>] <span class="op">=</span> <span class="st">&#39;cm&#39;</span></span>
-<span id="cb25-10"><a href="#cb25-10"></a></span>
-<span id="cb25-11"><a href="#cb25-11"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
-<span id="cb25-12"><a href="#cb25-12"></a></span>
-<span id="cb25-13"><a href="#cb25-13"></a><span class="co"># 自キャラ位置</span></span>
-<span id="cb25-14"><a href="#cb25-14"></a>x1 <span class="op">=</span> <span class="fl">5.5</span></span>
-<span id="cb25-15"><a href="#cb25-15"></a>y1 <span class="op">=</span> <span class="op">-</span><span class="fl">10.0</span></span>
-<span id="cb25-16"><a href="#cb25-16"></a></span>
-<span id="cb25-17"><a href="#cb25-17"></a><span class="co"># 敵キャラ位置</span></span>
-<span id="cb25-18"><a href="#cb25-18"></a>x2 <span class="op">=</span> <span class="fl">15.2</span></span>
-<span id="cb25-19"><a href="#cb25-19"></a>y2 <span class="op">=</span> <span class="fl">10.6</span></span>
-<span id="cb25-20"><a href="#cb25-20"></a></span>
-<span id="cb25-21"><a href="#cb25-21"></a><span class="co"># 射程距離、攻撃方向、拡がり角</span></span>
-<span id="cb25-22"><a href="#cb25-22"></a>bw_range <span class="op">=</span> <span class="dv">15</span></span>
-<span id="cb25-23"><a href="#cb25-23"></a>bw_direction <span class="op">=</span> <span class="dv">30</span></span>
-<span id="cb25-24"><a href="#cb25-24"></a>bw_spread_angle <span class="op">=</span> <span class="dv">70</span></span>
-<span id="cb25-25"><a href="#cb25-25"></a></span>
-<span id="cb25-26"><a href="#cb25-26"></a><span class="co"># 判定処理</span></span>
-<span id="cb25-27"><a href="#cb25-27"></a><span class="bu">print</span>(<span class="st">&#39;Miss.&#39;</span>)</span>
-<span id="cb25-28"><a href="#cb25-28"></a></span>
-<span id="cb25-29"><a href="#cb25-29"></a><span class="co"># ▲▲▲ 基本的な書き換え範囲（ここまで）</span></span>
-<span id="cb25-30"><a href="#cb25-30"></a></span>
-<span id="cb25-31"><a href="#cb25-31"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">128</span> <span class="op">&lt;=</span> x1 <span class="op">&lt;=</span> <span class="dv">127</span>  </span>
-<span id="cb25-32"><a href="#cb25-32"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">128</span> <span class="op">&lt;=</span> y1 <span class="op">&lt;=</span> <span class="dv">127</span>  </span>
-<span id="cb25-33"><a href="#cb25-33"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">128</span> <span class="op">&lt;=</span> x2 <span class="op">&lt;=</span> <span class="dv">127</span>  </span>
-<span id="cb25-34"><a href="#cb25-34"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">128</span> <span class="op">&lt;=</span> y2 <span class="op">&lt;=</span> <span class="dv">127</span>  </span>
-<span id="cb25-35"><a href="#cb25-35"></a><span class="cf">assert</span> <span class="fl">0.5</span> <span class="op">&lt;=</span> bw_range <span class="op">&lt;=</span> <span class="dv">50</span></span>
-<span id="cb25-36"><a href="#cb25-36"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">180</span> <span class="op">&lt;=</span> bw_direction <span class="op">&lt;=</span> <span class="dv">180</span></span>
-<span id="cb25-37"><a href="#cb25-37"></a><span class="cf">assert</span> <span class="dv">5</span> <span class="op">&lt;=</span> bw_spread_angle <span class="op">&lt;=</span> <span class="dv">270</span></span>
-<span id="cb25-38"><a href="#cb25-38"></a></span>
-<span id="cb25-39"><a href="#cb25-39"></a><span class="co"># 以下、適切に「当たり判定」ができているかを確認するための処理です。</span></span>
-<span id="cb25-40"><a href="#cb25-40"></a><span class="co"># 現時点では深く理解する必要はありません</span></span>
-<span id="cb25-41"><a href="#cb25-41"></a></span>
-<span id="cb25-42"><a href="#cb25-42"></a><span class="kw">def</span> render_graph():</span>
-<span id="cb25-43"><a href="#cb25-43"></a></span>
-<span id="cb25-44"><a href="#cb25-44"></a>  xp <span class="op">=</span> x1<span class="op">+</span>math.cos(math.radians(<span class="op">-</span>bw_direction<span class="op">+</span><span class="dv">90</span>))<span class="op">*</span>bw_range</span>
-<span id="cb25-45"><a href="#cb25-45"></a>  yp <span class="op">=</span> y1<span class="op">+</span>math.sin(math.radians(<span class="op">-</span>bw_direction<span class="op">+</span><span class="dv">90</span>))<span class="op">*</span>bw_range</span>
-<span id="cb25-46"><a href="#cb25-46"></a></span>
-<span id="cb25-47"><a href="#cb25-47"></a>  fig,ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>), facecolor<span class="op">=</span><span class="st">&#39;white&#39;</span>, dpi<span class="op">=</span><span class="dv">96</span>)</span>
-<span id="cb25-48"><a href="#cb25-48"></a>  ax.scatter(x1,y1,c<span class="op">=</span><span class="st">&#39;tab:blue&#39;</span>,s<span class="op">=</span><span class="dv">80</span>)</span>
-<span id="cb25-49"><a href="#cb25-49"></a></span>
-<span id="cb25-50"><a href="#cb25-50"></a>  ax.plot([x1,xp],[y1,yp],ls<span class="op">=</span><span class="st">&#39;--&#39;</span>,lw<span class="op">=</span><span class="fl">0.75</span>)</span>
-<span id="cb25-51"><a href="#cb25-51"></a>  ax.set_aspect(<span class="st">&#39;equal&#39;</span>, adjustable<span class="op">=</span><span class="st">&#39;box&#39;</span>)</span>
-<span id="cb25-52"><a href="#cb25-52"></a>  margin <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb25-53"><a href="#cb25-53"></a>  ax.set_xlim( <span class="bu">min</span>(x1,x2)<span class="op">-</span>margin, <span class="bu">max</span>(x1,x2)<span class="op">+</span>margin )</span>
-<span id="cb25-54"><a href="#cb25-54"></a>  ax.set_ylim( <span class="bu">min</span>(y1,y2)<span class="op">-</span>margin, <span class="bu">max</span>(y1,y2)<span class="op">+</span>margin )</span>
-<span id="cb25-55"><a href="#cb25-55"></a></span>
-<span id="cb25-56"><a href="#cb25-56"></a>  sector <span class="op">=</span> patches.Wedge((x1,y1),bw_range,</span>
-<span id="cb25-57"><a href="#cb25-57"></a>                        <span class="op">-</span>bw_direction <span class="op">-</span> bw_spread_angle<span class="op">/</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">90</span>,</span>
-<span id="cb25-58"><a href="#cb25-58"></a>                        <span class="op">-</span>bw_direction <span class="op">+</span> bw_spread_angle<span class="op">/</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">90</span>,</span>
-<span id="cb25-59"><a href="#cb25-59"></a>                        width<span class="op">=</span>bw_range, alpha<span class="op">=</span><span class="fl">0.4</span>)</span>
-<span id="cb25-60"><a href="#cb25-60"></a>  ax.add_patch(sector)</span>
-<span id="cb25-61"><a href="#cb25-61"></a></span>
-<span id="cb25-62"><a href="#cb25-62"></a>  ax.scatter(x2,y2,c<span class="op">=</span><span class="st">&#39;tab:red&#39;</span>)</span>
-<span id="cb25-63"><a href="#cb25-63"></a>  t <span class="op">=</span> ax.text(<span class="fl">0.02</span>, <span class="fl">0.98</span>, <span class="ss">f&#39;射程距離 : </span><span class="sc">{</span>bw_range<span class="sc">}</span><span class="ch">\n</span><span class="ss">攻撃方向 : </span><span class="sc">{</span>bw_direction<span class="sc">}</span><span class="ss">°</span><span class="ch">\n</span><span class="ss">拡がり角 : </span><span class="sc">{</span>bw_spread_angle<span class="sc">}</span><span class="ss">°&#39;</span>,</span>
-<span id="cb25-64"><a href="#cb25-64"></a>          va<span class="op">=</span><span class="st">&#39;top&#39;</span>, ha<span class="op">=</span><span class="st">&#39;left&#39;</span>, transform<span class="op">=</span>ax.transAxes)</span>
-<span id="cb25-65"><a href="#cb25-65"></a>  t.set_path_effects([pe.Stroke(linewidth<span class="op">=</span><span class="dv">4</span>,foreground<span class="op">=</span><span class="st">&#39;white&#39;</span>),pe.Normal()])</span>
-<span id="cb25-66"><a href="#cb25-66"></a></span>
-<span id="cb25-67"><a href="#cb25-67"></a>  ax.grid()</span>
-<span id="cb25-68"><a href="#cb25-68"></a>  ax.set_axisbelow(<span class="va">True</span>)</span>
-<span id="cb25-69"><a href="#cb25-69"></a>  ax.tick_params(direction<span class="op">=</span><span class="st">&#39;inout&#39;</span>)</span>
-<span id="cb25-70"><a href="#cb25-70"></a>  plt.show()</span>
-<span id="cb25-71"><a href="#cb25-71"></a></span>
-<span id="cb25-72"><a href="#cb25-72"></a>render_graph()</span></code></pre></div>
+      <div class="sourceCode" id="cb28" data-caption="演習4"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="im">import</span> math</span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="im">import</span> japanize_matplotlib</span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="im">import</span> matplotlib.patheffects <span class="im">as</span> pe</span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="im">from</span> matplotlib <span class="im">import</span> patches</span>
+<span id="cb28-7"><a href="#cb28-7"></a><span class="im">from</span> matplotlib_inline.backend_inline <span class="im">import</span> set_matplotlib_formats</span>
+<span id="cb28-8"><a href="#cb28-8"></a>set_matplotlib_formats(<span class="st">&#39;svg&#39;</span>)</span>
+<span id="cb28-9"><a href="#cb28-9"></a>plt.rcParams[<span class="st">&#39;mathtext.fontset&#39;</span>] <span class="op">=</span> <span class="st">&#39;cm&#39;</span></span>
+<span id="cb28-10"><a href="#cb28-10"></a></span>
+<span id="cb28-11"><a href="#cb28-11"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
+<span id="cb28-12"><a href="#cb28-12"></a></span>
+<span id="cb28-13"><a href="#cb28-13"></a><span class="co"># 自キャラ位置</span></span>
+<span id="cb28-14"><a href="#cb28-14"></a>x1 <span class="op">=</span> <span class="fl">5.5</span></span>
+<span id="cb28-15"><a href="#cb28-15"></a>y1 <span class="op">=</span> <span class="op">-</span><span class="fl">10.0</span></span>
+<span id="cb28-16"><a href="#cb28-16"></a></span>
+<span id="cb28-17"><a href="#cb28-17"></a><span class="co"># 敵キャラ位置</span></span>
+<span id="cb28-18"><a href="#cb28-18"></a>x2 <span class="op">=</span> <span class="fl">15.2</span></span>
+<span id="cb28-19"><a href="#cb28-19"></a>y2 <span class="op">=</span> <span class="fl">10.6</span></span>
+<span id="cb28-20"><a href="#cb28-20"></a></span>
+<span id="cb28-21"><a href="#cb28-21"></a><span class="co"># 射程距離、攻撃方向、拡がり角</span></span>
+<span id="cb28-22"><a href="#cb28-22"></a>bw_range <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb28-23"><a href="#cb28-23"></a>bw_direction <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb28-24"><a href="#cb28-24"></a>bw_spread_angle <span class="op">=</span> <span class="dv">70</span></span>
+<span id="cb28-25"><a href="#cb28-25"></a></span>
+<span id="cb28-26"><a href="#cb28-26"></a><span class="co"># 判定処理</span></span>
+<span id="cb28-27"><a href="#cb28-27"></a><span class="bu">print</span>(<span class="st">&#39;Miss.&#39;</span>)</span>
+<span id="cb28-28"><a href="#cb28-28"></a></span>
+<span id="cb28-29"><a href="#cb28-29"></a><span class="co"># ▲▲▲ 基本的な書き換え範囲（ここまで）</span></span>
+<span id="cb28-30"><a href="#cb28-30"></a></span>
+<span id="cb28-31"><a href="#cb28-31"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">128</span> <span class="op">&lt;=</span> x1 <span class="op">&lt;=</span> <span class="dv">127</span>  </span>
+<span id="cb28-32"><a href="#cb28-32"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">128</span> <span class="op">&lt;=</span> y1 <span class="op">&lt;=</span> <span class="dv">127</span>  </span>
+<span id="cb28-33"><a href="#cb28-33"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">128</span> <span class="op">&lt;=</span> x2 <span class="op">&lt;=</span> <span class="dv">127</span>  </span>
+<span id="cb28-34"><a href="#cb28-34"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">128</span> <span class="op">&lt;=</span> y2 <span class="op">&lt;=</span> <span class="dv">127</span>  </span>
+<span id="cb28-35"><a href="#cb28-35"></a><span class="cf">assert</span> <span class="fl">0.5</span> <span class="op">&lt;=</span> bw_range <span class="op">&lt;=</span> <span class="dv">50</span></span>
+<span id="cb28-36"><a href="#cb28-36"></a><span class="cf">assert</span> <span class="op">-</span><span class="dv">180</span> <span class="op">&lt;=</span> bw_direction <span class="op">&lt;=</span> <span class="dv">180</span></span>
+<span id="cb28-37"><a href="#cb28-37"></a><span class="cf">assert</span> <span class="dv">5</span> <span class="op">&lt;=</span> bw_spread_angle <span class="op">&lt;=</span> <span class="dv">270</span></span>
+<span id="cb28-38"><a href="#cb28-38"></a></span>
+<span id="cb28-39"><a href="#cb28-39"></a><span class="co"># 以下、適切に「当たり判定」ができているかを確認するための処理です。</span></span>
+<span id="cb28-40"><a href="#cb28-40"></a><span class="co"># 現時点では深く理解する必要はありません</span></span>
+<span id="cb28-41"><a href="#cb28-41"></a></span>
+<span id="cb28-42"><a href="#cb28-42"></a><span class="kw">def</span> render_graph():</span>
+<span id="cb28-43"><a href="#cb28-43"></a></span>
+<span id="cb28-44"><a href="#cb28-44"></a>  xp <span class="op">=</span> x1<span class="op">+</span>math.cos(math.radians(<span class="op">-</span>bw_direction<span class="op">+</span><span class="dv">90</span>))<span class="op">*</span>bw_range</span>
+<span id="cb28-45"><a href="#cb28-45"></a>  yp <span class="op">=</span> y1<span class="op">+</span>math.sin(math.radians(<span class="op">-</span>bw_direction<span class="op">+</span><span class="dv">90</span>))<span class="op">*</span>bw_range</span>
+<span id="cb28-46"><a href="#cb28-46"></a></span>
+<span id="cb28-47"><a href="#cb28-47"></a>  fig,ax<span class="op">=</span>plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>), facecolor<span class="op">=</span><span class="st">&#39;white&#39;</span>, dpi<span class="op">=</span><span class="dv">96</span>)</span>
+<span id="cb28-48"><a href="#cb28-48"></a>  ax.scatter(x1,y1,c<span class="op">=</span><span class="st">&#39;tab:blue&#39;</span>,s<span class="op">=</span><span class="dv">80</span>)</span>
+<span id="cb28-49"><a href="#cb28-49"></a></span>
+<span id="cb28-50"><a href="#cb28-50"></a>  ax.plot([x1,xp],[y1,yp],ls<span class="op">=</span><span class="st">&#39;--&#39;</span>,lw<span class="op">=</span><span class="fl">0.75</span>)</span>
+<span id="cb28-51"><a href="#cb28-51"></a>  ax.set_aspect(<span class="st">&#39;equal&#39;</span>, adjustable<span class="op">=</span><span class="st">&#39;box&#39;</span>)</span>
+<span id="cb28-52"><a href="#cb28-52"></a>  margin <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb28-53"><a href="#cb28-53"></a>  ax.set_xlim( <span class="bu">min</span>(x1,x2)<span class="op">-</span>margin, <span class="bu">max</span>(x1,x2)<span class="op">+</span>margin )</span>
+<span id="cb28-54"><a href="#cb28-54"></a>  ax.set_ylim( <span class="bu">min</span>(y1,y2)<span class="op">-</span>margin, <span class="bu">max</span>(y1,y2)<span class="op">+</span>margin )</span>
+<span id="cb28-55"><a href="#cb28-55"></a></span>
+<span id="cb28-56"><a href="#cb28-56"></a>  sector <span class="op">=</span> patches.Wedge((x1,y1),bw_range,</span>
+<span id="cb28-57"><a href="#cb28-57"></a>                        <span class="op">-</span>bw_direction <span class="op">-</span> bw_spread_angle<span class="op">/</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">90</span>,</span>
+<span id="cb28-58"><a href="#cb28-58"></a>                        <span class="op">-</span>bw_direction <span class="op">+</span> bw_spread_angle<span class="op">/</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">90</span>,</span>
+<span id="cb28-59"><a href="#cb28-59"></a>                        width<span class="op">=</span>bw_range, alpha<span class="op">=</span><span class="fl">0.4</span>)</span>
+<span id="cb28-60"><a href="#cb28-60"></a>  ax.add_patch(sector)</span>
+<span id="cb28-61"><a href="#cb28-61"></a></span>
+<span id="cb28-62"><a href="#cb28-62"></a>  ax.scatter(x2,y2,c<span class="op">=</span><span class="st">&#39;tab:red&#39;</span>)</span>
+<span id="cb28-63"><a href="#cb28-63"></a>  t <span class="op">=</span> ax.text(<span class="fl">0.02</span>, <span class="fl">0.98</span>, <span class="ss">f&#39;射程距離 : </span><span class="sc">{</span>bw_range<span class="sc">}</span><span class="ch">\n</span><span class="ss">攻撃方向 : </span><span class="sc">{</span>bw_direction<span class="sc">}</span><span class="ss">°</span><span class="ch">\n</span><span class="ss">拡がり角 : </span><span class="sc">{</span>bw_spread_angle<span class="sc">}</span><span class="ss">°&#39;</span>,</span>
+<span id="cb28-64"><a href="#cb28-64"></a>          va<span class="op">=</span><span class="st">&#39;top&#39;</span>, ha<span class="op">=</span><span class="st">&#39;left&#39;</span>, transform<span class="op">=</span>ax.transAxes)</span>
+<span id="cb28-65"><a href="#cb28-65"></a>  t.set_path_effects([pe.Stroke(linewidth<span class="op">=</span><span class="dv">4</span>,foreground<span class="op">=</span><span class="st">&#39;white&#39;</span>),pe.Normal()])</span>
+<span id="cb28-66"><a href="#cb28-66"></a></span>
+<span id="cb28-67"><a href="#cb28-67"></a>  ax.grid()</span>
+<span id="cb28-68"><a href="#cb28-68"></a>  ax.set_axisbelow(<span class="va">True</span>)</span>
+<span id="cb28-69"><a href="#cb28-69"></a>  ax.tick_params(direction<span class="op">=</span><span class="st">&#39;inout&#39;</span>)</span>
+<span id="cb28-70"><a href="#cb28-70"></a>  plt.show()</span>
+<span id="cb28-71"><a href="#cb28-71"></a></span>
+<span id="cb28-72"><a href="#cb28-72"></a>render_graph()</span></code></pre></div>
       <!-- ---------------------------------------- -->
     </main>
 
