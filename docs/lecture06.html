@@ -45,19 +45,16 @@ type="text/javascript"></script>
         <!-- ---------------------------------------- -->
          <ul>
 <li><a href="#準備と講義概要" id="toc-準備と講義概要"><span class="toc-section-number">1</span>
-準備と講義概要</a>
-<ul>
-<li><a href="#課題02-タートルグラフィックスの作品集"
-id="toc-課題02-タートルグラフィックスの作品集"><span class="toc-section-number">1.1</span> 「課題02
-タートルグラフィックス🐢」の作品集</a></li>
-</ul></li>
+準備と講義概要</a></li>
 <li><a href="#課題03" id="toc-課題03"><span class="toc-section-number">2</span> 課題03</a></li>
 <li><a href="#演習1" id="toc-演習1"><span class="toc-section-number">3</span>
 <strong>演習1</strong></a>
 <ul>
 <li><a href="#仕様" id="toc-仕様"><span class="toc-section-number">3.1</span> 仕様</a></li>
 <li><a href="#実行例" id="toc-実行例"><span class="toc-section-number">3.2</span> 実行例</a></li>
-<li><a href="#ヒントと注意点" id="toc-ヒントと注意点"><span class="toc-section-number">3.3</span>
+<li><a href="#練習問題-手作業" id="toc-練習問題-手作業"><span class="toc-section-number">3.3</span>
+練習問題 (手作業)</a></li>
+<li><a href="#ヒントと注意点" id="toc-ヒントと注意点"><span class="toc-section-number">3.4</span>
 ヒントと注意点</a></li>
 </ul></li>
 <li><a href="#演習2" id="toc-演習2"><span class="toc-section-number">4</span> 演習2</a>
@@ -77,7 +74,8 @@ class="toc-section-number">4.3</span> ヒントと注意点</a></li>
 <li><a href="#ヒントと注意点-2" id="toc-ヒントと注意点-2"><span
 class="toc-section-number">5.4</span> ヒントと注意点</a></li>
 </ul></li>
-<li><a href="#演習4" id="toc-演習4"><span class="toc-section-number">6</span> 演習4</a>
+<li><a href="#演習4-中級者向け-取組みは任意" id="toc-演習4-中級者向け-取組みは任意"><span
+class="toc-section-number">6</span> 演習4 (中級者向け: 取組みは任意)</a>
 <ul>
 <li><a href="#仕様-3" id="toc-仕様-3"><span class="toc-section-number">6.1</span> 仕様</a></li>
 <li><a href="#実行例-2" id="toc-実行例-2"><span class="toc-section-number">6.2</span>
@@ -92,7 +90,7 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
 
     <header class="markdown-body">
       <p>2026-2I プログラミング1 第06回 講義資料</p>
-      <p>2026年05月22日（月）3時限</p>
+      <p>2026年05月25日（月）3時限</p>
     </header>
 
     <main class="markdown-body">
@@ -112,66 +110,80 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
       <li>学習内容が十分に定着していないと感じた場合は、学習方法を根本的に見直してください。</li>
       </ul></li>
       </ul>
-      <h2 data-number="1.1" id="課題02-タートルグラフィックスの作品集"><span
-      class="header-section-number">1.1</span> 「課題02 タートルグラフィックス🐢」の作品集</h2>
-      <!-- あとで作品を挿入する -->
       <h1 data-number="2" id="課題03"><span class="header-section-number">2</span> 課題03</h1>
-      <p>以下の「<strong>演習1</strong>」から「<strong>演習4</strong>」について、<code>PG1-第06回講義.ipynb</code>
-      のなかで取組み、共有設定の上、Teams の指定位置に提出してください。<code>.ipynb</code>
-      ファイルを提出するわけではないので注意してください。</p>
-      <p>提出に際しては、必ず、<strong>ノートブックの</strong> <strong><em>先頭</em></strong>
-      に以下の内容のテキストセルを作成し、それにつづけて各演習のコードセルを配置してください。各コードセルの先頭には
-      <code>%reset -f</code> を配置してください。</p>
-      <p>▼ テキストセルに記述する内容</p>
+      <p>以下の「<strong>演習1</strong>」から「<strong>演習3</strong>」について、<code>PG1-第06回講義.ipynb</code>
+      のなかで取組み、その 共有URL をTeams の「課題」に、提出してください。</p>
+      <ul>
+      <li>Colab ノートブックの共有の設定手順は<a
+      href="lecture03.html#googlecolabノートブックの共有設定">第03回講義</a>で解説済みです。</li>
+      </ul>
+      <div class="balloon char-01 face-05 tone-blue">
+      <p><strong>演習4</strong> については
+      <u>中級者向けなので必須ではありません</u>。「演習1」から「演習3」について完璧にできていれば、それでも満点評価がつきます。なお、チャレンジすることが、評価にマイナスの影響を与えることはありません。</p>
+      </div>
+      <p>提出に際しては、ノートブックの <strong><em>先頭</em></strong>
+      に次の内容の「テキストセル」を作成し、氏名と出席番号を自分のものに書き換えてください。それにつづけて、必要があればライブラリをインストールするコードセル、「演習1」のコードセル、「演習2」のコードセル、「演習3」のコードセル・・・の順に配置してください。</p>
+      <ul>
+      <li>各セルの先頭には、かならず <code>%reset -f</code> を配置してください。</li>
+      </ul>
       <pre><code># **プログラミング1 課題03**
 
-- 氏名: 高専太郎 
 - 出席番号: 99
-- この課題の取り組み時間: **180分**</code></pre>
-      <p>必ず、課題に要した時間を明記してください。</p>
+- 氏名: 高専 太郎 
+- 課題03の取組み時間: 約XXX分</code></pre>
       <ul>
-      <li><strong><em>評価</em></strong> : 標準 (＝演習1～4の全てに取り組んでいる)
-      を「<strong>8点</strong>」として <strong>10点満点</strong> で評価します。
+      <li><p><strong><em>提出期限</em></strong> : 2026年06月14日 (日) 23時00分
+      (これ以降に確認・評価します)</p>
+      <ul>
+      <li>事前相談なく、提出期限を168時間（＝1週間・7日間）超過して提出されたもの（再提出を含む）は、未提出と同じく「0点」となります。</li>
+      </ul></li>
+      <li><p><strong><em>取組みの目安となる時間</em></strong> : <strong>180分</strong></p></li>
+      <li><p><strong><em>評価</em></strong> : 標準 (＝演習1～3の全てに取り組んでいる)
+      を「<strong>8点</strong>」として <strong>10点満点</strong> で評価します。</p>
       <ul>
       <li>課題の採点後は、修正版の再提出・追提出があっても原則として再評価はしません。</li>
-      <li>Colabノートブックの共有設定は<a
-      href="lecture03.html#googlecolabノートブックの共有設定">第03回講義</a>で解説済みです。
+      <li>共有範囲 (閲覧可)
+      が「大阪公立大学」もしくは「リンクを知っている全員」に設定されていない場合は「0点」となります。指摘を受けて修正しても「3点減」とします。</li>
+      </ul></li>
+      <li><p><strong><em>提出物・提出先</em></strong> : GoogleColab ノートブック
+      <code>PG1-第06回講義.ipynb</code> の <strong><u>共有リンク (URL)</u></strong> を Teams
+      の指定位置に提出してください。手順は <a href="figs/03/teams-01.png">第03回講義で解説済み</a>
+      です。</p>
       <ul>
-      <li>適切に共有されていない場合 (提出された共有リンクからプログラムを確認できない場合)
-      <strong>0点で評価します</strong>。再評価はしません。</li>
+      <li><code>.ipynb</code> の <u>ファイル本体を提出するわけではない</u>
+      ので注意してください。</li>
+      <li>提出後 (提出期限後)
+      も、<u>採点がフィードバックされるまではノートブックの内容を変更・更新して問題ありません</u>。</li>
       </ul></li>
-      </ul></li>
-      <li><strong><em>取り組み時間の目安</em></strong> : <strong>180分以上</strong>
+      <li><p><strong><em>取り組み時間の目安</em></strong> : <strong>180分以上</strong></p>
       <ul>
       <li>本課題は
       <strong><em>生成AIを直接的に利用すること（AIにコードを生成させること）を想定しない演習</em></strong>
-      です。
-      <ul>
-      <li>自然言語で自分の理解や解釈が適切かを生成AIに確認してもらう 👉 OK
-      (これは問題なし、学びの効果大)</li>
-      <li>自然言語で自分の疑問を生成AIに尋ねる 👉 OK (これも問題なし、学びの効果大)</li>
-      <li>直接的にプログラムコードを書いてもらう（あるいは修正してもらう） <br>👉
-      <strong>NG</strong>。今回の課題では原則として使用しない。</li>
-      </ul></li>
-      </ul></li>
-      <li><strong><em>期限</em></strong> : <strong>2026年6月14日 (日)</strong> 23時00分
-      <ul>
-      <li>提出後も、Teamsで採点がフィードバックされるまではノートブックの内容を変更して問題ありません。</li>
+      です。</li>
       </ul></li>
       </ul>
+      <div class="balloon char-01 face-02 tone-yellow">
+      <ul>
+      <li>自然言語で自分の理解や解釈が適切かを生成AIに確認してもらう 👉 OK</li>
+      <li>自然言語で自分の疑問を生成AIに尋ねる 👉 OK</li>
+      <li>生成AIに直接的にプログラムコードを書いてもらう（あるいは修正してもらう）👉
+      <strong>NG</strong></li>
+      </ul>
+      </div>
       <h1 data-number="3" id="演習1"><span class="header-section-number">3</span>
       <strong>演習1</strong></h1>
       <p>ソフトウェアエンジニアを目指すW君（高専2年生）は、プログラミングのスキルアップのために友人と共にゲームづくりに取り組んでいる。</p>
-      <p>いま、見下ろし型のフィールド画面を持ったRPGを作成している。いま、ゲームアイテムとして、使用時に…</p>
+      <p>いま、見下ろし型のフィールド画面を持ったRPGを作成しており、ゲームアイテムとして、使用時に…</p>
       <blockquote>
       <p>💀「西に125、南に92進めば幽霊船にであえるだろう」</p>
       </blockquote>
-      <p>…のように、<strong>自キャラの現在位置</strong>から<strong>幽霊船</strong>までの距離を表示する<a
+      <p>…のように、<strong>自キャラの現在位置</strong>から<strong>幽霊船</strong>までの移動方向と移動量を表示する<a
       href="https://wikiwiki.jp/dqdic3rd/【ふなのりのほね】">アイテム</a>を実装する必要が生じた。</p>
       <h2 data-number="3.1" id="仕様"><span class="header-section-number">3.1</span> 仕様</h2>
       <ul>
-      <li>ゲームのフィードとして、<span class="math inline">\(0 \le X \le 511\)</span>、<span
-      class="math inline">\(0 \le Y \le 511\)</span> の大きさのXYの2次元平面を考える。</li>
+      <li>ゲームのフィールドとして、<span class="math inline">\(0 \le X \le 511\)</span>、<span
+      class="math inline">\(0 \le Y \le 511\)</span> の大きさのXYの2次元平面
+      (座標範囲が循環するフィールド) を考える。</li>
       <li>X軸は<strong>右方向</strong>を正として、その方位を<strong>東</strong>とする。
       <ul>
       <li><span class="math inline">\(X=511\)</span>から東に1だけ動くと <span
@@ -179,7 +191,7 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
       class="math inline">\(X=0\)</span>から西に1だけ動くと <span
       class="math inline">\(X=511\)</span> に移動する。</li>
       </ul></li>
-      <li>Y軸は<strong>下方向</strong>を正とする、その方位を<strong>南</strong>とする。
+      <li>Y軸は<strong>下方向</strong>を正として、その方位を<strong>南</strong>とする。
       <ul>
       <li><span class="math inline">\(Y=511\)</span>から南に1だけ動くと <span
       class="math inline">\(Y=0\)</span> に移動し、<span
@@ -192,6 +204,7 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
       <li>東西のどちらからでも移動量が同じ場合は、東移動を優先してメッセージを出力する。<br />
       </li>
       <li>南北のどちらからでも移動量が同じ場合は、南移動を優先してメッセージを出力する。</li>
+      <li>移動量が <span class="math inline">\(0\)</span> となる方向は、メッセージに含めない。</li>
       </ul>
       <h2 data-number="3.2" id="実行例"><span class="header-section-number">3.2</span> 実行例</h2>
       <ul>
@@ -218,10 +231,137 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
       <li>自キャラの座標と幽霊船の座標が同じときに使用すれば、以下を表示する。</li>
       </ul>
       <pre><code>💀「幽霊船にであえたようじゃな」</code></pre>
-      <h2 data-number="3.3" id="ヒントと注意点"><span class="header-section-number">3.3</span>
+      <h2 data-number="3.3" id="練習問題-手作業"><span class="header-section-number">3.3</span>
+      練習問題 (手作業)</h2>
+      <p>いきなりプログラムを書き始めるのではなく、<u>まずは紙面上で答えを求められること</u>
+      を確認してください。ここでは、フィールドの端で「<strong>座標が循環すること</strong>」に注意して、<strong>東西方向の移動量</strong>
+      と <strong>南北方向の移動量</strong> を順に考えていきます。</p>
+      <ul>
+      <li><strong>確認1</strong> 自キャラのX座標が <span
+      class="math inline">\(20\)</span>、幽霊船のX座標が <span class="math inline">\(30\)</span>
+      のとき、東にいくつ進めば幽霊船と同じX座標になるか。そのときの計算式はなにか。
+      <ul>
+      <li>答え: <span class="masked">東に <span class="math inline">\(10\)</span></span></li>
+      </ul></li>
+      <li><strong>確認2</strong> 自キャラのX座標が <span
+      class="math inline">\(30\)</span>、幽霊船のX座標が <span class="math inline">\(20\)</span>
+      のとき、東に進む場合と西に進む場合の移動量をそれぞれ求めよ。また、この場合は、東西のどちらに進むべきか。
+      <ul>
+      <li>答え: <span class="masked">東に <span class="math inline">\(502\)</span>、西に <span
+      class="math inline">\(10\)</span>。移動量が小さいので西に進む。</span></li>
+      </ul></li>
+      <li><strong>確認3</strong> 自キャラのX座標が <span
+      class="math inline">\(510\)</span>、幽霊船のX座標が <span class="math inline">\(2\)</span>
+      のとき、東に進む場合と西に進む場合の移動量をそれぞれ求めよ。また、この場合は、東西のどちらに進むべきか。
+      <ul>
+      <li>答え: <span class="masked">東に <span class="math inline">\(4\)</span>、西に <span
+      class="math inline">\(508\)</span>。移動量が小さいので東に進む。</span></li>
+      </ul></li>
+      <li><strong>確認4</strong> 自キャラのX座標が <span
+      class="math inline">\(2\)</span>、幽霊船のX座標が <span class="math inline">\(510\)</span>
+      のとき、東に進む場合と西に進む場合の移動量をそれぞれ求めよ。また、この場合は、東西のどちらに進むべきか。
+      <ul>
+      <li>答え: <span class="masked">東に <span class="math inline">\(508\)</span>、西に <span
+      class="math inline">\(4\)</span>。移動量が小さいので西に進む。</span></li>
+      </ul></li>
+      <li><strong>確認5</strong> 自キャラのX座標が <span
+      class="math inline">\(0\)</span>、幽霊船のX座標が <span class="math inline">\(256\)</span>
+      のとき、東に進む場合と西に進む場合の移動量をそれぞれ求めよ。また、この場合は、東西のどちらに進むべきか。
+      <ul>
+      <li>答え: <span class="masked">東に <span class="math inline">\(256\)</span>、西に <span
+      class="math inline">\(256\)</span>。移動量が同じなので東に進む。</span></li>
+      </ul></li>
+      <li><strong>確認6</strong> 自キャラの座標が <span
+      class="math inline">\((20,10)\)</span>、幽霊船の座標が <span
+      class="math inline">\((30,5)\)</span>
+      のとき、東西方向と南北方向の移動量をそれぞれ求めて、出力すべきメッセージを答えよ。
+      <ul>
+      <li>答え: <span class="masked">東に <span class="math inline">\(10\)</span>、北に <span
+      class="math inline">\(5\)</span>
+      なので、<code>💀「東に10、北に5進めば幽霊船にであえるだろう」</code></span></li>
+      </ul></li>
+      <li><strong>確認7</strong> 自キャラの座標が <span
+      class="math inline">\((2,510)\)</span>、幽霊船の座標が <span
+      class="math inline">\((511,1)\)</span>
+      のとき、東西方向と南北方向の移動量をそれぞれ求めて、出力すべきメッセージを答えよ。
+      <ul>
+      <li>答え: <span class="masked">西に <span class="math inline">\(3\)</span>、南に <span
+      class="math inline">\(3\)</span>
+      なので、<code>💀「西に3、南に3進めば幽霊船にであえるだろう」</code></span></li>
+      </ul></li>
+      <li><strong>確認8</strong> 自キャラのX座標が <span
+      class="math inline">\(20\)</span>、幽霊船のX座標が <span class="math inline">\(30\)</span>
+      のとき、<code>x2 - x1</code> を計算せよ。また、その値は東に進む場合の移動量として使えるか。
+      <ul>
+      <li>答え: <span
+      class="masked"><code>x2 - x1 = 30 - 20 = 10</code>。正の値なので、東に進む場合の移動量としてそのまま使える。</span></li>
+      </ul></li>
+      <li><strong>確認9</strong> 自キャラのX座標が <span
+      class="math inline">\(30\)</span>、幽霊船のX座標が <span class="math inline">\(20\)</span>
+      のとき、<code>x2 - x1</code>
+      を計算せよ。また、その値を東に進む場合の移動量として使うには、どのように補正すればよいか。
+      <ul>
+      <li>答え: <span
+      class="masked"><code>x2 - x1 = 20 - 30 = -10</code>。負の値なので、フィールドの幅 <span
+      class="math inline">\(512\)</span> を足して <code>-10 + 512 = 502</code>
+      とすれば、東に進む場合の移動量になる。</span></li>
+      </ul></li>
+      <li><strong>確認10</strong> 自キャラのX座標が <span
+      class="math inline">\(510\)</span>、幽霊船のX座標が <span class="math inline">\(2\)</span>
+      のとき、<code>x2 - x1</code>
+      を計算せよ。また、その値を東に進む場合の移動量として使うには、どのように補正すればよいか。
+      <ul>
+      <li>答え: <span
+      class="masked"><code>x2 - x1 = 2 - 510 = -508</code>。負の値なので、フィールドの幅 <span
+      class="math inline">\(512\)</span> を足して <code>-508 + 512 = 4</code>
+      とすれば、東に進む場合の移動量になる。</span></li>
+      </ul></li>
+      <li><strong>確認11</strong> 自キャラのX座標が <span
+      class="math inline">\(2\)</span>、幽霊船のX座標が <span class="math inline">\(510\)</span>
+      のとき、西に進む場合の移動量を求めたい。このとき <code>x1 - x2</code>
+      を計算せよ。また、その値を西に進む場合の移動量として使うには、どのように補正すればよいか。
+      <ul>
+      <li>答え: <span
+      class="masked"><code>x1 - x2 = 2 - 510 = -508</code>。負の値なので、フィールドの幅 <span
+      class="math inline">\(512\)</span> を足して <code>-508 + 512 = 4</code>
+      とすれば、西に進む場合の移動量になる。</span></li>
+      </ul></li>
+      <li><strong>確認12</strong> Python では、<code>-10 % 512</code>、<code>-508 % 512</code>
+      を計算すると、それぞれどのような値になるか。これらの値は、確認9、確認10の補正後の値と一致するか。
+      <ul>
+      <li>答え: <span class="masked"><code>-10 % 512</code> は
+      <code>502</code>、<code>-508 % 512</code> は <code>4</code> になる。いずれも、フィールドの幅
+      <span class="math inline">\(512\)</span> を足して補正した値と一致する。</span></li>
+      </ul></li>
+      <li><strong>確認13</strong> フィールドの幅は <span class="math inline">\(512\)</span>
+      である。自キャラのX座標を <code>x1</code>、幽霊船のX座標を <code>x2</code>
+      とするとき、東に進む場合の移動量 <code>east</code> と、西に進む場合の移動量 <code>west</code>
+      は、それぞれどのように計算できるか。
+      <ul>
+      <li>答え: <span
+      class="masked"><code>east = (x2 - x1) % 512</code>、<code>west = (x1 - x2) % 512</code></span></li>
+      </ul></li>
+      <li><strong>確認14</strong> 自キャラのY座標を <code>y1</code>、幽霊船のY座標を <code>y2</code>
+      とするとき、南に進む場合の移動量 <code>south</code> と、北に進む場合の移動量
+      <code>north</code> は、それぞれどのように計算できるか。
+      <ul>
+      <li>答え: <span
+      class="masked"><code>south = (y2 - y1) % 512</code>、<code>north = (y1 - y2) % 512</code></span></li>
+      </ul></li>
+      <li><strong>確認15</strong> <code>east</code> と <code>west</code>
+      の値が求まったあと、東西方向のメッセージはどのように決めればよいか。また、<code>south</code>
+      と <code>north</code> の値が求まったあと、南北方向のメッセージはどのように決めればよいか。
+      <ul>
+      <li>答え: <span class="masked">東西方向は <code>east &lt;= west</code>
+      なら東、そうでなければ西を選ぶ。南北方向は <code>south &lt;= north</code>
+      なら南、そうでなければ北を選ぶ。ただし、移動量が <span class="math inline">\(0\)</span>
+      の方向はメッセージに含めない。</span></li>
+      </ul></li>
+      </ul>
+      <h2 data-number="3.4" id="ヒントと注意点"><span class="header-section-number">3.4</span>
       ヒントと注意点</h2>
       <ul>
-      <li>南北のみに移動するケース、東西のみに移動するケースにおいて句点「、」の出力に注意してください。</li>
+      <li>南北のみに移動するケース、東西のみに移動するケースにおいて読点「、」の出力に注意してください。</li>
       <li>基本的なプログラムなので、Geminiなどの生成AIは、十分に悩んで手を尽くしてから使用してください。最初から生成AIに頼ると、演習を通じて得られる学びと経験は半分からゼロになってしまいます。
       <ul>
       <li>自分が理解していないコードは、絶対に解答しないでください。以下の「<strong>演習2</strong>」から「<strong>演習4</strong>」についても同じです。</li>
@@ -323,7 +463,7 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
 <span id="cb12-7"><a href="#cb12-7"></a><span class="co"># キャラの移動目標の位置（座標）</span></span>
 <span id="cb12-8"><a href="#cb12-8"></a>x2, y2 <span class="op">=</span> <span class="dv">10</span>, <span class="dv">10</span></span>
 <span id="cb12-9"><a href="#cb12-9"></a></span>
-<span id="cb12-10"><a href="#cb12-10"></a><span class="co"># t秒数の位置を計算</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="co"># t秒後の位置を計算</span></span>
 <span id="cb12-11"><a href="#cb12-11"></a>t<span class="op">=</span> <span class="dv">8</span></span>
 <span id="cb12-12"><a href="#cb12-12"></a></span>
 <span id="cb12-13"><a href="#cb12-13"></a><span class="co"># ▼▼▼ 基本的な書き換え範囲（ここから）</span></span>
@@ -342,15 +482,15 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
       の座標を与えたときに、それを基に<strong>次のような「H」型の図形</strong>を描画するための「座標計算」が必要となった。</p>
       <p><strong>例: 点1として <span class="math inline">\((1,-4)\)</span>、点2として <span
       class="math inline">\((-5,-1.5)\)</span>
-      を与えたときに画面に描画したい「H」の図形)</strong></p>
+      を与えたときに画面に描画したい「H」の図形</strong></p>
       <figure>
       <img src="figs/06/p3-01.png" alt="img" />
       <figcaption aria-hidden="true">img</figcaption>
       </figure>
       <h2 data-number="5.1" id="仕様-2"><span class="header-section-number">5.1</span> 仕様</h2>
       <ul>
-      <li>任意の2点を与えたとき、それを両端とする線分 (図の青線) を描き、各端点から長さが <span
-      class="math inline">\(1\)</span> の垂直線（図内の2本の赤線）を描くための
+      <li>任意の2点を与えたとき、それを両端とする線分 (図の青線) を描き、各端点を中点とする長さ
+      <span class="math inline">\(1\)</span> の垂直線（図内の2本の赤線）を描くための
       <strong>4点の座標</strong> (<code>x1a</code>, <code>y1a</code>)、(<code>x1b</code>,
       <code>y1b</code>)、(<code>x2a</code>, <code>y2a</code>)、(<code>x2b</code>, <code>y2b</code>)
       を計算する処理を実装したい。
@@ -487,13 +627,14 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
       <p><strong>中級者向け</strong></p>
       <p>図は <a href="https://matplotlib.org/stable/gallery/index.html">Matplotlib</a>
       というライブラリを利用して描画しています。本授業では<a
-      href="https://takeshiwada1980.github.io/Programming1-2024/lecture11.html#斜方投射のシミュレーションと可視化">第11回講義</a>以降で正式に扱います。</p>
+      href="https://takeshiwada1980.github.io/Programming1-2025/lecture11.html#斜方投射のシミュレーションと可視化">第11回講義</a>以降で正式に扱います。</p>
       <p>この演習で要求されている処理は、NumPy の <code>ndarray</code> という行列 (ベクトル)
       を扱うオブジェクトを使用することで、極めてスマートに実装できます。本授業では、NumPy は<a
-      href="https://takeshiwada1980.github.io/Programming1-2024/lecture17.html#numpy">第17回講義</a>以降で正式に取り上げる予定です。意欲のある学生は、ぜひ
+      href="https://takeshiwada1980.github.io/Programming1-2025/lecture17.html#numpy">第17回講義</a>以降で正式に取り上げる予定です。意欲のある学生は、ぜひ
       NumPy を利用して本演習に取り組んでください。</p>
       </div>
-      <h1 data-number="6" id="演習4"><span class="header-section-number">6</span> 演習4</h1>
+      <h1 data-number="6" id="演習4-中級者向け-取組みは任意"><span
+      class="header-section-number">6</span> 演習4 (中級者向け: 取組みは任意)</h1>
       <p>ソフトウェアエンジニアを目指すW君（高専2年生）は、プログラミングのスキルアップのために友人と共にゲームづくりに取り組んでいる。</p>
       <p>いま、見下ろし型の2Dシューティングゲームを作成している。自キャラは、自分の位置から<strong>扇形の範囲攻撃ができる武器</strong>を装備しており、その攻撃に対する<strong>敵キャラの当たり判定</strong>をして「<strong>Hit!</strong>」あるいは「<strong>Miss.</strong>」の文字列を出力したい。</p>
       <ul>
@@ -504,8 +645,8 @@ class="toc-section-number">6.3</span> ヒントと注意点</a></li>
       <span class="math inline">\(0^\circ\)</span>、<strong>東</strong>を <span
       class="math inline">\(90^\circ\)</span>、<strong>西</strong>を<span
       class="math inline">\(-90^\circ\)</span>、<strong>南</strong>を <span
-      class="math inline">\(-180^\circ\)</span> or <span class="math inline">\(180^\circ\)</span>
-      とする。</li>
+      class="math inline">\(-180^\circ\)</span> または <span
+      class="math inline">\(180^\circ\)</span> とする。</li>
       <li>武器には「<strong>射程距離</strong>」「<strong>攻撃方向</strong>」「<strong>拡がり角</strong>」の3つのパラメータが設定される。</li>
       <li>扇形の攻撃範囲内に敵キャラが存在する場合は「<strong>Hit!</strong>」、そうではない場合は「<strong>Miss.</strong>」を出力したい。</li>
       </ul>
