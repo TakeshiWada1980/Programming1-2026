@@ -16,8 +16,8 @@ var:
 - 第04回講義 05月11日 (月)&ensp;[資料](lecture04.html)&ensp; ***課題02*** <font size="-1">標準入力, 繰り返し構文, タートルグラフィックス🐢</font>
 - 第05回講義 05月18日 (月)&ensp;[資料](lecture05.html)&ensp; <font size="-1">条件分岐</font>
 - 第06回講義 05月25日 (月)&ensp;[資料](lecture06.html)&ensp; ***小テスト2*** ***課題03***&ensp; <font size="-1">総合演習</font>
-- 第07回講義 06月01日 (月)
-- 中間試験📝
+- 第07回講義 06月01日 (月)&ensp;[資料](lecture07.html)&ensp; <font size="-1">繰り返し構文 (ループ変数), 数学計算</font>
+- 📝中間試験📝
 - 第08回講義 06月15日 (月)
 
 
