@@ -10,13 +10,13 @@ var:
 
 - [GoogleColab](https://colab.research.google.com/?hl=ja) にログインしておいてください。
   - `PG1-第07回講義.ipynb` という名前で「GoogleColabノートブック」を作成しておいてください。
-  - 本日の演習の**解答例**💯は [こちら](https://colab.research.google.com/drive/1KH5i0gwml70qKNBCAWAg0v78_ApC3cgj?usp=sharing) を参照してください。
+  - 本日の <font color="deeppink">演習の解答例</font>💯は [こちら](https://colab.research.google.com/drive/1KH5i0gwml70qKNBCAWAg0v78_ApC3cgj?usp=sharing) を参照してください。
 
 
 :::{.note .type-tips}
 **お願い**
 
-卒業研究に関連した「アンケート」にご協力をお願いいたします🙇‍♂️(全員、ご協力をお願いいたします)
+卒業研究に関連した「アンケート」にご協力をお願いいたします🙇‍♂️(全員回答に、協力をお願いいたします)
 
 - [自転車ルールに関する認識度および意識調査](https://forms.office.com/r/yLQh2JUtwb)
 :::
