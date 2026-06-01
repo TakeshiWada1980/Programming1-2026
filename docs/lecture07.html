@@ -45,20 +45,24 @@ type="text/javascript"></script>
         <!-- ---------------------------------------- -->
          <ul>
 <li><a href="#準備と講義概要" id="toc-準備と講義概要"><span class="toc-section-number">1</span>
-準備と講義概要</a></li>
+準備と講義概要</a>
+<ul>
+<li><a href="#課題2の作品共有" id="toc-課題2の作品共有"><span class="toc-section-number">1.1</span>
+課題2の作品共有</a></li>
+<li><a href="#講義概要" id="toc-講義概要"><span class="toc-section-number">1.2</span>
+講義概要</a></li>
+</ul></li>
 <li><a href="#mathライブラリ" id="toc-mathライブラリ"><span class="toc-section-number">2</span>
 Mathライブラリ</a>
 <ul>
-<li><a href="#演習1-目標時間-12分" id="toc-演習1-目標時間-12分"><span
-class="toc-section-number">2.1</span> 演習1 (<i class="fa-solid fa-stopwatch"></i> 目標時間:
-12分)</a></li>
+<li><a href="#演習1-目標時間-15分" id="toc-演習1-目標時間-15分"><span
+class="toc-section-number">2.1</span> 📝演習1 (⌛目標時間: 15分)</a></li>
 </ul></li>
 <li><a href="#組込み関数-数学系" id="toc-組込み関数-数学系"><span
 class="toc-section-number">3</span> 組込み関数 (数学系)</a>
 <ul>
 <li><a href="#とても重要なこと" id="toc-とても重要なこと"><span
-class="toc-section-number">3.1</span>
-とても重要なこと<i class="fa-solid fa-triangle-exclamation"></i></a></li>
+class="toc-section-number">3.1</span> とても重要なこと🚨</a></li>
 </ul></li>
 <li><a href="#繰り返し構文におけるループ変数の参照"
 id="toc-繰り返し構文におけるループ変数の参照"><span class="toc-section-number">4</span>
@@ -103,22 +107,44 @@ class="toc-section-number">6.1</span> 計算の正確度を比較</a></li>
       <h1 data-number="1" id="準備と講義概要"><span class="header-section-number">1</span>
       準備と講義概要</h1>
       <ul>
-      <li><p><a href="https://colab.research.google.com/?hl=ja">GoogleColab</a>
-      にログインしておいてください。</p>
+      <li><a href="https://colab.research.google.com/?hl=ja">GoogleColab</a>
+      にログインしておいてください。
       <ul>
       <li><code>PG1-第07回講義.ipynb</code>
       という名前で「GoogleColabノートブック」を作成しておいてください。</li>
-      <li>本日の演習の<strong>解答例</strong>は<a
-      href="https://colab.research.google.com/drive/1oHrEBEoSDFkxhrqgqN9uRUAzSC2SBBDJ?usp=sharing">こちら</a>を参照してください。</li>
+      <li>本日の演習の<strong>解答例</strong>💯は <a
+      href="https://colab.research.google.com/drive/1KH5i0gwml70qKNBCAWAg0v78_ApC3cgj?usp=sharing">こちら</a>
+      を参照してください。</li>
       </ul></li>
-      <li><p>今回の講義では「数学計算に関する処理」と「繰り返し構文
-      (ループ変数の参照)」について学びます。これらを学ぶことで、タートルグラフィックスと組み合わせて次のような画像が描画できるようになります。</p></li>
-      <li><p>卒業研究のアンケートに協力をお願いいたします。</p>
+      </ul>
+      <div class="note type-tips">
+      <p><strong>お願い</strong></p>
+      <p>卒業研究に関連した「アンケート」にご協力をお願いいたします🙇‍♂️(全員、ご協力をお願いいたします)</p>
       <ul>
       <li><a
       href="https://forms.office.com/r/yLQh2JUtwb">自転車ルールに関する認識度および意識調査</a></li>
-      </ul></li>
       </ul>
+      </div>
+      <h2 data-number="1.1" id="課題2の作品共有"><span class="header-section-number">1.1</span>
+      課題2の作品共有</h2>
+      <ul>
+      <li><a
+      href="https://colab.research.google.com/drive/1ItiHdGlgIJgn9WUeGt-855r-XodNKmMd?usp=sharing">学生作品
+      (タートルグラフィックス) ①</a></li>
+      <li><a
+      href="https://colab.research.google.com/drive/1KYN1A62L6cUA6duYmDgH4r9l92cisMjA?usp=sharing">学生作品
+      (タートルグラフィックス) ②</a></li>
+      <li><a
+      href="https://colab.research.google.com/drive/1NaIs4TwTNHTk5vsPFKyjUuBRG2unFSKn?usp=sharing">学生作品
+      (タートルグラフィックス) ③</a></li>
+      <li><a
+      href="https://colab.research.google.com/drive/112-LryNaKr-AiP39ry4zvD7xgw7KWm9k?usp=sharing">学生作品
+      (タートルグラフィックス) ④</a></li>
+      </ul>
+      <h2 data-number="1.2" id="講義概要"><span class="header-section-number">1.2</span>
+      講義概要</h2>
+      <p>今回の講義では「<strong>数学計算に関する処理</strong>」と「<strong>繰り返し構文
+      (ループ変数の参照)</strong>」について学びます。これらを学ぶことで、タートルグラフィックスと組み合わせて次のような画像が描画できるようになります。</p>
       <figure>
       <img src="figs/07/matrix1.svg" alt="matrix" />
       <figcaption aria-hidden="true">matrix</figcaption>
@@ -129,14 +155,14 @@ class="toc-section-number">6.1</span> 計算の正確度を比較</a></li>
       </figure>
       <h1 data-number="2" id="mathライブラリ"><span class="header-section-number">2</span>
       Mathライブラリ</h1>
-      <p>繰り返し構文 (ループ変数), 数学計算 各種数学の計算には
-      <strong><em>mathライブラリ</em></strong> を利用します。</p>
+      <p>各種数学の計算には <strong><em>mathライブラリ</em></strong> を利用します。</p>
       <p>プログラムのなかで「mathライブラリ」を使用するためには、次のようにインポートが必要です。</p>
       <div class="sourceCode" id="cb1" data-caption="mathライブラリのインポート.py"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> math  <span class="co"># 要インポート</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="bu">print</span>(<span class="ss">f&#39;円周率は </span><span class="sc">{</span>math<span class="sc">.</span>pi<span class="sc">:.5f}</span><span class="ss"> です&#39;</span>)</span></code></pre></div>
-      <p>特に、次の定数や関数は <strong>利用頻度が高い</strong> ため覚えておいてください。</p>
+      <p>特に、次に示す「定数」や「関数」は <strong>利用頻度が高い</strong>
+      ものであるため覚えておいてください。</p>
       <ul>
       <li><strong>円周率</strong> <span class="math inline">\(\pi\)</span> (定数値)
       <ul>
@@ -177,20 +203,33 @@ class="toc-section-number">6.1</span> 計算の正確度を比較</a></li>
       <p><span class="math inline">\(n\)</span> 個の異なるものから <span
       class="math inline">\(r\)</span> 個を選ぶ「組み合わせ」の総数 <span
       class="math inline">\(_{n}\mathrm{C}_{r}\)</span>
-      は、1年次の「<strong>基礎数学B</strong>」で学習済みですが、次のように計算できます。</p>
+      は、1年次の「<strong>基礎数学B</strong>」のなかで既に学習済みですが、次のように計算できます。</p>
       <p><span class="math display">\[ {}_{n}\mathrm{C}_{r} = \frac{n!}{r!(n-r)!}  \]</span></p>
       <p>なお、上記の式はTeX (テキストセルで有効) では
       <code>$$ {}_{n}\mathrm{C}_{r} = \frac{n!}{r!(n-r)!}  $$</code> のように表記します。</p>
       </div>
-      <h2 data-number="2.1" id="演習1-目標時間-12分"><span class="header-section-number">2.1</span>
-      演習1 (<i class="fa-solid fa-stopwatch"></i> 目標時間: 12分)</h2>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p><code>math.radians</code> と <code>math.degrees</code>
+      の違いが混乱しています。「度数法」と「弧度法」の違いも含めて、解説してください。</p>
+      </blockquote>
+      <blockquote>
+      <p>組み合わせ <span class="math inline">\(_{n}\mathrm{C}_{r}\)</span> の公式と
+      <code>math.comb(n,r)</code> が同じ計算をしていることを、<span
+      class="math inline">\(_{5}\mathrm{C}_{2}\)</span> の例で途中式つきで確認してください。</p>
+      </blockquote>
+      <h2 data-number="2.1" id="演習1-目標時間-15分"><span class="header-section-number">2.1</span>
+      📝演習1 (⌛目標時間: 15分)</h2>
       <p>確率 <span class="math inline">\(p\)</span> の事象が、<span
       class="math inline">\(n\)</span> 回の試行で <span class="math inline">\(k\)</span>
       回発生する確率 <span class="math inline">\(P\)</span> について、次式 (二項分布)
-      で計算できることが数学的に知られています。二項分布は、4年次の「<strong>確率統計</strong>」の授業で学びますが、高専2年でも十分に理解できる内容なので興味がある人は<a
-      href="https://www.youtube.com/results?search_query=二項分布">YouTube動画</a>などで学んでください。</p>
+      で計算できることが数学的に知られています。</p>
       <p><span class="math display">\[  P={}_{n} \mathrm{C}_{k} \cdot
       p^{k}\cdot(1-p)^{n-k}\]</span></p>
+      <div class="balloon char-01 face-02 tone-yellow">
+      <p>二項分布は、4年生の「<strong>確率統計</strong>」の授業で学びますが、高専2年でも十分に理解できる内容なので興味がある人は<a
+      href="https://www.youtube.com/results?search_query=二項分布">YouTube動画</a>などで学んでください。</p>
+      </div>
       <p>例えば「<strong>あたり</strong>」の割合が <span class="math inline">\(15\%\)</span>
       のクジを <span class="math inline">\(5\)</span> 回引いたときに、<span
       class="math inline">\(1\)</span> 回だけ「<strong>あたり</strong>」がでる確率 <span
@@ -214,16 +253,15 @@ class="toc-section-number">6.1</span> 計算の正確度を比較</a></li>
       class="math inline">\(1\)</span> 回のガチャには <span class="math inline">\(300\)</span>
       ジェムが必要である。また <span class="math inline">\(10,000\)</span> 円で <span
       class="math inline">\(11,720\)</span> ジェムが購入できる。</p>
-      <ul>
-      <li><strong>問1</strong>：ガチャを <span class="math inline">\(100\)</span>
-      回やって「メタスラの剣」が <strong>1本も入手できない確率</strong> (<span
-      class="math inline">\(\%\)</span>) を計算してください。
+      <h3 data-number="2.1.1" id="問1"><span class="header-section-number">2.1.1</span> 問1</h3>
+      <p>ガチャを <span class="math inline">\(100\)</span> 回やって「メタスラの剣」が
+      <strong>1本も入手できない確率</strong> (<span class="math inline">\(\%\)</span>)
+      を計算してください。</p>
       <ul>
       <li><strong>ヒント</strong>：「<strong>1本も入手できない確率</strong>」とは、言い換えれば「<span
       class="masked">0</span>本入手できる確率」と同義です。</li>
       <li><strong>答え</strong>： <span class="masked"><span
       class="math inline">\(60.58\%\)</span></span></li>
-      </ul></li>
       </ul>
       <div class="note type-caution">
       <p><strong>注意</strong></p>
@@ -246,34 +284,35 @@ class="toc-section-number">6.1</span> 計算の正確度を比較</a></li>
       href="lecture03.html#出力の書式指定">学習済み</a>です。例えば
       <code>print(f'p={0.1519:.1%}')</code> は <code>p=15.2%</code> を出力します。</p>
       </div>
-      <ul>
-      <li><strong>問2</strong>：ガチャを <span class="math inline">\(100\)</span>
-      回やって「メタスラの剣」が <strong>1本以上入手できる確率</strong> (<span
-      class="math inline">\(\%\)</span>) を計算してください。
+      <h3 data-number="2.1.2" id="問2"><span class="header-section-number">2.1.2</span> 問2</h3>
+      <p>ガチャを <span class="math inline">\(100\)</span> 回やって「メタスラの剣」が
+      <strong>1本以上入手できる確率</strong> (<span class="math inline">\(\%\)</span>)
+      を計算してください。</p>
       <ul>
       <li><strong>ヒント</strong>：「1本以上入手できる確率」とは、言い換えれば「<strong>1本入手できる確率
       + 2本入手できる確率 + … + 99本入手できる確率 +
       100本入手できる確率</strong>」ですが、それを計算するのは愚かなので…。</li>
       <li><strong>答え</strong>：<span class="masked"><span
       class="math inline">\(39.42\%\)</span></span></li>
-      </ul></li>
-      <li><strong>問3</strong>：<span class="math inline">\(100\)</span>
+      </ul>
+      <h3 data-number="2.1.3" id="問3"><span class="header-section-number">2.1.3</span> 問3</h3>
+      <p><span class="math inline">\(100\)</span>
       人が挑戦したとき、「メタスラの剣」が<strong>1本も入手できない人</strong>は (確率計算上では)
-      何人でてくるか計算してください。
+      何人でてくるか計算してください。</p>
       <ul>
       <li><strong>答え</strong>：<span class="masked">約 <span class="math inline">\(61\)</span>
       人</span></li>
-      </ul></li>
-      <li><strong>問4</strong>：<span class="math inline">\(100\)</span>
-      回のガチャに挑戦するときに必要な金額 (日本円) はいくらか計算してください。
+      </ul>
+      <h3 data-number="2.1.4" id="問4"><span class="header-section-number">2.1.4</span> 問4</h3>
+      <p><span class="math inline">\(100\)</span> 回のガチャに挑戦するときに必要な金額 (日本円)
+      はいくらか計算してください。</p>
       <ul>
       <li><strong>答え</strong>：<span class="masked">約 <span class="math inline">\(25,597\)</span>
       円</span></li>
-      </ul></li>
       </ul>
-      <p>余裕がある学生は、前回講義で学習した<a
-      href="lecture04.html#計算式をテストするとき">GoogleColabのフォーム機能</a>を利用して、UI (User
-      Interface) / UX (User Experience) を強化したバージョンを作成してみてください。</p>
+      <p>余裕がある学生は、前回講義で学習した <a
+      href="lecture04.html#計算式をテストするとき">GoogleColabのフォーム機能</a> を利用して、UI
+      (User Interface) / UX (User Experience) を強化したバージョンを作成してみてください。</p>
       <h1 data-number="3" id="組込み関数-数学系"><span class="header-section-number">3</span>
       組込み関数 (数学系)</h1>
       <p><strong><em>組み込み関数</em></strong>とは、<code>import</code>
@@ -317,7 +356,7 @@ class="toc-section-number">6.1</span> 計算の正確度を比較</a></li>
       href="https://docs.python.org/ja/3/library/functions.html">リファレンス</a>
       で確認してください。</p>
       <h2 data-number="3.1" id="とても重要なこと"><span class="header-section-number">3.1</span>
-      とても重要なこと<i class="fa-solid fa-triangle-exclamation"></i></h2>
+      とても重要なこと🚨</h2>
       <p>「教わったこと」を<strong>教わった範囲で無条件に受け入れて終わるのではなく</strong> <span
       class="masked">好奇心や興味関心を持って、発展的に「試す」「調べる」「考える」に取り組めるように</span>
       なってください。
@@ -388,9 +427,18 @@ i=4, i+5=9, sqrt4=2.00
 i=4</code></pre>
       <p>ループを抜けた後も、<strong>第08行目</strong> のように <span class="masked">変数
       <code>i</code> が参照 (読み取り) できること</span> に注意してください。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>Python における「ループ変数」とはなんですか？ たとえば <code>for i in range(5):</code> の
+      <code>i</code>
+      のように使われているもので、何のために存在しているか、どんな値になるのかがまったく分かりません。</p>
+      </blockquote>
+      <blockquote>
+      <p>Pythonの <code>range(5)</code> が <code>0,1,2,3,4</code> になって、<code>5</code>
+      を含まない理由を、初心者向けに説明してください。「ゼロオリジン」と「最後の値を含まない」という2つの観点を使ってください。</p>
+      </blockquote>
       <h3 data-number="4.1.1" id="演習2-目標時間-5分"><span
-      class="header-section-number">4.1.1</span> 演習2 (<i class="fa-solid fa-stopwatch"></i>
-      目標時間: 5分)</h3>
+      class="header-section-number">4.1.1</span> 📝演習2 (⌛目標時間: 5分)</h3>
       <p>次のような標準出力を得たいとします。</p>
       <pre><code>X座標 : -4
 X座標 : -3
@@ -425,9 +473,8 @@ X座標 :  4</code></pre>
 <span id="cb11-3"><a href="#cb11-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>n,n<span class="op">+</span><span class="dv">1</span>): <span class="co"># ◀ ここがポイント</span></span>
 <span id="cb11-4"><a href="#cb11-4"></a>  <span class="bu">print</span>(<span class="ss">f&#39;X座標 : </span><span class="sc">{</span>i<span class="sc">:&gt;2}</span><span class="ss">&#39;</span>)</span></code></pre></div>
       <h3 data-number="4.1.2" id="演習3-目標時間-9分"><span
-      class="header-section-number">4.1.2</span> 演習3 (<i class="fa-solid fa-stopwatch"></i>
-      目標時間: 9分)</h3>
-      <p>非負の整数値を格納する変数 <code>n</code> の値が <span class="math inline">\(N\)</span>
+      class="header-section-number">4.1.2</span> 📝演習3 (⌛目標時間: 9分)</h3>
+      <p>正の整数値を格納する変数 <code>n</code> の値が <span class="math inline">\(N\)</span>
       のとき、<span class="math inline">\(-N\)</span>、<span
       class="math inline">\(-N+1\)</span>、<span class="math inline">\(\cdots\)</span>、<span
       class="math inline">\(0\)</span>、<span class="math inline">\(\cdots\)</span>、<span
@@ -478,8 +525,8 @@ X座標 :  4</code></pre>
       </div>
       <h3 data-number="4.2.1" id="フォーム機能を使用して整形"><span
       class="header-section-number">4.2.1</span> フォーム機能を使用して整形</h3>
-      <p>上記プログラムを <strong>Colab.のフォーム機能</strong>
-      を使って整形・装飾したプログラム例を示します。Colab.ノートブックに貼り付けて実行してみてください。</p>
+      <p>上記プログラムを <strong>GoogleColabのフォーム機能</strong>
+      を使って整形・装飾したプログラム例を示します。実際にノートブックに貼り付けて実行してみてください。</p>
       <div class="sourceCode" id="cb17"
       data-caption="第n項までの等差数列を出力するプログラム(フォーム利用).py"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
@@ -514,8 +561,7 @@ X座標 :  4</code></pre>
       <p>等差数列と同様に、数学の教科書に記載されている式を利用する場合は「<strong>0オリジン</strong>」と「<strong>1オリジン</strong>」の違いに注意してください。以下は「微分積分1」の教科書に記載されている式です。</p>
       <p><span class="math display">\[ a_{n} = a \cdot r^{(n-1)} \]</span></p>
       <h3 data-number="4.3.1" id="演習4-目標時間-6分"><span
-      class="header-section-number">4.3.1</span> 演習4 (<i class="fa-solid fa-stopwatch"></i>
-      目標時間: 6分)</h3>
+      class="header-section-number">4.3.1</span> 📝演習4 (⌛目標時間: 6分)</h3>
       <p>上記の<strong>等比数列生成プログラム</strong>を <strong>Colabのフォーム機能</strong>
       を使って整形・装飾したプログラムに変更してください
       (先に例として示した「等差数列」のフォーム対応プログラムをベースに作成してください)。また、その動作を確認してください。</p>
@@ -535,9 +581,23 @@ X座標 :  4</code></pre>
       class="masked"><code>S += i**2</code></span> のように省略表記できます。</p>
       <p>なお <code>S =+ i**2</code> では意図した動作をしないので注意してください。<code>+=</code>
       のような演算子を「<strong>累算代入演算子</strong>」といいます。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>等差数列と等比数列をPythonの <code>for</code> 文で出力するとき、なぜ数学の公式の
+      <code>n</code> と、Pythonのループ変数 <code>i</code>
+      をそのまま同じ意味で扱えないのか説明してください。0オリジンと1オリジンの違いに注目してください。</p>
+      </blockquote>
+      <blockquote>
+      <p><code>S = S + i**2</code> と <code>S += i**2</code>
+      は同じ意味だと聞きました。初心者向けに、ループの各回で <code>S</code>
+      がどう変化するかを表で説明してください。</p>
+      </blockquote>
+      <blockquote>
+      <p><code>S =+ i**2</code>
+      と書いてしまったとき、Pythonはどのように解釈しますか。エラーにならないのに結果が間違う理由を説明してください。</p>
+      </blockquote>
       <h3 data-number="4.4.1" id="演習5-目標時間-8分"><span
-      class="header-section-number">4.4.1</span> 演習5 (<i class="fa-solid fa-stopwatch"></i>
-      目標時間: 8分)</h3>
+      class="header-section-number">4.4.1</span> 📝演習5 (⌛目標時間: 8分)</h3>
       <p>あるスマホゲームのガチャにおいて「<strong>URアイテム</strong>」の提供割合（排出率）は <span
       class="math inline">\(0.25\%\)</span> となっています。</p>
       <p><span class="math inline">\(300\)</span>
@@ -654,8 +714,7 @@ X座標 :  4</code></pre>
       <p>ColabTurtleの詳細は、<a href="https://github.com/tolgaatam/ColabTurtle">こちら</a>
       を参照してください。</p>
       <h3 data-number="5.1.1" id="演習6-目標時間-8分"><span
-      class="header-section-number">5.1.1</span> 演習6 (<i class="fa-solid fa-stopwatch"></i>
-      目標時間: 8分)</h3>
+      class="header-section-number">5.1.1</span> 📝演習6 (⌛目標時間: 8分)</h3>
       <p>上記の <code>ドットマトリックスの描画.py</code>
       を書き換えて、次のようなドットマトリクスを描画してください。明るい赤は
       <code>t.color(255,0,0)</code> で、暗い赤は <code>t.color(100,0,0)</code>
@@ -693,7 +752,7 @@ X座標 :  4</code></pre>
 <span id="cb25-10"><a href="#cb25-10"></a>t.initializeTurtle(initial_speed<span class="op">=</span><span class="dv">13</span>,initial_window_size<span class="op">=</span>(cx<span class="op">*</span><span class="dv">2</span>,cy<span class="op">*</span><span class="dv">2</span>))</span>
 <span id="cb25-11"><a href="#cb25-11"></a>t.shape(<span class="st">&#39;circle&#39;</span>)<span class="op">;</span>t.hideturtle()<span class="op">;</span>t.bgcolor(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
 <span id="cb25-12"><a href="#cb25-12"></a></span>
-<span id="cb25-13"><a href="#cb25-13"></a><span class="co"># N角形の外角を計算しておく</span></span>
+<span id="cb25-13"><a href="#cb25-13"></a><span class="co"># N角形の内角を計算しておく</span></span>
 <span id="cb25-14"><a href="#cb25-14"></a>deg <span class="op">=</span> <span class="dv">180</span><span class="op">-</span><span class="dv">360</span><span class="op">/</span>n</span>
 <span id="cb25-15"><a href="#cb25-15"></a>rad <span class="op">=</span> math.radians(deg)</span>
 <span id="cb25-16"><a href="#cb25-16"></a></span>
@@ -822,224 +881,15 @@ X座標 :  4</code></pre>
       回の実行についての <strong>平均実行時間</strong> が <span
       class="math inline">\(208(\mathrm{ns})\)</span> で、その<strong>標準偏差</strong> が <span
       class="math inline">\(9.64(\mathrm{ns})\)</span> であった、という意味になります。</p>
-      <!-- ## 標準入力からの書式付き入力の対応
-
-      詳しいことは後日解説しますが、標準入力からスペース区切りの文字を受け取って、内部で数値として扱いたい場合は、次のコードで処理することができます。
-
-      ```python{.numberLines}
-      %reset -f
-      s = input() # スペース区切りで数値入力「12.5 -37.5 0.71」
-      a, b, c = map(float, s.split())
-
-      print(a)
-      print(b)
-      print(c)
-      ``` -->
-      <!-- ## 課題 (宿題)
-
-      GoogleClassroomに提示したリンクからTechFULのセッション「**PG1-課題03**」に参加し、問題に取り組んでください。
-
-      - 前期中間試験に**相当する課題**です。標準的な試験勉強時間(6時間程度) + 試験実施時間 (1時間) をあわせた**約7時間をかけて取り組むことを想定した難易度**に設定しています。
-        - 一部の問題については、次回の授業 (6月5日) でヒントを提示します。
-
-      - **評価**：標準 (＝指示した最低限のことができている) を7.5点として、10点満点で評価します。
-        - 0点～7.5点の範囲は絶対評価で点数をつけます。
-        - 7.5点～10点の範囲は相対評価で点数をつけます。
-
-
-      ## 準備
-
-      - [TechFUL](https://techful-programming.com/) にログインしておいてください。
-      - [GoogleColab.](https://colab.research.google.com/?hl=ja) にログインしておいてください。
-        - 「**0605_繰返し構文.ipynb**」という名前でノートブックを作成しておいてください (今回、ノートブックの提出は**ありません**)。
-
-      ## PG1-課題02の解答例①
-
-      Google Colab. ノートブックにあわせて最小限の修正を加えています (`%reset -f`の追加など)。
-
-      ### 自キャラを基準とした敵キャラの距離と方向の計算
-
-      ```python{.numberLines}
-      %reset -f
-      import math
-      # x1 = float(input()); y1 = float(input())
-      # x2 = float(input()); y2 = float(input())
-      x1, y1 = 2.3,   2
-      x2, y2 = -1 , 4.5
-      d = ((x1-x2)**2+(y1-y2)**2)**0.5 # 距離計算（三平方の定理）
-      r = math.degrees( math.atan2((x2-x1),(y2-y1)) ) # 角度計算
-      print(f'{d:.2f}')
-      print(f'{r:.1f}')
-      ```
-
-      **べき乗の計算**には `**` 演算子を使用します。また $\sqrt{x}$ は、1年次の「**基礎数学**」で学んだように「 $\sqrt{x}=x^{\frac{1}{2}}=x^{0.5}$ 」であるため `x**0.5` (または`x**(1/2)`) で計算できます。
-
-      なお `**` 演算子の使用を**推奨**しますが、別の方法として `import math` をしたうえで `math.sqrt(x)` で**平方根**を計算したり、`math.pow(x,5)` のように**べき乗**を計算したりできます。
-
-      :::{.note .type-tips}
-      **\*\*演算子の優先順位**
-
-      `**` 演算子の**優先順位**に注意してください。**確信を持てない場合は、その都度確認するか、括弧をつけて使用してください**。
-
-      ```python{.numberLines}
-      a1 = 2**2*3   # -> (2**2)*3 -> 12
-      a2 = 2**(2*3) # -> 64
-      b1 = 2**1/2   # -> (2**1)/2 -> 1
-      b2 = 2**(1/2) # -> 1.41..
-      ```
-
-      **確認**: 各変数に格納される値はどのようになるか。予想して確認せよ (一般に、このようなケースでは括弧を明示するべきである)。
-
-      ```python{.numberLines}
-      c1 = 5*2**2
-      c2 = 4/2**2
-      ```
-
-      :::
-
-      :::{.note .type-senior}
-      **中級者向け:自力で平方根を求める**
-
-      `**` 演算子や、mathモジュール (ライブラリ) を使わなくとも平方根を計算できます。以下に「**ニュートン法**」という手法により、繰返し計算から平方根を求める方法を示します。もちろん***非推奨***です。
-
-      ```python{.numberLines}
-      %reset -f
-      import math
-      n = 10 # 10の平方根を求める
-
-      # 繰返し処理で平方根を計算する
-      sqrt_n = n / 2
-      for i in range(4): # 繰返し計算
-        q = (sqrt_n + n / sqrt_n) / 2.0
-        sqrt_n = q
-
-      print(f'sqrt({n})= {sqrt_n:.20f} ライブラリを未使用')
-      print(f'sqrt({n})= {math.sqrt(n):.20f} ライブラリを使用')
-      print(f'sqrt({n})= {n**0.5:.20f} **演算子を使用')
-      ```
-
-      プログラムの実行結果は次のようになります。
-
-      ```
-      sqrt(10)= 3.16227766044413627355 ライブラリを未使用
-      sqrt(10)= 3.16227766016837952279 ライブラリを使用
-      sqrt(10)= 3.16227766016837952279 **演算子を使用
-      ```
-
-      `**` 演算子やmathライブラリを使った場合と結果を比較してください。
-
-      ::: -->
-      <!-- ## PG1-課題02の解答例②
-
-      Google Colab. ノートブックで動作するように最小限の修正を加えています。
-
-      ### 直線移動する自キャラのn秒後位置の計算
-
-      ```python{.numberLines}
-      %reset -f
-      x1 = float(input()); y1 = float(input())
-      x2 = float(input()); y2 = float(input())
-      t = float(input())
-      # x1, y1 = 6.25, 10.75
-      # x2, y2 = 42.19, -30
-      # t = 15
-      vx = x2-x1; vy = y2-y1 # 自キャラ→目的地のベクトルのX成分とY成分
-      dis = (vx**2+vy**2)**0.5  # 2点間の距離（ベクトルの大きさ）
-      ux = vx/dis; uy = vy/dis  # 単位ベクトル
-
-      # t秒後の位置は、現在位置 + t秒間に進む距離
-      ptx = x1 + ux*t
-      pty = y1 + uy*t
-      print(f'({x1+ux*t:.2f},{y1+uy*t:.2f})')
-      ```
-
-      「**ベクトル・行列**」の授業で習っているように、単位ベクトルとは「**大きさが1のベクトル**」です。10行目のように、ベクトルを「ベクトルの**大きさ**」で割ることで、「単位ベクトル」を求めることができます。
-
-      問題設定では「移動速度は $1$単位距離/秒 とする」としているので、$1$ 秒後には現在地点に「単位ベクトル」を加えた地点に移動します。そして、13行目・14行目のように、$t$ 秒後には<span class="masked">現在地点に「単位ベクトルを $t$ 倍したベクトル」加えた</span> 地点に移動します。
-
-      ### 三角関数を利用して単位ベクトルを計算する方法
-
-      `math.atan2()` と `math.sin()`、`math.cos()` を使って「単位ベクトル」を求めることもできます。
-
-      ```python{.numberLines}
-      %reset -f
-      import math
-      x1, y1 = 6.25, 10.75
-      x2, y2 = 42.19, -30
-      vx = x2-x1; vy = y2-y1
-      theta = math.atan2(vy,vx)
-      ux = math.cos(theta)
-      uy = math.sin(theta)
-      print(f'単位ベクトル ({ux:.2f},{uy:.2f})')
-      ```
-
-      実際に実行して <span class="masked">ベクトルを大きさで除して求めた場合と結果が一致すること</span> を確認してください。
-
-      ## 複数の文を1行に記述
-
-      通常、Pythonでは **1行に1文を記述** しますが、C/C++言語やJavaScriptのように、***セミコロン*** (`;`) で区切れば **1行に複数の文を記述** できます。XとYのようにペアになっているようなものは <span class="masked">1行にまとめて書いたほうが分かりやすい場合</span> もあります。必要に応じて使用してください。
-
-      例えば、次の2つのプログラムは **実質的に同じプログラム** になります。
-
-      ```python{.numberLines}
-      x = input()
-      y = input()
-      z = input()
-      ```
-
-      ```python{.numberLines}
-      x = input(); y = input(); z = input()
-      ```
-
-      ## アンパック (多重代入・展開)
-
-      上に示したものと ***似て非なるもの*** に「**アンパック** (多重代入や展開とも呼ばれます) 」があります。
-
-      これには、セミコロンではなく、**カンマ** `,` を使用します。アンパックは、この先の授業で登場する ***リスト*** や ***タプル*** に**深く関連した機能**となります。詳細については、以降の授業で解説します。
-
-      例えば、次の2つのプログラムは、実質的に同じプログラムになります。
-
-      ```python{.numberLines}
-      x = 10
-      y = 20
-      z = 30
-      ```
-
-      ```python{.numberLines}
-      x, y, z = 10, 20, 30
-      ```
-
-      セミコロンを使って1行に複数の文を記述することは可読性を損なわない限りは**どんな場面でも使用できます**。一方で、<span class="masked">アンパックは 変数に値を代入 (バインド) するケースでしか利用できません (使用するべきではありません)</span>。 -->
-      <!-- ## PG1-課題03のヒント 
-
-      いずれの問題も、まずは **紙上に図を描いて考えること** が何よりも大事です。この作業もしないまま「できない」「分からない」と投げ出したり、悲観したりするのは、非常に愚かです。
-
-      また、出題ページの末尾に記載される **補足とヒント** にも、必ず目を通してください。
-
-
-      ### その点はXY平面の第何象限に存在するのか
-
-      負数に対して `%` 演算子を使用する場合に注意してください。
-
-      ```python{.numberLines}
-      %reset -f
-      print(  10%3    ) # ->  1
-      print(  10%(-3) ) # -> -2
-      print( -10%3    ) # ->  1
-      print( -10%(-3) ) # -> -2
-      ```
-
-      ### バツ印の描画のための座標計算
-
-      バツ印は、1本目の直接の**中点**で、2本目の直線と交差します。よって **中点を通って1本目の直線と垂直な線** を描くことでバツ印が描けます。
-
-      あるベクトルと**直交するベクトルの求め方**は、数学の教科書やウェブを参照すればすぐに見つけることができます。
-
-      - https://www.try-it.jp/chapters-5458/sections-5459/lessons-5520/
-
-      もしくは、次のような幾何学的な性質に着目して解くこともできます。<span class="masked">緑の実線と破線の長さが同じであること、オレンジの実線と破線の長さが同じであることを利用します</span>。
-
-      ![hint1](figs/07/hint1.png) -->
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>GoogleColabの <code>%%timeit</code> の出力にある
+      <code>mean</code>、<code>std. dev.</code>、<code>loops each</code>
+      の意味を説明してください。実行結果の数字を読んで、どちらのコードがどのくらい速いのかを判断する練習問題も作ってください。</p>
+      </blockquote>
+      <blockquote>
+      <p>速いコードと読みやすいコードのどちらを優先すべきか迷っています。今回の等比数列の例を使って、初学者が意識すべき判断基準を説明してください。</p>
+      </blockquote>
       <!-- ---------------------------------------- -->
     </main>
 
