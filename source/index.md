@@ -18,8 +18,12 @@ var:
 - 第06回講義 05月25日 (月)&ensp;[資料](lecture06.html)&ensp; ***小テスト2*** ***課題03***&ensp; <font size="-1">総合演習</font>
 - 第07回講義 06月01日 (月)&ensp;[資料](lecture07.html)&ensp; <font size="-1">繰り返し構文 (ループ変数), 数学計算</font>
 - 📝中間試験📝
-- 第08回講義 06月15日 (月)
+- 第08回講義 06月15日 (月)&ensp;[資料](lecture08.html)&ensp; <font size="-1">リスト</font>
+- 第09回講義 06月22日 (月) ***小テスト3*** <font size="-1">ローカル開発環境構築</font>
 
+---
+
+- 補講 (オンデマンド) 7月25日 (土) &ensp;[資料](additional01.html)&ensp;
 
 ## 参考資料
 
