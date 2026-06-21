@@ -19,7 +19,7 @@ var:
 - 第07回講義 06月01日 (月)&ensp;[資料](lecture07.html)&ensp; <font size="-1">繰り返し構文 (ループ変数), 数学計算</font>
 - 📝中間試験📝
 - 第08回講義 06月15日 (月)&ensp;[資料](lecture08.html)&ensp; <font size="-1">リスト</font>
-- 第09回講義 06月22日 (月) ***小テスト3*** <font size="-1">ローカル開発環境構築</font>
+- 第09回講義 06月22日 (月)&ensp;[資料](lecture09.html)&ensp; ***小テスト3*** <font size="-1">ローカル開発環境構築</font>
 
 ---
 
