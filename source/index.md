@@ -20,6 +20,8 @@ var:
 - 📝中間試験📝
 - 第08回講義 06月15日 (月)&ensp;[資料](lecture08.html)&ensp; <font size="-1">リスト</font>
 - 第09回講義 06月22日 (月)&ensp;[資料](lecture09.html)&ensp; ***小テスト3*** <font size="-1">ローカル開発環境構築</font>
+- 第10回講義 06月29日 (月)&ensp;[資料](lecture10.html)&ensp; <font size="-1">リストと繰返し</font>
+
 
 ---
 
