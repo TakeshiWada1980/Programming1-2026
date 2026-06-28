@@ -185,7 +185,7 @@ class="toc-section-number">11</span> 第08回講義の「演習7」の解答例<
       <li>Google Colab で Python プログラムを実行する場合、プログラムは自分のPC上ではなく、Google
       のクラウドサーバ上で実行される。一方、<a
       href="lecture09.html#ノートブックの新規作成と実行">前回講義</a> で解説した方法で構築した
-      Jupyter 環境は、プログラムは自分のPC上で実行される。この説明は「適切」か「不適切」か答えよ。
+      Jupyter 環境では、プログラムは自分のPC上で実行される。この説明は「適切」か「不適切」か答えよ。
       <ul>
       <li><strong>答え</strong>: <span class="masked">適切⭕</span></li>
       <li><strong>解説</strong>: <span
@@ -199,9 +199,9 @@ class="toc-section-number">11</span> 第08回講義の「演習7」の解答例<
       となる。この説明は「適切」か「不適切」か答えよ。
       <ul>
       <li><strong>答え</strong>: <span class="masked">適切⭕</span></li>
-      <li><strong>解説</strong>: <span
-      class="masked">マジックコマンドはノートブック環境（<code>.ipynb</code>）固有の機能であり、通常の
-      <code>.py</code> ファイルには記述できない。<code>.py</code> ファイルに <code>%reset -f</code>
+      <li><strong>解説</strong>: <span class="masked">マジックコマンドは IPython
+      カーネルを使うノートブック環境固有の機能であり、通常の <code>.py</code>
+      ファイルには記述できない。<code>.py</code> ファイルに <code>%reset -f</code>
       を書いて実行すると SyntaxError になる。</span></li>
       </ul></li>
       <li>Python のインストール時に「Add python.exe to
@@ -318,6 +318,12 @@ class="toc-section-number">11</span> 第08回講義の「演習7」の解答例<
       してください。</p>
       <pre><code>PS C:\***\PG1-10 &gt; python -m venv .venv
 PS C:\***\PG1-10 &gt; .venv/Scripts/Activate.ps1</code></pre>
+      <p>上記のコマンドを実行すると、ターミナルのプロンプトの先頭に <code>(.venv)</code>
+      と表示されます。これが表示されていれば、仮想環境が<strong>正しく有効化されている</strong>サインです。</p>
+      <figure>
+      <img src="figs/09/vs-code-20.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
       <div class="note type-tips">
       <p><strong>注意</strong></p>
       <p><code>python -m venv .venv</code>
@@ -401,7 +407,7 @@ pip     26.1.2</code></pre>
       (<code>Ctrl</code>+<code>Enter</code>を押下)
       して、適切な出力が得られることを確認してください。</p>
       <ul>
-      <li>ノートブックの初回実行には、いくつかの手順が必要です。詳しくは<a
+      <li><u>ノートブックの初回実行には、いくつかの手順が必要です</u>。詳しくは<a
       href="lecture09.html#ノートブックの新規作成と実行">第09回講義ノート</a>
       を参照してください。</li>
       </ul>
@@ -595,7 +601,7 @@ Successfully installed pip-26.1.2</code></pre>
       <pre><code>matplotlib                3.11.0
 matplotlib-inline         0.2.2
 nbformat                  5.10.4</code></pre>
-      <p>上記より、<code>matplotlib</code> のバージョン 3.10.3
+      <p>上記より、<code>matplotlib</code> のバージョン 3.11.0
       が仮想環境にインストールされたことが分かります。</p>
       <p><strong>(プロンプト例)</strong></p>
       <blockquote>
@@ -744,7 +750,7 @@ nbformat                  5.10.4</code></pre>
       <p>上記では <code>range</code> の引数により、ループ変数の「<strong>範囲</strong>
       (開始値・終了値) 」や <span class="masked">「刻み幅」</span>
       を（ある程度までは）操作できること学びました。しかし、<code>range</code>
-      では「<strong>整数値</strong>」しか扱うことができず、小数値をループ変数したい場合
+      では「<strong>整数値</strong>」しか扱うことができず、小数値をループ変数として使いたい場合
       (特に「<strong>物理シミュレーション</strong>」などの要求)
       は、次のようにブロック内で別の変数を用意する必要があります。</p>
       <p>次のプログラムを実際に実行して結果を確認してください。</p>
@@ -1003,7 +1009,7 @@ nbformat                  5.10.4</code></pre>
       <code>%%timeit</code> で計測してみます。</p>
       <p><code>%%timeit</code> は <a href="lecture07.html#計算時間を比較">第07回講義</a>
       のなかでも紹介していますが、<span class="masked">セル単位の実行時間を計測するマジックコマンド
-      (Colab.環境専用) です</span>。なお、<code>%%timeit</code> のセルのなかでは
+      (Colab 環境専用) です</span>。なお、<code>%%timeit</code> のセルのなかでは
       <code>%reset -f</code> や <code>print</code> は使わないようにしてください。</p>
       <p>次の3つの処理の処理時間を比較します。Colab.環境で上記の各プログラムを実行して、その実行時間を比較してみてください。</p>
       <ol type="1">
@@ -1070,8 +1076,8 @@ nbformat                  5.10.4</code></pre>
 <span id="cb39-4"><a href="#cb39-4"></a><span class="bu">print</span>(arr)</span></code></pre></div>
       <p>上記のプログラムでは、取り除きたい要素 <code>'C'</code> のインデックスを <code>2</code>
       のように数値で直接的に指定しました。しかし、実際にはそのようなケースは少なく、前々回で学習した
-      <code>index</code> メソッドと組み合わせて利用します( <code>index</code>
-      は指定の要素が「リストの何番目に存在するかを調べるメソッドでした)。</p>
+      <code>index</code> メソッドと組み合わせて利用します（<code>index</code>
+      は指定の要素が「リストの何番目に存在するか」を調べるメソッドでした）。</p>
       <p>つまり、次のように利用します。</p>
       <div class="sourceCode" id="cb40"
       data-caption="特定の値を持ったインデックスを検索して削除 (1)"><pre
