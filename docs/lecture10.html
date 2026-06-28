@@ -112,13 +112,12 @@ class="toc-section-number">9.1</span> remove による要素の削除</a></li>
 class="toc-section-number">9.2</span> 演習6 (⌛目標時間: 10分)</a></li>
 </ul></li>
 <li><a href="#宿題" id="toc-宿題"><span class="toc-section-number">10</span> 宿題</a></li>
-<li><a href="#課題04の解答例" id="toc-課題04の解答例"><span class="toc-section-number">11</span>
-課題04の解答例</a>
+<li><a href="#第08回講義の演習7の解答例" id="toc-第08回講義の演習7の解答例"><span
+class="toc-section-number">11</span> 第08回講義の「演習7」の解答例</a>
 <ul>
-<li><a href="#問題" id="toc-問題"><span class="toc-section-number">11.1</span> 問題</a></li>
-<li><a href="#解答例①" id="toc-解答例①"><span class="toc-section-number">11.2</span>
+<li><a href="#解答例①" id="toc-解答例①"><span class="toc-section-number">11.1</span>
 解答例①</a></li>
-<li><a href="#解答例②" id="toc-解答例②"><span class="toc-section-number">11.3</span>
+<li><a href="#解答例②" id="toc-解答例②"><span class="toc-section-number">11.2</span>
 解答例②</a></li>
 </ul></li>
 </ul> 
@@ -166,7 +165,8 @@ class="toc-section-number">9.2</span> 演習6 (⌛目標時間: 10分)</a></li>
       Notebook ともに共通している。</span></li>
       </ul></li>
       <li>Google Colab で作成したノートブックは、Jupyter Notebook と同じ <code>.ipynb</code>
-      形式で扱えるため、エクスポートして Jupyter Notebook 環境で開くことができる。
+      形式で扱えるため、エクスポートして Jupyter Notebook
+      環境で開くことができる。この説明は「適切」か「不適切」か答えよ。
       <ul>
       <li><strong>答え</strong>: <span class="masked">適切⭕</span></li>
       <li><strong>解説</strong>: <span class="masked">Colab のノートブックは <code>.ipynb</code>
@@ -174,7 +174,8 @@ class="toc-section-number">9.2</span> 演習6 (⌛目標時間: 10分)</a></li>
       固有のマジックコマンドや環境依存の処理は動作しない場合がある。</span></li>
       </ul></li>
       <li>Jupyter Notebook で作成したノートブックは、Google Colab と同じ <code>.ipynb</code>
-      形式で扱えるため、Google Colab にアップロードして開くことができる。
+      形式で扱えるため、Google Colab
+      にアップロードして開くことができる。この説明は「適切」か「不適切」か答えよ。
       <ul>
       <li><strong>答え</strong>: <span class="masked">適切⭕</span></li>
       <li><strong>解説</strong>: <span class="masked">上記と同様に、.ipynb
@@ -184,7 +185,7 @@ class="toc-section-number">9.2</span> 演習6 (⌛目標時間: 10分)</a></li>
       <li>Google Colab で Python プログラムを実行する場合、プログラムは自分のPC上ではなく、Google
       のクラウドサーバ上で実行される。一方、<a
       href="lecture09.html#ノートブックの新規作成と実行">前回講義</a> で解説した方法で構築した
-      Jupyter 環境は、プログラムは自分のPC上で実行される。
+      Jupyter 環境は、プログラムは自分のPC上で実行される。この説明は「適切」か「不適切」か答えよ。
       <ul>
       <li><strong>答え</strong>: <span class="masked">適切⭕</span></li>
       <li><strong>解説</strong>: <span
@@ -194,7 +195,8 @@ class="toc-section-number">9.2</span> 演習6 (⌛目標時間: 10分)</a></li>
       </ul></li>
       <li>Google Colab や Jupyter Notebook のノートブックでは <code>%reset -f</code> のような
       <code>%</code> で始まるマジックコマンドを使うことができるが、通常の Python プログラム (
-      <code>.py</code> ファイル) ではマジックコマンドは使用できず、SyntaxError となる。
+      <code>.py</code> ファイル) ではマジックコマンドは使用できず、SyntaxError
+      となる。この説明は「適切」か「不適切」か答えよ。
       <ul>
       <li><strong>答え</strong>: <span class="masked">適切⭕</span></li>
       <li><strong>解説</strong>: <span
@@ -204,20 +206,22 @@ class="toc-section-number">9.2</span> 演習6 (⌛目標時間: 10分)</a></li>
       </ul></li>
       <li>Python のインストール時に「Add python.exe to
       PATH」のオプションにチェックを入れることで、ターミナル上でフルパスを指定せずに
-      <code>python</code> とコマンド名だけ打てば Python を実行できるようになる。
+      <code>python</code> とコマンド名だけ打てば Python
+      を実行できるようになる。この説明は「適切」か「不適切」か答えよ。
       <ul>
       <li><strong>答え</strong>: <span class="masked">適切⭕</span></li>
       <li><strong>解説</strong>: <span class="masked">環境変数 PATH に Python
       のインストール先フォルダを登録することで、ファイルの場所を指定しなくてもコマンド名だけで実行できるようになる。これを「パスを通す」という。</span></li>
       </ul></li>
       <li>Python
-      の各プロジェクトで仮想環境を作成せず、グローバル環境に直接ライブラリをインストールして作業することが推奨される。
+      の各プロジェクトで仮想環境を作成せず、グローバル環境に直接ライブラリをインストールして作業することが推奨される。この説明は「適切」か「不適切」か答えよ。
       <ul>
       <li><strong>答え</strong>: <span class="masked">不適切</span></li>
       <li><strong>解説</strong>: <span
       class="masked">グローバル環境に複数プロジェクト分のライブラリをインストールしていくと、バージョンの競合が起きやすくなる。プロジェクトごとに仮想環境を作成し、そこにインストールするのが推奨される。</span></li>
       </ul></li>
-      <li>Python の仮想環境を OneDrive で同期しているフォルダの配下に作成しても、特に問題はない。
+      <li>Python の仮想環境を OneDrive
+      で同期しているフォルダの配下に作成しても、特に問題はない。この説明は「適切」か「不適切」か答えよ。
       <ul>
       <li><strong>答え</strong>: <span class="masked">不適切</span></li>
       <li><strong>解説</strong>: <span
@@ -690,6 +694,51 @@ nbformat                  5.10.4</code></pre>
       <li><code>range(5,20,-1)</code> また <code>range(5,20,-2)</code>
       として実行し、<strong>第3引数の値がどのような意味を持つか</strong>を考察し、その考察が正しいものかコードを実行して検証してください。</li>
       </ul>
+      <h3 data-number="5.4.1" id="定着確認-1"><span class="header-section-number">5.4.1</span>
+      定着確認</h3>
+      <ul>
+      <li><code>range(5)</code> を使った <code>for</code> ループでは、ループ変数には <code>1</code>
+      から <code>5</code> までの整数が順次格納される。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span class="masked"><code>range(5)</code> は <code>0</code> から
+      <code>4</code> までの整数を生成する。引数に <code>n</code> を1つ与えた場合、<code>0</code>
+      から <code>n-1</code> までが範囲となります。</span></li>
+      </ul></li>
+      <li><code>range(3, 8)</code> を使った <code>for</code> ループでは、ループ変数には
+      <code>3, 4, 5, 6, 7</code> の順に値が格納される。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">適切⭕</span></li>
+      <li><strong>解説</strong>: <span class="masked"><code>range(a, b)</code> は第1引数
+      <code>a</code> 以上・第2引数 <code>b</code>
+      未満の整数を生成します。終了値は含まれない点に注意してください。</span></li>
+      </ul></li>
+      <li><code>range(10, 5)</code>
+      のように第1引数が第2引数より大きい場合、エラーが発生する。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span
+      class="masked">エラーにはならないが、生成される整数が1つもないため、ループ本体が一度も実行されません。結果として何も出力されません。</span></li>
+      </ul></li>
+      <li><code>range(0, 10, 3)</code> を使った <code>for</code> ループでは、ループ変数には
+      <code>0, 3, 6, 9</code> の順に値が格納される。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">適切⭕</span></li>
+      <li><strong>解説</strong>: <span class="masked"><code>range</code>
+      の第3引数は「刻み幅（ステップ）」を指定する。<code>range(0, 10, 3)</code> は <code>0</code>
+      から始まり <code>3</code> ずつ増加し、<code>10</code> 未満の値として <code>0, 3, 6, 9</code>
+      を生成します。</span></li>
+      </ul></li>
+      <li><code>range</code> の引数には小数値（例:
+      <code>range(0.5, 9.5)</code>）を使用することができる。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span class="masked"><code>range</code>
+      は整数値しか扱えません。小数値を引数にすると <code>TypeError</code>
+      が発生します。小数のループ変数を使いたい場合は、次のセクションで解説するように整数ループ変数を使って計算で小数に変換するか、<code>numpy</code>
+      の <code>np.arange()</code> を使用します。</span></li>
+      </ul></li>
+      </ul>
       <h1 data-number="6" id="繰返し構文-ループ変数に小数値を使用したい場合"><span
       class="header-section-number">6</span> 繰返し構文 (ループ変数に小数値を使用したい場合)</h1>
       <p>上記では <code>range</code> の引数により、ループ変数の「<strong>範囲</strong>
@@ -714,8 +763,9 @@ nbformat                  5.10.4</code></pre>
 <span id="cb23-4"><a href="#cb23-4"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>t<span class="sc">:.2f}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39; &#39;</span>)</span>
 <span id="cb23-5"><a href="#cb23-5"></a>  <span class="cf">if</span> i<span class="op">%</span><span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span> : <span class="co"># 0.1単位で改行</span></span>
 <span id="cb23-6"><a href="#cb23-6"></a>    <span class="bu">print</span>(<span class="st">&#39;&#39;</span>) <span class="co"># 改行</span></span></code></pre></div>
-      <p>上記では、割り算の <span class="masked">余り</span> を求める <code>%</code>
-      演算子を使用して、一定値に達したときに改行するようにしています。なお、<code>%</code>
+      <p>上記では、割り算の <span class="masked">余り</span> を求める <code>%</code> 演算子
+      (剰余計算演算子)
+      を使用して、一定値に達したときに改行するようにしています。なお、<code>%</code>
       演算子については<a href="lecture03.html#四則演算">第03回講義</a>で学びました。</p>
       <p>プログラミングでは、<span class="masked">使用する変数は必要最低限にすること</span>
       が望ましいです。上記のような要求は <code>numpy</code>
@@ -782,9 +832,10 @@ nbformat                  5.10.4</code></pre>
       による繰返し構文が適しています。</p>
       <p><code>while</code>
       の一例を示します。次のプログラムをコピペして実行し、その後、その実行結果とプログラムを照らし合わせて内容を理解してください
-      (重要なポイントになります、読み飛ばさず、確実に理解してください) 。理解できないところは「<a
-      href="https://www.google.com/search?q=Python+while+初心者向け">Python while
-      初心者向け</a>」などでウェブ検索して解決してください。</p>
+      (重要なポイントになります、読み飛ばさず、確実に理解してください) 。</p>
+      <ul>
+      <li>ある程度考えてみても理解できないところは、「分からないこと」を言語化した上で生成AIなどを活用して解決してみてください。</li>
+      </ul>
       <div class="sourceCode" id="cb27" data-caption="九九の練習プログラム"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="im">import</span> time <span class="co"># 第12行目で time.sleep(3) を使用する準備</span></span>
@@ -825,7 +876,7 @@ nbformat                  5.10.4</code></pre>
       による繰返し構文を利用して、次のような値を出力するプログラムを作成してください。</p>
       <pre><code>5 6 7 8 9 10 11 12 13 14 15 </code></pre>
       <p><strong>ヒント</strong>: 次のプログラムを参考にしてください。</p>
-      <div class="sourceCode" id="cb29"><pre
+      <div class="sourceCode" id="cb29" data-caption="演習4のヒント"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb29-2"><a href="#cb29-2"></a>i <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb29-3"><a href="#cb29-3"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">10</span> :</span>
@@ -877,7 +928,8 @@ nbformat                  5.10.4</code></pre>
       <figcaption aria-hidden="true">img</figcaption>
       </figure>
       <p>これを回避するためには、以下のような例外処理を記述します。これにより、スタックトレースを吐き出すことなく正常終了としてプログラムを停止させることができます。</p>
-      <div class="sourceCode" id="cb31" data-caption="breakを使ったループの離脱"><pre
+      <div class="sourceCode" id="cb31"
+      data-caption="KeyboardInterrupt と break を使ったループの離脱"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb31-2"><a href="#cb31-2"></a><span class="cf">try</span>:</span>
 <span id="cb31-3"><a href="#cb31-3"></a>  <span class="cf">while</span> <span class="va">True</span> :</span>
@@ -886,7 +938,7 @@ nbformat                  5.10.4</code></pre>
 <span id="cb31-6"><a href="#cb31-6"></a><span class="cf">except</span> <span class="pp">KeyboardInterrupt</span>:</span>
 <span id="cb31-7"><a href="#cb31-7"></a>  <span class="bu">print</span>(<span class="st">&#39;プログラムを終了します&#39;</span>)</span>
 <span id="cb31-8"><a href="#cb31-8"></a><span class="bu">print</span>()</span></code></pre></div>
-      <p><strong>(プロンプト例)</strong></p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
       <blockquote>
       <p>プログラミングの文脈で「スタックトレース」とは何ですか？</p>
       </blockquote>
@@ -929,7 +981,7 @@ nbformat                  5.10.4</code></pre>
       <p>自キャラと敵キャラによる「<strong>1対1の自動バトル
       (交互に攻撃して決着がつくまで戦う系)</strong>」を実況するようなプログラムを作成してください。なお、詳細に作りこむとキリがないので、授業中は<strong>15分程度</strong>で次のセクションに移動してください。</p>
       <ul>
-      <li>ここでは <code>while</code> <code>break</code> を使用することを期待しています。</li>
+      <li>ここでは <code>while</code> や <code>break</code> を使用することを期待しています。</li>
       </ul>
       <p><strong>作成例</strong></p>
       <pre><code>勇者ヨシヒコの前に赤色スライムがあらわれた。
@@ -941,19 +993,18 @@ nbformat                  5.10.4</code></pre>
 スライムの攻撃、勇者ヨシヒコに・・・</code></pre>
       <h1 data-number="8" id="リスト操作の負荷量の比較"><span class="header-section-number">8</span>
       リスト操作の負荷量の比較</h1>
-      <p><a
-      href="lecture08.html#リストにおける要素の書き換えと追加">前々回の講義</a>ではリストを<strong>初期化する方法</strong>
-      (例えば <code>[0]*10</code> など) や、リストに<strong>要素を追加する方法</strong> (例えば
-      <code>append</code> や <code>insert</code> メソッドなど) を学習しました。</p>
+      <p><a href="lecture08.html#リストにおける要素の書き換えと追加">前々回の講義</a>
+      ではリストを<strong>初期化する方法</strong> (例えば <code>[0]*10</code> など)
+      や、リストに<strong>要素を追加する方法</strong> (例えば <code>append</code> や
+      <code>insert</code> メソッドなど) を学習しました。</p>
       <p>基本的に、リストに順次要素を追加する方法は、いわゆる「<strong>重たい処理</strong>」となります。あらかじめリストの長さが決まっているケースでは、その長さのリストを作成しておき、そこに値を書き込んでいくほうが高速かつ効率的な処理となります。</p>
       <p>例として、長さが「1000」で、その要素として先頭から 0、1、2、…、999
       という数値が格納されるリストを生成すること考えます。この処理を次の3つの方法で実行して、それに要する時間を
       <code>%%timeit</code> で計測してみます。</p>
-      <p><code>%%timeit</code> は<a
-      href="lecture07.html#計算時間を比較">第07回講義</a>でも紹介していますが、<span
-      class="masked">セル単位の実行時間を計測するマジックコマンド (Colab.環境専用)
-      です</span>。なお、<code>%%timeit</code> のセルのなかでは <code>%reset -f</code> や
-      <code>print</code> は使わないようにしてください。</p>
+      <p><code>%%timeit</code> は <a href="lecture07.html#計算時間を比較">第07回講義</a>
+      のなかでも紹介していますが、<span class="masked">セル単位の実行時間を計測するマジックコマンド
+      (Colab.環境専用) です</span>。なお、<code>%%timeit</code> のセルのなかでは
+      <code>%reset -f</code> や <code>print</code> は使わないようにしてください。</p>
       <p>次の3つの処理の処理時間を比較します。Colab.環境で上記の各プログラムを実行して、その実行時間を比較してみてください。</p>
       <ol type="1">
       <li>初期値が 0 で、要素数 1000 のリストを作成する (<code>arr=[0]*1000</code>)
@@ -1188,92 +1239,52 @@ nbformat                  5.10.4</code></pre>
 <span id="cb48-43"><a href="#cb48-43"></a>ax.set_aspect(<span class="st">&#39;equal&#39;</span>, adjustable<span class="op">=</span><span class="st">&#39;box&#39;</span>)</span>
 <span id="cb48-44"><a href="#cb48-44"></a>ax.set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
 <span id="cb48-45"><a href="#cb48-45"></a>plt.show()</span></code></pre></div>
-      <h1 data-number="11" id="課題04の解答例"><span class="header-section-number">11</span>
-      課題04の解答例</h1>
-      <h2 data-number="11.1" id="問題"><span class="header-section-number">11.1</span> 問題</h2>
-      <p>FC版DQ3 (<a
-      href="https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88III_%E3%81%9D%E3%81%97%E3%81%A6%E4%BC%9D%E8%AA%AC%E3%81%B8%E2%80%A6">ファミコン版のドラゴンクエスト3</a>)
-      の武器を扱った「<strong>100連ガチャ</strong>」のシミュレータを作成したい。ガチャにより排出される武器は
-      <code>item_names_str</code>
-      でカンマ区切りで与えられる<strong>全33種</strong>の武器である。また、その排出比は
-      <code>item_p_str</code> でカンマ区切りで与えた数値となっている。</p>
-      <p>ここでの排出比とは・・・例えば「ひのきのぼう」「こんぼう」「どうのつるぎ」の全３種を仮定し、その排出比が「<span
-      class="math inline">\(10\)</span>」「<span class="math inline">\(5\)</span>」「<span
-      class="math inline">\(2\)</span>」であれば、「ひのきのぼう」があたる確率は <span
-      class="math inline">\(10/(10+5+2)\)</span>、「こんぼう」があたる確率は <span
-      class="math inline">\(5/(10+5+2)\)</span>、「どうのつるぎ」があたる確率は <span
-      class="math inline">\(2/(10+5+2)\)</span> のように考えること。</p>
-      <div class="sourceCode" id="cb49" data-caption="データ例"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb49-2"><a href="#cb49-2"></a>item_names_str <span class="op">=</span> <span class="st">&#39;ひのきのぼう,こんぼう,どうのつるぎ,せいなるナイフ,くさりがま,とげのむち,まどうしのつえ,てつのやり,どくばり,てつのつめ,はがねのつるぎ,てつのオノ,あまぐものつえ,いかづちのつえ,さざなみのつえ,さばきのつえ,おおばさみ,ゆうわくのけん,りりょくのつえ,おおかなづち,はやぶさのけん,ゾンビキラー,ドラゴンキラー,くさなぎのけん,ガイアのつるぎ,ふぶきのつるぎ,いなづまのけん,まじんのオノ,らいじんのけん,もろはのつるぎ,はかいのつるぎ,おうごんのつめ,おうじゃのけん&#39;</span></span>
-<span id="cb49-3"><a href="#cb49-3"></a>item_p_str <span class="op">=</span> <span class="st">&#39;50,50,50,40,40,35,30,30,25,20,20,20,10,10,10,10,10,10,10,10,5,5,5,4,3,3,2,2,2,2,2,2,1&#39;</span></span></code></pre></div>
-      <p>上記の設定に基づき<strong>100連ガチャ</strong>のシミュレーションを実行し、次のような出力を得たい。</p>
-      <pre><code>100連ガチャの結果、以下のアイテムを獲得しました。
-ひのきのぼう ... 8個
-こんぼう ... 8個
-どうのつるぎ ... 9個
-せいなるナイフ ... 8個
-くさりがま ... 11個
-とげのむち ... 7個
-まどうしのつえ ... 5個
-てつのやり ... 7個
-どくばり ... 6個
-てつのつめ ... 5個
-はがねのつるぎ ... 4個
-てつのオノ ... 3個
-あまぐものつえ ... 2個
-いかづちのつえ ... 1個
-さざなみのつえ ... 6個
-さばきのつえ ... 2個
-ゆうわくのけん ... 3個
-りりょくのつえ ... 2個
-おおかなづち ... 1個
-ゾンビキラー ... 1個
-まじんのオノ ... 1個</code></pre>
-      <p>この要求を満たすことができるPythonプログラムを考え、実装せよ。</p>
-      <h2 data-number="11.2" id="解答例①"><span class="header-section-number">11.2</span>
+      <h1 data-number="11" id="第08回講義の演習7の解答例"><span
+      class="header-section-number">11</span> 第08回講義の「演習7」の解答例</h1>
+      <p><a href="lecture08.html#演習7">第08回講義の「演習7」</a>(2025年度までは提出課題だったもの)
+      の解答例です。</p>
+      <h2 data-number="11.1" id="解答例①"><span class="header-section-number">11.1</span>
       解答例①</h2>
-      <div class="sourceCode" id="cb51" data-caption="解答例1 (オーソドックスな実装)"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb51-2"><a href="#cb51-2"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb51-3"><a href="#cb51-3"></a><span class="im">import</span> random <span class="im">as</span> r</span>
-<span id="cb51-4"><a href="#cb51-4"></a></span>
-<span id="cb51-5"><a href="#cb51-5"></a>item_names_str <span class="op">=</span> <span class="st">&#39;ひのきのぼう,こんぼう,どうのつるぎ,せいなるナイフ,くさりがま,とげのむち,まどうしのつえ,てつのやり,どくばり,てつのつめ,はがねのつるぎ,てつのオノ,あまぐものつえ,いかづちのつえ,さざなみのつえ,さばきのつえ,おおばさみ,ゆうわくのけん,りりょくのつえ,おおかなづち,はやぶさのけん,ゾンビキラー,ドラゴンキラー,くさなぎのけん,ガイアのつるぎ,ふぶきのつるぎ,いなづまのけん,まじんのオノ,らいじんのけん,もろはのつるぎ,はかいのつるぎ,おうごんのつめ,おうじゃのけん&#39;</span></span>
-<span id="cb51-6"><a href="#cb51-6"></a>item_p_str <span class="op">=</span> <span class="st">&#39;50,50,50,40,40,35,30,30,25,20,20,20,10,10,10,10,10,10,10,10,5,5,5,4,3,3,2,2,2,2,2,1,1&#39;</span></span>
-<span id="cb51-7"><a href="#cb51-7"></a></span>
-<span id="cb51-8"><a href="#cb51-8"></a>item_names <span class="op">=</span> <span class="bu">list</span>(item_names_str.split(<span class="st">&#39;,&#39;</span>))   <span class="co"># 文字列→リスト</span></span>
-<span id="cb51-9"><a href="#cb51-9"></a>item_p <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">int</span>, item_p_str.split(<span class="st">&#39;,&#39;</span>))) <span class="co"># 文字列→リスト</span></span>
-<span id="cb51-10"><a href="#cb51-10"></a></span>
-<span id="cb51-11"><a href="#cb51-11"></a><span class="cf">assert</span> <span class="bu">len</span>(item_names) <span class="op">==</span> <span class="bu">len</span>(item_p) <span class="co"># 2つのリストの長さが同じであることを確認</span></span>
-<span id="cb51-12"><a href="#cb51-12"></a></span>
-<span id="cb51-13"><a href="#cb51-13"></a>item_counts <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span><span class="bu">len</span>(item_names) <span class="co"># 結果を格納する0で初期化したリスト</span></span>
-<span id="cb51-14"><a href="#cb51-14"></a>n <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb51-15"><a href="#cb51-15"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
-<span id="cb51-16"><a href="#cb51-16"></a>  item <span class="op">=</span> r.choices(item_names,weights<span class="op">=</span>item_p,k<span class="op">=</span><span class="dv">1</span>)[<span class="dv">0</span>]</span>
-<span id="cb51-17"><a href="#cb51-17"></a>  index <span class="op">=</span> item_names.index(item)</span>
-<span id="cb51-18"><a href="#cb51-18"></a>  item_counts[index]<span class="op">+=</span><span class="dv">1</span></span>
-<span id="cb51-19"><a href="#cb51-19"></a></span>
-<span id="cb51-20"><a href="#cb51-20"></a><span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">連ガチャの結果、以下のアイテムを獲得しました。&#39;</span>)</span>
-<span id="cb51-21"><a href="#cb51-21"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(item_names)):</span>
-<span id="cb51-22"><a href="#cb51-22"></a>  <span class="cf">if</span> item_counts[i] <span class="op">!=</span> <span class="dv">0</span>: <span class="co"># 1個以上獲得していれば</span></span>
-<span id="cb51-23"><a href="#cb51-23"></a>    <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>item_names[i]<span class="sc">}</span><span class="ss"> ... </span><span class="sc">{</span>item_counts[i]<span class="sc">}</span><span class="ss">個&#39;</span>)</span></code></pre></div>
-      <h2 data-number="11.3" id="解答例②"><span class="header-section-number">11.3</span>
+      <div class="sourceCode" id="cb49" data-caption="解答例1 (オーソドックスな実装)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
+<span id="cb49-3"><a href="#cb49-3"></a></span>
+<span id="cb49-4"><a href="#cb49-4"></a>item_names_str <span class="op">=</span> <span class="st">&#39;ひのきのぼう,こんぼう,どうのつるぎ,せいなるナイフ,くさりがま,とげのむち,まどうしのつえ,てつのやり,どくばり,てつのつめ,はがねのつるぎ,てつのオノ,あまぐものつえ,いかづちのつえ,さざなみのつえ,さばきのつえ,おおばさみ,ゆうわくのけん,りりょくのつえ,おおかなづち,はやぶさのけん,ゾンビキラー,ドラゴンキラー,くさなぎのけん,ガイアのつるぎ,ふぶきのつるぎ,いなづまのけん,まじんのオノ,らいじんのけん,もろはのつるぎ,はかいのつるぎ,おうごんのつめ,おうじゃのけん&#39;</span></span>
+<span id="cb49-5"><a href="#cb49-5"></a>item_p_str <span class="op">=</span> <span class="st">&#39;50,50,50,40,40,35,30,30,25,20,20,20,10,10,10,10,10,10,10,10,5,5,5,4,3,3,2,2,2,2,2,1,1&#39;</span></span>
+<span id="cb49-6"><a href="#cb49-6"></a></span>
+<span id="cb49-7"><a href="#cb49-7"></a>item_names <span class="op">=</span> <span class="bu">list</span>(item_names_str.split(<span class="st">&#39;,&#39;</span>))   <span class="co"># 文字列→リスト</span></span>
+<span id="cb49-8"><a href="#cb49-8"></a>item_p <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">int</span>, item_p_str.split(<span class="st">&#39;,&#39;</span>))) <span class="co"># 文字列→リスト</span></span>
+<span id="cb49-9"><a href="#cb49-9"></a></span>
+<span id="cb49-10"><a href="#cb49-10"></a><span class="cf">assert</span> <span class="bu">len</span>(item_names) <span class="op">==</span> <span class="bu">len</span>(item_p) <span class="co"># 2つのリストの長さが同じであることを確認</span></span>
+<span id="cb49-11"><a href="#cb49-11"></a></span>
+<span id="cb49-12"><a href="#cb49-12"></a>item_counts <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span><span class="bu">len</span>(item_names) <span class="co"># 結果を格納する0で初期化したリスト</span></span>
+<span id="cb49-13"><a href="#cb49-13"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb49-14"><a href="#cb49-14"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
+<span id="cb49-15"><a href="#cb49-15"></a>  item <span class="op">=</span> r.choices(item_names,weights<span class="op">=</span>item_p,k<span class="op">=</span><span class="dv">1</span>)[<span class="dv">0</span>]</span>
+<span id="cb49-16"><a href="#cb49-16"></a>  index <span class="op">=</span> item_names.index(item)</span>
+<span id="cb49-17"><a href="#cb49-17"></a>  item_counts[index]<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb49-18"><a href="#cb49-18"></a></span>
+<span id="cb49-19"><a href="#cb49-19"></a><span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">連ガチャの結果、以下のアイテムを獲得しました。&#39;</span>)</span>
+<span id="cb49-20"><a href="#cb49-20"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(item_names)):</span>
+<span id="cb49-21"><a href="#cb49-21"></a>  <span class="cf">if</span> item_counts[i] <span class="op">!=</span> <span class="dv">0</span>: <span class="co"># 1個以上獲得していれば</span></span>
+<span id="cb49-22"><a href="#cb49-22"></a>    <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>item_names[i]<span class="sc">}</span><span class="ss"> ... </span><span class="sc">{</span>item_counts[i]<span class="sc">}</span><span class="ss">個&#39;</span>)</span></code></pre></div>
+      <h2 data-number="11.2" id="解答例②"><span class="header-section-number">11.2</span>
       解答例②</h2>
-      <div class="sourceCode" id="cb52" data-caption="解答例2 (ちょっと変わった実装例)"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb52-2"><a href="#cb52-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
-<span id="cb52-3"><a href="#cb52-3"></a></span>
-<span id="cb52-4"><a href="#cb52-4"></a>item_names_str <span class="op">=</span> <span class="st">&#39;ひのきのぼう,こんぼう,どうのつるぎ,せいなるナイフ,くさりがま,とげのむち,まどうしのつえ,てつのやり,どくばり,てつのつめ,はがねのつるぎ,てつのオノ,あまぐものつえ,いかづちのつえ,さざなみのつえ,さばきのつえ,おおばさみ,ゆうわくのけん,りりょくのつえ,おおかなづち,はやぶさのけん,ゾンビキラー,ドラゴンキラー,くさなぎのけん,ガイアのつるぎ,ふぶきのつるぎ,いなづまのけん,まじんのオノ,らいじんのけん,もろはのつるぎ,はかいのつるぎ,おうごんのつめ,おうじゃのけん&#39;</span></span>
-<span id="cb52-5"><a href="#cb52-5"></a>item_p_str <span class="op">=</span> <span class="st">&#39;50,50,50,40,40,35,30,30,25,20,20,20,10,10,10,10,10,10,10,10,5,5,5,4,3,3,2,2,2,2,2,1,1&#39;</span></span>
-<span id="cb52-6"><a href="#cb52-6"></a></span>
-<span id="cb52-7"><a href="#cb52-7"></a>item_names <span class="op">=</span> <span class="bu">list</span>(item_names_str.split(<span class="st">&#39;,&#39;</span>))   <span class="co"># 文字列→リスト</span></span>
-<span id="cb52-8"><a href="#cb52-8"></a>item_p <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">int</span>, item_p_str.split(<span class="st">&#39;,&#39;</span>))) <span class="co"># 文字列→リスト</span></span>
-<span id="cb52-9"><a href="#cb52-9"></a></span>
-<span id="cb52-10"><a href="#cb52-10"></a><span class="cf">assert</span> <span class="bu">len</span>(item_names) <span class="op">==</span> <span class="bu">len</span>(item_p) <span class="co"># 2つのリストの長さが同じであることを確認</span></span>
-<span id="cb52-11"><a href="#cb52-11"></a></span>
-<span id="cb52-12"><a href="#cb52-12"></a>items <span class="op">=</span> r.choices(item_names,weights<span class="op">=</span>item_p,k<span class="op">=</span><span class="dv">100</span>)</span>
-<span id="cb52-13"><a href="#cb52-13"></a><span class="cf">for</span> item <span class="kw">in</span> <span class="bu">set</span>(items):</span>
-<span id="cb52-14"><a href="#cb52-14"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> ... </span><span class="sc">{</span>items<span class="sc">.</span>count(item)<span class="sc">}</span><span class="ss">個&#39;</span>)</span></code></pre></div>
+      <div class="sourceCode" id="cb50" data-caption="解答例2 (ちょっと変わった実装例)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb50-2"><a href="#cb50-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
+<span id="cb50-3"><a href="#cb50-3"></a></span>
+<span id="cb50-4"><a href="#cb50-4"></a>item_names_str <span class="op">=</span> <span class="st">&#39;ひのきのぼう,こんぼう,どうのつるぎ,せいなるナイフ,くさりがま,とげのむち,まどうしのつえ,てつのやり,どくばり,てつのつめ,はがねのつるぎ,てつのオノ,あまぐものつえ,いかづちのつえ,さざなみのつえ,さばきのつえ,おおばさみ,ゆうわくのけん,りりょくのつえ,おおかなづち,はやぶさのけん,ゾンビキラー,ドラゴンキラー,くさなぎのけん,ガイアのつるぎ,ふぶきのつるぎ,いなづまのけん,まじんのオノ,らいじんのけん,もろはのつるぎ,はかいのつるぎ,おうごんのつめ,おうじゃのけん&#39;</span></span>
+<span id="cb50-5"><a href="#cb50-5"></a>item_p_str <span class="op">=</span> <span class="st">&#39;50,50,50,40,40,35,30,30,25,20,20,20,10,10,10,10,10,10,10,10,5,5,5,4,3,3,2,2,2,2,2,1,1&#39;</span></span>
+<span id="cb50-6"><a href="#cb50-6"></a></span>
+<span id="cb50-7"><a href="#cb50-7"></a>item_names <span class="op">=</span> <span class="bu">list</span>(item_names_str.split(<span class="st">&#39;,&#39;</span>))   <span class="co"># 文字列→リスト</span></span>
+<span id="cb50-8"><a href="#cb50-8"></a>item_p <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">int</span>, item_p_str.split(<span class="st">&#39;,&#39;</span>))) <span class="co"># 文字列→リスト</span></span>
+<span id="cb50-9"><a href="#cb50-9"></a></span>
+<span id="cb50-10"><a href="#cb50-10"></a><span class="cf">assert</span> <span class="bu">len</span>(item_names) <span class="op">==</span> <span class="bu">len</span>(item_p) <span class="co"># 2つのリストの長さが同じであることを確認</span></span>
+<span id="cb50-11"><a href="#cb50-11"></a></span>
+<span id="cb50-12"><a href="#cb50-12"></a>items <span class="op">=</span> r.choices(item_names,weights<span class="op">=</span>item_p,k<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb50-13"><a href="#cb50-13"></a><span class="cf">for</span> item <span class="kw">in</span> <span class="bu">set</span>(items):</span>
+<span id="cb50-14"><a href="#cb50-14"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> ... </span><span class="sc">{</span>items<span class="sc">.</span>count(item)<span class="sc">}</span><span class="ss">個&#39;</span>)</span></code></pre></div>
       <!-- ---------------------------------------- -->
     </main>
 
