@@ -151,6 +151,33 @@ class="toc-section-number">11</span> 第08回講義の「演習7」の解答例<
       ですが、同じ問題ではありません。</li>
       </ul></li>
       </ul>
+      <div class="note type-caution">
+      <p><strong>曖昧な理解の危うさ</strong></p>
+      <p>既に Python プログラミングを学び始めて 3ヶ月 が経ちますが、小テスト3 の「問題1
+      (実行結果を答える問題) 」の正答率が <strong>3/41</strong> (<strong>7.3%</strong>) でした。</p>
+      <ul>
+      <li><code>for</code> と <code>range</code>
+      については、第07回講義、第08回講義で多数の演習を含めて取り上げています。</li>
+      <li><code>print</code> (<code>sep</code> と <code>end</code> を含む) については 第02回講義
+      以降、毎回の授業で使用しているものです
+      (小テスト1でも、これらに関する問題を出題しています)。</li>
+      </ul>
+      <div class="sourceCode" id="cb1" data-caption="小テスト3 問題1"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">9</span>):</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="bu">print</span>(x, sep<span class="op">=</span><span class="st">&#39;*&#39;</span>, end<span class="op">=</span><span class="st">&#39;:&#39;</span>)</span></code></pre></div>
+      <ul>
+      <li>print の sep と end の挙動（今回のコードでは sep
+      が実質的に無効になる点）の正誤を問わず、for と range(2,9)
+      が生成する値の範囲だけに着目しても、正しく把握できていたのは <strong>9/41</strong>
+      (<strong>22%</strong>) しかいませんでした。</li>
+      </ul>
+      <p>なお、問題用紙には以下の注意書きを示しています。</p>
+      <blockquote>
+      <p>問題文やプログラムコードのなかには、標準出力の結果に実質的な影響を与えない記述が含まれている場合があります。たとえば、関数呼び出しで引数が指定されていても、その引数の効果が出力結果に現れない場合があります。解答にあたっては、コードの見た目や引数の有無だけで判断せず、Pythonの各命令・関数が実際にどのように評価・実行されるかに基づいて判断してください。</p>
+      </blockquote>
+      <p>授業には出席して真面目に取り組んでいる、授業以外にも、一定の時間を費やして課題や復習もしている…という状況で理解できていないとすれば、<strong>学習の方法や質に問題があるかもしれません</strong>。AI
+      利用方法を含め、見直しをしてみてください。</p>
+      </div>
       <h3 data-number="1.0.1" id="定着確認"><span class="header-section-number">1.0.1</span>
       定着確認</h3>
       <p>以下に、前回の授業で取り扱った内容に関する「定着確認問題」を用意しています。</p>
@@ -378,10 +405,10 @@ pip     26.1.2</code></pre>
       <p>なお、<code>F5</code> キーを押下して VSCode
       でアクティブタブに表示されているプログラムを実行するための手順 (設定) については、<a
       href="lecture09.html#pythonファイルの実行">第09回講義資料</a> を参照してください。</p>
-      <div class="sourceCode" id="cb4" data-caption="test01.py"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>items <span class="op">=</span> [<span class="st">&#39;どうのつるぎ&#39;</span>,<span class="st">&#39;やくそう&#39;</span>,<span class="st">&#39;どくけしそう&#39;</span>,<span class="st">&#39;ぬののふく&#39;</span>]</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="bu">print</span>(item)</span></code></pre></div>
+      <div class="sourceCode" id="cb5" data-caption="test01.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>items <span class="op">=</span> [<span class="st">&#39;どうのつるぎ&#39;</span>,<span class="st">&#39;やくそう&#39;</span>,<span class="st">&#39;どくけしそう&#39;</span>,<span class="st">&#39;ぬののふく&#39;</span>]</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="bu">print</span>(item)</span></code></pre></div>
       <div class="balloon char-01 face-02 tone-yellow">
       <p><code>.venv</code> のフォルダの内部に <code>test01.py</code>
       を保存しないように注意してください。<code>.venv</code>
@@ -407,9 +434,9 @@ pip     26.1.2</code></pre>
       コマンドでライブラリが追加されていることを確認してください。</p>
       <p>VSCode上で <code>test02.ipynb</code> (拡張子に注意)
       を作成し、<strong>コードセルを追加</strong>し、次のプログラムを記述してください。</p>
-      <div class="sourceCode" id="cb6" data-caption="test02.ipynb"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="bu">print</span>(<span class="st">&#39;ドラゴンクエストIII そして伝説へ…&#39;</span>)</span></code></pre></div>
+      <div class="sourceCode" id="cb7" data-caption="test02.ipynb"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="bu">print</span>(<span class="st">&#39;ドラゴンクエストIII そして伝説へ…&#39;</span>)</span></code></pre></div>
       <p>ノートブック編集画面の右上の「<strong>カーネルの選択</strong>」から適切なもの
       (Python仮想環境) を選択して、その後、コードセルを実行
       (<code>Ctrl</code>+<code>Enter</code>を押下)
@@ -489,16 +516,16 @@ pip     26.1.2</code></pre>
       (<code>Ctrl</code>+<code>Enter</code>を押下) してください。</p>
       <p>以下のコードは <span class="masked">matplotlib
       というライブラリを利用して「グラフ」を描画</span> するプログラムになります。</p>
-      <div class="sourceCode" id="cb8" data-caption="グラフを描画するプログラム.py"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a>x <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>]</span>
-<span id="cb8-5"><a href="#cb8-5"></a>y <span class="op">=</span> [<span class="dv">20</span>,<span class="dv">40</span>,<span class="dv">30</span>,<span class="dv">50</span>,<span class="dv">40</span>]</span>
-<span id="cb8-6"><a href="#cb8-6"></a></span>
-<span id="cb8-7"><a href="#cb8-7"></a>fig,ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb8-8"><a href="#cb8-8"></a>ax.plot(x,y,marker<span class="op">=</span><span class="st">&#39;o&#39;</span>)</span>
-<span id="cb8-9"><a href="#cb8-9"></a>plt.show()</span></code></pre></div>
+      <div class="sourceCode" id="cb9" data-caption="グラフを描画するプログラム.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a>x <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>]</span>
+<span id="cb9-5"><a href="#cb9-5"></a>y <span class="op">=</span> [<span class="dv">20</span>,<span class="dv">40</span>,<span class="dv">30</span>,<span class="dv">50</span>,<span class="dv">40</span>]</span>
+<span id="cb9-6"><a href="#cb9-6"></a></span>
+<span id="cb9-7"><a href="#cb9-7"></a>fig,ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb9-8"><a href="#cb9-8"></a>ax.plot(x,y,marker<span class="op">=</span><span class="st">&#39;o&#39;</span>)</span>
+<span id="cb9-9"><a href="#cb9-9"></a>plt.show()</span></code></pre></div>
       <p>実行すると <code>ModuleNotFoundError: No module named 'matplotlib'</code>
       という<strong>実行時エラーが発生</strong>します。このエラーメッセージは、上記の
       <strong>第02行目</strong> の <code>import</code> に関連して発生しているもので <span
@@ -637,10 +664,10 @@ nbformat                  5.10.4</code></pre>
       <p>ここまで、<strong>繰返し構文</strong>としては、次のように <code>range</code> に
       <strong><em>1個の引数</em></strong> (以下の例では <code>5</code>)
       を与えるものを取り扱ってきました。</p>
-      <div class="sourceCode" id="cb17" data-caption="rangeの引数に1個の引数を与える場合"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb17-3"><a href="#cb17-3"></a>  <span class="bu">print</span>(i)</span></code></pre></div>
+      <div class="sourceCode" id="cb18" data-caption="rangeの引数に1個の引数を与える場合"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb18-3"><a href="#cb18-3"></a>  <span class="bu">print</span>(i)</span></code></pre></div>
       <p>このプログラムを実行すると、まずは <strong>ループ変数</strong>である <code>i</code> に
       <code>0</code> が格納された状態で<strong>ブロック</strong> (＝インデントされた範囲)
       が実行され、つづいて <code>i</code> に <code>1</code>
@@ -662,10 +689,10 @@ nbformat                  5.10.4</code></pre>
       を削除してください (ノーマルなPython環境では <code>%reset -f</code> はエラーになります)
       。</li>
       </ul>
-      <div class="sourceCode" id="cb19" data-caption="演習1.py"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb19-3"><a href="#cb19-3"></a>  <span class="bu">print</span>(i) <span class="co"># ここを書き換える</span></span></code></pre></div>
+      <div class="sourceCode" id="cb20" data-caption="演習1.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb20-3"><a href="#cb20-3"></a>  <span class="bu">print</span>(i) <span class="co"># ここを書き換える</span></span></code></pre></div>
       <p><strong>期待する結果</strong></p>
       <pre><code>5
 6
@@ -683,10 +710,10 @@ nbformat                  5.10.4</code></pre>
       <p>この方法とは別に <code>range</code>
       に「<strong>開始値</strong>」と「<strong>終了値+1</strong>」の
       <strong><em>2つの引数</em></strong> を与えることでも同様の処理が可能となります。</p>
-      <div class="sourceCode" id="cb21" data-caption="rangeの引数に2個の引数を与える場合"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>,<span class="dv">9</span><span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb21-3"><a href="#cb21-3"></a>  <span class="bu">print</span>(i)</span></code></pre></div>
+      <div class="sourceCode" id="cb22" data-caption="rangeの引数に2個の引数を与える場合"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>,<span class="dv">9</span><span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="bu">print</span>(i)</span></code></pre></div>
       <p><code>range</code> に2個の引数を与えた場合、ループ変数 (上記の例では <code>i</code>)
       には「第1引数の値」から「第2引数の値 <strong>未満</strong> の値」が順次格納され、つまり、<span
       class="masked">変数 <code>i</code> に <code>5</code> から <code>9</code>
@@ -762,21 +789,21 @@ nbformat                  5.10.4</code></pre>
       (特に「<strong>物理シミュレーション</strong>」などの要求)
       は、次のようにブロック内で別の変数を用意する必要があります。</p>
       <p>次のプログラムを実際に実行して結果を確認してください。</p>
-      <div class="sourceCode" id="cb22" data-caption="ループ変数で小数を扱う方法"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="co"># ループブロックで 0.00 から 1.00 まで</span></span>
-<span id="cb22-3"><a href="#cb22-3"></a><span class="co"># 0.01 刻みの値を使用したい</span></span>
-<span id="cb22-4"><a href="#cb22-4"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span><span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb22-5"><a href="#cb22-5"></a>  t <span class="op">=</span> <span class="fl">0.01</span> <span class="op">*</span> i</span>
-<span id="cb22-6"><a href="#cb22-6"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>t<span class="sc">:.2f}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39; &#39;</span>)</span></code></pre></div>
-      <p>さらに、次のようにすると 0.1 刻みで改行出力されることを確認してください。</p>
-      <div class="sourceCode" id="cb23" data-caption="ループ変数で小数を扱う方法 (改行付き)"><pre
+      <div class="sourceCode" id="cb23" data-caption="ループ変数で小数を扱う方法"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span><span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb23-3"><a href="#cb23-3"></a>  t <span class="op">=</span> <span class="fl">0.01</span> <span class="op">*</span> i</span>
-<span id="cb23-4"><a href="#cb23-4"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>t<span class="sc">:.2f}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39; &#39;</span>)</span>
-<span id="cb23-5"><a href="#cb23-5"></a>  <span class="cf">if</span> i<span class="op">%</span><span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span> : <span class="co"># 0.1単位で改行</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a>    <span class="bu">print</span>(<span class="st">&#39;&#39;</span>) <span class="co"># 改行</span></span></code></pre></div>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="co"># ループブロックで 0.00 から 1.00 まで</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="co"># 0.01 刻みの値を使用したい</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span><span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb23-5"><a href="#cb23-5"></a>  t <span class="op">=</span> <span class="fl">0.01</span> <span class="op">*</span> i</span>
+<span id="cb23-6"><a href="#cb23-6"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>t<span class="sc">:.2f}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39; &#39;</span>)</span></code></pre></div>
+      <p>さらに、次のようにすると 0.1 刻みで改行出力されることを確認してください。</p>
+      <div class="sourceCode" id="cb24" data-caption="ループ変数で小数を扱う方法 (改行付き)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span><span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb24-3"><a href="#cb24-3"></a>  t <span class="op">=</span> <span class="fl">0.01</span> <span class="op">*</span> i</span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>t<span class="sc">:.2f}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39; &#39;</span>)</span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="cf">if</span> i<span class="op">%</span><span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span> : <span class="co"># 0.1単位で改行</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a>    <span class="bu">print</span>(<span class="st">&#39;&#39;</span>) <span class="co"># 改行</span></span></code></pre></div>
       <p>上記では、割り算の <span class="masked">余り</span> を求める <code>%</code> 演算子
       (剰余計算演算子)
       を使用して、一定値に達したときに改行するようにしています。なお、<code>%</code>
@@ -788,14 +815,14 @@ nbformat                  5.10.4</code></pre>
       は<strong>数値計算支援用のライブラリ</strong>で「<strong>ナンパイ</strong>」もしくは「ナムパイ」と読みます。工学分野では極めて使用頻度が高いライブラリとなります。具体的には
       <code>range()</code> の代わりに <code>np.arange()</code>
       を使うことで、<strong>直接的に小数のループ変数を使用すること</strong> ができます。</p>
-      <div class="sourceCode" id="cb24"
+      <div class="sourceCode" id="cb25"
       data-caption="numpyライブラリを使ってループ変数に小数を扱う方法"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="im">import</span> numpy <span class="im">as</span> np   <span class="co"># numpy を np という省略名で使用</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="cf">for</span> t <span class="kw">in</span> np.arange(<span class="dv">0</span>,<span class="fl">1.01</span>,<span class="fl">0.01</span>):</span>
-<span id="cb24-4"><a href="#cb24-4"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>t<span class="sc">:.2f}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39; &#39;</span>)</span>
-<span id="cb24-5"><a href="#cb24-5"></a>  <span class="cf">if</span> t <span class="op">%</span> <span class="fl">0.1</span> <span class="op">==</span> <span class="dv">0</span> :</span>
-<span id="cb24-6"><a href="#cb24-6"></a>    <span class="bu">print</span>()</span></code></pre></div>
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="im">import</span> numpy <span class="im">as</span> np   <span class="co"># numpy を np という省略名で使用</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="cf">for</span> t <span class="kw">in</span> np.arange(<span class="dv">0</span>,<span class="fl">1.01</span>,<span class="fl">0.01</span>):</span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>t<span class="sc">:.2f}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39; &#39;</span>)</span>
+<span id="cb25-5"><a href="#cb25-5"></a>  <span class="cf">if</span> t <span class="op">%</span> <span class="fl">0.1</span> <span class="op">==</span> <span class="dv">0</span> :</span>
+<span id="cb25-6"><a href="#cb25-6"></a>    <span class="bu">print</span>()</span></code></pre></div>
       <p>実際に実行して結果を確認してください。</p>
       <h2 data-number="6.1" id="演習3-1-目標時間-10分"><span
       class="header-section-number">6.1</span> 演習3-1 (⌛目標時間: 10分)</h2>
@@ -850,24 +877,24 @@ nbformat                  5.10.4</code></pre>
       <ul>
       <li>ある程度考えてみても理解できないところは、「分からないこと」を言語化した上で生成AIなどを活用して解決してみてください。</li>
       </ul>
-      <div class="sourceCode" id="cb27" data-caption="九九の練習プログラム"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="im">import</span> time <span class="co"># 第12行目で time.sleep(3) を使用する準備</span></span>
-<span id="cb27-3"><a href="#cb27-3"></a><span class="im">import</span> random <span class="im">as</span> r</span>
-<span id="cb27-4"><a href="#cb27-4"></a><span class="bu">print</span>(<span class="st">&#39;九九の練習プログラムです&#39;</span>)</span>
-<span id="cb27-5"><a href="#cb27-5"></a><span class="bu">input</span>(<span class="st">&#39;はじめるためには [Enter] を押下してください。&#39;</span>)</span>
-<span id="cb27-6"><a href="#cb27-6"></a>x <span class="op">=</span> <span class="dv">1</span> <span class="co"># 処理継続フラグを立てる</span></span>
-<span id="cb27-7"><a href="#cb27-7"></a></span>
-<span id="cb27-8"><a href="#cb27-8"></a><span class="cf">while</span> x <span class="op">==</span> <span class="dv">1</span> : <span class="co"># 処理継続フラグ変数 x が 1 である間ずっと (while)</span></span>
-<span id="cb27-9"><a href="#cb27-9"></a>  a <span class="op">=</span> r.randint(<span class="dv">1</span>,<span class="dv">9</span>) <span class="co"># 1～9の範囲のランダムな整数値</span></span>
-<span id="cb27-10"><a href="#cb27-10"></a>  b <span class="op">=</span> r.randint(<span class="dv">1</span>,<span class="dv">9</span>)</span>
-<span id="cb27-11"><a href="#cb27-11"></a>  <span class="bu">print</span>(<span class="ss">f&#39;問題：</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> x </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss"> = ? (3秒後に答えが表示されます)&#39;</span>)</span>
-<span id="cb27-12"><a href="#cb27-12"></a>  time.sleep(<span class="dv">3</span>)  <span class="co"># 3秒間プログラムを停止</span></span>
-<span id="cb27-13"><a href="#cb27-13"></a>  <span class="bu">print</span>(<span class="ss">f&#39;答えは「</span><span class="sc">{</span>a<span class="op">*</span>b<span class="sc">}</span><span class="ss">」でした。&#39;</span>)</span>
-<span id="cb27-14"><a href="#cb27-14"></a>  u <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;つづける場合は [Enter]、終了する場合は 何か文字を入力して [Enter] &gt; &#39;</span>)</span>
-<span id="cb27-15"><a href="#cb27-15"></a>  <span class="cf">if</span> u <span class="op">!=</span> <span class="st">&#39;&#39;</span> :</span>
-<span id="cb27-16"><a href="#cb27-16"></a>    x <span class="op">=</span> <span class="dv">0</span> <span class="co"># 処理継続フラグを折る</span></span>
-<span id="cb27-17"><a href="#cb27-17"></a><span class="bu">print</span>(<span class="st">&#39;お疲れ様でした。&#39;</span>)</span></code></pre></div>
+      <div class="sourceCode" id="cb28" data-caption="九九の練習プログラム"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="im">import</span> time <span class="co"># 第12行目で time.sleep(3) を使用する準備</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="im">import</span> random <span class="im">as</span> r</span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="bu">print</span>(<span class="st">&#39;九九の練習プログラムです&#39;</span>)</span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="bu">input</span>(<span class="st">&#39;はじめるためには [Enter] を押下してください。&#39;</span>)</span>
+<span id="cb28-6"><a href="#cb28-6"></a>x <span class="op">=</span> <span class="dv">1</span> <span class="co"># 処理継続フラグを立てる</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a></span>
+<span id="cb28-8"><a href="#cb28-8"></a><span class="cf">while</span> x <span class="op">==</span> <span class="dv">1</span> : <span class="co"># 処理継続フラグ変数 x が 1 である間ずっと (while)</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a>  a <span class="op">=</span> r.randint(<span class="dv">1</span>,<span class="dv">9</span>) <span class="co"># 1～9の範囲のランダムな整数値</span></span>
+<span id="cb28-10"><a href="#cb28-10"></a>  b <span class="op">=</span> r.randint(<span class="dv">1</span>,<span class="dv">9</span>)</span>
+<span id="cb28-11"><a href="#cb28-11"></a>  <span class="bu">print</span>(<span class="ss">f&#39;問題：</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> x </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss"> = ? (3秒後に答えが表示されます)&#39;</span>)</span>
+<span id="cb28-12"><a href="#cb28-12"></a>  time.sleep(<span class="dv">3</span>)  <span class="co"># 3秒間プログラムを停止</span></span>
+<span id="cb28-13"><a href="#cb28-13"></a>  <span class="bu">print</span>(<span class="ss">f&#39;答えは「</span><span class="sc">{</span>a<span class="op">*</span>b<span class="sc">}</span><span class="ss">」でした。&#39;</span>)</span>
+<span id="cb28-14"><a href="#cb28-14"></a>  u <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;つづける場合は [Enter]、終了する場合は 何か文字を入力して [Enter] &gt; &#39;</span>)</span>
+<span id="cb28-15"><a href="#cb28-15"></a>  <span class="cf">if</span> u <span class="op">!=</span> <span class="st">&#39;&#39;</span> :</span>
+<span id="cb28-16"><a href="#cb28-16"></a>    x <span class="op">=</span> <span class="dv">0</span> <span class="co"># 処理継続フラグを折る</span></span>
+<span id="cb28-17"><a href="#cb28-17"></a><span class="bu">print</span>(<span class="st">&#39;お疲れ様でした。&#39;</span>)</span></code></pre></div>
       <div class="note type-caution">
       <p><strong>Jupyterでinputを使用する場合の注意</strong></p>
       <p>前回の講義でも解説したように、Jupyter環境では <code>input()</code>
@@ -890,37 +917,37 @@ nbformat                  5.10.4</code></pre>
       による繰返し構文を利用して、次のような値を出力するプログラムを作成してください。</p>
       <pre><code>5 6 7 8 9 10 11 12 13 14 15 </code></pre>
       <p><strong>ヒント</strong>: 次のプログラムを参考にしてください。</p>
-      <div class="sourceCode" id="cb29" data-caption="演習4のヒント"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb29-2"><a href="#cb29-2"></a>i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb29-3"><a href="#cb29-3"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">10</span> :</span>
-<span id="cb29-4"><a href="#cb29-4"></a>  <span class="bu">print</span>(i)</span>
-<span id="cb29-5"><a href="#cb29-5"></a>  i<span class="op">+=</span><span class="dv">1</span> <span class="co"># 「i=i+1」と同じ意味</span></span></code></pre></div>
+      <div class="sourceCode" id="cb30" data-caption="演習4のヒント"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb30-2"><a href="#cb30-2"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">10</span> :</span>
+<span id="cb30-4"><a href="#cb30-4"></a>  <span class="bu">print</span>(i)</span>
+<span id="cb30-5"><a href="#cb30-5"></a>  i<span class="op">+=</span><span class="dv">1</span> <span class="co"># 「i=i+1」と同じ意味</span></span></code></pre></div>
       <h2 data-number="7.2" id="無限ループ"><span class="header-section-number">7.2</span>
       無限ループ</h2>
       <p><code>while 1 :</code> または <code>while True :</code>
       のようにすると「<strong>無限ループ</strong>」となります。<strong>無限ループから抜けだす</strong>ためには
       <code>break</code> 文を使用します。</p>
       <p>次のプログラムをコピペして実行し、その後、その実行結果とプログラムを照らし合わせて内容を理解してください。</p>
-      <div class="sourceCode" id="cb30" data-caption="breakを使ったループの離脱"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="im">import</span> time</span>
-<span id="cb30-4"><a href="#cb30-4"></a>wallet <span class="op">=</span> <span class="dv">20_000</span> <span class="co"># 所持金</span></span>
-<span id="cb30-5"><a href="#cb30-5"></a>bet <span class="op">=</span> <span class="dv">300</span>       <span class="co"># ガチャ1回の費用</span></span>
-<span id="cb30-6"><a href="#cb30-6"></a>n <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb30-7"><a href="#cb30-7"></a><span class="co"># SSRゲット or 破産するまでの無限ループ</span></span>
-<span id="cb30-8"><a href="#cb30-8"></a><span class="cf">while</span> <span class="va">True</span> :</span>
-<span id="cb30-9"><a href="#cb30-9"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">回目の</span><span class="sc">{</span>bet<span class="sc">}</span><span class="ss">円ガチャに挑戦&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
-<span id="cb30-10"><a href="#cb30-10"></a>  wallet <span class="op">-=</span> bet  <span class="co">#「wallet=wallet-bet」と同じ</span></span>
-<span id="cb30-11"><a href="#cb30-11"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
-<span id="cb30-12"><a href="#cb30-12"></a>    time.sleep(<span class="fl">0.5</span>)</span>
-<span id="cb30-13"><a href="#cb30-13"></a>    <span class="bu">print</span>(<span class="st">&#39;.&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
-<span id="cb30-14"><a href="#cb30-14"></a>  x <span class="op">=</span> r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>))[<span class="dv">0</span>]</span>
-<span id="cb30-15"><a href="#cb30-15"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">を入手! 残金は</span><span class="sc">{</span>wallet<span class="sc">:,}</span><span class="ss">円</span><span class="sc">{</span><span class="st">&quot;っ&quot;</span><span class="op">*</span>r<span class="sc">.</span>randint(<span class="dv">1</span>,<span class="dv">5</span>)<span class="sc">}</span><span class="ss">!&#39;</span>)</span>
-<span id="cb30-16"><a href="#cb30-16"></a>  <span class="cf">if</span> wallet <span class="op">&lt;</span> bet <span class="kw">or</span> x <span class="op">==</span> <span class="st">&#39;SSR&#39;</span> :</span>
-<span id="cb30-17"><a href="#cb30-17"></a>    <span class="cf">break</span></span>
-<span id="cb30-18"><a href="#cb30-18"></a>  n <span class="op">+=</span> <span class="dv">1</span>   <span class="co"># 「n=n+1」と同じ </span></span></code></pre></div>
+      <div class="sourceCode" id="cb31" data-caption="breakを使ったループの離脱"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="im">import</span> time</span>
+<span id="cb31-4"><a href="#cb31-4"></a>wallet <span class="op">=</span> <span class="dv">20_000</span> <span class="co"># 所持金</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>bet <span class="op">=</span> <span class="dv">300</span>       <span class="co"># ガチャ1回の費用</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>n <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a><span class="co"># SSRゲット or 破産するまでの無限ループ</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a><span class="cf">while</span> <span class="va">True</span> :</span>
+<span id="cb31-9"><a href="#cb31-9"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">回目の</span><span class="sc">{</span>bet<span class="sc">}</span><span class="ss">円ガチャに挑戦&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb31-10"><a href="#cb31-10"></a>  wallet <span class="op">-=</span> bet  <span class="co">#「wallet=wallet-bet」と同じ</span></span>
+<span id="cb31-11"><a href="#cb31-11"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb31-12"><a href="#cb31-12"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb31-13"><a href="#cb31-13"></a>    <span class="bu">print</span>(<span class="st">&#39;.&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb31-14"><a href="#cb31-14"></a>  x <span class="op">=</span> r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>))[<span class="dv">0</span>]</span>
+<span id="cb31-15"><a href="#cb31-15"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">を入手! 残金は</span><span class="sc">{</span>wallet<span class="sc">:,}</span><span class="ss">円</span><span class="sc">{</span><span class="st">&quot;っ&quot;</span><span class="op">*</span>r<span class="sc">.</span>randint(<span class="dv">1</span>,<span class="dv">5</span>)<span class="sc">}</span><span class="ss">!&#39;</span>)</span>
+<span id="cb31-16"><a href="#cb31-16"></a>  <span class="cf">if</span> wallet <span class="op">&lt;</span> bet <span class="kw">or</span> x <span class="op">==</span> <span class="st">&#39;SSR&#39;</span> :</span>
+<span id="cb31-17"><a href="#cb31-17"></a>    <span class="cf">break</span></span>
+<span id="cb31-18"><a href="#cb31-18"></a>  n <span class="op">+=</span> <span class="dv">1</span>   <span class="co"># 「n=n+1」と同じ </span></span></code></pre></div>
       <h2 data-number="7.3" id="無限ループに陥った場合は"><span
       class="header-section-number">7.3</span> 無限ループに陥った場合は・・・</h2>
       <p>Colab (Jupyterを含む)
@@ -942,16 +969,16 @@ nbformat                  5.10.4</code></pre>
       <figcaption aria-hidden="true">img</figcaption>
       </figure>
       <p>これを回避するためには、以下のような例外処理を記述します。これにより、スタックトレースを吐き出すことなく正常終了としてプログラムを停止させることができます。</p>
-      <div class="sourceCode" id="cb31"
+      <div class="sourceCode" id="cb32"
       data-caption="KeyboardInterrupt と break を使ったループの離脱"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="cf">try</span>:</span>
-<span id="cb31-3"><a href="#cb31-3"></a>  <span class="cf">while</span> <span class="va">True</span> :</span>
-<span id="cb31-4"><a href="#cb31-4"></a>    x <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;文字を入力してください：&#39;</span>)</span>
-<span id="cb31-5"><a href="#cb31-5"></a>    <span class="bu">print</span>(<span class="st">&#39;🫠&#39;</span>)</span>
-<span id="cb31-6"><a href="#cb31-6"></a><span class="cf">except</span> <span class="pp">KeyboardInterrupt</span>:</span>
-<span id="cb31-7"><a href="#cb31-7"></a>  <span class="bu">print</span>(<span class="st">&#39;プログラムを終了します&#39;</span>)</span>
-<span id="cb31-8"><a href="#cb31-8"></a><span class="bu">print</span>()</span></code></pre></div>
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="cf">try</span>:</span>
+<span id="cb32-3"><a href="#cb32-3"></a>  <span class="cf">while</span> <span class="va">True</span> :</span>
+<span id="cb32-4"><a href="#cb32-4"></a>    x <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;文字を入力してください：&#39;</span>)</span>
+<span id="cb32-5"><a href="#cb32-5"></a>    <span class="bu">print</span>(<span class="st">&#39;🫠&#39;</span>)</span>
+<span id="cb32-6"><a href="#cb32-6"></a><span class="cf">except</span> <span class="pp">KeyboardInterrupt</span>:</span>
+<span id="cb32-7"><a href="#cb32-7"></a>  <span class="bu">print</span>(<span class="st">&#39;プログラムを終了します&#39;</span>)</span>
+<span id="cb32-8"><a href="#cb32-8"></a><span class="bu">print</span>()</span></code></pre></div>
       <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
       <blockquote>
       <p>プログラミングの文脈で「スタックトレース」とは何ですか？</p>
@@ -962,34 +989,34 @@ nbformat                  5.10.4</code></pre>
       <p><code>random.choices</code> は、次のように結果を必ず <strong>リスト</strong>
       として返してきます。リストではなく、リストの中身が必要な場合は <code>[]</code>
       で要素を取得してください。</p>
-      <div class="sourceCode" id="cb32" data-caption="random.choicesの挙動"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
-<span id="cb32-3"><a href="#cb32-3"></a></span>
-<span id="cb32-4"><a href="#cb32-4"></a><span class="co"># キーワード引数 k=4</span></span>
-<span id="cb32-5"><a href="#cb32-5"></a>x <span class="op">=</span>  r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>),k<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb32-6"><a href="#cb32-6"></a><span class="bu">print</span>(x) <span class="co"># =&gt; [&#39;R&#39;, &#39;SR&#39;, &#39;R&#39;, &#39;R&#39;]</span></span>
-<span id="cb32-7"><a href="#cb32-7"></a></span>
-<span id="cb32-8"><a href="#cb32-8"></a><span class="co"># キーワード引数 k=2</span></span>
-<span id="cb32-9"><a href="#cb32-9"></a>x <span class="op">=</span>  r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>),k<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb32-10"><a href="#cb32-10"></a><span class="bu">print</span>(x) <span class="co"># =&gt; [&#39;R&#39;, &#39;R&#39;]</span></span>
-<span id="cb32-11"><a href="#cb32-11"></a></span>
-<span id="cb32-12"><a href="#cb32-12"></a><span class="co"># キーワード引数 k=1</span></span>
-<span id="cb32-13"><a href="#cb32-13"></a>x <span class="op">=</span>  r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>),k<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb32-14"><a href="#cb32-14"></a><span class="bu">print</span>(x) <span class="co"># =&gt; [&#39;R&#39;]</span></span>
-<span id="cb32-15"><a href="#cb32-15"></a></span>
-<span id="cb32-16"><a href="#cb32-16"></a><span class="co"># キーワード引数 kを省略（k=1）と同じ</span></span>
-<span id="cb32-17"><a href="#cb32-17"></a>x <span class="op">=</span>  r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>))</span>
-<span id="cb32-18"><a href="#cb32-18"></a><span class="bu">print</span>(x) <span class="co"># =&gt; [&#39;R&#39;]</span></span>
-<span id="cb32-19"><a href="#cb32-19"></a></span>
-<span id="cb32-20"><a href="#cb32-20"></a><span class="co"># キーワード引数 kを省略（k=1）と同じ</span></span>
-<span id="cb32-21"><a href="#cb32-21"></a>x <span class="op">=</span>  r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>))</span>
-<span id="cb32-22"><a href="#cb32-22"></a>x <span class="op">=</span> x[<span class="dv">0</span>] <span class="co"># xはリストなので x[0] でゼロ番目の要素を取得</span></span>
-<span id="cb32-23"><a href="#cb32-23"></a><span class="bu">print</span>(x) <span class="co"># R</span></span>
-<span id="cb32-24"><a href="#cb32-24"></a></span>
-<span id="cb32-25"><a href="#cb32-25"></a><span class="co"># 省略形</span></span>
-<span id="cb32-26"><a href="#cb32-26"></a>x <span class="op">=</span>  r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>))[<span class="dv">0</span>]</span>
-<span id="cb32-27"><a href="#cb32-27"></a><span class="bu">print</span>(x) <span class="co"># R</span></span></code></pre></div>
+      <div class="sourceCode" id="cb33" data-caption="random.choicesの挙動"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
+<span id="cb33-3"><a href="#cb33-3"></a></span>
+<span id="cb33-4"><a href="#cb33-4"></a><span class="co"># キーワード引数 k=4</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a>x <span class="op">=</span>  r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>),k<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb33-6"><a href="#cb33-6"></a><span class="bu">print</span>(x) <span class="co"># =&gt; [&#39;R&#39;, &#39;SR&#39;, &#39;R&#39;, &#39;R&#39;]</span></span>
+<span id="cb33-7"><a href="#cb33-7"></a></span>
+<span id="cb33-8"><a href="#cb33-8"></a><span class="co"># キーワード引数 k=2</span></span>
+<span id="cb33-9"><a href="#cb33-9"></a>x <span class="op">=</span>  r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>),k<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb33-10"><a href="#cb33-10"></a><span class="bu">print</span>(x) <span class="co"># =&gt; [&#39;R&#39;, &#39;R&#39;]</span></span>
+<span id="cb33-11"><a href="#cb33-11"></a></span>
+<span id="cb33-12"><a href="#cb33-12"></a><span class="co"># キーワード引数 k=1</span></span>
+<span id="cb33-13"><a href="#cb33-13"></a>x <span class="op">=</span>  r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>),k<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb33-14"><a href="#cb33-14"></a><span class="bu">print</span>(x) <span class="co"># =&gt; [&#39;R&#39;]</span></span>
+<span id="cb33-15"><a href="#cb33-15"></a></span>
+<span id="cb33-16"><a href="#cb33-16"></a><span class="co"># キーワード引数 kを省略（k=1）と同じ</span></span>
+<span id="cb33-17"><a href="#cb33-17"></a>x <span class="op">=</span>  r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>))</span>
+<span id="cb33-18"><a href="#cb33-18"></a><span class="bu">print</span>(x) <span class="co"># =&gt; [&#39;R&#39;]</span></span>
+<span id="cb33-19"><a href="#cb33-19"></a></span>
+<span id="cb33-20"><a href="#cb33-20"></a><span class="co"># キーワード引数 kを省略（k=1）と同じ</span></span>
+<span id="cb33-21"><a href="#cb33-21"></a>x <span class="op">=</span>  r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>))</span>
+<span id="cb33-22"><a href="#cb33-22"></a>x <span class="op">=</span> x[<span class="dv">0</span>] <span class="co"># xはリストなので x[0] でゼロ番目の要素を取得</span></span>
+<span id="cb33-23"><a href="#cb33-23"></a><span class="bu">print</span>(x) <span class="co"># R</span></span>
+<span id="cb33-24"><a href="#cb33-24"></a></span>
+<span id="cb33-25"><a href="#cb33-25"></a><span class="co"># 省略形</span></span>
+<span id="cb33-26"><a href="#cb33-26"></a>x <span class="op">=</span>  r.choices([<span class="st">&#39;R&#39;</span>,<span class="st">&#39;SR&#39;</span>,<span class="st">&#39;SSR&#39;</span>],weights<span class="op">=</span>(<span class="dv">75</span>,<span class="dv">20</span>,<span class="dv">5</span>))[<span class="dv">0</span>]</span>
+<span id="cb33-27"><a href="#cb33-27"></a><span class="bu">print</span>(x) <span class="co"># R</span></span></code></pre></div>
       <h2 data-number="7.4" id="演習5-目標時間-15分"><span class="header-section-number">7.4</span>
       演習5 (⌛目標時間: 15分)</h2>
       <p>自キャラと敵キャラによる「<strong>1対1の自動バトル
@@ -1033,21 +1060,21 @@ nbformat                  5.10.4</code></pre>
       でリストの「<strong>先頭</strong>」に順次要素を追加していく。以下の <code>p3.py</code>
       参照。</li>
       </ol>
-      <div class="sourceCode" id="cb34" data-caption="p1.py"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="op">%%</span>timeit</span>
-<span id="cb34-2"><a href="#cb34-2"></a>arr <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span><span class="dv">1000</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
-<span id="cb34-4"><a href="#cb34-4"></a>  arr[i]<span class="op">=</span>i</span></code></pre></div>
-      <div class="sourceCode" id="cb35" data-caption="p2.py"><pre
+      <div class="sourceCode" id="cb35" data-caption="p1.py"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="op">%%</span>timeit</span>
-<span id="cb35-2"><a href="#cb35-2"></a>arr <span class="op">=</span> []</span>
+<span id="cb35-2"><a href="#cb35-2"></a>arr <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span><span class="dv">1000</span></span>
 <span id="cb35-3"><a href="#cb35-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
-<span id="cb35-4"><a href="#cb35-4"></a>  arr.append(i)</span></code></pre></div>
-      <div class="sourceCode" id="cb36" data-caption="p3.py"><pre
+<span id="cb35-4"><a href="#cb35-4"></a>  arr[i]<span class="op">=</span>i</span></code></pre></div>
+      <div class="sourceCode" id="cb36" data-caption="p2.py"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="op">%%</span>timeit</span>
 <span id="cb36-2"><a href="#cb36-2"></a>arr <span class="op">=</span> []</span>
 <span id="cb36-3"><a href="#cb36-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
-<span id="cb36-4"><a href="#cb36-4"></a>  arr.insert(<span class="dv">0</span>,<span class="dv">999</span><span class="op">-</span>i)</span></code></pre></div>
+<span id="cb36-4"><a href="#cb36-4"></a>  arr.append(i)</span></code></pre></div>
+      <div class="sourceCode" id="cb37" data-caption="p3.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="op">%%</span>timeit</span>
+<span id="cb37-2"><a href="#cb37-2"></a>arr <span class="op">=</span> []</span>
+<span id="cb37-3"><a href="#cb37-3"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
+<span id="cb37-4"><a href="#cb37-4"></a>  arr.insert(<span class="dv">0</span>,<span class="dv">999</span><span class="op">-</span>i)</span></code></pre></div>
       <p>特に <code>insert</code> を使ってリストの途中 (末尾以外)
       に要素を追加する処理は、処理時間が長くなることが確認できると思います。</p>
       <h1 data-number="9" id="リスト要素の削除"><span class="header-section-number">9</span>
@@ -1056,11 +1083,11 @@ nbformat                  5.10.4</code></pre>
       などのメソッドにより「<strong>要素の追加</strong>」が可能でした。これに対して <code>pop</code>
       や <code>remove</code> などのメソッドにより「<strong>要素の削除</strong>」が可能です。</p>
       <p>リストの要素削除について動作を確認するために、次のようなリストを考えます。実行して結果を確認してください。</p>
-      <div class="sourceCode" id="cb37" data-caption="準備"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb37-2"><a href="#cb37-2"></a>arr <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;ABCDBBEF&#39;</span>) <span class="co"># 文字列からリストを作成可能</span></span>
-<span id="cb37-3"><a href="#cb37-3"></a><span class="bu">print</span>(arr)      <span class="co"># =&gt; [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;B&#39;, &#39;B&#39;, &#39;E&#39;, &#39;F&#39;]</span></span>
-<span id="cb37-4"><a href="#cb37-4"></a><span class="bu">print</span>(<span class="bu">len</span>(arr)) <span class="co"># =&gt; 8</span></span></code></pre></div>
+      <div class="sourceCode" id="cb38" data-caption="準備"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb38-2"><a href="#cb38-2"></a>arr <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;ABCDBBEF&#39;</span>) <span class="co"># 文字列からリストを作成可能</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="bu">print</span>(arr)      <span class="co"># =&gt; [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;B&#39;, &#39;B&#39;, &#39;E&#39;, &#39;F&#39;]</span></span>
+<span id="cb38-4"><a href="#cb38-4"></a><span class="bu">print</span>(<span class="bu">len</span>(arr)) <span class="co"># =&gt; 8</span></span></code></pre></div>
       <p>上記のリスト <code>arr</code> に対して要素削除の操作を行ないます。</p>
       <p><code>pop</code>
       は「指定したインデックスの要素」を取り除き、その部分を「前詰め」します。例えば、<code>arr</code>
@@ -1068,40 +1095,40 @@ nbformat                  5.10.4</code></pre>
       <code>2</code> を <code>pop</code> の引数に指定します。<code>pop</code> メソッドには
       <strong>戻り値</strong> があり、取り除いた値を受けとることもできます。</p>
       <p>実際に次のプログラムを実行して、結果を確認してみてください。</p>
-      <div class="sourceCode" id="cb38" data-caption="インデックスを指定して要素を削除 (1)"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb38-2"><a href="#cb38-2"></a>arr <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;ABCDBBEF&#39;</span>)</span>
-<span id="cb38-3"><a href="#cb38-3"></a>p <span class="op">=</span> arr.pop(<span class="dv">2</span>)</span>
-<span id="cb38-4"><a href="#cb38-4"></a><span class="bu">print</span>(arr)      <span class="co"># =&gt; [&#39;A&#39;, &#39;B&#39;, &#39;D&#39;, &#39;B&#39;, &#39;B&#39;, &#39;E&#39;, &#39;F&#39;]</span></span>
-<span id="cb38-5"><a href="#cb38-5"></a><span class="bu">print</span>(<span class="bu">len</span>(arr)) <span class="co"># =&gt; 7</span></span>
-<span id="cb38-6"><a href="#cb38-6"></a><span class="bu">print</span>(<span class="ss">f&#39;p=</span><span class="sc">{</span>p<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; p=C</span></span></code></pre></div>
-      <p>上記の例では、<strong>第03行目</strong> で変数 <code>p</code> で <code>arr.pop(2)</code>
-      の結果を受け取っていますが、これは、次のように受け取らないことも可能です。</p>
-      <div class="sourceCode" id="cb39" data-caption="インデックスを指定して要素を削除 (2)"><pre
+      <div class="sourceCode" id="cb39" data-caption="インデックスを指定して要素を削除 (1)"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb39-2"><a href="#cb39-2"></a>arr <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;ABCDBBEF&#39;</span>)</span>
-<span id="cb39-3"><a href="#cb39-3"></a>arr.pop(<span class="dv">2</span>) <span class="co"># 戻り値を受け取らない</span></span>
-<span id="cb39-4"><a href="#cb39-4"></a><span class="bu">print</span>(arr)</span></code></pre></div>
+<span id="cb39-3"><a href="#cb39-3"></a>p <span class="op">=</span> arr.pop(<span class="dv">2</span>)</span>
+<span id="cb39-4"><a href="#cb39-4"></a><span class="bu">print</span>(arr)      <span class="co"># =&gt; [&#39;A&#39;, &#39;B&#39;, &#39;D&#39;, &#39;B&#39;, &#39;B&#39;, &#39;E&#39;, &#39;F&#39;]</span></span>
+<span id="cb39-5"><a href="#cb39-5"></a><span class="bu">print</span>(<span class="bu">len</span>(arr)) <span class="co"># =&gt; 7</span></span>
+<span id="cb39-6"><a href="#cb39-6"></a><span class="bu">print</span>(<span class="ss">f&#39;p=</span><span class="sc">{</span>p<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; p=C</span></span></code></pre></div>
+      <p>上記の例では、<strong>第03行目</strong> で変数 <code>p</code> で <code>arr.pop(2)</code>
+      の結果を受け取っていますが、これは、次のように受け取らないことも可能です。</p>
+      <div class="sourceCode" id="cb40" data-caption="インデックスを指定して要素を削除 (2)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb40-2"><a href="#cb40-2"></a>arr <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;ABCDBBEF&#39;</span>)</span>
+<span id="cb40-3"><a href="#cb40-3"></a>arr.pop(<span class="dv">2</span>) <span class="co"># 戻り値を受け取らない</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a><span class="bu">print</span>(arr)</span></code></pre></div>
       <p>上記のプログラムでは、取り除きたい要素 <code>'C'</code> のインデックスを <code>2</code>
       のように数値で直接的に指定しました。しかし、実際にはそのようなケースは少なく、前々回で学習した
       <code>index</code> メソッドと組み合わせて利用します（<code>index</code>
       は指定の要素が「リストの何番目に存在するか」を調べるメソッドでした）。</p>
       <p>つまり、次のように利用します。</p>
-      <div class="sourceCode" id="cb40"
-      data-caption="特定の値を持ったインデックスを検索して削除 (1)"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb40-2"><a href="#cb40-2"></a>arr <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;ABCDBBEF&#39;</span>)</span>
-<span id="cb40-3"><a href="#cb40-3"></a>idx <span class="op">=</span> arr.index(<span class="st">&#39;C&#39;</span>) <span class="co"># Cのインデックスを得る</span></span>
-<span id="cb40-4"><a href="#cb40-4"></a>arr.pop(idx)</span>
-<span id="cb40-5"><a href="#cb40-5"></a><span class="bu">print</span>(arr)</span></code></pre></div>
-      <p>これは、さらに次のように変数 <code>idx</code>
-      を省いて記述することができます。可読性が損なわれない範囲で、不要な変数は省くことが望ましいです。</p>
       <div class="sourceCode" id="cb41"
-      data-caption="特定の値を持ったインデックスを検索して削除 (2)"><pre
+      data-caption="特定の値を持ったインデックスを検索して削除 (1)"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb41-2"><a href="#cb41-2"></a>arr <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;ABCDBBEF&#39;</span>)</span>
-<span id="cb41-3"><a href="#cb41-3"></a>arr.pop(arr.index(<span class="st">&#39;C&#39;</span>)) <span class="co"># ここに注目</span></span>
-<span id="cb41-4"><a href="#cb41-4"></a><span class="bu">print</span>(arr)</span></code></pre></div>
+<span id="cb41-3"><a href="#cb41-3"></a>idx <span class="op">=</span> arr.index(<span class="st">&#39;C&#39;</span>) <span class="co"># Cのインデックスを得る</span></span>
+<span id="cb41-4"><a href="#cb41-4"></a>arr.pop(idx)</span>
+<span id="cb41-5"><a href="#cb41-5"></a><span class="bu">print</span>(arr)</span></code></pre></div>
+      <p>これは、さらに次のように変数 <code>idx</code>
+      を省いて記述することができます。可読性が損なわれない範囲で、不要な変数は省くことが望ましいです。</p>
+      <div class="sourceCode" id="cb42"
+      data-caption="特定の値を持ったインデックスを検索して削除 (2)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb42-2"><a href="#cb42-2"></a>arr <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;ABCDBBEF&#39;</span>)</span>
+<span id="cb42-3"><a href="#cb42-3"></a>arr.pop(arr.index(<span class="st">&#39;C&#39;</span>)) <span class="co"># ここに注目</span></span>
+<span id="cb42-4"><a href="#cb42-4"></a><span class="bu">print</span>(arr)</span></code></pre></div>
       <ul>
       <li><code>pop</code>
       の引数に負数を与えたとき、どのようになるか。結果について推測したうえで、実際にコードを実行して確認してください。</li>
@@ -1111,11 +1138,11 @@ nbformat                  5.10.4</code></pre>
       <p><code>remove</code>
       では、インデックスではく、削除したい「<strong>要素そのもの</strong>」を指定してリストから取り除くことができます。先ほどと同様に
       <code>'C'</code> を削除したい場合は次のようにします。</p>
-      <div class="sourceCode" id="cb42" data-caption="要素の値を指定して削除"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb42-2"><a href="#cb42-2"></a>arr <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;ABCDBBEF&#39;</span>)</span>
-<span id="cb42-3"><a href="#cb42-3"></a>arr.remove(<span class="st">&#39;C&#39;</span>) <span class="co"># 削除したいものを直接指定</span></span>
-<span id="cb42-4"><a href="#cb42-4"></a><span class="bu">print</span>(arr)</span></code></pre></div>
+      <div class="sourceCode" id="cb43" data-caption="要素の値を指定して削除"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb43-2"><a href="#cb43-2"></a>arr <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;ABCDBBEF&#39;</span>)</span>
+<span id="cb43-3"><a href="#cb43-3"></a>arr.remove(<span class="st">&#39;C&#39;</span>) <span class="co"># 削除したいものを直接指定</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a><span class="bu">print</span>(arr)</span></code></pre></div>
       <ul>
       <li>リストに存在していない要素 (たとえば <code>Z</code> など) を <code>remove</code>
       の引数に与えたとき、どのようになるか。結果を推測したうえで、実際に結果を確認してください。</li>
@@ -1126,12 +1153,12 @@ nbformat                  5.10.4</code></pre>
       を削除します。<strong>全てを削除したい場合</strong>は <span class="masked"><code>while</code>
       などと組み合わせて <code>remove</code> 使用する必要</span> があります。</p>
       <p>次のプログラム実行し、その結果を確認してください。</p>
-      <div class="sourceCode" id="cb43"
+      <div class="sourceCode" id="cb44"
       data-caption="「remove」では最初に見つかった要素（1個のみ）が削除される例"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb43-2"><a href="#cb43-2"></a>arr <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;ABCDBBEF&#39;</span>)</span>
-<span id="cb43-3"><a href="#cb43-3"></a>arr.remove(<span class="st">&#39;B&#39;</span>) <span class="co"># 最初に発見したBのみを削除</span></span>
-<span id="cb43-4"><a href="#cb43-4"></a><span class="bu">print</span>(arr)</span></code></pre></div>
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb44-2"><a href="#cb44-2"></a>arr <span class="op">=</span> <span class="bu">list</span>(<span class="st">&#39;ABCDBBEF&#39;</span>)</span>
+<span id="cb44-3"><a href="#cb44-3"></a>arr.remove(<span class="st">&#39;B&#39;</span>) <span class="co"># 最初に発見したBのみを削除</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a><span class="bu">print</span>(arr)</span></code></pre></div>
       <h2 data-number="9.2" id="演習6-目標時間-10分"><span class="header-section-number">9.2</span>
       演習6 (⌛目標時間: 10分)</h2>
       <p>次のプログラムが意図する動作をするようにコードを追加してください。</p>
@@ -1146,48 +1173,48 @@ nbformat                  5.10.4</code></pre>
       は、<code>while</code> に対する条件式としても使うことができます。</li>
       </ul></li>
       </ul>
-      <div class="sourceCode" id="cb44" data-caption="演習6"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb44-2"><a href="#cb44-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
-<span id="cb44-3"><a href="#cb44-3"></a></span>
-<span id="cb44-4"><a href="#cb44-4"></a>RED <span class="op">=</span> <span class="st">&#39;</span><span class="ch">\033</span><span class="st">[31m&#39;</span></span>
-<span id="cb44-5"><a href="#cb44-5"></a>BLUE <span class="op">=</span> <span class="st">&#39;</span><span class="ch">\033</span><span class="st">[34m&#39;</span></span>
-<span id="cb44-6"><a href="#cb44-6"></a>RESET <span class="op">=</span> <span class="st">&#39;</span><span class="ch">\033</span><span class="st">[0m&#39;</span></span>
-<span id="cb44-7"><a href="#cb44-7"></a></span>
-<span id="cb44-8"><a href="#cb44-8"></a>target <span class="op">=</span> <span class="st">&#39;やくそう&#39;</span></span>
-<span id="cb44-9"><a href="#cb44-9"></a>items <span class="op">=</span> [<span class="st">&#39;どうのつるぎ&#39;</span>,<span class="st">&#39;やくそう&#39;</span>,<span class="st">&#39;どくけしそう&#39;</span>,<span class="st">&#39;ぬののふく&#39;</span>, <span class="st">&#39;やくそう&#39;</span>, <span class="st">&#39;やくそう&#39;</span>, <span class="st">&#39;かわのたて&#39;</span>]</span>
-<span id="cb44-10"><a href="#cb44-10"></a></span>
-<span id="cb44-11"><a href="#cb44-11"></a><span class="bu">print</span>(<span class="ss">f&#39;勇者ヨシヒコのもちもの (</span><span class="sc">{</span><span class="bu">len</span>(items)<span class="sc">}</span><span class="ss">) : </span><span class="sc">{</span>BLUE<span class="sc">}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
-<span id="cb44-12"><a href="#cb44-12"></a><span class="bu">print</span>(<span class="op">*</span>items, sep<span class="op">=</span><span class="st">&#39; &#39;</span>) <span class="co"># アンパック(後述)</span></span>
-<span id="cb44-13"><a href="#cb44-13"></a><span class="bu">print</span>(RESET)</span>
-<span id="cb44-14"><a href="#cb44-14"></a></span>
-<span id="cb44-15"><a href="#cb44-15"></a><span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>RED<span class="sc">}</span><span class="ss">勇者ヨシヒコはパルプンテを唱えた。なんと全ての「</span><span class="sc">{</span>target<span class="sc">}</span><span class="ss">」が粉々に砕け散った💥💥</span><span class="sc">{</span>RESET<span class="sc">}</span><span class="ss">&#39;</span>)</span>
-<span id="cb44-16"><a href="#cb44-16"></a><span class="bu">print</span>()</span>
-<span id="cb44-17"><a href="#cb44-17"></a></span>
-<span id="cb44-18"><a href="#cb44-18"></a><span class="co">#【意図する動作】</span></span>
-<span id="cb44-19"><a href="#cb44-19"></a><span class="co"># ここに items からすべての target を取り除くような処理を記述する</span></span>
-<span id="cb44-20"><a href="#cb44-20"></a></span>
-<span id="cb44-21"><a href="#cb44-21"></a><span class="bu">print</span>(<span class="ss">f&#39;勇者ヨシヒコのもちもの (</span><span class="sc">{</span><span class="bu">len</span>(items)<span class="sc">}</span><span class="ss">) : </span><span class="sc">{</span>BLUE<span class="sc">}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
-<span id="cb44-22"><a href="#cb44-22"></a><span class="bu">print</span>(<span class="op">*</span>items, sep<span class="op">=</span><span class="st">&#39; &#39;</span>) </span>
-<span id="cb44-23"><a href="#cb44-23"></a><span class="bu">print</span>(RESET)</span></code></pre></div>
+      <div class="sourceCode" id="cb45" data-caption="演習6"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
+<span id="cb45-3"><a href="#cb45-3"></a></span>
+<span id="cb45-4"><a href="#cb45-4"></a>RED <span class="op">=</span> <span class="st">&#39;</span><span class="ch">\033</span><span class="st">[31m&#39;</span></span>
+<span id="cb45-5"><a href="#cb45-5"></a>BLUE <span class="op">=</span> <span class="st">&#39;</span><span class="ch">\033</span><span class="st">[34m&#39;</span></span>
+<span id="cb45-6"><a href="#cb45-6"></a>RESET <span class="op">=</span> <span class="st">&#39;</span><span class="ch">\033</span><span class="st">[0m&#39;</span></span>
+<span id="cb45-7"><a href="#cb45-7"></a></span>
+<span id="cb45-8"><a href="#cb45-8"></a>target <span class="op">=</span> <span class="st">&#39;やくそう&#39;</span></span>
+<span id="cb45-9"><a href="#cb45-9"></a>items <span class="op">=</span> [<span class="st">&#39;どうのつるぎ&#39;</span>,<span class="st">&#39;やくそう&#39;</span>,<span class="st">&#39;どくけしそう&#39;</span>,<span class="st">&#39;ぬののふく&#39;</span>, <span class="st">&#39;やくそう&#39;</span>, <span class="st">&#39;やくそう&#39;</span>, <span class="st">&#39;かわのたて&#39;</span>]</span>
+<span id="cb45-10"><a href="#cb45-10"></a></span>
+<span id="cb45-11"><a href="#cb45-11"></a><span class="bu">print</span>(<span class="ss">f&#39;勇者ヨシヒコのもちもの (</span><span class="sc">{</span><span class="bu">len</span>(items)<span class="sc">}</span><span class="ss">) : </span><span class="sc">{</span>BLUE<span class="sc">}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb45-12"><a href="#cb45-12"></a><span class="bu">print</span>(<span class="op">*</span>items, sep<span class="op">=</span><span class="st">&#39; &#39;</span>) <span class="co"># アンパック(後述)</span></span>
+<span id="cb45-13"><a href="#cb45-13"></a><span class="bu">print</span>(RESET)</span>
+<span id="cb45-14"><a href="#cb45-14"></a></span>
+<span id="cb45-15"><a href="#cb45-15"></a><span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>RED<span class="sc">}</span><span class="ss">勇者ヨシヒコはパルプンテを唱えた。なんと全ての「</span><span class="sc">{</span>target<span class="sc">}</span><span class="ss">」が粉々に砕け散った💥💥</span><span class="sc">{</span>RESET<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb45-16"><a href="#cb45-16"></a><span class="bu">print</span>()</span>
+<span id="cb45-17"><a href="#cb45-17"></a></span>
+<span id="cb45-18"><a href="#cb45-18"></a><span class="co">#【意図する動作】</span></span>
+<span id="cb45-19"><a href="#cb45-19"></a><span class="co"># ここに items からすべての target を取り除くような処理を記述する</span></span>
+<span id="cb45-20"><a href="#cb45-20"></a></span>
+<span id="cb45-21"><a href="#cb45-21"></a><span class="bu">print</span>(<span class="ss">f&#39;勇者ヨシヒコのもちもの (</span><span class="sc">{</span><span class="bu">len</span>(items)<span class="sc">}</span><span class="ss">) : </span><span class="sc">{</span>BLUE<span class="sc">}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb45-22"><a href="#cb45-22"></a><span class="bu">print</span>(<span class="op">*</span>items, sep<span class="op">=</span><span class="st">&#39; &#39;</span>) </span>
+<span id="cb45-23"><a href="#cb45-23"></a><span class="bu">print</span>(RESET)</span></code></pre></div>
       <div class="note type-tips">
       <p><strong>リストのアンパック</strong></p>
       <p>リストを関数の引数として与える場合、先頭に「<strong>アスタリスク</strong>」をつけて「<strong>アンパック
       (展開)</strong>」という処理を施すことができます。これにより、次のようなことができます。</p>
-      <div class="sourceCode" id="cb45" data-caption="アンパックを利用したPythonicなプログラム"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb45-2"><a href="#cb45-2"></a>items <span class="op">=</span> [<span class="st">&#39;どうのつるぎ&#39;</span>,<span class="st">&#39;やくそう&#39;</span>,<span class="st">&#39;どくけしそう&#39;</span>,<span class="st">&#39;ぬののふく&#39;</span>]</span>
-<span id="cb45-3"><a href="#cb45-3"></a><span class="bu">print</span>(<span class="op">*</span>items, sep<span class="op">=</span><span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>) <span class="co"># itemsの頭に「*」を付けた。また sep 引数を設定</span></span></code></pre></div>
+      <div class="sourceCode" id="cb46" data-caption="アンパックを利用したPythonicなプログラム"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb46-2"><a href="#cb46-2"></a>items <span class="op">=</span> [<span class="st">&#39;どうのつるぎ&#39;</span>,<span class="st">&#39;やくそう&#39;</span>,<span class="st">&#39;どくけしそう&#39;</span>,<span class="st">&#39;ぬののふく&#39;</span>]</span>
+<span id="cb46-3"><a href="#cb46-3"></a><span class="bu">print</span>(<span class="op">*</span>items, sep<span class="op">=</span><span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>) <span class="co"># itemsの頭に「*」を付けた。また sep 引数を設定</span></span></code></pre></div>
       <p>このとき、上記の <strong>第03行目</strong> は、次のような文と同じ意味を持ちます。</p>
-      <div class="sourceCode" id="cb46" data-caption="アンパックの解説"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a><span class="bu">print</span>(<span class="st">&#39;どうのつるぎ&#39;</span>,<span class="st">&#39;やくそう&#39;</span>,<span class="st">&#39;どくけしそう&#39;</span>,<span class="st">&#39;ぬののふく&#39;</span>, sep<span class="op">=</span><span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span></code></pre></div>
+      <div class="sourceCode" id="cb47" data-caption="アンパックの解説"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a><span class="bu">print</span>(<span class="st">&#39;どうのつるぎ&#39;</span>,<span class="st">&#39;やくそう&#39;</span>,<span class="st">&#39;どくけしそう&#39;</span>,<span class="st">&#39;ぬののふく&#39;</span>, sep<span class="op">=</span><span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)</span></code></pre></div>
       <p>つまり、リストをアンパックすると「<strong>リスト内の要素を個別の引数として関数に与えること</strong>」が可能になります。もし、アンパックを使わずに同じ処理をする場合、以下のように
       <code>for</code> を利用する必要があります。</p>
-      <div class="sourceCode" id="cb47" data-caption="アンパックを利用しない例"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb47-2"><a href="#cb47-2"></a>items <span class="op">=</span> [<span class="st">&#39;どうのつるぎ&#39;</span>,<span class="st">&#39;やくそう&#39;</span>,<span class="st">&#39;どくけしそう&#39;</span>,<span class="st">&#39;ぬののふく&#39;</span>]</span>
-<span id="cb47-3"><a href="#cb47-3"></a><span class="cf">for</span> item <span class="kw">in</span> items :</span>
-<span id="cb47-4"><a href="#cb47-4"></a>  <span class="bu">print</span>(item)</span></code></pre></div>
+      <div class="sourceCode" id="cb48" data-caption="アンパックを利用しない例"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb48-2"><a href="#cb48-2"></a>items <span class="op">=</span> [<span class="st">&#39;どうのつるぎ&#39;</span>,<span class="st">&#39;やくそう&#39;</span>,<span class="st">&#39;どくけしそう&#39;</span>,<span class="st">&#39;ぬののふく&#39;</span>]</span>
+<span id="cb48-3"><a href="#cb48-3"></a><span class="cf">for</span> item <span class="kw">in</span> items :</span>
+<span id="cb48-4"><a href="#cb48-4"></a>  <span class="bu">print</span>(item)</span></code></pre></div>
       </div>
       <h1 data-number="10" id="宿題"><span class="header-section-number">10</span> 宿題</h1>
       <p>次回は、次のような「斜方投射」の簡易シミュレーションを扱います。斜方投射 (基礎物理学)
@@ -1207,84 +1234,59 @@ nbformat                  5.10.4</code></pre>
       <span class="math inline">\(dt\)</span> 秒後の速度を求めよ。答え：<span class="masked"><span
       class="math inline">\(v-g\cdot dt\)</span></span></p></li>
       </ul>
-      <div class="sourceCode" id="cb48"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb48-2"><a href="#cb48-2"></a><span class="im">import</span> math</span>
-<span id="cb48-3"><a href="#cb48-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb48-4"><a href="#cb48-4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb48-5"><a href="#cb48-5"></a></span>
-<span id="cb48-6"><a href="#cb48-6"></a><span class="co"># パラメータ設定</span></span>
-<span id="cb48-7"><a href="#cb48-7"></a>v0 <span class="op">=</span> <span class="fl">20.0</span>    <span class="co"># 初速度(m/s)</span></span>
-<span id="cb48-8"><a href="#cb48-8"></a>theta <span class="op">=</span> <span class="dv">60</span>   <span class="co"># 水平方向から上方にθ(deg)</span></span>
-<span id="cb48-9"><a href="#cb48-9"></a>g <span class="op">=</span> <span class="fl">9.8</span>      <span class="co"># 重力加速度m/s^2</span></span>
-<span id="cb48-10"><a href="#cb48-10"></a></span>
-<span id="cb48-11"><a href="#cb48-11"></a><span class="co"># シミュレーション</span></span>
-<span id="cb48-12"><a href="#cb48-12"></a>dt <span class="op">=</span> <span class="fl">0.1</span>  <span class="co"># 位置計算の時間間隔</span></span>
-<span id="cb48-13"><a href="#cb48-13"></a><span class="bu">iter</span> <span class="op">=</span> <span class="dv">80</span> <span class="co"># シミュレーション繰返し回数</span></span>
-<span id="cb48-14"><a href="#cb48-14"></a></span>
-<span id="cb48-15"><a href="#cb48-15"></a>theta <span class="op">=</span> math.radians(theta) <span class="co"># deg -&gt; rad</span></span>
-<span id="cb48-16"><a href="#cb48-16"></a></span>
-<span id="cb48-17"><a href="#cb48-17"></a>arr_x<span class="op">=</span>[<span class="dv">0</span>]<span class="op">*</span><span class="bu">iter</span> <span class="co"># X位置を格納するリストの初期化</span></span>
-<span id="cb48-18"><a href="#cb48-18"></a>arr_y<span class="op">=</span>[<span class="dv">0</span>]<span class="op">*</span><span class="bu">iter</span> <span class="co"># Y位置　〃</span></span>
-<span id="cb48-19"><a href="#cb48-19"></a></span>
-<span id="cb48-20"><a href="#cb48-20"></a>arr_x[<span class="dv">0</span>] <span class="op">=</span> x <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Xの初期位置</span></span>
-<span id="cb48-21"><a href="#cb48-21"></a>arr_y[<span class="dv">0</span>] <span class="op">=</span> y <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Yの 〃</span></span>
-<span id="cb48-22"><a href="#cb48-22"></a>vx <span class="op">=</span> v0 <span class="op">*</span> math.cos(theta) <span class="co"># X成分の初期速度 </span></span>
-<span id="cb48-23"><a href="#cb48-23"></a>vy <span class="op">=</span> v0 <span class="op">*</span> math.sin(theta) <span class="co"># Y成分 〃</span></span>
-<span id="cb48-24"><a href="#cb48-24"></a></span>
-<span id="cb48-25"><a href="#cb48-25"></a><span class="co"># シミュレーション</span></span>
-<span id="cb48-26"><a href="#cb48-26"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="bu">iter</span>):</span>
-<span id="cb48-27"><a href="#cb48-27"></a>  vy <span class="op">=</span> vy <span class="op">-</span> g <span class="op">*</span> dt <span class="co"># Y方向の速度更新</span></span>
-<span id="cb48-28"><a href="#cb48-28"></a>  x <span class="op">=</span> x <span class="op">+</span> vx <span class="op">*</span> dt  <span class="co"># X位置の計算</span></span>
-<span id="cb48-29"><a href="#cb48-29"></a>  y <span class="op">=</span> y <span class="op">+</span> vy <span class="op">*</span> dt  <span class="co"># Y位置 〃</span></span>
-<span id="cb48-30"><a href="#cb48-30"></a></span>
-<span id="cb48-31"><a href="#cb48-31"></a>  <span class="co"># 地面衝突の反発 (バウンド) の処理</span></span>
-<span id="cb48-32"><a href="#cb48-32"></a>  <span class="cf">if</span> y <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb48-33"><a href="#cb48-33"></a>    y <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb48-34"><a href="#cb48-34"></a>    vy <span class="op">=</span> <span class="op">-</span>vy <span class="op">*</span> <span class="fl">0.8</span>  <span class="co"># 反発係数</span></span>
-<span id="cb48-35"><a href="#cb48-35"></a></span>
-<span id="cb48-36"><a href="#cb48-36"></a>  arr_x[i] <span class="op">=</span> x</span>
-<span id="cb48-37"><a href="#cb48-37"></a>  arr_y[i] <span class="op">=</span> y</span>
-<span id="cb48-38"><a href="#cb48-38"></a></span>
-<span id="cb48-39"><a href="#cb48-39"></a><span class="co"># 可視化（現状でここから先は理解不要）</span></span>
-<span id="cb48-40"><a href="#cb48-40"></a>fig,ax <span class="op">=</span> plt.subplots(dpi<span class="op">=</span><span class="dv">120</span>)</span>
-<span id="cb48-41"><a href="#cb48-41"></a>ax.scatter(arr_x,arr_y,marker<span class="op">=</span><span class="st">&#39;o&#39;</span>,s<span class="op">=</span><span class="dv">20</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb48-42"><a href="#cb48-42"></a>ax.axhline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb48-43"><a href="#cb48-43"></a>ax.set_aspect(<span class="st">&#39;equal&#39;</span>, adjustable<span class="op">=</span><span class="st">&#39;box&#39;</span>)</span>
-<span id="cb48-44"><a href="#cb48-44"></a>ax.set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
-<span id="cb48-45"><a href="#cb48-45"></a>plt.show()</span></code></pre></div>
+      <div class="sourceCode" id="cb49"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="im">import</span> math</span>
+<span id="cb49-3"><a href="#cb49-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb49-4"><a href="#cb49-4"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb49-5"><a href="#cb49-5"></a></span>
+<span id="cb49-6"><a href="#cb49-6"></a><span class="co"># パラメータ設定</span></span>
+<span id="cb49-7"><a href="#cb49-7"></a>v0 <span class="op">=</span> <span class="fl">20.0</span>    <span class="co"># 初速度(m/s)</span></span>
+<span id="cb49-8"><a href="#cb49-8"></a>theta <span class="op">=</span> <span class="dv">60</span>   <span class="co"># 水平方向から上方にθ(deg)</span></span>
+<span id="cb49-9"><a href="#cb49-9"></a>g <span class="op">=</span> <span class="fl">9.8</span>      <span class="co"># 重力加速度m/s^2</span></span>
+<span id="cb49-10"><a href="#cb49-10"></a></span>
+<span id="cb49-11"><a href="#cb49-11"></a><span class="co"># シミュレーション</span></span>
+<span id="cb49-12"><a href="#cb49-12"></a>dt <span class="op">=</span> <span class="fl">0.1</span>  <span class="co"># 位置計算の時間間隔</span></span>
+<span id="cb49-13"><a href="#cb49-13"></a><span class="bu">iter</span> <span class="op">=</span> <span class="dv">80</span> <span class="co"># シミュレーション繰返し回数</span></span>
+<span id="cb49-14"><a href="#cb49-14"></a></span>
+<span id="cb49-15"><a href="#cb49-15"></a>theta <span class="op">=</span> math.radians(theta) <span class="co"># deg -&gt; rad</span></span>
+<span id="cb49-16"><a href="#cb49-16"></a></span>
+<span id="cb49-17"><a href="#cb49-17"></a>arr_x<span class="op">=</span>[<span class="dv">0</span>]<span class="op">*</span><span class="bu">iter</span> <span class="co"># X位置を格納するリストの初期化</span></span>
+<span id="cb49-18"><a href="#cb49-18"></a>arr_y<span class="op">=</span>[<span class="dv">0</span>]<span class="op">*</span><span class="bu">iter</span> <span class="co"># Y位置　〃</span></span>
+<span id="cb49-19"><a href="#cb49-19"></a></span>
+<span id="cb49-20"><a href="#cb49-20"></a>arr_x[<span class="dv">0</span>] <span class="op">=</span> x <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Xの初期位置</span></span>
+<span id="cb49-21"><a href="#cb49-21"></a>arr_y[<span class="dv">0</span>] <span class="op">=</span> y <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Yの 〃</span></span>
+<span id="cb49-22"><a href="#cb49-22"></a>vx <span class="op">=</span> v0 <span class="op">*</span> math.cos(theta) <span class="co"># X成分の初期速度 </span></span>
+<span id="cb49-23"><a href="#cb49-23"></a>vy <span class="op">=</span> v0 <span class="op">*</span> math.sin(theta) <span class="co"># Y成分 〃</span></span>
+<span id="cb49-24"><a href="#cb49-24"></a></span>
+<span id="cb49-25"><a href="#cb49-25"></a><span class="co"># シミュレーション</span></span>
+<span id="cb49-26"><a href="#cb49-26"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="bu">iter</span>):</span>
+<span id="cb49-27"><a href="#cb49-27"></a>  vy <span class="op">=</span> vy <span class="op">-</span> g <span class="op">*</span> dt <span class="co"># Y方向の速度更新</span></span>
+<span id="cb49-28"><a href="#cb49-28"></a>  x <span class="op">=</span> x <span class="op">+</span> vx <span class="op">*</span> dt  <span class="co"># X位置の計算</span></span>
+<span id="cb49-29"><a href="#cb49-29"></a>  y <span class="op">=</span> y <span class="op">+</span> vy <span class="op">*</span> dt  <span class="co"># Y位置 〃</span></span>
+<span id="cb49-30"><a href="#cb49-30"></a></span>
+<span id="cb49-31"><a href="#cb49-31"></a>  <span class="co"># 地面衝突の反発 (バウンド) の処理</span></span>
+<span id="cb49-32"><a href="#cb49-32"></a>  <span class="cf">if</span> y <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb49-33"><a href="#cb49-33"></a>    y <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb49-34"><a href="#cb49-34"></a>    vy <span class="op">=</span> <span class="op">-</span>vy <span class="op">*</span> <span class="fl">0.8</span>  <span class="co"># 反発係数</span></span>
+<span id="cb49-35"><a href="#cb49-35"></a></span>
+<span id="cb49-36"><a href="#cb49-36"></a>  arr_x[i] <span class="op">=</span> x</span>
+<span id="cb49-37"><a href="#cb49-37"></a>  arr_y[i] <span class="op">=</span> y</span>
+<span id="cb49-38"><a href="#cb49-38"></a></span>
+<span id="cb49-39"><a href="#cb49-39"></a><span class="co"># 可視化（現状でここから先は理解不要）</span></span>
+<span id="cb49-40"><a href="#cb49-40"></a>fig,ax <span class="op">=</span> plt.subplots(dpi<span class="op">=</span><span class="dv">120</span>)</span>
+<span id="cb49-41"><a href="#cb49-41"></a>ax.scatter(arr_x,arr_y,marker<span class="op">=</span><span class="st">&#39;o&#39;</span>,s<span class="op">=</span><span class="dv">20</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb49-42"><a href="#cb49-42"></a>ax.axhline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb49-43"><a href="#cb49-43"></a>ax.set_aspect(<span class="st">&#39;equal&#39;</span>, adjustable<span class="op">=</span><span class="st">&#39;box&#39;</span>)</span>
+<span id="cb49-44"><a href="#cb49-44"></a>ax.set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
+<span id="cb49-45"><a href="#cb49-45"></a>plt.show()</span></code></pre></div>
       <h1 data-number="11" id="第08回講義の演習7の解答例"><span
       class="header-section-number">11</span> 第08回講義の「演習7」の解答例</h1>
       <p><a href="lecture08.html#演習7">第08回講義の「演習7」</a>(2025年度までは提出課題だったもの)
       の解答例です。</p>
       <h2 data-number="11.1" id="解答例①"><span class="header-section-number">11.1</span>
       解答例①</h2>
-      <div class="sourceCode" id="cb49" data-caption="解答例1 (オーソドックスな実装)"><pre
-      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
-<span id="cb49-2"><a href="#cb49-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
-<span id="cb49-3"><a href="#cb49-3"></a></span>
-<span id="cb49-4"><a href="#cb49-4"></a>item_names_str <span class="op">=</span> <span class="st">&#39;ひのきのぼう,こんぼう,どうのつるぎ,せいなるナイフ,くさりがま,とげのむち,まどうしのつえ,てつのやり,どくばり,てつのつめ,はがねのつるぎ,てつのオノ,あまぐものつえ,いかづちのつえ,さざなみのつえ,さばきのつえ,おおばさみ,ゆうわくのけん,りりょくのつえ,おおかなづち,はやぶさのけん,ゾンビキラー,ドラゴンキラー,くさなぎのけん,ガイアのつるぎ,ふぶきのつるぎ,いなづまのけん,まじんのオノ,らいじんのけん,もろはのつるぎ,はかいのつるぎ,おうごんのつめ,おうじゃのけん&#39;</span></span>
-<span id="cb49-5"><a href="#cb49-5"></a>item_p_str <span class="op">=</span> <span class="st">&#39;50,50,50,40,40,35,30,30,25,20,20,20,10,10,10,10,10,10,10,10,5,5,5,4,3,3,2,2,2,2,2,1,1&#39;</span></span>
-<span id="cb49-6"><a href="#cb49-6"></a></span>
-<span id="cb49-7"><a href="#cb49-7"></a>item_names <span class="op">=</span> <span class="bu">list</span>(item_names_str.split(<span class="st">&#39;,&#39;</span>))   <span class="co"># 文字列→リスト</span></span>
-<span id="cb49-8"><a href="#cb49-8"></a>item_p <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">int</span>, item_p_str.split(<span class="st">&#39;,&#39;</span>))) <span class="co"># 文字列→リスト</span></span>
-<span id="cb49-9"><a href="#cb49-9"></a></span>
-<span id="cb49-10"><a href="#cb49-10"></a><span class="cf">assert</span> <span class="bu">len</span>(item_names) <span class="op">==</span> <span class="bu">len</span>(item_p) <span class="co"># 2つのリストの長さが同じであることを確認</span></span>
-<span id="cb49-11"><a href="#cb49-11"></a></span>
-<span id="cb49-12"><a href="#cb49-12"></a>item_counts <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span><span class="bu">len</span>(item_names) <span class="co"># 結果を格納する0で初期化したリスト</span></span>
-<span id="cb49-13"><a href="#cb49-13"></a>n <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb49-14"><a href="#cb49-14"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
-<span id="cb49-15"><a href="#cb49-15"></a>  item <span class="op">=</span> r.choices(item_names,weights<span class="op">=</span>item_p,k<span class="op">=</span><span class="dv">1</span>)[<span class="dv">0</span>]</span>
-<span id="cb49-16"><a href="#cb49-16"></a>  index <span class="op">=</span> item_names.index(item)</span>
-<span id="cb49-17"><a href="#cb49-17"></a>  item_counts[index]<span class="op">+=</span><span class="dv">1</span></span>
-<span id="cb49-18"><a href="#cb49-18"></a></span>
-<span id="cb49-19"><a href="#cb49-19"></a><span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">連ガチャの結果、以下のアイテムを獲得しました。&#39;</span>)</span>
-<span id="cb49-20"><a href="#cb49-20"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(item_names)):</span>
-<span id="cb49-21"><a href="#cb49-21"></a>  <span class="cf">if</span> item_counts[i] <span class="op">!=</span> <span class="dv">0</span>: <span class="co"># 1個以上獲得していれば</span></span>
-<span id="cb49-22"><a href="#cb49-22"></a>    <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>item_names[i]<span class="sc">}</span><span class="ss"> ... </span><span class="sc">{</span>item_counts[i]<span class="sc">}</span><span class="ss">個&#39;</span>)</span></code></pre></div>
-      <h2 data-number="11.2" id="解答例②"><span class="header-section-number">11.2</span>
-      解答例②</h2>
-      <div class="sourceCode" id="cb50" data-caption="解答例2 (ちょっと変わった実装例)"><pre
+      <div class="sourceCode" id="cb50" data-caption="解答例1 (オーソドックスな実装)"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb50-2"><a href="#cb50-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
 <span id="cb50-3"><a href="#cb50-3"></a></span>
@@ -1296,9 +1298,34 @@ nbformat                  5.10.4</code></pre>
 <span id="cb50-9"><a href="#cb50-9"></a></span>
 <span id="cb50-10"><a href="#cb50-10"></a><span class="cf">assert</span> <span class="bu">len</span>(item_names) <span class="op">==</span> <span class="bu">len</span>(item_p) <span class="co"># 2つのリストの長さが同じであることを確認</span></span>
 <span id="cb50-11"><a href="#cb50-11"></a></span>
-<span id="cb50-12"><a href="#cb50-12"></a>items <span class="op">=</span> r.choices(item_names,weights<span class="op">=</span>item_p,k<span class="op">=</span><span class="dv">100</span>)</span>
-<span id="cb50-13"><a href="#cb50-13"></a><span class="cf">for</span> item <span class="kw">in</span> <span class="bu">set</span>(items):</span>
-<span id="cb50-14"><a href="#cb50-14"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> ... </span><span class="sc">{</span>items<span class="sc">.</span>count(item)<span class="sc">}</span><span class="ss">個&#39;</span>)</span></code></pre></div>
+<span id="cb50-12"><a href="#cb50-12"></a>item_counts <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span><span class="bu">len</span>(item_names) <span class="co"># 結果を格納する0で初期化したリスト</span></span>
+<span id="cb50-13"><a href="#cb50-13"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb50-14"><a href="#cb50-14"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
+<span id="cb50-15"><a href="#cb50-15"></a>  item <span class="op">=</span> r.choices(item_names,weights<span class="op">=</span>item_p,k<span class="op">=</span><span class="dv">1</span>)[<span class="dv">0</span>]</span>
+<span id="cb50-16"><a href="#cb50-16"></a>  index <span class="op">=</span> item_names.index(item)</span>
+<span id="cb50-17"><a href="#cb50-17"></a>  item_counts[index]<span class="op">+=</span><span class="dv">1</span></span>
+<span id="cb50-18"><a href="#cb50-18"></a></span>
+<span id="cb50-19"><a href="#cb50-19"></a><span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">連ガチャの結果、以下のアイテムを獲得しました。&#39;</span>)</span>
+<span id="cb50-20"><a href="#cb50-20"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(item_names)):</span>
+<span id="cb50-21"><a href="#cb50-21"></a>  <span class="cf">if</span> item_counts[i] <span class="op">!=</span> <span class="dv">0</span>: <span class="co"># 1個以上獲得していれば</span></span>
+<span id="cb50-22"><a href="#cb50-22"></a>    <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>item_names[i]<span class="sc">}</span><span class="ss"> ... </span><span class="sc">{</span>item_counts[i]<span class="sc">}</span><span class="ss">個&#39;</span>)</span></code></pre></div>
+      <h2 data-number="11.2" id="解答例②"><span class="header-section-number">11.2</span>
+      解答例②</h2>
+      <div class="sourceCode" id="cb51" data-caption="解答例2 (ちょっと変わった実装例)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb51-2"><a href="#cb51-2"></a><span class="im">import</span> random <span class="im">as</span> r</span>
+<span id="cb51-3"><a href="#cb51-3"></a></span>
+<span id="cb51-4"><a href="#cb51-4"></a>item_names_str <span class="op">=</span> <span class="st">&#39;ひのきのぼう,こんぼう,どうのつるぎ,せいなるナイフ,くさりがま,とげのむち,まどうしのつえ,てつのやり,どくばり,てつのつめ,はがねのつるぎ,てつのオノ,あまぐものつえ,いかづちのつえ,さざなみのつえ,さばきのつえ,おおばさみ,ゆうわくのけん,りりょくのつえ,おおかなづち,はやぶさのけん,ゾンビキラー,ドラゴンキラー,くさなぎのけん,ガイアのつるぎ,ふぶきのつるぎ,いなづまのけん,まじんのオノ,らいじんのけん,もろはのつるぎ,はかいのつるぎ,おうごんのつめ,おうじゃのけん&#39;</span></span>
+<span id="cb51-5"><a href="#cb51-5"></a>item_p_str <span class="op">=</span> <span class="st">&#39;50,50,50,40,40,35,30,30,25,20,20,20,10,10,10,10,10,10,10,10,5,5,5,4,3,3,2,2,2,2,2,1,1&#39;</span></span>
+<span id="cb51-6"><a href="#cb51-6"></a></span>
+<span id="cb51-7"><a href="#cb51-7"></a>item_names <span class="op">=</span> <span class="bu">list</span>(item_names_str.split(<span class="st">&#39;,&#39;</span>))   <span class="co"># 文字列→リスト</span></span>
+<span id="cb51-8"><a href="#cb51-8"></a>item_p <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="bu">int</span>, item_p_str.split(<span class="st">&#39;,&#39;</span>))) <span class="co"># 文字列→リスト</span></span>
+<span id="cb51-9"><a href="#cb51-9"></a></span>
+<span id="cb51-10"><a href="#cb51-10"></a><span class="cf">assert</span> <span class="bu">len</span>(item_names) <span class="op">==</span> <span class="bu">len</span>(item_p) <span class="co"># 2つのリストの長さが同じであることを確認</span></span>
+<span id="cb51-11"><a href="#cb51-11"></a></span>
+<span id="cb51-12"><a href="#cb51-12"></a>items <span class="op">=</span> r.choices(item_names,weights<span class="op">=</span>item_p,k<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb51-13"><a href="#cb51-13"></a><span class="cf">for</span> item <span class="kw">in</span> <span class="bu">set</span>(items):</span>
+<span id="cb51-14"><a href="#cb51-14"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>item<span class="sc">}</span><span class="ss"> ... </span><span class="sc">{</span>items<span class="sc">.</span>count(item)<span class="sc">}</span><span class="ss">個&#39;</span>)</span></code></pre></div>
       <!-- ---------------------------------------- -->
     </main>
 
