@@ -21,7 +21,7 @@ var:
 - 第08回講義 06月15日 (月)&ensp;[資料](lecture08.html)&ensp; <font size="-1">リスト</font>
 - 第09回講義 06月22日 (月)&ensp;[資料](lecture09.html)&ensp; ***小テスト3*** <font size="-1">ローカル開発環境構築</font>
 - 第10回講義 06月29日 (月)&ensp;[資料](lecture10.html)&ensp; <font size="-1">リストと繰返し</font>
-- 第11回講義 07月06日 (月)&ensp;資料&ensp; **_課題04_** <font size="-1">関数・型</font>
+- 第11回講義 07月06日 (月)&ensp;資料&ensp; **_小テスト3 (再)_** **_課題04_** <font size="-1">関数・型</font>
 
 ---
 
