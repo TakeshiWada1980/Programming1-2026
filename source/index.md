@@ -17,11 +17,20 @@ var:
 - 第05回講義 05月18日 (月)&ensp;[資料](lecture05.html)&ensp; <font size="-1">条件分岐</font>
 - 第06回講義 05月25日 (月)&ensp;[資料](lecture06.html)&ensp; ***小テスト2*** ***課題03***&ensp; <font size="-1">総合演習</font>
 - 第07回講義 06月01日 (月)&ensp;[資料](lecture07.html)&ensp; <font size="-1">繰り返し構文 (ループ変数), 数学計算</font>
-- 📝中間試験📝
+
+📝中間試験期間📝
+
 - 第08回講義 06月15日 (月)&ensp;[資料](lecture08.html)&ensp; <font size="-1">リスト</font>
 - 第09回講義 06月22日 (月)&ensp;[資料](lecture09.html)&ensp; ***小テスト3*** <font size="-1">ローカル開発環境構築</font>
 - 第10回講義 06月29日 (月)&ensp;[資料](lecture10.html)&ensp; <font size="-1">リストと繰返し</font>
-- 第11回講義 07月06日 (月)&ensp;資料&ensp; **_小テスト3 (再)_** **_課題04_** <font size="-1">関数・型</font>
+- 第11回講義 07月06日 (月)&ensp;[資料](lecture11.html)&ensp; **_小テスト3 (再)_** **_課題04_** <font size="-1">関数・型</font>
+- 第12回講義 07月13日 (月)&ensp;資料&ensp; 
+- 第13回講義 07月27日 (月)&ensp;資料&ensp; 
+
+🍉夏休み🍉
+
+- 第14回講義 09月14日 (月)&ensp;資料&ensp; 
+
 
 ---
 
