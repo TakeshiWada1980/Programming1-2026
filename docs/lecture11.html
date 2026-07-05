@@ -556,6 +556,45 @@ pip install numpy</code></pre>
 <span id="cb13-2"><a href="#cb13-2"></a>a<span class="op">=</span><span class="st">&#39;Wow!&#39;</span>  <span class="co"># この変数aには様々な値が入ることを想定しています。</span></span>
 <span id="cb13-3"><a href="#cb13-3"></a></span>
 <span id="cb13-4"><a href="#cb13-4"></a><span class="co"># 型に応じて処理を変えるプログラムを追記</span></span></code></pre></div>
+      <h3 data-number="5.2.2" id="定着確認"><span class="header-section-number">5.2.2</span>
+      定着確認</h3>
+      <ul>
+      <li>Python
+      では、変数を使う前に、その変数の型を明示的に宣言しておく必要がある。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span class="masked">Python
+      は動的型付け言語であり、C/C++やJavaのような型宣言の構文は存在しない。<code>a=10</code>
+      のように値を代入するだけで、その値に応じて型が自動的に決まる。</span></li>
+      </ul></li>
+      <li><code>a=10</code> として <code>a</code> が整数型 (int) になったあと、同じプログラム内で
+      <code>a='ABC'</code> と書くと、エラーになる。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span class="masked">Python
+      では、変数そのものに型が固定されているのではなく、代入された値に型がある。そのため
+      <code>a</code> に別の型の値を再代入すれば、<code>a</code>
+      の型もそれに応じて変わる（動的型付け）。エラーにはならない。</span></li>
+      </ul></li>
+      <li><code>a=True</code> のとき、<code>type(a) is int</code> と <code>isinstance(a, int)</code>
+      は、常に同じ結果になる。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span class="masked"><code>type(a) is int</code> は
+      <code>False</code> になるが、<code>isinstance(a, int)</code> は <code>True</code>
+      になる。bool型が
+      int型の派生型であるために生じる現象で、両者は常に一致するとは限らない。</span></li>
+      </ul></li>
+      <li>変数 <code>a</code> に整数型 (int) の値が入っているとき <code>a.upper()</code>
+      を呼び出すと、文字列型ではないため何も出力されないだけで、エラーにはならない。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span class="masked">整数型 (int) は <code>upper</code>
+      というメソッドを持っていないため、<code>a.upper()</code> を呼び出すと
+      <code>AttributeError</code>
+      が発生してプログラムが停止する。「何も起きない」わけではない。</span></li>
+      </ul></li>
+      </ul>
       <h1 data-number="6" id="関数-function-初級"><span class="header-section-number">6</span> 関数
       (Function) 初級</h1>
       <p>プログラムにおいて <span
@@ -654,6 +693,54 @@ pip install numpy</code></pre>
 <span id="cb17-8"><a href="#cb17-8"></a>p2_x, p2_y <span class="op">=</span> <span class="dv">15</span>, <span class="dv">25</span></span>
 <span id="cb17-9"><a href="#cb17-9"></a>d <span class="op">=</span> get_distance( p1_x, p1_y, p2_x, p2_y )</span>
 <span id="cb17-10"><a href="#cb17-10"></a><span class="bu">print</span>(<span class="ss">f&#39;距離は </span><span class="sc">{</span>d<span class="sc">:.1f}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <h3 data-number="6.3.1" id="定着確認-1"><span class="header-section-number">6.3.1</span>
+      定着確認</h3>
+      <ul>
+      <li>Python では、<code>def</code>
+      で関数を定義した行が実行されると、その時点で関数の中身（ブロック）も一度実行される。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span class="masked"><code>def</code>
+      は関数を「定義する（登録する）」だけの文であり、関数の中身が実行されるのは、その関数が実際に呼び出されたときだけである。</span></li>
+      </ul></li>
+      <li><code>def add_tax_to_price(price):</code> の仮引数名を
+      <code>def add_tax_to_price(p):</code> のように変更した場合、その関数を呼び出している側
+      (<code>add_tax_to_price(p1)</code> など) の変数名も <code>p</code>
+      に合わせて書き換える必要がある。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span
+      class="masked">仮引数名は関数定義の内部だけで使われるローカルな名前であり、呼び出し側の変数名と一致させる必要はない。呼び出し側は「値」を渡しているだけで、その値が呼び出された時点の仮引数に格納される。</span></li>
+      </ul></li>
+      <li>1個の引数を受け取るように定義された関数を、引数を渡さずに呼び出すと
+      (<code>add_tax_to_price()</code> のように)
+      、エラーになる。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">適切⭕</span></li>
+      <li><strong>解説</strong>: <span class="masked"><code>price</code>
+      に対応する値が渡されていないため
+      <code>TypeError: add_tax_to_price() missing 1 required positional argument: 'price'</code>
+      のようなエラーが発生する。</span></li>
+      </ul></li>
+      <li>関数の呼び出し (<code>add_tax_to_price(p1)</code> など) を、その関数を定義する
+      <code>def ...</code>
+      よりも前に書いても、問題なく動作する。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span
+      class="masked">Pythonのプログラムは上から順に実行されるため、関数の呼び出しが <code>def</code>
+      による定義よりも前にあると、その時点ではまだ関数が定義されておらず <code>NameError</code>
+      が発生する。</span></li>
+      </ul></li>
+      <li><code>get_distance(x1,y1,x2,y2)</code>
+      のように複数の引数を持つ関数を呼び出すとき、渡す値の順番を入れ替えても、結果に影響はない。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span class="masked">複数の引数は先頭から順番に仮引数
+      (<code>x1,y1,x2,y2</code>)
+      へ対応づけられる（位置引数）。渡す順番を変えると各仮引数に格納される値も変わってしまい、結果も変わる。</span></li>
+      </ul></li>
+      </ul>
       <h1 data-number="7" id="アサート文"><span class="header-section-number">7</span>
       アサート文</h1>
       <p>アサート (<code>assert</code>) は主に <span class="masked">デバッグやエラーチェック</span>
@@ -721,6 +808,34 @@ pip install numpy</code></pre>
 <span id="cb20-5"><a href="#cb20-5"></a></span>
 <span id="cb20-6"><a href="#cb20-6"></a></span>
 <span id="cb20-7"><a href="#cb20-7"></a><span class="bu">print</span>(<span class="ss">f&#39;リストの先頭要素は </span><span class="sc">{</span>a[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> です。&#39;</span>)</span></code></pre></div>
+      <h3 data-number="7.1.1" id="定着確認-2"><span class="header-section-number">7.1.1</span>
+      定着確認</h3>
+      <ul>
+      <li><code>assert 条件式</code> は、条件式が <strong>真 (True)</strong>
+      のときにエラーを発生させてプログラムを停止する。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span class="masked"><code>assert</code> は条件式が <strong>偽
+      (False)</strong> のときに <code>AssertionError</code> を発生させてプログラムを停止する。真
+      (True) の場合は何も起きず、そのまま処理が継続される。</span></li>
+      </ul></li>
+      <li><code>assert</code>
+      はデバッグ・確認のための機能であり、製品として提供するプログラムのエラー処理には、例外処理など別の仕組みを使うことが推奨される。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">適切⭕</span></li>
+      <li><strong>解説</strong>: <span class="masked"><code>assert</code>
+      は「ここではこうなっているはず」という開発者自身の前提を確認するための機能であり、あくまでデバッグ用途。製品レベルのエラー処理には、後の講義で学習する例外処理などを利用する。</span></li>
+      </ul></li>
+      <li><code>assert len(arr) == 6</code> のようなアサート文には条件式のみ書くことができ、条件が
+      False
+      だったときに表示する任意のメッセージを追加することはできない。この説明は「適切」か「不適切」か答えよ。
+      <ul>
+      <li><strong>答え</strong>: <span class="masked">不適切</span></li>
+      <li><strong>解説</strong>: <span class="masked"><code>assert 条件式, 'メッセージ'</code>
+      のようにカンマに続けて文字列を指定することで、<code>AssertionError</code>
+      発生時にそのメッセージを表示させることができる。</span></li>
+      </ul></li>
+      </ul>
       <h1 data-number="8" id="sqliteとの連携"><span class="header-section-number">8</span>
       SQLiteとの連携</h1>
       <p>先週金曜日の「情報2」の授業のなかで RDB や SQL について触れたので「<strong>Python と SQLite
