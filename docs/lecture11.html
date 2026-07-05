@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="referrer" content="no-referrer" />
+
+    <script>
+      MathJax = {
+        chtml: {
+          displayAlign: "left",
+          displayIndent: "1em",
+        },
+      };
+    </script>
+
+     <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+type="text/javascript"></script> 
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>第11回 2I-プログラミング1</title>
+  </head>
+
+  <body>
+    <div class="openbtn"><span></span><span></span><span></span></div>
+    <nav id="g-nav">
+      <div id="g-nav-list">
+        <!-- ---------------------------------------- -->
+         <ul>
+<li><a href="#準備案内" id="toc-準備案内"><span class="toc-section-number">1</span> 準備・案内</a>
+<ul>
+<li><a href="#次回も小テストを実施します" id="toc-次回も小テストを実施します"><span
+class="toc-section-number">1.1</span> 次回も小テストを実施します。</a></li>
+</ul></li>
+<li><a href="#課題04-自由課題" id="toc-課題04-自由課題"><span class="toc-section-number">2</span>
+課題04 (自由課題)</a>
+<ul>
+<li><a href="#課題04-として提出するファイルの作成手順-必読重要"
+id="toc-課題04-として提出するファイルの作成手順-必読重要"><span
+class="toc-section-number">2.1</span> 課題04 として提出するファイルの作成手順
+(🚨必読・重要🚨)</a></li>
+<li><a href="#注意事項" id="toc-注意事項"><span class="toc-section-number">2.2</span>
+注意事項</a></li>
+</ul></li>
+<li><a href="#復習-実行開発環境の構築" id="toc-復習-実行開発環境の構築"><span
+class="toc-section-number">3</span> 復習: 実行開発環境の構築</a></li>
+<li><a href="#ファイルネームに関する注意" id="toc-ファイルネームに関する注意"><span
+class="toc-section-number">4</span> ファイルネームに関する注意</a>
+<ul>
+<li><a href="#演習1-目標時間-10分" id="toc-演習1-目標時間-10分"><span
+class="toc-section-number">4.1</span> 演習1 (<i class="fa-solid fa-stopwatch"></i> 目標時間:
+10分)</a></li>
+</ul></li>
+<li><a href="#型-type" id="toc-型-type"><span class="toc-section-number">5</span> 型 (Type)</a>
+<ul>
+<li><a href="#どうやって型を確認するのか" id="toc-どうやって型を確認するのか"><span
+class="toc-section-number">5.1</span> どうやって型を確認するのか?</a></li>
+<li><a href="#型が違うと何が変わるのか" id="toc-型が違うと何が変わるのか"><span
+class="toc-section-number">5.2</span> 型が違うと何が変わるのか?</a></li>
+</ul></li>
+<li><a href="#関数-function-初級" id="toc-関数-function-初級"><span
+class="toc-section-number">6</span> 関数 (Function) 初級</a>
+<ul>
+<li><a href="#演習4-目標時間-15分" id="toc-演習4-目標時間-15分"><span
+class="toc-section-number">6.1</span> 演習4 (<i class="fa-solid fa-stopwatch"></i> 目標時間:
+15分)</a></li>
+<li><a href="#演習5-目標時間-10分" id="toc-演習5-目標時間-10分"><span
+class="toc-section-number">6.2</span> 演習5 (<i class="fa-solid fa-stopwatch"></i> 目標時間:
+10分)</a></li>
+<li><a href="#複数の引数を持つ関数" id="toc-複数の引数を持つ関数"><span
+class="toc-section-number">6.3</span> 複数の引数を持つ関数</a></li>
+</ul></li>
+<li><a href="#アサート文" id="toc-アサート文"><span class="toc-section-number">7</span>
+アサート文</a>
+<ul>
+<li><a href="#演習6-目標時間-3分" id="toc-演習6-目標時間-3分"><span
+class="toc-section-number">7.1</span> 演習6 (<i class="fa-solid fa-stopwatch"></i> 目標時間:
+3分)</a></li>
+</ul></li>
+<li><a href="#sqliteとの連携" id="toc-sqliteとの連携"><span class="toc-section-number">8</span>
+SQLiteとの連携</a></li>
+<li><a href="#斜方投射のシミュレーションと可視化" id="toc-斜方投射のシミュレーションと可視化"><span
+class="toc-section-number">9</span> 斜方投射のシミュレーションと可視化</a>
+<ul>
+<li><a href="#確認" id="toc-確認"><span class="toc-section-number">9.1</span> 確認</a></li>
+<li><a href="#基本プログラム" id="toc-基本プログラム"><span class="toc-section-number">9.2</span>
+基本プログラム</a></li>
+<li><a href="#アニメーション" id="toc-アニメーション"><span class="toc-section-number">9.3</span>
+アニメーション</a></li>
+</ul></li>
+</ul> 
+        <!-- ---------------------------------------- -->
+      </div>
+    </nav>
+
+    <header class="markdown-body">
+      <p>2026-2I プログラミング1 第11回 講義資料</p>
+      <p>2026年07月06日（月）3時限</p>
+    </header>
+
+    <main class="markdown-body">
+      <!-- ---------------------------------------- -->
+      <h1 data-number="1" id="準備案内"><span class="header-section-number">1</span> 準備・案内</h1>
+      <ul>
+      <li><strong><em>小テスト3 (再)</em></strong> を実施します。</li>
+      <li>今回の演習の実装例（解答例）は <a
+      href="https://colab.research.google.com/drive/1avzHQaschVAhV1JFb0xc_r3eW53_4JdX?usp=sharing">こちら</a>
+      を参照してください。</li>
+      <li>卒業研究に関するアンケートにご協力ください。</li>
+      </ul>
+      <h2 data-number="1.1" id="次回も小テストを実施します"><span
+      class="header-section-number">1.1</span> 次回も小テストを実施します。</h2>
+      <ul>
+      <li>今回の講義資料の範囲を中心とした出題です。特に「<strong>関数</strong>を用いた基本的な
+      Pythonプログラム を正しく記述できる」ようになっておいてください。
+      <ul>
+      <li>関数の「<strong>引数</strong>」と「<strong>戻値</strong>」の意味・役割について正しく理解しておいてください。</li>
+      <li>関数を <strong>定義するコード</strong> を正しく記述できるようになっておいてください。</li>
+      <li>関数を <strong>呼び出すコード</strong> を 〃 。</li>
+      </ul></li>
+      </ul>
+      <h1 data-number="2" id="課題04-自由課題"><span class="header-section-number">2</span> 課題04
+      (自由課題)</h1>
+      <p>現在までの <strong>Pythonプログラミングの学び (約4カ月) の集大成</strong> として
+      GoogleColab で実行可能な Pythonプログラムを作成して提出してください。いわゆる
+      <strong><em>自由課題</em></strong> となります。</p>
+      <ul>
+      <li><strong><em>共有URLの提出期限</em></strong> : <strong>2026年7月26日(日)
+      23:00</strong></li>
+      <li><strong><em>内容の完成期限</em></strong> : <strong>2026年8月9日(日) 23:00</strong>
+      <ul>
+      <li>上記の「内容の完成期限」以降に採点します。</li>
+      <li>課題の採点後は、<strong>修正版の再提出・追提出があっても原則として再評価はしません</strong>
+      (採点がフィードバックされるまではノートブックの内容を変更して問題ありません)。</li>
+      </ul></li>
+      <li><strong><em>提出先</em></strong> : Teams「<strong>PG1-課題04</strong>」
+      <ul>
+      <li>「<strong><u>リンクを知っている全員</u></strong>」に共有設定されたリンク (URL)
+      を提出してください。
+      <ul>
+      <li><code>https://colab.research.google.com/drive/1xxxx?usp=sharing</code>
+      の形式になるはずです。</li>
+      </ul></li>
+      <li>提出されたリンクは <strong>本校の学生・教員に公開</strong> します。公開可能な内容
+      (コンテンツ)
+      としてください。<strong>公序良俗</strong>や<strong>著作権</strong>などに反しなければ「テーマ」について制限はありません。ゲームでも、学習支援ツールでも何でもどうぞ。</li>
+      </ul></li>
+      <li><strong><em>評価</em></strong> :
+      テキストセルによるプログラムの紹介・解説を「<strong>5点満点</strong>」、コードセル
+      (プログラム本体)
+      を「<strong>5点満点</strong>」で、「<strong>合計10点満点</strong>」で評価します。「7.6点」を標準とします。
+      <ul>
+      <li>提出遅れや体裁上の不備、共有設定ミスがあれば合計点から減点するので注意してください
+      (指摘後に対応しても回復はないので提出時に十分に確認してください)。</li>
+      </ul></li>
+      <li><strong><em>取り組み時間の目安</em></strong> : この課題には
+      <strong>最低でも「10時間以上」</strong> を費やして取り組んでください
+      (本科目では前期末試験を実施しないので、試験勉強に相当する時間と熱量を投資してください)。</li>
+      </ul>
+      <div class="note type-caution">
+      <p><strong>注意</strong></p>
+      <p>「課題04」の直接的な評価は「10点満点」ですが、最終成績を評価するときには課題01～03よりも
+      <strong>ウエイト (重み)
+      は大きくします</strong>。特に、<u>ここまでの課題に未提出があったような学生は
+      <strong>挽回のチャンス</strong></u>
+      なので、提出に不備が無いように細心の注意を払い、十分な時間と熱量を費やして計画的に取り組んでください。</p>
+      </div>
+      <ul>
+      <li>参考 : <a
+      href="https://omunet-my.sharepoint.com/:t:/g/personal/z21707r_omu_ac_jp/IQCEbZzWW0DURbq3jVVoAuioAZub8me_2GsJcdqct20YBUU?e=yQ87bi">2025年度の作品</a>
+      (学内のみ)</li>
+      <li>参考 : <a
+      href="https://omunet-my.sharepoint.com/:t:/g/personal/z21707r_omu_ac_jp/Ea9YIErxB69JqyuaHCuKK_gBBWACgldEs07JMXGezJFliQ?e=ariWHS">2024年度の作品</a>
+      (学内のみ)</li>
+      <li>参考 : <a
+      href="https://omunet-my.sharepoint.com/:t:/g/personal/z21707r_omu_ac_jp/Ecy_z24h9vhJqOFNXh8GtkoBfzSTK1BZp8CE33TCF_91BQ?e=sHu38r">2023年度の作品</a>
+      (学内のみ)</li>
+      </ul>
+      <h2 data-number="2.1" id="課題04-として提出するファイルの作成手順-必読重要"><span
+      class="header-section-number">2.1</span> 課題04 として提出するファイルの作成手順
+      (🚨必読・重要🚨)</h2>
+      <ul>
+      <li>課題04 の<a
+      href="https://colab.research.google.com/drive/1uol10dRtUxc8O6eks9Fn2JZxxhXoUSfi?usp=sharing">テンプレート</a>
+      を用意しています。必ずこれを利用してください。</li>
+      <li>雛形を複製して「課題04_<strong>48-WT</strong>.ipynb」のような名前のノートブックを作成してください。ここで「<strong>48-WT</strong>」の前半は「<strong>出席番号</strong>」、後半は「氏名の<strong>大文字イニシャル</strong>
+      (姓・名の順番の半角大文字)」としてください。
+      <ul>
+      <li>出席番号が1桁の学生は、ゼロ埋めしてください。例：<code>課題04_01-XX</code>、<code>課題04_07-XX</code></li>
+      <li>ノートブックの名前のミスは、2点減とします。</li>
+      </ul></li>
+      <li>ノートブックの共有設定を変更して「<strong>リンクを知っている全員</strong>」が「<strong>閲覧者</strong>」となるように設定してください。</li>
+      </ul>
+      <figure>
+      <img src="figs/11/colab01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="2.2" id="注意事項"><span class="header-section-number">2.2</span>
+      注意事項</h2>
+      <ul>
+      <li>作品 (課題) は、GoogleColab 上で実行可能なものとしてください。
+      <ul>
+      <li>Colab環境で <code>pip</code> を使ってライブラリを追加することはOKです。</li>
+      <li>部分的に JavaScript などを含めても問題ありませんが、あくまで Python
+      を「主」としてください。</li>
+      </ul></li>
+      <li><a
+      href="https://colab.research.google.com/drive/1uol10dRtUxc8O6eks9Fn2JZxxhXoUSfi?usp=sharing">課題04のテンプレート</a>
+      に従って、テキストセルに <strong>プログラムの「タイトル」や「説明」など</strong>
+      を記述してください。
+      <ul>
+      <li>この部分の記述も評価対象 (50%相当) になります。</li>
+      </ul></li>
+      <li>現在までに、<strong><u>この授業で学んだことを最大限に取り込んだ内容</u></strong>
+      が期待されます。この授業で扱っていない技術やライブラリを組み込むことも歓迎・推奨です。
+      <ul>
+      <li>変数、条件分岐、繰り返し、関数、文字列処理、乱数 (ランダム)、各種ライブラリ</li>
+      <li><a href="https://colab.research.google.com/notebooks/forms.ipynb">Forms機能</a>、<a
+      href="https://www.google.com/search?q=ipywidgetとは">ipywidgets</a> なども使用可</li>
+      </ul></li>
+      <li>プログラムの実行結果 (出力セル) を残しておいてください。</li>
+      <li>ITエンジニア界隈では、インターンシップ (4年生) や 就職活動などで <span
+      class="masked">ポートフォリオ (作品集)</span>
+      の提出が求められます。その「準備」という位置づけでも頑張って取り組んでください。例えば、以下のような設問が設定されていることがあります。</li>
+      </ul>
+      <blockquote>
+      <p>現在までに自分で作成してきたアプリやウェブサービスなどの成果物について記述してください。公開しているURLあれば記載してください。</p>
+      </blockquote>
+      <blockquote>
+      <p>GitHub等でソースコードを公開していたらそのURIを教えてください。</p>
+      </blockquote>
+      <p>ポートフォリオとしての「質」を考えた場合、コメントの有無や内容、可読性、保守性、再利用性などもポイントとなります。プログラミングの経験のある学生は、その点も意識してください。</p>
+      <h1 data-number="3" id="復習-実行開発環境の構築"><span class="header-section-number">3</span>
+      復習: 実行開発環境の構築</h1>
+      <p>今後、授業のなかで練習時間は確保しませんが、以下の手順で <span
+      class="masked">Pythonの仮想環境の新規構築がスムーズにできる</span>
+      ようになっておいてください。指示があったときは、以下の作業が
+      (ライブラリのダウンロードとインストールの待ち時間を除いて) <strong><em>5分以内</em></strong>
+      にできるようになっておいてください。</p>
+      <ol type="1">
+      <li>プロジェクトフォルダの作成、VSCodeによるフォルダのオープン</li>
+      <li>仮想環境の作成
+      <ul>
+      <li><code>python -m venv .venv</code></li>
+      </ul></li>
+      <li>仮想環境の有効化
+      <ul>
+      <li><code>.venv/Scripts/Activate.ps1</code></li>
+      </ul></li>
+      <li>pipのアップグレード
+      <ul>
+      <li><code>python -m pip install --upgrade pip</code></li>
+      </ul></li>
+      <li>必要パッケージのインストール
+      <ul>
+      <li><code>pip install XXXXX</code></li>
+      </ul></li>
+      <li>動作確認用のプログラムファイルの新規作成
+      <ul>
+      <li>通常プログラムなら <code>xxxx.py</code></li>
+      <li>ノートブックプログラム (=<span class="masked">Jupyter環境を要インストール</span> ) なら
+      <code>xxxx.ipynb</code>,</li>
+      </ul></li>
+      <li>プログラムの実行と動作確認
+      <ul>
+      <li>通常プログラムなら <code>.vscode/launch.json</code> の作成（Python
+      Debuggerの設定）して、<code>F5</code> 押下でコンソールに実行結果が表示されることを確認する (<a
+      href="lecture09.html#pythonファイルの実行">第09回講義資料</a> を参照)。</li>
+      <li>ノートブックプログラムなら、ランタイムの設定をして、出力セルに実行結果が表示されることを確認する
+      ( <a href="lecture09.html#ノートブックの新規作成と実行">第09回講義資料</a>)。</li>
+      <li>ライブラリを <code>import</code> するための文を書いたときに <span
+      class="masked">ModuleNotFoundError が発生しないこと</span> の確認</li>
+      </ul></li>
+      </ol>
+      <p>慣れるまでは <strong>週1で練習</strong>してください。</p>
+      <h1 data-number="4" id="ファイルネームに関する注意"><span
+      class="header-section-number">4</span> ファイルネームに関する注意</h1>
+      <p>Jupyter環境 (GoogleColab環境)
+      <strong>以外</strong>で、プログラムファイルを作成する際は、ファイル名に <span
+      class="masked">日本語やスペース (半角も全角も)
+      、ハイフンなどを使用しないでください</span>。</p>
+      <p>また、プログラムのなかでインポートしているライブラリ (モジュール) と <span
+      class="masked">同じ名前のPythonファイル名をつけないでください</span>。</p>
+      <p>例えば、プログラムのなかに <code>import random</code>
+      という文を含む場合、そのプログラムファイルに <code>random.py</code>
+      という名前を付けたり、同フォルダに <code>random.py</code> というファイルが存在すると <span
+      class="masked">実行時エラー</span> が発生します。</p>
+      <p>初心者によくあるミスなので注意してください。</p>
+      <div class="note type-caution">
+      <p><strong>注意</strong></p>
+      <p><code>.venv</code> は仮想環境を管理するためのフォルダです。この <code>.venv</code>
+      フォルダ内に <code>test01.py</code> や <code>test02.ipynb</code>
+      など、自分で作成したプログラムファイルを配置しないでください。</p>
+      <p><strong>▼▼ NGな配置例👎 ▼▼</strong></p>
+      <pre><code>📂 PG1-10
+└─ 📂 .venv
+    ├─ 📂 ... 
+    ├─ 📂 ...
+    ├─ 📝 test01.py     👈.venvフォルダ内部に配置 NG
+    └─ 📝 test02.ipynb  👈.venvフォルダ内部に配置 NG</code></pre>
+      <p><strong>▼▼ OKな配置例👍 ▼▼</strong></p>
+      <pre><code>📂 PG1-10
+├─ 📂 .venv
+│   ├─ 📂 ... 
+│   └─ 📂 ...
+├─ 📝 test01.py
+└─ 📝 test02.ipynb</code></pre>
+      </div>
+      <h2 data-number="4.1" id="演習1-目標時間-10分"><span class="header-section-number">4.1</span>
+      演習1 (<i class="fa-solid fa-stopwatch"></i> 目標時間: 10分)</h2>
+      <h3 data-number="4.1.1" id="手順1-準備"><span class="header-section-number">4.1.1</span> 手順1
+      (準備)</h3>
+      <p>ローカルに構築した仮想環境 (＝新規作成は不要。前回講義で作成した <code>PG1-10</code>
+      をそのまま利用すればOK) で <code>pip install numpy</code> を実行して、numpy
+      をインストールしてください。</p>
+      <pre><code>.venv/Scripts/Activate.ps1
+pip install numpy</code></pre>
+      <p>既に、仮想環境に <code>numpy</code> がインストール済みであれば
+      <code>pip install numpy</code> は省略可能です (再度、実行しても問題はありません)。</p>
+      <div class="note type-tips">
+      <p><strong>仮想環境の明示的な有効化</strong></p>
+      <p>VSCodeは起動時に、<code>.venv</code>
+      フォルダの存在を検知して、<strong>自動的に仮想環境を有効化</strong>
+      します。ただし、タイミングの問題などで、仮想環境が自動的に有効化されない場合もあります。その状態で、<code>pip</code>
+      を実行すると、ライブラリが (仮想環境ではなく) <strong>グローバル環境 (共通環境)</strong>
+      にインストールされてしまいます。</p>
+      <p>グローバル環境にライブラリがインストールされると、ライブラリ同士の依存関係の問題で根深いバグや不具合を引き起こす可能性があります。特に複数のライブラリを組み合わせて大規模な開発をするときに起きます。</p>
+      <p>そのため、上記では <code>.venv/Scripts/Activate.ps1</code> のコマンドで <span
+      class="masked">明示的に仮想環境を有効化</span> しています。</p>
+      <p>なお、現在、有効になっているPython環境は、PowerShellで以下のコマンドを打って確認できます。表示されたパスに、プロジェクトフォルダの
+      <code>.venv</code> が含まれていれば仮想環境が有効化されています。</p>
+      <pre><code>Get-Command python | Select-Object -ExpandProperty Definition</code></pre>
+      <p>なお、そもそも「<strong>仮想環境とは何なのか？</strong>」が分からない人は、以下のプロンプトで生成AIに質問してください。</p>
+      <blockquote>
+      <p>Pythonプログラム開発では、仮想環境を構築して、それを有効化して作業するように言われます。そもそも「仮想環境」とは何ですか。それを使うことによるメリットはなんですか。使わないと何が問題なのですか。プログラミング初学者の高校2年生が理解できるように分かりやすく説明してください。専門用語の使用はできるだけ避けて、分かりやすいたとえで説明してください。</p>
+      </blockquote>
+      </div>
+      <h3 data-number="4.1.2" id="手順2-準備"><span class="header-section-number">4.1.2</span> 手順2
+      (準備)</h3>
+      <p>次に <code>np-01.py</code>
+      という名前で「Pythonファイル」を新規作成してください。そして、以下のプログラムを貼り付けて「<strong>期待する結果</strong>」が得られるように
+      <code>np.arange</code> の第2引数を調整してください (サンプルとして提示のプログラムでは
+      <code>5.00</code> が表示されません)。</p>
+      <p>なお、<code>np.arange</code> については <a
+      href="lecture10.html#繰返し構文-ループ変数に小数値を使用したい場合">前回講義</a>
+      で既に解説済みです。</p>
+      <div class="sourceCode" id="cb5" data-caption="np-01.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> numpy <span class="im">as</span> np   <span class="co"># numpy を np という省略名で使用</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="cf">for</span> t <span class="kw">in</span> np.arange(<span class="fl">0.0</span>, <span class="fl">5.0</span>, <span class="fl">0.5</span>):</span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="bu">print</span>(<span class="ss">f&#39;</span><span class="sc">{</span>t<span class="sc">:.2f}</span><span class="ss">&#39;</span>,end<span class="op">=</span><span class="st">&#39; &#39;</span>)</span></code></pre></div>
+      <p>期待する結果</p>
+      <pre><code>0.00 0.50 1.00 1.50 2.00 2.50 3.00 3.50 4.00 4.50 5.00 </code></pre>
+      <h3 data-number="4.1.3" id="手順3"><span class="header-section-number">4.1.3</span> 手順3</h3>
+      <p>さて、ここからが <span class="masked">本題</span> です。</p>
+      <p>上記のファイル名を <code>numpy.py</code>
+      (プログラムのなかでインポートしているライブラリと同じ名前)
+      に変更して、その実行結果を確認してください。</p>
+      <p>また、ファイル名を <code>np.py</code> に変更して、その実行結果を確認してください。</p>
+      <p>必要に応じて「なぜこのようなことが発生するのか」を<strong>ウェブ検索</strong>あるいは<strong>ChatGPT</strong>を使って解決してください。これは、<strong>適切な検索キーワードやプロンプトを構築する練習です</strong>。</p>
+      <p>🚨 ここから先は <strong>GoogleColab</strong> または <strong>Jupyter</strong>
+      を利用してください 🚨</p>
+      <h1 data-number="5" id="型-type"><span class="header-section-number">5</span> 型 (Type)</h1>
+      <p>ここまでは、<strong>あえて</strong>言及を避けてきましたが、Python においても、C/C++言語
+      (<strong>Arduino言語</strong>)、Java と同様に <span class="masked">型 (Type)</span>
+      が存在して機能しています。</p>
+      <p>ただし、Python
+      では、C/C++言語のようにプログラマによる<strong>明示的な型付けはせずに</strong>、Python実行環境が
+      <strong>動的に型付け</strong> をします。つまり <code>a=10</code> という文を書けば
+      <code>a</code> は自動的に <span class="masked">「整数型 (<code>int</code>)」</span>
+      となります。</p>
+      <p>また、一方で <code>a='ABC'</code> という文を書けば <code>a</code> は <span
+      class="masked">自動的に「文字列型 (<code>str</code>)」</span> となります。</p>
+      <p><strong>(プロンプト例)</strong></p>
+      <blockquote>
+      <p>プログラミングの文脈で「動的型付け」とはなんですか？私は Arduino (C言語)
+      も、Pythonも、それぞれ約15時間ぐらい学んでいます。そんな私に分かるように解説してください。</p>
+      </blockquote>
+      <ul>
+      <li>例：<code>a=10</code> と書くと変数 <code>a</code> は、<span class="masked">整数
+      (int)</span> <strong>型</strong>として扱われる。</li>
+      <li>例：<code>a='10'</code> あるいは <code>a="10"</code> と書くと変数 <code>a</code> は、<span
+      class="masked">文字列 (str)</span> <strong>型</strong>として扱われる。</li>
+      <li>例：<code>a=10.0</code> と書くと変数 <code>a</code> は、<span class="masked">浮動小数点数
+      (float)</span> <strong>型</strong>として扱われる。</li>
+      <li>例：<code>a=[10]</code> と書くと変数 <code>a</code> は、<span class="masked">リスト
+      (list)</span> <strong>型</strong>として扱われる。</li>
+      </ul>
+      <div class="note type-tips">
+      <p><strong>型付けの種類</strong></p>
+      <p>プログラミング言語の型システムには「静的型付け」「強い動的型付け」「弱い動的型付け」「型なし」などが存在します。それぞれ一長一短があります。興味のある学生は調べてみてください。なお、Pythonは
+      <span class="masked">強い動的型付け言語</span> に属します。</p>
+      </div>
+      <p><strong>(プロンプト例)</strong></p>
+      <blockquote>
+      <p>プログラミング言語の型システムには「静的型付け」「強い動的型付け」「弱い動的型付け」「型なし」などが存在すると聞きました。それぞれの違いを教えてください。</p>
+      </blockquote>
+      <h2 data-number="5.1" id="どうやって型を確認するのか"><span
+      class="header-section-number">5.1</span> どうやって型を確認するのか?</h2>
+      <p><code>type()</code>
+      という組み込み関数を使用して<strong>データの「型」を確認できます</strong>。</p>
+      <p><strong>(プロンプト例)</strong></p>
+      <blockquote>
+      <p>Pythonの「組み込み関数」って何ですか？以前に授業で習った気がするのですが、忘れてしまいました。</p>
+      </blockquote>
+      <p>具体的には、<code>is</code> 演算子と <code>type()</code> の組み合わせで <span
+      class="masked">変数が特定の型であるかどうか</span> を判定できます。ここでは print
+      関数と組み合わせていますが、<strong>実務的なプログラムでは、if文の「条件」としてよく使用されます</strong>。</p>
+      <p>例えば「変数 <code>a</code> が <code>str</code>型
+      であるか？」という判定は次のようにできます。</p>
+      <div class="sourceCode" id="cb7" data-caption="isとtypeによる型の判定"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb7-2"><a href="#cb7-2"></a>a <span class="op">=</span> <span class="st">&#39;Hello&#39;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="bu">print</span>( <span class="bu">type</span>(a) <span class="kw">is</span> <span class="bu">str</span> ) <span class="co"># True</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="bu">print</span>( <span class="bu">type</span>(a) <span class="kw">is</span> <span class="bu">int</span> ) <span class="co"># False </span></span></code></pre></div>
+      <p>同様に、<code>isinstance()</code> という組み込み関数を利用することもできます。</p>
+      <div class="sourceCode" id="cb8" data-caption="isinstanceによる型の判定"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb8-2"><a href="#cb8-2"></a>a <span class="op">=</span> <span class="st">&#39;Hello&#39;</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="bu">print</span>( <span class="bu">isinstance</span>(a, <span class="bu">str</span>) ) <span class="co"># True</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="bu">print</span>( <span class="bu">isinstance</span>(a, <span class="bu">int</span>) ) <span class="co"># False </span></span></code></pre></div>
+      <p>次のプログラムを実行して、その結果を確認してください。また、その結果とプログラムを突き合わせて内容を理解してください。</p>
+      <div class="sourceCode" id="cb9" data-caption="type-test.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb9-2"><a href="#cb9-2"></a>a <span class="op">=</span> <span class="dv">10</span> <span class="co"># 👈この値を書き換えてみる</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># 型を確認する</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="bu">print</span>(<span class="ss">f&#39;変数aの型は </span><span class="sc">{</span><span class="bu">type</span>(a)<span class="sc">}</span><span class="ss"> です&#39;</span>)</span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="bu">print</span>(<span class="st">&#39;---&#39;</span>)</span>
+<span id="cb9-7"><a href="#cb9-7"></a></span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="co"># 代表的な型 str int bool float list</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="bu">print</span>(<span class="ss">f&#39;変数aの isinstance(a,str) は </span><span class="sc">{</span><span class="bu">isinstance</span>(a,<span class="bu">str</span>)<span class="sc">}</span><span class="ss"> です&#39;</span>)</span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="bu">print</span>(<span class="ss">f&#39;変数aの isinstance(a,int) は </span><span class="sc">{</span><span class="bu">isinstance</span>(a,<span class="bu">int</span>)<span class="sc">}</span><span class="ss"> です&#39;</span>)</span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="bu">print</span>(<span class="ss">f&#39;変数aの isinstance(a,bool) は </span><span class="sc">{</span><span class="bu">isinstance</span>(a,<span class="bu">bool</span>)<span class="sc">}</span><span class="ss"> です&#39;</span>)</span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="bu">print</span>(<span class="ss">f&#39;変数aの isinstance(a,float) は </span><span class="sc">{</span><span class="bu">isinstance</span>(a,<span class="bu">float</span>)<span class="sc">}</span><span class="ss"> です&#39;</span>)</span>
+<span id="cb9-13"><a href="#cb9-13"></a><span class="bu">print</span>(<span class="ss">f&#39;変数aの isinstance(a,list) は </span><span class="sc">{</span><span class="bu">isinstance</span>(a,<span class="bu">list</span>)<span class="sc">}</span><span class="ss"> です&#39;</span>)</span>
+<span id="cb9-14"><a href="#cb9-14"></a><span class="bu">print</span>(<span class="st">&#39;---&#39;</span>)</span>
+<span id="cb9-15"><a href="#cb9-15"></a></span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="co"># if文に組み込み① → isinstance() 関数</span></span>
+<span id="cb9-17"><a href="#cb9-17"></a><span class="cf">if</span> <span class="bu">isinstance</span>(a,<span class="bu">str</span>) :</span>
+<span id="cb9-18"><a href="#cb9-18"></a>  <span class="bu">print</span>(<span class="st">&#39;変数aは、文字列型(str)です&#39;</span>)</span>
+<span id="cb9-19"><a href="#cb9-19"></a><span class="cf">else</span>:</span>
+<span id="cb9-20"><a href="#cb9-20"></a>  <span class="bu">print</span>(<span class="st">&#39;変数aは、文字列型(str)ではないです&#39;</span>)</span>
+<span id="cb9-21"><a href="#cb9-21"></a></span>
+<span id="cb9-22"><a href="#cb9-22"></a><span class="co"># if文に組み込み② → is 演算子</span></span>
+<span id="cb9-23"><a href="#cb9-23"></a><span class="cf">if</span> <span class="bu">type</span>(a) <span class="kw">is</span> <span class="bu">str</span> :</span>
+<span id="cb9-24"><a href="#cb9-24"></a>  <span class="bu">print</span>(<span class="st">&#39;変数aは、文字列型(str)です&#39;</span>)</span>
+<span id="cb9-25"><a href="#cb9-25"></a><span class="cf">else</span>:</span>
+<span id="cb9-26"><a href="#cb9-26"></a>  <span class="bu">print</span>(<span class="st">&#39;変数aは、文字列型(str)ではないです&#39;</span>)</span></code></pre></div>
+      <h3 data-number="5.1.1" id="演習2-目標時間-8分"><span
+      class="header-section-number">5.1.1</span> 演習2 (<i class="fa-solid fa-stopwatch"></i>
+      目標時間: 8分)</h3>
+      <p>上記プログラムの <strong>第02行目</strong> の <code>a=10</code>
+      を次のように書き換え、その実行結果を確認してください。</p>
+      <ul>
+      <li><code>a=10.0</code></li>
+      <li><code>a=True</code> ※ 実行結果に注意!</li>
+      <li><code>a='abc'</code></li>
+      <li><code>a=[]</code></li>
+      <li><code>a=[10,20,30]</code></li>
+      <li><code>a=0b1001</code> ※ <code>0b</code> で開始するのは2進数</li>
+      <li><code>a=0xFF5</code> ※ <code>0x</code> で開始するのは16進数</li>
+      <li><code>a=int(3.14)</code></li>
+      </ul>
+      <div class="note type-senior">
+      <p><strong>中級者向け「<code>isinstance</code>」と「<code>is</code>と<code>type</code>」による判定の違い</strong></p>
+      <p>演習2において <strong>第02行目</strong> を <code>a=True</code>
+      としたときに予想外の結果がでたと思います。そのため、最初のうちは、is と type
+      の組み合わせを利用することをお勧めします。</p>
+      <div class="sourceCode" id="cb10" data-caption="実行結果に差がでる場合"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb10-2"><a href="#cb10-2"></a>a <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co"># bool型であるか？</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="bu">print</span>( <span class="bu">type</span>(a) <span class="kw">is</span> <span class="bu">bool</span>)      <span class="co"># True</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="bu">print</span>( <span class="bu">isinstance</span>(a, <span class="bu">bool</span>) ) <span class="co"># True</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="co"># int型であるか？</span></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="bu">print</span>( <span class="bu">type</span>(a) <span class="kw">is</span> <span class="bu">int</span> )     <span class="co"># False</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="bu">print</span>( <span class="bu">isinstance</span>(a, <span class="bu">int</span>) ) <span class="co"># True ?!</span></span></code></pre></div>
+      <p>両者の違いを理解するためには、中級レベルの理解
+      (「継承」などのオブジェクト指向プログラミングの基礎理解)
+      が必要です。現時点では、皆さんの理解の範疇を超えると思うので、授業では扱いません。詳しく知りたい人は、生成AIを利用してください。プロンプトの例を示します。</p>
+      <p><strong>(プロンプト例)</strong></p>
+      <blockquote>
+      <p>Pythonで「a=True」のとき、「type(a) is int」はFalseになるのに、「isinstance(a,
+      int)」はTrueになるのはなぜですか？</p>
+      </blockquote>
+      </div>
+      <h2 data-number="5.2" id="型が違うと何が変わるのか"><span
+      class="header-section-number">5.2</span> 型が違うと何が変わるのか?</h2>
+      <p>型によって、その変数 (オブジェクト) から
+      <strong>呼び出すことができる「メソッド」が違ってきます</strong>。例えば、変数 <code>a</code>
+      が <strong>文字列型(str)</strong> であれば、英字の小文字を大文字に変換する
+      <code>a.upper()</code> のようなメソッドを呼び出せますが、それ以外の <strong>整数型</strong>
+      (int) や <strong>浮動小数点数型</strong> (float) では <span class="masked">
+      (自分で確認しましょう🫠) </span> が発生します。</p>
+      <div class="note type-tips">
+      <p><strong>「メソッド」とは何か</strong></p>
+      <p><strong>メソッド</strong>とは、オブジェクト指向プログラミングの用語になります。現時点では「変数名のあとに<strong>ドット</strong>
+      <code>.</code> を付けて呼びだす関数」ぐらいに考えてください。</p>
+      </div>
+      <p>例として、次のコードを実行して結果を確認してください。その後、<strong>第02行目</strong>を
+      <code>a=10</code> に書き換えて (つまり、<span class="masked">変数 <code>a</code>
+      を「文字列型」から「整数型」に変えて</span>) 、その実行結果を確認してください。</p>
+      <div class="sourceCode" id="cb11"
+      data-caption="型によって呼び出せるメソッドが変わってくる例"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb11-2"><a href="#cb11-2"></a>a<span class="op">=</span><span class="st">&#39;windows&#39;</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="bu">print</span>( a.upper() )</span></code></pre></div>
+      <p>上記のプログラムは、次のように改良することができます。実行して結果を確認してください。その後、<code>a=10</code>
+      に書き換えて、その実行結果を確認してください。</p>
+      <div class="sourceCode" id="cb12" data-caption="型による条件分岐の導入"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb12-2"><a href="#cb12-2"></a>a<span class="op">=</span><span class="st">&#39;windows&#39;</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="cf">if</span> <span class="bu">type</span>(a) <span class="kw">is</span> <span class="bu">str</span> :   <span class="co"># 変数aの型が文字列 (str) ならば</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="bu">print</span>( a.upper() )</span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="cf">else</span> :</span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="bu">print</span>(<span class="st">&#39;変数aは文字列型ではないので upper メソッドを持っていません。&#39;</span>)</span></code></pre></div>
+      <h3 data-number="5.2.1" id="演習3-目標時間-10分"><span
+      class="header-section-number">5.2.1</span> 演習3 (<i class="fa-solid fa-stopwatch"></i>
+      目標時間: 10分)</h3>
+      <p>以下のプログラムに追記して、変数 <code>a</code> が</p>
+      <ul>
+      <li>「文字列型」であれば文字列を3回出力する処理 (例えば <code>Wow!</code> が格納されていれば
+      <code>Wow!Wow!Wow!</code> を出力)、</li>
+      <li>「整数型」または「浮動小数点数型」であれば5倍した値を出力する処理、</li>
+      <li>「リスト型」であればそのまま出力、</li>
+      <li>それ以外の型 (例えば 真偽値型(bool) ) であれば <code>Error!</code> を出力する処理</li>
+      </ul>
+      <p>にしてください。</p>
+      <p>ここでは、<code>elif</code> (既に<a href="lecture05.html#elif節">第05回講義</a>で学習済み)
+      を使用することを期待しています。また、<code>if</code> の条件文には、AND条件 <code>and</code>
+      (<a href="lecture05.html#and条件">学習済み</a>)、OR条件 <code>or</code> (<a
+      href="lecture05.html#or条件">学習済み</a>) を使うことができました。例えば
+      <code>if a%3==0 and a%5==0</code> は <code>a</code>
+      が「3の倍数」かつ「5の倍数」のとき真になります。</p>
+      <div class="sourceCode" id="cb13" data-caption="演習3"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb13-2"><a href="#cb13-2"></a>a<span class="op">=</span><span class="st">&#39;Wow!&#39;</span>  <span class="co"># この変数aには様々な値が入ることを想定しています。</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="co"># 型に応じて処理を変えるプログラムを追記</span></span></code></pre></div>
+      <h1 data-number="6" id="関数-function-初級"><span class="header-section-number">6</span> 関数
+      (Function) 初級</h1>
+      <p>プログラムにおいて <span
+      class="masked">ある処理を行なうための一連の命令をまとめたもの</span> を <strong><em>関数
+      (Function)</em></strong>
+      と呼びます。関数を利用することで、そのプログラムは<strong>読みやすくなり</strong>、また、<strong>修正や変更も容易になります</strong>。</p>
+      <p>これまでに <code>print()</code> や <code>input()</code>
+      などを何度も使用してきましたが、これらはPythonが最初から提供している「<strong>組み込み関数</strong>」というものになります。また、<code>math.sin()</code>
+      や <code>math.radians()</code> は、数学ライブラリをインポートすること (つまり <span
+      class="masked"><code>import math</code> をすることで</span>) で使用可能になる関数です。</p>
+      <p>さらに、Pythonをはじめとして各種プログラムでは、プログラマ自身で<strong>関数を定義して、それを呼び出して使用することができます</strong>。</p>
+      <p>例えば「<strong>税抜き価格を引数として与えると、税込み価格 (端数切捨て)
+      を計算して返す関数</strong>」は、次のように記述できます。実際に実行して、その結果を確認してください。ここでは食料品を対象に「税率8%」を考えています。</p>
+      <div class="sourceCode" id="cb14" data-caption="関数の定義と呼出し"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="co"># 自作関数 add_tax_to_price を定義</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="kw">def</span> add_tax_to_price(price):</span>
+<span id="cb14-5"><a href="#cb14-5"></a>  x <span class="op">=</span> price <span class="op">*</span> <span class="fl">1.08</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>  x <span class="op">=</span> <span class="bu">int</span>(x)</span>
+<span id="cb14-7"><a href="#cb14-7"></a>  <span class="cf">return</span> x <span class="co"># x を戻り値として呼び出し側に返す</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a></span>
+<span id="cb14-9"><a href="#cb14-9"></a>p1 <span class="op">=</span> <span class="dv">73</span></span>
+<span id="cb14-10"><a href="#cb14-10"></a>p2 <span class="op">=</span> add_tax_to_price(p1)</span>
+<span id="cb14-11"><a href="#cb14-11"></a><span class="bu">print</span>(<span class="ss">f&#39;ガリガリ君 </span><span class="sc">{</span>p1<span class="sc">}</span><span class="ss">円（税込み</span><span class="sc">{</span>p2<span class="sc">}</span><span class="ss">円）&#39;</span>) </span>
+<span id="cb14-12"><a href="#cb14-12"></a></span>
+<span id="cb14-13"><a href="#cb14-13"></a>p1 <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb14-14"><a href="#cb14-14"></a>p2 <span class="op">=</span> add_tax_to_price(p1)</span>
+<span id="cb14-15"><a href="#cb14-15"></a><span class="bu">print</span>(<span class="ss">f&#39;うまい棒 </span><span class="sc">{</span>p1<span class="sc">}</span><span class="ss">円（税込み</span><span class="sc">{</span>p2<span class="sc">}</span><span class="ss">円）&#39;</span>) </span></code></pre></div>
+      <p>ここで <code>def</code> は <strong><em>Define</em></strong>
+      (日本語で「<strong>定義</strong>」の意味) の略語になります。</p>
+      <h2 data-number="6.1" id="演習4-目標時間-15分"><span class="header-section-number">6.1</span>
+      演習4 (<i class="fa-solid fa-stopwatch"></i> 目標時間: 15分)</h2>
+      <p>上記のプログラムについて</p>
+      <ul>
+      <li><p><strong>引数なし</strong> で関数を呼びだすと
+      (つまり、<strong>第10行目</strong>や<strong>第14行目</strong>で
+      <code>p2 = add_tax_to_price()</code> とすると)
+      、どのようになるか。結果について推測したうえで、実際にコードを実行して確認してください。</p></li>
+      <li><p>括弧なしで関数を呼びだすと (つまり <code>p2 = add_tax_to_price</code> とすると)
+      どのようになるか。結果について推測したうえで、実際にコードを実行して確認してください。</p></li>
+      <li><p><strong>第04行目</strong>を <code>def add_tax_to_price(p):</code>
+      に書き換えたとき、<strong>プログラムが書き換え前と同じ動作をするように</strong>、その他の部分を修正してください。</p></li>
+      <li><p><strong>第04行目</strong>を <code>def get_total_price(price):</code>
+      に書き換えたとき、<strong>プログラムが書き換え前と同じ動作をするように</strong>、その他の部分を修正してください。</p></li>
+      <li><p>次のように「関数の呼び出し」を「関数の定義」よりも前に記述するとどうなるか。結果について推測したうえで、実際にコードを実行して確認してください。</p></li>
+      </ul>
+      <div class="sourceCode" id="cb15" data-caption="関数の定義と呼出しの順番"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="co"># 関数呼び出しを先に記述する</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>p1 <span class="op">=</span> <span class="dv">73</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="bu">print</span>(<span class="ss">f&#39;ガリガリ君 </span><span class="sc">{</span>p1<span class="sc">}</span><span class="ss">円（税込み</span><span class="sc">{</span>add_tax_to_price(p1)<span class="sc">}</span><span class="ss">円）&#39;</span>) </span>
+<span id="cb15-5"><a href="#cb15-5"></a></span>
+<span id="cb15-6"><a href="#cb15-6"></a><span class="co"># 関数定義をあとに記述する</span></span>
+<span id="cb15-7"><a href="#cb15-7"></a><span class="kw">def</span> add_tax_to_price(price):</span>
+<span id="cb15-8"><a href="#cb15-8"></a>  <span class="cf">return</span> <span class="bu">int</span>(price <span class="op">*</span> <span class="fl">1.08</span>)</span></code></pre></div>
+      <h2 data-number="6.2" id="演習5-目標時間-10分"><span class="header-section-number">6.2</span>
+      演習5 (<i class="fa-solid fa-stopwatch"></i> 目標時間: 10分)</h2>
+      <p>引数として、0 から 5 までの <strong>整数値</strong>
+      を与えると、それに対応して「☆☆☆☆☆」「★☆☆☆☆」・・・「★★★★☆」「★★★★★」という文字列を返してくる関数
+      <code>star</code> を定義してください。また、その動作確認してください。</p>
+      <p>なお、引数として<strong>0未満の整数値</strong>が渡されたときは「☆☆☆☆☆」、<strong>6以上の整数値</strong>が渡されたときは「★★★★★」を戻り値としてください。また、<strong>整数値以外の引数</strong>を受け取ったときは「ERROR」という文字列を戻り値としてください。</p>
+      <div class="sourceCode" id="cb16" data-caption="レーティング用の星マークを得る関数"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="co"># 目的の処理をする関数に書き換える</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="kw">def</span> star(n):</span>
+<span id="cb16-5"><a href="#cb16-5"></a>  r <span class="op">=</span> <span class="st">&#39;★&#39;</span><span class="op">*</span><span class="dv">5</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a>  <span class="cf">return</span> r</span>
+<span id="cb16-7"><a href="#cb16-7"></a></span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="co"># </span></span>
+<span id="cb16-9"><a href="#cb16-9"></a><span class="bu">print</span>(star(<span class="dv">4</span>))     <span class="co"># =&gt; ★★★★☆</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a><span class="bu">print</span>(star(<span class="op">-</span><span class="dv">4</span>))    <span class="co"># =&gt; ☆☆☆☆☆</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a><span class="bu">print</span>(star(<span class="dv">10</span>))    <span class="co"># =&gt; ★★★★★</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a></span>
+<span id="cb16-13"><a href="#cb16-13"></a><span class="bu">print</span>(star(<span class="st">&#39;5&#39;</span>))   <span class="co"># =&gt; ERROR</span></span>
+<span id="cb16-14"><a href="#cb16-14"></a><span class="bu">print</span>(star([<span class="st">&#39;5&#39;</span>])) <span class="co"># =&gt; ERROR</span></span>
+<span id="cb16-15"><a href="#cb16-15"></a><span class="bu">print</span>(star(<span class="st">&#39;1.5&#39;</span>)) <span class="co"># =&gt; ERROR</span></span></code></pre></div>
+      <ul>
+      <li>ヒント： <span class="masked">型の判定には <code>isinstance</code> や
+      <code>type</code>、<code>is</code> などを使用する。</span></li>
+      </ul>
+      <h2 data-number="6.3" id="複数の引数を持つ関数"><span class="header-section-number">6.3</span>
+      複数の引数を持つ関数</h2>
+      <p>関数では、<strong>複数の引数</strong>を受け取ることもできます。例えば、次に示すものは
+      2点の座標 x1, y1, x2, y2
+      を与えたとき、その距離を計算する関数の記述例です。実際に実行して、その結果を確認してください。</p>
+      <div class="sourceCode" id="cb17" data-caption="複数の引数を受け取る関数"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb17-2"><a href="#cb17-2"></a></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="co"># 距離を計算する関数</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="kw">def</span> get_distance(x1,y1,x2,y2):</span>
+<span id="cb17-5"><a href="#cb17-5"></a>  <span class="cf">return</span> ( (x2<span class="op">-</span>x1)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (y2<span class="op">-</span>y1)<span class="op">**</span><span class="dv">2</span> )<span class="op">**</span><span class="fl">0.5</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a></span>
+<span id="cb17-7"><a href="#cb17-7"></a>p1_x, p1_y <span class="op">=</span> <span class="dv">10</span>, <span class="dv">10</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a>p2_x, p2_y <span class="op">=</span> <span class="dv">15</span>, <span class="dv">25</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a>d <span class="op">=</span> get_distance( p1_x, p1_y, p2_x, p2_y )</span>
+<span id="cb17-10"><a href="#cb17-10"></a><span class="bu">print</span>(<span class="ss">f&#39;距離は </span><span class="sc">{</span>d<span class="sc">:.1f}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <h1 data-number="7" id="アサート文"><span class="header-section-number">7</span>
+      アサート文</h1>
+      <p>アサート (<code>assert</code>) は主に <span class="masked">デバッグやエラーチェック</span>
+      を目的に使用する機能です。例えば、次のように <code>assert 条件文</code>
+      という形式で使用します。ちなみに、<strong>第03行目</strong>の <code>.pop()</code> は、既に<a
+      href="lecture10.html#リスト要素の削除">第10回講義</a>で学習済みです。</p>
+      <div class="sourceCode" id="cb18" data-caption="アサート文の利用例"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb18-2"><a href="#cb18-2"></a>arr <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>] <span class="co"># 長さ7のリストを初期化</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>arr.pop()             <span class="co"># リスト末尾の要素を取り除く</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a></span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="co"># arr の長さが 6 であることを「念のために確認したい」</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="cf">assert</span> <span class="bu">len</span>(arr) <span class="op">==</span> <span class="dv">6</span> <span class="co"># ◀◀◀ これがアサート文</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a></span>
+<span id="cb18-8"><a href="#cb18-8"></a><span class="co"># (以降、継続処理)</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a><span class="bu">print</span>(<span class="st">&#39;後続処理&#39;</span>)</span></code></pre></div>
+      <p><code>assert</code> は、それに続く条件式が <strong>真 (True)</strong>
+      であることを「<strong>確認</strong>」する目的として使用します。</p>
+      <p>もし、条件式が <strong>偽（False）</strong>
+      となる場合、プログラムはエラーメッセージを生成して<strong>強制停止</strong>します。一方で、<strong>真
+      (True)</strong> となる場合は <span class="masked">何も出力せずに処理を継続</span> します。</p>
+      <p>上記プログラムの場合、リスト <code>arr</code> が <code>pop()</code> メソッドによって <span
+      class="masked">「長さ 6 になっていること」を念のために確認するため</span> に
+      <strong>第06行目</strong> に <code>assert</code> 文を書いています。</p>
+      <p>ここで、<strong>第02行目</strong> を
+      <code>arr=[0,1,0,1,0,1,0,1] # 長さ7のリストを初期化</code>
+      に書き換えて再度実行してみてください。今度は <span class="masked"> (自分で確認しましょう🫠)
+      </span> が発生します。</p>
+      <p>つまり、<code>assert</code>は「<strong>ここでは、この変数は、こうなっているはず！</strong>」を念のために確認する機能を提供します。</p>
+      <p>このようなことは、<code>if</code> と <code>print</code>、さらにプログラムを停止する
+      <code>sys.exit()</code> や例外スローを組み合わせても可能ですが、 <code>assert</code>
+      と比較すると手間になります。また、Jupyter環境 (Colab.環境) では <code>sys.exit()</code>
+      は意図した動作をしません。</p>
+      <div class="note type-tips">
+      <p><strong>AssertionErrorの発生時に任意のメッセージを表示</strong></p>
+      <p><code>assert</code> 文で、次のようにカンマにつづけてメッセージ (文字列) を設定しておくと
+      <strong>AssertionError</strong> が発生したときに、その文字列を出力することができます。</p>
+      <div class="sourceCode" id="cb19" data-caption="アサート文の利用例" data-startFrom="5"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python" style="counter-reset: source-line 4;"><span id="cb19-5"><a href="#cb19-5"></a><span class="co"># カンマにつづけて任意の文字列を設定</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="cf">assert</span> <span class="bu">len</span>(arr) <span class="op">==</span> <span class="dv">6</span>, <span class="st">&#39;arr の長さが 6 以外になってる！どこかおかしい&#39;</span></span></code></pre></div>
+      <p>AssertionErrorが発生したときの画面出力</p>
+      <figure>
+      <img src="figs/11/assert-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      </div>
+      <div class="note type-caution">
+      <p><strong>assertはデバッグ用途</strong></p>
+      <p><code>assert</code>
+      は、主に<strong>デバッグのために使用する機能</strong>であることを忘れないでください。<strong>製品レベルのエラー処理</strong>には、後の講義で学習する
+      <strong>例外処理</strong> と <code>print</code> による文字列出力を組み合わせて使用します。</p>
+      <p>例外処理では、予期しないエラーが発生した場合でも、プログラムの処理を継続させることが可能となる仕組みを提供します。</p>
+      </div>
+      <h2 data-number="7.1" id="演習6-目標時間-3分"><span class="header-section-number">7.1</span>
+      演習6 (<i class="fa-solid fa-stopwatch"></i> 目標時間: 3分)</h2>
+      <p>変数 <code>a</code>
+      が<strong>リスト型で</strong>あることを「確認」するためのアサート文を指定の位置に記述してください。また、その動作確認をしてください
+      (<code>a=10</code> や <code>a='10'</code> に書き換えて <code>assert</code>
+      が機能するか確認してください) 。</p>
+      <div class="sourceCode" id="cb20" data-caption="演習6"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb20-2"><a href="#cb20-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>]</span>
+<span id="cb20-3"><a href="#cb20-3"></a></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="co"># 以下に変数aがリスト型であることを確認するアサート文を記述</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a></span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="bu">print</span>(<span class="ss">f&#39;リストの先頭要素は </span><span class="sc">{</span>a[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> です。&#39;</span>)</span></code></pre></div>
+      <h1 data-number="8" id="sqliteとの連携"><span class="header-section-number">8</span>
+      SQLiteとの連携</h1>
+      <p>先週金曜日の「情報2」の授業のなかで RDB や SQL について触れたので「<strong>Python と SQLite
+      が簡単に連携できること</strong>」を紹介しておきます。詳しいことは、今後の授業のなかで触れていきます。</p>
+      <p>Pythonには、SQLite3データベースに接続するための <code>sqlite3</code>
+      という標準ライブラリが備えられています。</p>
+      <p>例えば、次のようなクエリに相当する処理 (情報2の第11回講義資料の p.201 を参照) は、、、</p>
+      <pre><code>-- テーブル「社員表」が存在しているなら削除
+DROP TABLE IF EXISTS 社員表;
+
+-- ①フィールド「社員番号」「名前」「部署」「住所」を持ったテーブル「社員表」を作成
+CREATE TABLE 社員表(社員番号,名前,部署,住所);
+
+-- ②テーブル「社員表」にレコードを挿入
+INSERT INTO 社員表 VALUES(2009001,&#39;田中一郎&#39;,&#39;営業部&#39;,&#39;神奈川県伊勢原市&#39;);
+INSERT INTO 社員表 VALUES(2009002,&#39;山本二郎&#39;,&#39;開発部&#39;,&#39;神奈川県横浜市&#39;);
+INSERT INTO 社員表 VALUES(2009003,&#39;佐藤三郎&#39;,&#39;開発部&#39;,&#39;神奈川県横浜市&#39;);
+INSERT INTO 社員表 VALUES(2009004,&#39;ウチのシロ&#39;,&#39;帰宅部&#39;,&#39;神奈川県犬山市&#39;);
+
+-- ③テーブル「社員表」から全項目(*)を選択して表示
+SELECT * FROM 社員表;</code></pre>
+      <p>以下のような Python
+      プログラムによって記述することができます。実際に実行して確認してみてください。</p>
+      <div class="sourceCode" id="cb22" data-caption="SQLite3との連携"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="im">import</span> sqlite3</span>
+<span id="cb22-3"><a href="#cb22-3"></a></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="co"># DBとの接続の開始</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a>conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;test.db&#39;</span>)</span>
+<span id="cb22-6"><a href="#cb22-6"></a>cur <span class="op">=</span> conn.cursor() <span class="co"># DBのカーソル(Cursor)取得</span></span>
+<span id="cb22-7"><a href="#cb22-7"></a></span>
+<span id="cb22-8"><a href="#cb22-8"></a><span class="co"># DBの作成</span></span>
+<span id="cb22-9"><a href="#cb22-9"></a>cur.execute(<span class="st">&quot;DROP TABLE IF EXISTS 社員表&quot;</span>)</span>
+<span id="cb22-10"><a href="#cb22-10"></a>cur.execute(<span class="st">&quot;CREATE TABLE 社員表(社員番号,名前,部署,住所)&quot;</span>)</span>
+<span id="cb22-11"><a href="#cb22-11"></a>cur.execute(<span class="st">&quot;INSERT INTO 社員表 VALUES(2009001,&#39;田中一郎&#39;,&#39;営業部&#39;,&#39;神奈川県伊勢原市&#39;)&quot;</span>)</span>
+<span id="cb22-12"><a href="#cb22-12"></a>cur.execute(<span class="st">&quot;INSERT INTO 社員表 VALUES(2009002,&#39;山本二郎&#39;,&#39;開発部&#39;,&#39;神奈川県横浜市&#39;)&quot;</span>)</span>
+<span id="cb22-13"><a href="#cb22-13"></a>cur.execute(<span class="st">&quot;INSERT INTO 社員表 VALUES(2009003,&#39;佐藤三郎&#39;,&#39;開発部&#39;,&#39;神奈川県横浜市&#39;)&quot;</span>)</span>
+<span id="cb22-14"><a href="#cb22-14"></a>cur.execute(<span class="st">&quot;INSERT INTO 社員表 VALUES(2009004,&#39;ウチのシロ&#39;,&#39;帰宅部&#39;,&#39;神奈川県犬山市&#39;)&quot;</span>)</span>
+<span id="cb22-15"><a href="#cb22-15"></a>conn.commit() <span class="co"># 処理を実行</span></span>
+<span id="cb22-16"><a href="#cb22-16"></a></span>
+<span id="cb22-17"><a href="#cb22-17"></a><span class="co"># データの更新</span></span>
+<span id="cb22-18"><a href="#cb22-18"></a><span class="co"># cur.execute(&quot;UPDATE 社員表 SET 名前=&#39;ウチのミケ&#39;, 住所=&#39;神奈川県猫山市&#39; WHERE 社員番号=2009004&quot;)</span></span>
+<span id="cb22-19"><a href="#cb22-19"></a><span class="co"># conn.commit()</span></span>
+<span id="cb22-20"><a href="#cb22-20"></a></span>
+<span id="cb22-21"><a href="#cb22-21"></a>cur.execute(<span class="st">&#39;SELECT * FROM 社員表&#39;</span>)</span>
+<span id="cb22-22"><a href="#cb22-22"></a></span>
+<span id="cb22-23"><a href="#cb22-23"></a>table <span class="op">=</span> <span class="bu">list</span>(cur)</span>
+<span id="cb22-24"><a href="#cb22-24"></a><span class="cf">for</span> record <span class="kw">in</span> table:</span>
+<span id="cb22-25"><a href="#cb22-25"></a>  <span class="bu">print</span>(<span class="op">*</span>record,sep<span class="op">=</span><span class="st">&#39;|&#39;</span>) <span class="co"># タプル(＝リストのようなもの) のアンパック</span></span>
+<span id="cb22-26"><a href="#cb22-26"></a></span>
+<span id="cb22-27"><a href="#cb22-27"></a><span class="co"># print(table[0][1]) # =&gt; 田中一郎</span></span>
+<span id="cb22-28"><a href="#cb22-28"></a><span class="co"># print(table[3][2]) # =&gt; 帰宅部</span></span>
+<span id="cb22-29"><a href="#cb22-29"></a></span>
+<span id="cb22-30"><a href="#cb22-30"></a><span class="co"># DBとの接続を切る</span></span>
+<span id="cb22-31"><a href="#cb22-31"></a>conn.close()</span></code></pre></div>
+      <p>このプログラムでは、DBの新規作成を行なっていますが、通常は、データベースの新規作成などは他のソフトウェアでおこないます。プログラムでは、既存のデータベースに接続して必要なデータを読み込んだり、データの更新処理を行ないます。</p>
+      <h1 data-number="9" id="斜方投射のシミュレーションと可視化"><span
+      class="header-section-number">9</span> 斜方投射のシミュレーションと可視化</h1>
+      <p>ここまで学習してきたことを組み合わせて「斜方投射」の<strong>簡易シミュレーション</strong>と<strong>可視化</strong>に挑戦してみましょう。このセクションでは
+      <strong>Jupyter環境 (Colab環境) を使用することを想定</strong> します。</p>
+      <figure>
+      <img src="figs/10/sim1.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="9.1" id="確認"><span class="header-section-number">9.1</span> 確認</h2>
+      <ul>
+      <li><p>ある時刻において位置 <span class="math inline">\(x (\mathrm{m})\)</span>、速度 <span
+      class="math inline">\(v (\mathrm{m/s})\)</span> の物体がある。この物体について、微小時間 <span
+      class="math inline">\(dt\)</span> 秒後の位置を求めよ。<br />
+      答え：<span class="masked"><span class="math inline">\(x+v\cdot dt\)</span></span></p></li>
+      <li><p>ある時刻において速度 <span class="math inline">\(v(\mathrm{m/s})\)</span>、加速度 <span
+      class="math inline">\(-g(\mathrm{m/s^2})\)</span> の物体がある。この物体について、微小時間
+      <span class="math inline">\(dt\)</span> 秒後の速度を求めよ。<br />
+      答え：<span class="masked"><span class="math inline">\(v-g\cdot dt\)</span></span></p></li>
+      <li><p>ある時刻において位置 <span class="math inline">\(x (\mathrm{m})\)</span>、速度 <span
+      class="math inline">\(v(\mathrm{m/s})\)</span>、加速度 <span
+      class="math inline">\(a(\mathrm{m/s^2})\)</span> の物体がある。この物体について、微小時間
+      <span class="math inline">\(dt\)</span> 秒後の位置を求めよ。<br />
+      答え：<span class="masked"><span class="math inline">\(x+v\cdot dt+0.5\cdot a \cdot
+      dt^2\)</span></span></p>
+      <ul>
+      <li>ただし、<span class="math inline">\(dt\)</span> が非常に小さいときは <span
+      class="math inline">\(x+v\cdot dt\)</span> で近似できる。</li>
+      </ul></li>
+      </ul>
+      <h2 data-number="9.2" id="基本プログラム"><span class="header-section-number">9.2</span>
+      基本プログラム</h2>
+      <p><a href="lecture10.html#宿題">前回の宿題</a> として、以下のプログラムについては
+      <strong>既に60分を費やして読み込んでいることを前提</strong> とします。</p>
+      <p>このプログラムでは「<strong>斜方投射</strong>」したときの <span class="masked">物体の位置
+      (X座標とY座標)</span> を <strong>0.1秒間隔</strong> で計算して、それをリスト
+      <code>arr_x</code> と <code>arr_y</code> に格納し、最後にそれを可視化 (グラフ化)
+      しています。</p>
+      <p>シミュレーションの時間範囲は、<strong>第11行目</strong>と<strong>第12行目</strong>のコード
+      <code>dt=0.1</code> と <code>iter=80</code> から計算できるように、時刻 <span
+      class="math inline">\(0(\mathrm{s})\)</span> から時刻 <span class="masked"><span
+      class="math inline">\(8.0(\mathrm{s})\)</span>（厳密に言えば <span
+      class="math inline">\(7.9(\mathrm{s})\)</span> ）</span> となります。</p>
+      <p>実際にコードを実行して、その結果を確認してください。</p>
+      <div class="sourceCode" id="cb23" data-caption="斜方投射のシミュレーション"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="im">import</span> math</span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># 可視化支援ライブラリ</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="co"># パラメータ設定</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>v0 <span class="op">=</span> <span class="fl">20.0</span>    <span class="co"># 初速度(m/s)</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a>theta <span class="op">=</span> <span class="dv">60</span>   <span class="co"># 水平方向から上方にθ(deg)に向けて投射</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a>g <span class="op">=</span> <span class="fl">9.8</span>      <span class="co"># 重力加速度m/s^2</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a></span>
+<span id="cb23-10"><a href="#cb23-10"></a><span class="co"># シミュレーションの準備・設定</span></span>
+<span id="cb23-11"><a href="#cb23-11"></a>dt <span class="op">=</span> <span class="fl">0.1</span>  <span class="co"># 位置を計算する時間間隔</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a><span class="bu">iter</span> <span class="op">=</span> <span class="dv">80</span> <span class="co"># シミュレーション繰返し回数</span></span>
+<span id="cb23-13"><a href="#cb23-13"></a></span>
+<span id="cb23-14"><a href="#cb23-14"></a>theta <span class="op">=</span> math.radians(theta) <span class="co"># deg -&gt; rad 変換</span></span>
+<span id="cb23-15"><a href="#cb23-15"></a></span>
+<span id="cb23-16"><a href="#cb23-16"></a>arr_x<span class="op">=</span>[<span class="dv">0</span>]<span class="op">*</span><span class="bu">iter</span> <span class="co"># X位置を格納するリストの初期化</span></span>
+<span id="cb23-17"><a href="#cb23-17"></a>arr_y<span class="op">=</span>[<span class="dv">0</span>]<span class="op">*</span><span class="bu">iter</span> <span class="co"># Y位置　〃</span></span>
+<span id="cb23-18"><a href="#cb23-18"></a></span>
+<span id="cb23-19"><a href="#cb23-19"></a><span class="cf">assert</span> <span class="bu">len</span>(arr_x) <span class="op">==</span> <span class="bu">len</span>(arr_y)</span>
+<span id="cb23-20"><a href="#cb23-20"></a></span>
+<span id="cb23-21"><a href="#cb23-21"></a>arr_x[<span class="dv">0</span>] <span class="op">=</span> x <span class="op">=</span> <span class="dv">0</span>  <span class="co"># t=0 のX位置</span></span>
+<span id="cb23-22"><a href="#cb23-22"></a>arr_y[<span class="dv">0</span>] <span class="op">=</span> y <span class="op">=</span> <span class="dv">0</span>  <span class="co">#  〃 のY位置</span></span>
+<span id="cb23-23"><a href="#cb23-23"></a></span>
+<span id="cb23-24"><a href="#cb23-24"></a>vx <span class="op">=</span> v0 <span class="op">*</span> math.cos(theta) <span class="co"># 初速度のX成分</span></span>
+<span id="cb23-25"><a href="#cb23-25"></a>vy <span class="op">=</span> v0 <span class="op">*</span> math.sin(theta) <span class="co"># 　〃　のY成分</span></span>
+<span id="cb23-26"><a href="#cb23-26"></a></span>
+<span id="cb23-27"><a href="#cb23-27"></a><span class="co"># シミュレーション</span></span>
+<span id="cb23-28"><a href="#cb23-28"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="bu">iter</span>):</span>
+<span id="cb23-29"><a href="#cb23-29"></a>  vy <span class="op">=</span> vy <span class="op">-</span> g <span class="op">*</span> dt <span class="co"># Y方向の速度更新</span></span>
+<span id="cb23-30"><a href="#cb23-30"></a>  x <span class="op">=</span> x <span class="op">+</span> vx <span class="op">*</span> dt  <span class="co"># X位置の更新計算</span></span>
+<span id="cb23-31"><a href="#cb23-31"></a>  y <span class="op">=</span> y <span class="op">+</span> vy <span class="op">*</span> dt  <span class="co"># Y位置 〃</span></span>
+<span id="cb23-32"><a href="#cb23-32"></a></span>
+<span id="cb23-33"><a href="#cb23-33"></a>  <span class="co"># 地面衝突の反発 (バウンド) の処理</span></span>
+<span id="cb23-34"><a href="#cb23-34"></a>  <span class="cf">if</span> y <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb23-35"><a href="#cb23-35"></a>    y <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-36"><a href="#cb23-36"></a>    vy <span class="op">=</span> <span class="op">-</span>vy <span class="op">*</span> <span class="fl">0.8</span>  <span class="co"># 反発係数</span></span>
+<span id="cb23-37"><a href="#cb23-37"></a></span>
+<span id="cb23-38"><a href="#cb23-38"></a>  arr_x[i] <span class="op">=</span> x <span class="co"># 更新されたX位置をリストに格納</span></span>
+<span id="cb23-39"><a href="#cb23-39"></a>  arr_y[i] <span class="op">=</span> y <span class="co">#   〃    Y位置を  〃</span></span>
+<span id="cb23-40"><a href="#cb23-40"></a></span>
+<span id="cb23-41"><a href="#cb23-41"></a><span class="co"># 可視化（現状でここから先は深く理解する必要はない）</span></span>
+<span id="cb23-42"><a href="#cb23-42"></a>fig,ax <span class="op">=</span> plt.subplots(dpi<span class="op">=</span><span class="dv">120</span>)</span>
+<span id="cb23-43"><a href="#cb23-43"></a>ax.scatter(arr_x,arr_y,marker<span class="op">=</span><span class="st">&#39;o&#39;</span>,s<span class="op">=</span><span class="dv">20</span>,alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb23-44"><a href="#cb23-44"></a>ax.axhline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb23-45"><a href="#cb23-45"></a>ax.set_aspect(<span class="st">&#39;equal&#39;</span>, adjustable<span class="op">=</span><span class="st">&#39;box&#39;</span>)</span>
+<span id="cb23-46"><a href="#cb23-46"></a>ax.set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">30</span>) <span class="co"># Y軸の表示範囲</span></span>
+<span id="cb23-47"><a href="#cb23-47"></a>plt.show()</span></code></pre></div>
+      <ul>
+      <li>斜方投射の初期位置を <span class="math inline">\((0,12)\)</span>
+      に変更してプログラムを実行してください。また、そのシミュレーションが適切なものであるか検証してください。<strong>検証後はプログラムを元に戻しておいてください</strong>。</li>
+      <li>斜方投射の角度を <span class="math inline">\(45(deg)\)</span> および <span
+      class="math inline">\(30(deg)\)</span>
+      に変更してプログラムを実行してください。また、そのシミュレーションが適切なものであるか検証せよ。最もX方向で遠くまで飛ばせる角度について考察してください。<strong>検証後はプログラムを元に戻しておいてください</strong>。</li>
+      <li>反発係数を <span class="math inline">\(0.9\)</span> および <span
+      class="math inline">\(0.7\)</span>
+      に変更してプログラムを実行してください。また、そのシミュレーションが適切なものであるか検証してください。<strong>検証後はプログラムを元に戻しておいてください</strong>。</li>
+      <li>シミュレーションの時間範囲 ( 時刻 <span class="math inline">\(0.0\)</span> から <span
+      class="math inline">\(8.0\)</span> まで ) を変えずに、その時間間隔を <span
+      class="math inline">\(0.2(\mathrm{s})\)</span>
+      に変更してプログラムを実行してください。また、そのシミュレーションが適切なものであるか検証してください。同様に、時間間隔を
+      <span class="math inline">\(0.05(\mathrm{s})\)</span>
+      とした場合についても実行してください。<strong>検証後はプログラムを元に戻しておいてください</strong>。</li>
+      <li><span class="math inline">\(x=50\)</span> の位置に壁が存在するとして<strong>X方向にも衝突
+      (反発) </strong>が生じるようにしてください。</li>
+      </ul>
+      <h2 data-number="9.3" id="アニメーション"><span class="header-section-number">9.3</span>
+      アニメーション</h2>
+      <p><strong>第43行目</strong>
+      以降がアニメーション対応にするための変更箇所になります。Gifを出力するためには
+      <code>pip install pillow</code> が必要です。</p>
+      <figure>
+      <img src="figs/11/animation.gif" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <div class="sourceCode" id="cb24" data-caption="斜方投射のJSアニメーション"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="im">import</span> math</span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="im">import</span> matplotlib.animation <span class="im">as</span> animation</span>
+<span id="cb24-5"><a href="#cb24-5"></a><span class="im">import</span> IPython</span>
+<span id="cb24-6"><a href="#cb24-6"></a></span>
+<span id="cb24-7"><a href="#cb24-7"></a><span class="co"># パラメータ設定</span></span>
+<span id="cb24-8"><a href="#cb24-8"></a>v0 <span class="op">=</span> <span class="fl">20.0</span>    <span class="co"># 初速度(m/s)</span></span>
+<span id="cb24-9"><a href="#cb24-9"></a>theta <span class="op">=</span> <span class="dv">60</span>   <span class="co"># 水平方向から上方にθ(deg)に向けて投射</span></span>
+<span id="cb24-10"><a href="#cb24-10"></a>g <span class="op">=</span> <span class="fl">9.8</span>      <span class="co"># 重力加速度m/s^2</span></span>
+<span id="cb24-11"><a href="#cb24-11"></a></span>
+<span id="cb24-12"><a href="#cb24-12"></a><span class="co"># シミュレーションの準備・設定</span></span>
+<span id="cb24-13"><a href="#cb24-13"></a>dt <span class="op">=</span> <span class="fl">0.1</span>  <span class="co"># 位置を計算する時間間隔</span></span>
+<span id="cb24-14"><a href="#cb24-14"></a><span class="bu">iter</span> <span class="op">=</span> <span class="dv">120</span> <span class="co"># シミュレーション繰返し回数</span></span>
+<span id="cb24-15"><a href="#cb24-15"></a></span>
+<span id="cb24-16"><a href="#cb24-16"></a>theta <span class="op">=</span> math.radians(theta) <span class="co"># deg -&gt; rad 変換</span></span>
+<span id="cb24-17"><a href="#cb24-17"></a></span>
+<span id="cb24-18"><a href="#cb24-18"></a>arr_x<span class="op">=</span>[<span class="dv">0</span>]<span class="op">*</span><span class="bu">iter</span> <span class="co"># X位置を格納するリストの初期化</span></span>
+<span id="cb24-19"><a href="#cb24-19"></a>arr_y<span class="op">=</span>[<span class="dv">0</span>]<span class="op">*</span><span class="bu">iter</span> <span class="co"># Y位置　〃</span></span>
+<span id="cb24-20"><a href="#cb24-20"></a></span>
+<span id="cb24-21"><a href="#cb24-21"></a><span class="cf">assert</span> <span class="bu">len</span>(arr_x) <span class="op">==</span> <span class="bu">len</span>(arr_y)</span>
+<span id="cb24-22"><a href="#cb24-22"></a></span>
+<span id="cb24-23"><a href="#cb24-23"></a>arr_x[<span class="dv">0</span>] <span class="op">=</span> x <span class="op">=</span> <span class="dv">0</span>  <span class="co"># t=0 のX位置</span></span>
+<span id="cb24-24"><a href="#cb24-24"></a>arr_y[<span class="dv">0</span>] <span class="op">=</span> y <span class="op">=</span> <span class="dv">0</span>  <span class="co">#  〃 のY位置</span></span>
+<span id="cb24-25"><a href="#cb24-25"></a></span>
+<span id="cb24-26"><a href="#cb24-26"></a>vx <span class="op">=</span> v0 <span class="op">*</span> math.cos(theta) <span class="co"># 初速度のX成分</span></span>
+<span id="cb24-27"><a href="#cb24-27"></a>vy <span class="op">=</span> v0 <span class="op">*</span> math.sin(theta) <span class="co"># 　〃　のY成分</span></span>
+<span id="cb24-28"><a href="#cb24-28"></a></span>
+<span id="cb24-29"><a href="#cb24-29"></a><span class="co"># シミュレーション</span></span>
+<span id="cb24-30"><a href="#cb24-30"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="bu">iter</span>):</span>
+<span id="cb24-31"><a href="#cb24-31"></a>  vy <span class="op">=</span> vy <span class="op">-</span> g <span class="op">*</span> dt <span class="co"># Y方向の速度更新</span></span>
+<span id="cb24-32"><a href="#cb24-32"></a>  x <span class="op">=</span> x <span class="op">+</span> vx <span class="op">*</span> dt  <span class="co"># X位置の更新計算</span></span>
+<span id="cb24-33"><a href="#cb24-33"></a>  y <span class="op">=</span> y <span class="op">+</span> vy <span class="op">*</span> dt  <span class="co"># Y位置 〃</span></span>
+<span id="cb24-34"><a href="#cb24-34"></a></span>
+<span id="cb24-35"><a href="#cb24-35"></a>  <span class="co"># 地面衝突の反発 (バウンド) の処理</span></span>
+<span id="cb24-36"><a href="#cb24-36"></a>  <span class="cf">if</span> y <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb24-37"><a href="#cb24-37"></a>    y <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb24-38"><a href="#cb24-38"></a>    vy <span class="op">=</span> <span class="op">-</span>vy <span class="op">*</span> <span class="fl">0.8</span>  <span class="co"># 反発係数</span></span>
+<span id="cb24-39"><a href="#cb24-39"></a></span>
+<span id="cb24-40"><a href="#cb24-40"></a>  arr_x[i] <span class="op">=</span> x <span class="co"># 更新されたX位置をリストに格納</span></span>
+<span id="cb24-41"><a href="#cb24-41"></a>  arr_y[i] <span class="op">=</span> y <span class="co">#   〃    Y位置を  〃</span></span>
+<span id="cb24-42"><a href="#cb24-42"></a></span>
+<span id="cb24-43"><a href="#cb24-43"></a><span class="co"># アニメーション</span></span>
+<span id="cb24-44"><a href="#cb24-44"></a>fig,ax <span class="op">=</span> plt.subplots(dpi<span class="op">=</span><span class="dv">120</span>,figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">3</span>))</span>
+<span id="cb24-45"><a href="#cb24-45"></a>ss <span class="op">=</span> <span class="dv">5</span> <span class="co"># 残像数</span></span>
+<span id="cb24-46"><a href="#cb24-46"></a></span>
+<span id="cb24-47"><a href="#cb24-47"></a><span class="kw">def</span> frame(i):</span>
+<span id="cb24-48"><a href="#cb24-48"></a>  ax.clear()</span>
+<span id="cb24-49"><a href="#cb24-49"></a>  ax.set_aspect(<span class="st">&#39;equal&#39;</span>, adjustable<span class="op">=</span><span class="st">&#39;box&#39;</span>)</span>
+<span id="cb24-50"><a href="#cb24-50"></a>  ax.set_ylim(<span class="op">-</span><span class="dv">1</span>,<span class="dv">30</span>)</span>
+<span id="cb24-51"><a href="#cb24-51"></a>  ax.set_xlim(<span class="dv">0</span>, <span class="bu">round</span>(<span class="bu">max</span>(arr_x),<span class="op">-</span><span class="dv">1</span>)<span class="op">+</span><span class="dv">5</span>)</span>
+<span id="cb24-52"><a href="#cb24-52"></a>  ax.axhline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb24-53"><a href="#cb24-53"></a>  ax.text(<span class="fl">0.01</span>,<span class="fl">0.98</span>,<span class="ss">f&#39;t=</span><span class="sc">{</span>i<span class="op">*</span>dt<span class="sc">:.2f}</span><span class="ss">&#39;</span>,va<span class="op">=</span><span class="st">&#39;top&#39;</span>,transform<span class="op">=</span>ax.transAxes)</span>
+<span id="cb24-54"><a href="#cb24-54"></a>  <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(ss):</span>
+<span id="cb24-55"><a href="#cb24-55"></a>    ax.scatter(arr_x[i<span class="op">+</span>t],arr_y[i<span class="op">+</span>t],</span>
+<span id="cb24-56"><a href="#cb24-56"></a>               marker<span class="op">=</span><span class="st">&#39;o&#39;</span>,s<span class="op">=</span><span class="dv">20</span>,c<span class="op">=</span><span class="st">&#39;tab:blue&#39;</span>,alpha<span class="op">=</span>t<span class="op">/</span>(ss<span class="op">+</span><span class="dv">1</span>))</span>
+<span id="cb24-57"><a href="#cb24-57"></a></span>
+<span id="cb24-58"><a href="#cb24-58"></a>plt.tight_layout()</span>
+<span id="cb24-59"><a href="#cb24-59"></a>ani <span class="op">=</span> animation.FuncAnimation(fig, frame, interval<span class="op">=</span><span class="dv">100</span>,frames<span class="op">=</span><span class="bu">iter</span><span class="op">-</span>ss)</span>
+<span id="cb24-60"><a href="#cb24-60"></a>ani.save(<span class="st">&#39;animation.gif&#39;</span>, writer<span class="op">=</span><span class="st">&#39;pillow&#39;</span>, fps<span class="op">=</span><span class="dv">10</span>) <span class="co"># アニメーションGIFを出力</span></span>
+<span id="cb24-61"><a href="#cb24-61"></a>plt.close()</span>
+<span id="cb24-62"><a href="#cb24-62"></a></span>
+<span id="cb24-63"><a href="#cb24-63"></a>IPython.display.HTML(ani.to_jshtml()) <span class="co"># 出力セルにJavaScriptアニメーションを出力</span></span></code></pre></div>
+      <!-- ---------------------------------------- -->
+    </main>
+
+    <footer class="markdown-body">
+      <p><a href="https://takeshiwada1980.github.io/Programming1-2026/">講義資料のIndexに移動</a></p>
+    </footer>
+
+    <script>
+      window.onload = function () {
+        // ナビゲーション関連
+        let openBtn = document.getElementsByClassName("openbtn")[0];
+        let navPnl = document.getElementById("g-nav");
+        openBtn.onclick = () => {
+          openBtn.classList.toggle("active");
+          navPnl.classList.toggle("panelactive");
+        };
+
+        let items = navPnl.getElementsByTagName("a");
+        Array.from(items).forEach((item) => {
+          item.onclick = () => {
+            openBtn.classList.toggle("active");
+            navPnl.classList.toggle("panelactive");
+          };
+        });
+
+        // マスク処理
+        let maskedSpans = document.getElementsByClassName("masked");
+        Array.from(maskedSpans).forEach((span) => {
+          span.onclick = () => {
+            span.classList.toggle("open");
+          };
+        });
+
+        // 吹き出しコンポーネントの補完
+        function updateBalloonFrame(body) {
+          var svg = body.querySelector(":scope > .balloon-frame");
+          var path = body.querySelector(":scope > .balloon-frame .balloon-frame-shape");
+          if (!svg || !path) return;
+
+          var rect = body.getBoundingClientRect();
+          var style = getComputedStyle(body);
+          var width = Math.max(1, Math.ceil(rect.width));
+          var height = Math.max(1, Math.ceil(rect.height));
+
+          var stroke = parseFloat(style.getPropertyValue("--balloon-stroke-width")) || 2;
+          var radius = parseFloat(style.getPropertyValue("--balloon-radius")) || 18;
+          var tailWidth = parseFloat(style.getPropertyValue("--balloon-tail-width")) || 26;
+          var tailTop = parseFloat(style.getPropertyValue("--balloon-tail-top")) || 18;
+          var tailBase = parseFloat(style.getPropertyValue("--balloon-tail-base")) || 20;
+          var tailTipInset =
+            parseFloat(style.getPropertyValue("--balloon-tail-tip-inset")) || 3;
+          var s2 = stroke * 0.5;
+          var left = tailWidth + s2;
+          var top = s2;
+          var right = width - s2;
+          var bottom = height - s2;
+          var safeRadius = Math.min(radius, (right - left) * 0.5, (bottom - top) * 0.5);
+          var baseTop = Math.max(
+            top + safeRadius + 4,
+            Math.min(bottom - safeRadius - tailBase - 4, tailTop),
+          );
+          var baseBottom = Math.min(bottom - safeRadius - 4, baseTop + tailBase);
+          var tipX = Math.max(s2, tailTipInset);
+          var tipY = (baseTop + baseBottom) * 0.5;
+          var d = [
+            "M",
+            left + safeRadius,
+            top,
+            "H",
+            right - safeRadius,
+            "A",
+            safeRadius,
+            safeRadius,
+            0,
+            0,
+            1,
+            right,
+            top + safeRadius,
+            "V",
+            bottom - safeRadius,
+            "A",
+            safeRadius,
+            safeRadius,
+            0,
+            0,
+            1,
+            right - safeRadius,
+            bottom,
+            "H",
+            left + safeRadius,
+            "A",
+            safeRadius,
+            safeRadius,
+            0,
+            0,
+            1,
+            left,
+            bottom - safeRadius,
+            "V",
+            baseBottom,
+            "L",
+            tipX,
+            tipY,
+            "L",
+            left,
+            baseTop,
+            "V",
+            top + safeRadius,
+            "A",
+            safeRadius,
+            safeRadius,
+            0,
+            0,
+            1,
+            left + safeRadius,
+            top,
+            "Z",
+          ].join(" ");
+
+          svg.setAttribute("viewBox", "0 0 " + width + " " + height);
+          path.setAttribute("d", d);
+        }
+
+        document.querySelectorAll("div.balloon").forEach(function (div) {
+          if (div.querySelector(":scope > .balloon-body")) return;
+
+          var hasContent = Array.from(div.childNodes).some(function (node) {
+            return node.nodeType !== Node.TEXT_NODE || node.textContent.trim() !== "";
+          });
+          if (!hasContent) return;
+
+          var classNames = Array.from(div.classList);
+          var charClass = classNames.find(function (name) {
+            return /^char-\d\d/.test(name) && name.length === 7;
+          });
+          var faceClass = classNames.find(function (name) {
+            return /^face-\d\d/.test(name) && name.length === 7;
+          });
+
+          var contentNodes = Array.from(div.childNodes);
+          var body = document.createElement("div");
+          body.className = "balloon-body";
+
+          var frame = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg",
+          );
+          frame.setAttribute("aria-hidden", "true");
+          frame.classList.add("balloon-frame");
+
+          var framePath = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "path",
+          );
+          framePath.classList.add("balloon-frame-shape");
+          frame.appendChild(framePath);
+
+          var bubble = document.createElement("div");
+          bubble.className = "balloon-bubble";
+
+          var content = document.createElement("div");
+          content.className = "balloon-content";
+          contentNodes.forEach(function (node) {
+            content.appendChild(node);
+          });
+
+          bubble.appendChild(content);
+          body.appendChild(frame);
+          body.appendChild(bubble);
+
+          if (charClass && faceClass) {
+            var figure = document.createElement("div");
+            figure.className = "balloon-figure";
+
+            var avatar = document.createElement("div");
+            avatar.className = "balloon-avatar";
+
+            var image = document.createElement("img");
+            var avatarBasePath = "figs/balloon/" + charClass + "/" + faceClass;
+            var triedGifAvatar = false;
+            image.src = avatarBasePath + ".png";
+            image.alt = "";
+            image.loading = "lazy";
+            image.decoding = "async";
+            image.addEventListener("error", function () {
+              if (!triedGifAvatar) {
+                triedGifAvatar = true;
+                image.src = avatarBasePath + ".gif";
+                return;
+              }
+
+              div.classList.add("balloon-no-avatar");
+              if (figure.parentNode) {
+                figure.remove();
+              }
+            });
+
+            avatar.appendChild(image);
+            figure.appendChild(avatar);
+            div.appendChild(figure);
+          } else {
+            div.classList.add("balloon-no-avatar");
+          }
+
+          div.appendChild(body);
+          updateBalloonFrame(body);
+
+          if (window.ResizeObserver) {
+            var observer = new ResizeObserver(function () {
+              updateBalloonFrame(body);
+            });
+            observer.observe(body);
+          }
+        });
+
+        // data-startfrom 属性の行番号カウンタのリセット
+        document.querySelectorAll("div.sourceCode").forEach(function (div) {
+          var startFrom = div.getAttribute("data-startfrom");
+          if (startFrom != null) {
+            div.style.counterReset = "pg-line " + (startFrom - 1);
+          }
+        });
+
+        // コピーボタンの追加
+        document.querySelectorAll("div.sourceCode").forEach(function (div) {
+          var btn = document.createElement("button");
+          btn.className = "copy-btn";
+          btn.title = "コードをコピー";
+          btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+          btn.addEventListener("click", function () {
+            var codeEl = div.querySelector("code");
+            if (!codeEl) return;
+            navigator.clipboard.writeText(codeEl.innerText).then(function () {
+              btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+              setTimeout(function () {
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+              }, 1500);
+            });
+          });
+          div.appendChild(btn);
+        });
+
+      };
+    </script>
+  </body>
+</html>
