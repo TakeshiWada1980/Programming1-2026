@@ -8,6 +8,7 @@ var:
 
 ## 準備・案内
 
+
 - **_小テスト3 (再)_** を実施します。
 - 今回の演習の実装例（解答例）は [こちら](https://colab.research.google.com/drive/1avzHQaschVAhV1JFb0xc_r3eW53_4JdX?usp=sharing) を参照してください。
 - 卒業研究に関するアンケートにご協力ください。
