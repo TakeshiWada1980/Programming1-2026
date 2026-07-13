@@ -10,13 +10,109 @@ var:
 
 - [GoogleColab.](https://colab.research.google.com/?hl=ja) にログイン、もしくは、ローカル環境の Jupyter を起動し、「`PG1-第12回講義.ipynb`」という名前でノートブックを作成しておいてください。
 - 授業の冒頭で「小テスト❹」を実施します。筆記用具を準備しておいてください。
-- 前回講義で[課題04 (自由課題)](lecture11.html#課題04-自由課題)が出題されています。期限はだいぶ先ですが、計画的に取り組んでください。
+- 前回講義で [課題04 (自由課題)](lecture11.html#課題04-自由課題) を出題しています。完成期限はだいぶ先ですが、計画的に取り組んでください。
     - ***共有URLの提出期限*** : **2026年7月26日(日) 23:00** 
     - ***内容の完成期限*** : **2026年8月9日(日) 23:00** 
 
 ## 復習 (リストとnparray)
 
-[前々回](lecture10.html#繰返し構文-ループ変数に小数値を使用したい場合)、[前回](lecture11.html#演習1-目標時間-10分)の講義では、NumPy (ナンパイ) の `np.arange` を使った **繰り返し計算処理** について学びました。基本的かつ様々な場面で利用する処理なので定着させておいてください。
+[前々回](lecture10.html#繰返し構文-ループ変数に小数値を使用したい場合)、[前回](lecture11.html#演習1-目標時間-10分) の講義では、NumPy (ナンパイ) の `np.arange` を使った **繰り返し計算処理** について学びました。基本的かつ様々な場面で利用する処理なので定着させておいてください。
+
+ここで、ネイティブ (＝Pythonの組込み関数) である `range` と、外部ライブラリである `np.arange` の対応関係について、もう一度きちんと整理しておきます。以下の内容は **すべて既に解説済み** のものです (忘れてしまっている人は、この機会にしっかり記憶を呼び戻しておいてください)。
+
+#### 引数を1個指定した場合の挙動
+
+もっとも基本的な「引数1個」のケースです。ネイティブの `range` の基本的な使い方は [第10回講義](lecture10.html#繰返し構文の基本) で学習済みです。`np.arange` に対しても同じように「1個の引数」だけを与えることができ、`range` と同じ結果を得ることができます。
+
+```python{.numberLines caption="range01.py (引数1個)"}
+%reset -f
+for i in range(5): # 組込み関数の range
+  print(i,end=' ')
+```
+
+```python{.numberLines caption="arange01.py (引数1個)"}
+%reset -f
+import numpy as np
+for i in np.arange(5): # ライブラリ numpy の arange 関数
+  print(i,end=' ')
+```
+
+どちらを実行しても `0 1 2 3 4` という同じ標準出力が得られることを確認してください。
+
+#### 引数を2個指定した場合の挙動
+
+つづいて「開始値」と <span class="masked">終了値</span> を指定する、**_引数2個_** のケースです。`range` に **2個の引数を与えたときの挙動** は [第10回講義](lecture10.html#rangeに対して2つの引数を与える) で解説済みです。`np.arange` も全く同じ流儀で、第1引数に開始値、第2引数に終了値を与えます。
+
+```python{.numberLines caption="range02.py (引数2個)"}
+%reset -f
+for i in range(2,8):
+  print(i,end=' ')
+```
+
+```python{.numberLines caption="arange02.py (引数2個)"}
+%reset -f
+import numpy as np
+for i in np.arange(2,8):
+  print(i,end=' ')
+```
+
+どちらも <span class="masked">`2 3 4 5 6 7`</span> が出力されます。「**終了値そのものは含まれない**」という点も、既に学習済みです。
+
+#### 引数を3個指定した場合の挙動
+
+最後に **刻み幅 (ステップ)** を指定する、引数3個のケースです。こちらも [第10回講義](lecture10.html#演習2-目標時間-15分) の演習・定着確認で扱った内容です。
+
+```python{.numberLines caption="range03.py (引数3個)"}
+%reset -f
+for i in range(0,10,3):
+  print(i,end=' ')
+```
+
+```python{.numberLines caption="arange03.py (引数3個)"}
+%reset -f
+import numpy as np
+for i in np.arange(0,10,3):
+  print(i,end=' ')
+```
+
+どちらも `0 3 6 9` が出力されます。第3引数を指定すると、<span class="masked">値が「飛び飛び (等間隔)」</span> になる点に注目してください。
+
+#### 定着確認
+
+- `range(0, 12, 3)` を実行した場合、最後に生成される値はいくつか答えよ。
+    - 答え: <span class="masked">`9`。次の値は `12` で、これは終了値の `12` と一致しますが、`range` の終了値は「含まれない」ため生成されません。よって `0, 3, 6, 9` で終了する。</span>
+- `range(5)` と同じ結果を得るように、range に 3個の引数 を明示して書き換えよ。
+    - 答え: <span class="masked">`range(0, 5, 1)`</span>
+
+
+#### 小数値 (浮動小数点数) の取り扱い
+
+つづいて、`range` の第3引数 (刻み幅) には小数値を指定できない、という点についても再確認しておきます。これも [第10回講義の定着確認](lecture10.html#定着確認-1) で、実際に手を動かして確認してもらった内容です。
+
+```python{.numberLines caption="range04.py (第3引数に小数を指定 → エラー)"}
+%reset -f
+for i in range(0,10,0.5): # 第3引数に小数を指定
+  print(i,end=' ')
+```
+
+上記を実行すると、次のような `TypeError` が発生します。
+
+```
+TypeError: 'float' object cannot be interpreted as an integer
+```
+
+`range` はあくまで「**整数**」しか扱えないため、第3引数 (刻み幅) に小数を与えると実行時エラーとなります。
+
+一方、`np.arange` であれば、次のように第3引数に小数値を指定しても問題なく動作します。この点も [第10回講義](lecture10.html#繰返し構文-ループ変数に小数値を使用したい場合) や [前回講義](lecture11.html#手順2-準備) で既に確認済みです。
+
+```python{.numberLines caption="arange04.py (第3引数に小数を指定 → 正常動作)"}
+%reset -f
+import numpy as np
+for i in np.arange(0,10,0.5): # 第3引数に小数を指定してもOK
+  print(f'{i:.1f}',end=' ')
+```
+
+`range` では実現できなかった「小数刻みのループ処理」が `np.arange` を使うことで簡潔に実現できる、という点をあらためて確認しておいてください。
 
 ### 練習問題
 
@@ -64,7 +160,7 @@ player = {
 }
 
 # 辞書の値【参照】[] に key を与えて value を参照
-print( player['name'] ) # => 勇者ヨシヒコ'
+print( player['name'] ) # => 勇者ヨシヒコ
 # print( player[name] )   # => 実行時エラー。name という変数は存在しない
 ```
 
@@ -106,7 +202,7 @@ print( f'HP = {player["hp"]}' ) # => HP = 120
 
 **(ヒント)**
 
-- 「持ち物」の一覧を出力するためには「for文」か「アンパック」を使用します。アンパックは [第10回講義](lecture10.html#演習5-目標時間-10分) 既に学習済みです。
+- 「持ち物」の一覧を出力するためには「for文」か「アンパック」を使用します。アンパックは[第10回講義](lecture10.html#演習6-目標時間-10分)で既に学習済みです。
     - for文を利用する場合のヒント :<span class="masked">`for item in player['items'] :
 `</span> 
     - アンパックを利用する場合のヒント : <span class="masked">`print( *player['items'], sep=', ' )`</span> 
@@ -136,15 +232,15 @@ print_point(p2)
 
 上記のプログラムの解読を通して、以下のことが分かると思います。
 
-- 関数の引数に「辞書型」を与えることもできる。関数については[第11回講義](lecture11.html#関数-function-初級)で学習済みです。
-- **第05行目** のように `type(xxx) is dict` によって、引数として受け取った `xxx` が辞書型かどうかを確認できる。`assert` についても[第11回講義](lecture11.html#アサート文)で学習済みです。
+- 関数の引数に「辞書型」を与えることもできる。関数については [第11回講義](lecture11.html#関数-function-初級) で学習済みです。
+- **第05行目** のように `type(xxx) is dict` によって、引数として受け取った `xxx` が辞書型かどうかを確認できる。`assert` についても [第11回講義](lecture11.html#アサート文) で学習済みです。
 - 変数 `yyy` を「**空のリスト**」として初期化するには `yyy=[]` あるいは `yyy=list()` のように記述しました。これに対して「**空の辞書**」として初期化するには `xxx={}` あるいは `xxx=dict()` のように記述します。
 - 関数を利用することでプログラムをすっきりと記述することができます。
 
 #### 定着確認
 
 - 変数 `items` を「空のリスト」として初期化するための文を答えよ。
-    - 答え: <span class="masked">list=[]</span> 
+    - 答え: <span class="masked">items=[]</span> 
 - 変数 `player` を「空の辞書」として初期化するための文を答えよ。
     - 答え: <span class="masked">player={}</span> 
 
@@ -172,7 +268,7 @@ for x in ['やくそう', 'きえさりそう'] : # ループ変数 x は「や�
 #### 定着確認
 
 - 辞書型のオブジェクト `items` のキーに `'こんぼう'` を含むかどうかを判定する条件式を答えよ。
-    - 答え: <span class="masked">`'こんぼう' x in items.keys()`</span> 
+    - 答え: <span class="masked">`'こんぼう' in items.keys()`</span> 
 - 辞書型のオブジェクト `items` のキーの数を出力する `print` 文を記述せよ。
     - 答え: <span class="masked">`print(len(items.keys()))`</span> 
 
@@ -251,7 +347,7 @@ for c in items: # このようにスマートに記述可能
   print(c)
 ```
 
-上記では、ループ変数 `c` には数値ではなく、リスト `arr` の要素 (つまり「やくそう」「どくけしそう」…) が順番に格納されながら繰返し処理されます。
+上記では、ループ変数 `c` には数値ではなく、リスト `items` の要素 (つまり「やくそう」「どくけしそう」…) が順番に格納されながら繰返し処理されます。
 
 Python では基本的に `loop01b.py` のような記述が推奨されます。`loop01a.py`の記述は非推奨です。
 
@@ -298,7 +394,7 @@ for i,c in enumerate(items,1): # i の初期値を 1 に設定
 ```python{.numberLines caption="演習3"}
 %reset -f
 codename = ['Coffee Lake Refresh','Comet Lake',
-            'Rocket Lake','Alder Lake','Raptor Lake','Meteor Lake']
+            'Rocket Lake','Alder Lake','Raptor Lake','Raptor Lake Refresh']
 # ここから先にコードを追加
 ```
 
@@ -311,12 +407,12 @@ codename = ['Coffee Lake Refresh','Comet Lake',
 第11世代 Rocket Lake
 第12世代 Alder Lake
 第13世代 Raptor Lake
-第14世代 Meteor Lake
+第14世代 Raptor Lake Refresh
 ```
 
 ## リストの扱いに関する補足② : アンパック
 
-[第10開講](lecture10.html#演習5-目標時間-10分)で簡単に触れていますが `unpack-01a.py` は `unpack-01b.py` のようにスマートに記述することができます。
+[第10回講義](lecture10.html#演習6-目標時間-10分)で簡単に触れていますが `unpack-01a.py` は `unpack-01b.py` のようにスマートに記述することができます。
 
 どちらのプログラムも同じ出力が得られることを確認してください。
 
@@ -374,7 +470,7 @@ print(f's2={s2}, s3={s3}, s4={s4}')
 
 「文字列」は「リスト」ではありませんが、「リスト」と同じように `[]` を使って**要素 (=1文字) を参照**したり、**スライス**で部分文字列を取得することができます。半角文字、全角文字、絵文字を含めてPythonでは適切に「1文字」を切り分けることができます。
 
-例えば、変数 `item` に「やくそう」という文字列が格納されている場合...
+例えば、変数 `name` に「やくそう」という文字列が格納されている場合...
 
 - `name[0]` で「や」
 - `name[0:2]` で「やく」
@@ -441,16 +537,23 @@ for i in range(3):
 
 自由課題のヒントにしてください。
 
-```python{.numberLines}
+この例で押さえてほしいポイントは「野球のスコア計算そのもの」ではなく、`clear_output()` と `time.sleep()` を組み合わせて **同じ画面を繰返し書き換えながら (＝再描画しながら) 表示を更新していく** という技法です。スコアボードは、あくまでその技法を説明するための題材の一つに過ぎません。「進行状況をリアルタイムに表示したい」「アニメーションのような演出をしたい」といった自由課題に取り組む際の参考にしてください。
+
+```python{.numberLines caption="画面（標準出力）の再描画"}
 %reset -f
 import time
 import random as r
 import IPython.display
 
-n=9           # 9回（イニング）までのゲーム委
+n=9           # 9回（イニング）までのゲーム
 G = [-1]*n    # スコアの初期化
 H = [-1]*n
 wait_time = 2 # [Sec]
+sayonara = False # サヨナラ勝ちだったかどうかのフラグ
+
+# 集計（未消化のイニングを表す -1 を除いて合計） #########
+def total(score):
+  return sum(s for s in score if s != -1)
 
 # チームのスコア #########################
 def print_team_score(name,score):
@@ -460,7 +563,7 @@ def print_team_score(name,score):
       print(f'{score[i]:>2}|',end='')
     else :
       print('  |',end='')
-  print(f'{sum(score[:t]):>2}|')
+  print(f'{total(score):>2}|')
 
 # スコアボード全体の出力 #################
 def print_score_board():
@@ -487,13 +590,28 @@ for t in range(n):
   print_score_board()
   time.sleep(wait_time)
 
+  # 最終回（9回裏）で、既にH（後攻）が勝ち越している場合は、Hの攻撃を待たずに試合終了
+  if t == n-1 and total(H) > total(G) :
+    break
+
   # 後攻「H」の攻撃回
   H[t] = r.choices([0,1,2,3],[4,3,2,1])[0]
   print_score_board()
   time.sleep(wait_time)
 
-if sum(H) > sum(G):
-  print('😄😄😄😄😄')
+  # 最終回（9回裏）でHが逆転・勝ち越した場合は、その時点で試合終了（サヨナラ）
+  if t == n-1 and total(H) > total(G) :
+    sayonara = True
+    break
+
+print()
+if total(H) > total(G) :
+  if sayonara :
+    print('😄😄😄😄😄 サヨナラ勝ち!!')
+  else :
+    print('😄😄😄😄😄')
+elif total(H) == total(G) :
+  print('🤝🤝🤝🤝🤝 引き分け')
 else :
   print('😱😱😱😱😱')
 ```
@@ -503,7 +621,7 @@ else :
 
 ユーザーから入力された文字列が `犬` または `いぬ` または `イヌ` のとき、「**ワン ! **」という文字列を出力する処理を考えます。
 
-この処理 (条件分岐) を素直に記述すると次のようになります。`or` で **OR条件** を表現しています。`or` は [第06回講義](lecture05.html#or条件)で既に学習済みです。
+この処理 (条件分岐) を素直に記述すると次のようになります。`or` で **OR条件** を表現しています。`or` は [第05回講義](lecture05.html#or条件)で既に学習済みです。
 
 ```python{.numberLines}
 %reset -f
@@ -585,7 +703,7 @@ if '' :
 ```python{.numberLines}
 %reset -f
 animal = input('動物名を入力してください : ')
-if animal in ['犬','いぬ','イヌ'] : # リスト ['犬','いぬ','イヌ'] に anmial は含まれるか?
+if animal in ['犬','いぬ','イヌ'] : # リスト ['犬','いぬ','イヌ'] に animal は含まれるか?
   print('ワン!')
 else :
   print('・・・')
@@ -606,16 +724,16 @@ ICTエンジニア (特にプログラマやSE) には「**面倒な作業はラ
 ```python{.numberLines caption="トランプカードの初期化（Lv.1）"}
 %reset -f
 # プログラマ的な発想・姿勢に基づかない初期化
-cards = ['♠A', '♠2', '♠3', '♠4', '♠5', '♠6', '♠7', '♠8', '♠9', '♠10', '♠J', '♠Q', '♠K',
-         '♦A', '♦2', '♦3', '♦4', '♦5', '♦6', '♦7', '♦8', '♦9', '♦10', '♦J', '♦Q', '♦K',
-         '♥A', '♥2', '♥3', '♥4', '♥5', '♥6', '♥7', '♥8', '♥9', '♥10', '♥J', '♥Q', '♥K',
-         '♣A', '♣2', '♣3', '♣4', '♣5', '♣6', '♣7', '♣8', '♣9', '♣10', '♣J', '♣Q', '♣K']
+cards = ['♠A','♠2','♠3','♠4','♠5','♠6','♠7','♠8','♠9','♠10','♠J','♠Q','♠K',
+         '♦A','♦2','♦3','♦4','♦5','♦6','♦7','♦8','♦9','♦10','♦J','♦Q','♦K',
+         '♥A','♥2','♥3','♥4','♥5','♥6','♥7','♥8','♥9','♥10','♥J','♥Q','♥K',
+         '♣A','♣2','♣3','♣4','♣5','♣6','♣7','♣8','♣9','♣10','♣J','♣Q','♣K']
 print(cards)
 ```
 
 上記のコードを記述に要する時間は、せいぜい3分程度ですが、この3分の面倒を避けるために **プログラムを、考えたり、調べたり、試行錯誤したりすることに1時間、2時間を費やすことができるか** が、プログラミング思考になれているか、否かの指標になります。
 
-このような <span class="masked">めんどくさいことをしないためならいかなる努力も惜しまない</span> ということができれば、上記 `card_init_01.py` は、次のように書けることに気付き、その内容の理解に至ると思います。これにより、このカードの初期化に相当するタスクからは **永遠に解放される** という恩恵を得ることができます。
+このような <span class="masked">めんどくさいことをしないためならいかなる努力も惜しまない</span> ということができれば、上記のコードは、次のように書けることに気付き、その内容の理解に至ると思います。これにより、このカードの初期化に相当するタスクからは **永遠に解放される** という恩恵を得ることができます。
 
 ```python{.numberLines  caption="トランプカードの初期化（Lv.2）"}
 %reset -f
@@ -743,6 +861,8 @@ import math
 x = math.sin(0.25)**2 + math.cos(0.25)**2 # math.が必要
 print(x)
 ```
+
+### 演習
 
 - `import01.py` で `math.sin(0.25)` とすると、どのようになるか。結果について推測したうえで、実際にコードを実行して確認せよ。
 
