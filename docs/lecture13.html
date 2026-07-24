@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="referrer" content="no-referrer" />
+
+    <script>
+      MathJax = {
+        chtml: {
+          displayAlign: "left",
+          displayIndent: "1em",
+        },
+      };
+    </script>
+
+     <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+type="text/javascript"></script> 
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>第13回 2I-プログラミング1</title>
+  </head>
+
+  <body>
+    <div class="openbtn"><span></span><span></span><span></span></div>
+    <nav id="g-nav">
+      <div id="g-nav-list">
+        <!-- ---------------------------------------- -->
+         <ul>
+<li><a href="#準備案内" id="toc-準備案内"><span class="toc-section-number">1</span> 準備・案内</a>
+<ul>
+<li><a href="#次回-夏休み明け小テストを実施します"
+id="toc-次回-夏休み明け小テストを実施します"><span class="toc-section-number">1.1</span> 次回
+(夏休み明け)、小テストを実施します。</a></li>
+</ul></li>
+<li><a href="#課題05" id="toc-課題05"><span class="toc-section-number">2</span> 課題05</a>
+<ul>
+<li><a href="#補足" id="toc-補足"><span class="toc-section-number">2.1</span> 補足</a></li>
+</ul></li>
+<li><a href="#プログラミングの上達のためには" id="toc-プログラミングの上達のためには"><span
+class="toc-section-number">3</span> プログラミングの上達のためには…</a></li>
+<li><a href="#リストに格納可能な値の型" id="toc-リストに格納可能な値の型"><span
+class="toc-section-number">4</span> リストに格納可能な値の型</a>
+<ul>
+<li><a href="#演習1-目標時間-8分" id="toc-演習1-目標時間-8分"><span
+class="toc-section-number">4.1</span> 演習1 (<i class="fa-solid fa-stopwatch"></i> 目標時間:
+8分)</a></li>
+</ul></li>
+<li><a href="#二次元リスト" id="toc-二次元リスト"><span class="toc-section-number">5</span>
+二次元リスト</a>
+<ul>
+<li><a href="#c言語との違い" id="toc-c言語との違い"><span class="toc-section-number">5.1</span>
+C言語との違い</a></li>
+<li><a href="#次元リストの様々な初期化の方法" id="toc-次元リストの様々な初期化の方法"><span
+class="toc-section-number">5.2</span> 2次元リストの様々な「初期化」の方法</a></li>
+</ul></li>
+<li><a href="#浅いコピーと深いコピーに進む前の確認"
+id="toc-浅いコピーと深いコピーに進む前の確認"><span class="toc-section-number">6</span>
+「浅いコピーと深いコピー」に進む前の確認</a></li>
+<li><a href="#リストの浅いコピーと深いコピー" id="toc-リストの浅いコピーと深いコピー"><span
+class="toc-section-number">7</span> リストの「浅いコピー」と「深いコピー」</a>
+<ul>
+<li><a href="#理解のためのステップ1-出題編" id="toc-理解のためのステップ1-出題編"><span
+class="toc-section-number">7.1</span> 理解のためのステップ1 ～出題編～</a></li>
+<li><a href="#理解のためのステップ2-出題編" id="toc-理解のためのステップ2-出題編"><span
+class="toc-section-number">7.2</span> 理解のためのステップ2 ～出題編～</a></li>
+<li><a href="#理解のためのステップ3-出題編" id="toc-理解のためのステップ3-出題編"><span
+class="toc-section-number">7.3</span> 理解のためのステップ3 ～出題編～</a></li>
+<li><a href="#理解のためのステップ4-解答編" id="toc-理解のためのステップ4-解答編"><span
+class="toc-section-number">7.4</span> 理解のためのステップ4 ～解答編～</a></li>
+<li><a href="#理屈は分かったものの不便ではないか" id="toc-理屈は分かったものの不便ではないか"><span
+class="toc-section-number">7.5</span> 理屈は分かったものの不便ではないか</a></li>
+</ul></li>
+</ul> 
+        <!-- ---------------------------------------- -->
+      </div>
+    </nav>
+
+    <header class="markdown-body">
+      <p>2026-2I プログラミング1 第13回 講義資料</p>
+      <p>2026年07月27日（月）3時限</p>
+    </header>
+
+    <main class="markdown-body">
+      <!-- ---------------------------------------- -->
+      <h1 data-number="1" id="準備案内"><span class="header-section-number">1</span> 準備・案内</h1>
+      <ul>
+      <li><a href="https://colab.research.google.com/?hl=ja">Google Colab</a>
+      にログイン、もしくは、ローカル環境の <a
+      href="lecture09.html#ノートブックの新規作成と実行">Jupyter</a>
+      を起動し、<code>PG1-第13回講義.ipynb</code> という名前でノートブックを作成しておいてください。
+      <ul>
+      <li>今回の演習の実装例（解答例）は <a
+      href="https://colab.research.google.com/drive/1S7bCgfahcmEHN09lLhQoxBuyBE30Sbj6?usp=sharing">こちら</a>
+      を参照してください。</li>
+      </ul></li>
+      </ul>
+      <h2 data-number="1.1" id="次回-夏休み明け小テストを実施します"><span
+      class="header-section-number">1.1</span> 次回 (夏休み明け)、小テストを実施します。</h2>
+      <ul>
+      <li>今回の講義資料の範囲からの出題です。特に<a
+      href="lecture13.html#リストの浅いコピーと深いコピー">リストの浅いコピーと深いコピー</a>について理解しておいてください。
+      <ul>
+      <li>「参照」の概念を理解しておいてください。</li>
+      <li>多次元リストを <code>=</code> で代入した場合、リストの <code>copy()</code>
+      メソッドで浅いコピーをした場合、<code>copy.deepcopy()</code>
+      関数で深いコピーをした場合の挙動の違いを理解し、<code>id()</code>
+      関数や要素の変更による影響を通して確認できるようになっておいてください。</li>
+      <li>Teams に昨年度の小テスト例を配置しています。対策の参考にしてください。</li>
+      </ul></li>
+      </ul>
+      <h1 data-number="2" id="課題05"><span class="header-section-number">2</span> 課題05</h1>
+      <ul>
+      <li>今回の講義が「<strong>夏休み前の最終授業</strong>」となります。そして、次回の授業が
+      <strong>9月14日 (月)</strong> なので、<span class="masked">1カ月強のブランク (空白期間)</span>
+      が生じることになります。
+      <ul>
+      <li>語学やスポーツと同様に、<strong>プログラミング初心者が「1カ月以上のブランク」をつくると、学んだ内容や感覚の多くを忘れてしまいます</strong>。それは皆さんも教員も望まないはずです。そのため、夏休み中も、言語や内容・方法・スタイルは問わないので、<strong>最低でも3時間/週</strong>
+      は何かしらプログラミングに取り組んでください。
+      <ul>
+      <li>理想としては毎週840分以上 (1日2時間) を推奨します。</li>
+      <li>クラブ活動や総合課題学習 (高専祭) に関連するプログラミングの取り組みでも全然OKです。</li>
+      </ul></li>
+      <li>…とはいえ、人間、何らかの強制力がないと「やらずじまい」になってしまいます。わずかでも、強制力を働かせるために、<strong><em>課題05</em></strong>
+      として、週単位で「<strong>プログラミングの学びの報告</strong>」をしてもらい、それを課題点として成績反映させる方法をとります。</li>
+      </ul></li>
+      <li>08/06(木) ～ 08/12(水) の取組み <span class="math inline">\(\to\)</span> <a
+      href="https://forms.office.com/r/ViSNYAHrd2">課題05-学習記録①</a> <font size="-1">入力期間
+      08/13 ～ 08/19</font></li>
+      <li>08/13(木) ～ 08/19(水) の取組み <span class="math inline">\(\to\)</span> <a
+      href="https://forms.office.com/r/eTr3ZK8uzr">課題05-学習記録②</a> <font size="-1">入力期間
+      08/20 ～ 08/26</font></li>
+      <li>08/20(木) ～ 08/26(水) の取組み <span class="math inline">\(\to\)</span> <a
+      href="https://forms.office.com/r/QvMGUtRW3R">課題05-学習記録③</a> <font size="-1">入力期間
+      08/27 ～ 09/02</font></li>
+      <li>08/27(木) ～ 09/02(水) の取組み <span class="math inline">\(\to\)</span> <a
+      href="https://forms.office.com/r/HbVUH7k9E7">課題05-学習記録④</a> <font size="-1">入力期間
+      09/03 ～ 09/09</font></li>
+      <li>09/03(木) ～ 09/09(水) の取組み <span class="math inline">\(\to\)</span> <a
+      href="https://forms.office.com/r/S2285bMAP9">課題05-学習記録⑤</a> <font size="-1">入力期間
+      09/10 ～ 09/16</font></li>
+      </ul>
+      <p>※ 入力期間中にフォームが開けない場合は、Teamsのチャットで和田に連絡をお願いします。</p>
+      <p>※
+      フォームの回答後は、以下のように<strong>「回答を保存して編集する」</strong>を押下して、<strong>回答を保存しておくことを強く推奨します</strong>。保存しておくことで、<u>未提出と言われたとき、提出済みであることを証明する手段</u>
+      となります。</p>
+      <figure>
+      <img src="figs/13/form-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <h2 data-number="2.1" id="補足"><span class="header-section-number">2.1</span> 補足</h2>
+      <p>入力期間になると、上記のリンクから Microsoft Forms にアクセスできます。</p>
+      <blockquote>
+      <p>202X年XX月XX日～XX月XX日のプログラミング学習の取り組みの報告フォームです。最低ラインとして毎週180分以上、理想としては毎週840分以上（1日2時間）を推奨しています。</p>
+      </blockquote>
+      <figure>
+      <img src="figs/13/form-02.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>フォームには「出席番号」と「氏名」につづけて次の項目があるので、記入して送信してください。<strong>期限を過ぎると、そのフォームにはアクセスできません。入力期間中は何度でも編集が可能です。</strong></p>
+      <ul>
+      <li>この期間の総取り組み時間を記入してください。単位は「<strong>分
+      (min)</strong>」で記入してください。</li>
+      <li>この期間の取組み内容を具体的かつ客観的に報告してください。<u>最低でも180文字以上の記入</u>が無いと加点対象となりません。</li>
+      </ul>
+      <p>例えば、以下のような感じで、具体的に記入してください。</p>
+      <blockquote>
+      <p>Progateのレッスン「Python
+      I」で「変数を使ってみよう」「真偽値と条件分岐」「お買い物代金を計算しよう」に取り組んだ。「型」についてYouTube動画とウェブ記事で学習した。総合課題学習のプロジェクト「XXXX」のYYY機能の実装のために、YYについて調べて、実装を進めた（TypeScript）。YYY機能の実装に関して進捗率が20%から40%になった。YouTubeでスクレイピング、HTTP関連の動画を5本視聴した。</p>
+      </blockquote>
+      <blockquote>
+      <p>プログラム1の講義資料の第01回～第03回までの内容（演習問題と課題を含む）に再度、取り組んだ。不明点については
+      ChatGPT
+      を使って深堀りした。特に、演習については、理解を定着させるために時間を空けて2回以上、繰り返し取り組んだ。YouTube
+      でプログラミングの苦手を克服する系の動画を数本視聴して、ポイントをスマホメモに残した。「プログラミングが苦手な人の特徴！現役エンジニアが解説」「【ひろゆき】※プログラマーになれない人の特徴※
+      あなた向いてないね。残念ですが…」「子どもがプログラミング嫌いになる理由3選」など。</p>
+      </blockquote>
+      <blockquote>
+      <p>GitHub Education について調べて申請した。VSCodeに「GitHub
+      Copilot」の拡張機能をインストールしてコードの補完機能を使ってみた（合計3時間）。「苦しんで覚えるＣ言語」というウェブサイトでC言語の勉強をはじめた。3章の「画面への表示」まで進めた（2時間ぐらい）。VSCodeでC言語の環境を構築したが思った以上に苦戦して、とりあえず
+      paiza.io で開発することにした。</p>
+      </blockquote>
+      <div class="balloon char-01 face-02 tone-yellow">
+      <p><strong>「課題05」として何に取り組めばよいか分からないときは…</strong></p>
+      <p>本科目の講義資料を<a
+      href="lecture01.html">第01回</a>から、「演習問題」や「課題」を含め、再度、取り組んでください。資料を読むだけではなく、必ず手をも動かしてください。また、2周目なので、生成AI機能をオフにして取り組むこともよいと思います。</p>
+      <p>以前にも伝えていますが <span class="masked">「調べる」「試す」「考える」</span>
+      をバランスよく行なうことがポイントです。</p>
+      </div>
+      <h1 data-number="3" id="プログラミングの上達のためには"><span
+      class="header-section-number">3</span> プログラミングの上達のためには…</h1>
+      <p>プログラミングは「<strong>語学</strong>」や「<strong>スポーツ</strong>」「<strong>楽器演奏</strong>」と同じく、<span
+      class="masked">方法や理論のレクチャーを受ける</span> だけ、<span
+      class="masked">解説を読む</span> だけでは、いつまでもモノにはなりません
+      (＝頭のなかに描いた「やりたいこと」を、プログラムとして自由に記述できるレベルにはなりません)
+      。語学、スポーツ、楽器演奏のように、<u>実際に繰返し手を動かして試行錯誤しながら、その感覚をつかむ必要があります</u>。</p>
+      <p>例えば、バスケにおいて「コーチからレイアップシュートの指導を受けて、その後、レイアップシュートを成功させることができた」という事実から、<span
+      class="masked">俺はレイアップシュートを完全に習得した
+      (これ以上は練習する必要はないし、試合でもレイアップシュートで得点をとれる)</span>、とか思ってしまう人がいたら、かなり問題ですよね？</p>
+      <p>これは、プログラミングでも同じで「Python
+      の辞書型について、講義資料を読んで理解し、そのあとの演習課題もクリアした」からといって、それが身に付いたことにはなりません。実際に、繰返して使うことで、その結果として辞書型が身に付きます。この事実をしっかりと意識しておくようにしてください。</p>
+      <div class="balloon char-01 face-01 tone-pink">
+      <p><strong>わからないまま、進んでいませんか？</strong></p>
+      <ul>
+      <li>「前回の講義資料、やり残しがあるけどまあいいか」</li>
+      <li>「AIが書いてくれたコードで動いたからヨシ！
+      (コードの意味を細かく理解できていないけど💦)」</li>
+      </ul>
+      <p>その「まあいいか」は、後から必ず「大きなツケ」となって返ってきます。気づいたときには「何をしているのか、まったくわからない」状態、そこから一人で取り返すのは、正直、かなりしんどいです。<strong>小学2年生でマスターしておくべき「九九」ができないまま、中学生になってしまうようなものです。</strong></p>
+      <p>そうならないためにも、理解が曖昧な箇所があれば、今のうちに第01回講義の内容から振り返ってください。今回の講義には、前回までの内容を前提とする箇所が多く含まれています。</p>
+      </div>
+      <p>プログラミングの学習は、ブロックを一段ずつ積み上げていくことに似ています。下の段が十分に固まっていなければ、その上に新しいブロックを安定して積むことはできません。</p>
+      <h1 data-number="4" id="リストに格納可能な値の型"><span class="header-section-number">4</span>
+      リストに格納可能な値の型</h1>
+      <p><strong>C言語</strong>における「<strong>配列</strong> (Array)
+      」では、以下のように「配列の要素を <span class="masked">すべて同じ型で統一</span>
+      する必要」がありました。</p>
+      <div class="sourceCode" id="cb1"
+      data-caption="これはC言語プログラムです。Python環境では実行できません。"><pre
+      class="sourceCode numberSource c numberLines"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">){</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="co">// arr は int型のみを「要素」にする必要がある</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="dt">int</span> arr<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">10</span><span class="op">,</span><span class="dv">20</span><span class="op">,</span><span class="dv">30</span><span class="op">,</span><span class="dv">40</span><span class="op">};</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="op">}</span></span></code></pre></div>
+      <p>一方で、Pythonの「<strong>リスト</strong> (List)」では、要素として
+      <strong>異なる型を混在させること</strong> が可能です。</p>
+      <p>実際に、以下に示すPythonプログラムのリスト <code>arr</code>
+      には「整数型」「文字列型」「真偽型
+      (ブール型)」「リスト型」「辞書型」を混在させていますが、問題なく動作します。実際に動作と結果を確認してください
+      (C言語ではこのようなことはできません)。</p>
+      <p>特に、リスト <code>arr</code> の要素として、さらにリスト <code>[66,77,88]</code>
+      を持てる点に着目してください。このようにリストを入れ子にすることが、Pythonで
+      <strong><em>2次元リスト</em></strong> を構成する基礎になります。</p>
+      <p>なお、<strong>第04行目</strong> の <code>enumerate</code> については <a
+      href="lecture12.html#enumerate">第12回講義</a> で既に学習済みです。同様に
+      <strong>第05行目</strong> の <code>type</code> についても <a
+      href="lecture11.html#型-type">第11回講義</a> で既に学習済みです。</p>
+      <div class="sourceCode" id="cb2"
+      data-caption="Pythonのリストは、要素として様々な型を持つことができる"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb2-2"><a href="#cb2-2"></a>arr <span class="op">=</span> [ <span class="dv">52</span>, <span class="st">&#39;ABC&#39;</span>, <span class="va">True</span>, [<span class="dv">66</span>,<span class="dv">77</span>,<span class="dv">88</span>], {<span class="st">&#39;秀&#39;</span>:<span class="dv">5</span>, <span class="st">&#39;優&#39;</span>:<span class="dv">4</span>, <span class="st">&#39;良&#39;</span>:<span class="dv">3</span>, <span class="st">&#39;可&#39;</span>:<span class="dv">2</span>} ]</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="cf">for</span> i,a <span class="kw">in</span> <span class="bu">enumerate</span>(arr):</span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="bu">print</span>(<span class="ss">f&#39;arr[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">] の内容は </span><span class="sc">{</span><span class="bu">str</span>(<span class="bu">type</span>(a))<span class="sc">:&lt;14}</span><span class="ss"> 型の </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> です。&#39;</span>)</span></code></pre></div>
+      <p><strong>実行結果</strong></p>
+      <pre><code>arr[0] の内容は &lt;class &#39;int&#39;&gt;  型の 52 です。
+arr[1] の内容は &lt;class &#39;str&#39;&gt;  型の ABC です。
+arr[2] の内容は &lt;class &#39;bool&#39;&gt; 型の True です。
+arr[3] の内容は &lt;class &#39;list&#39;&gt; 型の [66, 77, 88] です。
+arr[4] の内容は &lt;class &#39;dict&#39;&gt; 型の {&#39;秀&#39;: 5, &#39;優&#39;: 4, &#39;良&#39;: 3, &#39;可&#39;: 2} です。</code></pre>
+      <p>ここで、<code>arr[3]</code> に格納されている <code>[66,77,88]</code> の <code>77</code>
+      という数値を取得するためには <span class="masked"><code>arr[3][1]</code></span>
+      のように記述します。また、<code>arr[4]</code> の辞書型が持つ <code>3</code>
+      という数値を取得するためには <span class="masked"><code>arr[4]['良']</code></span>
+      のように記述します。</p>
+      <ul>
+      <li><code>arr[3][1]</code> や <code>arr[4]['良']</code> という式によって、実際に
+      <code>77</code> や <code>3</code> という値が取得できることを確認してください
+      (<code>print()</code> 関数で実際に値を出力してみてください)。
+      <ul>
+      <li>ヒント： <span class="masked"><code>print(f'arr[3][1] の内容は { } です。')</code></span>
+      の <code>{</code> と <code>}</code> に適切な変数を記述する。</li>
+      <li>ヒント： <span
+      class="masked"><code>print(f'arr[4]["良"] の内容は { } です。')</code></span> の
+      <code>{</code> と <code>}</code> に適切な変数を記述する。
+      <ul>
+      <li><a href="lecture12.html#辞書-dict">第12回講義</a> で学んだように <strong>f文字列</strong>
+      の内部で辞書型を参照する場合は、<u>シングルクォートとダブルクォートを使い分け</u>
+      てください。</li>
+      </ul></li>
+      </ul></li>
+      </ul>
+      <h3 data-number="4.0.1" id="定着確認"><span class="header-section-number">4.0.1</span>
+      定着確認</h3>
+      <p>次のようにリスト <code>arr</code> が定義されているとする。</p>
+      <div class="sourceCode" id="cb4" data-caption="定着確認"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>arr <span class="op">=</span> [</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="dv">2026</span>,</span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="st">&#39;Python&#39;</span>,</span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="va">False</span>,</span>
+<span id="cb4-5"><a href="#cb4-5"></a>  [<span class="dv">12</span>,<span class="dv">24</span>,<span class="dv">36</span>,<span class="dv">48</span>],</span>
+<span id="cb4-6"><a href="#cb4-6"></a>  {<span class="st">&#39;国語&#39;</span>:<span class="dv">72</span>, <span class="st">&#39;数学&#39;</span>:<span class="dv">88</span>, <span class="st">&#39;英語&#39;</span>:<span class="dv">65</span>}</span>
+<span id="cb4-7"><a href="#cb4-7"></a>]</span></code></pre></div>
+      <p>以下の各問いに答えよ。</p>
+      <ul>
+      <li>辞書に登録されているキー <code>'数学'</code> の値 <code>88</code> を取得する式を答えよ。
+      <ul>
+      <li><strong>答え</strong>：<span class="masked"><code>arr[4]['数学']</code></span></li>
+      </ul></li>
+      <li>内側のリスト <code>[12,24,36,48]</code> から、値 <code>48</code> を取得する式を答えよ。
+      <ul>
+      <li><strong>答え</strong>：<span class="masked"><code>arr[3][3]</code></span></li>
+      </ul></li>
+      <li>辞書に登録されているキー <code>'英語'</code> の値を <code>65</code> から <code>70</code>
+      に書き換える代入文を答えよ。
+      <ul>
+      <li><strong>答え</strong>：<span class="masked"><code>arr[4]['英語'] = 70</code></span></li>
+      </ul></li>
+      <li><code>arr[4]['数学'] の内容は 88 です</code>
+      という文字列が出力されるように、f文字列を使った <code>print()</code> 関数を1行で記述せよ。
+      <ul>
+      <li><strong>答え</strong>：<span
+      class="masked"><code>print(f"arr[4]['数学'] の内容は {arr[4]['数学']} です")</code></span></li>
+      </ul></li>
+      </ul>
+      <h2 data-number="4.1" id="演習1-目標時間-8分"><span class="header-section-number">4.1</span>
+      演習1 (<i class="fa-solid fa-stopwatch"></i> 目標時間: 8分)</h2>
+      <p><strong>期待する出力</strong>が得られるように、次のプログラムを追記してください。なお、<strong>第03行目</strong>
+      と <strong>第04行目</strong> の <code>assert</code> は <a
+      href="lecture11.html#アサート文">第11回講義</a> で既に学習済みです。</p>
+      <div class="sourceCode" id="cb5" data-caption="演習1.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb5-2"><a href="#cb5-2"></a>arr <span class="op">=</span> [ [<span class="dv">55</span>,<span class="dv">66</span>,<span class="dv">77</span>,<span class="dv">88</span>], {<span class="st">&#39;秀&#39;</span>:<span class="dv">5</span>, <span class="st">&#39;優&#39;</span>:<span class="dv">4</span>, <span class="st">&#39;良&#39;</span>:<span class="dv">3</span>, <span class="st">&#39;可&#39;</span>:<span class="dv">2</span>} ]</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="cf">assert</span> <span class="bu">type</span>(arr[<span class="dv">0</span>]) <span class="kw">is</span> <span class="bu">list</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="cf">assert</span> <span class="bu">type</span>(arr[<span class="dv">1</span>]) <span class="kw">is</span> <span class="bu">dict</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co"># ここから先にコードを追記する</span></span></code></pre></div>
+      <p><strong>期待する出力</strong></p>
+      <pre><code>arr[0][0] の内容は 55 です。
+arr[0][1] の内容は 66 です。
+arr[0][2] の内容は 77 です。
+arr[0][3] の内容は 88 です。
+
+arr[1][&#39;秀&#39;] の内容は 5 です。
+arr[1][&#39;優&#39;] の内容は 4 です。
+arr[1][&#39;良&#39;] の内容は 3 です。
+arr[1][&#39;可&#39;] の内容は 2 です。</code></pre>
+      <p>なお、ここでは次のようなプログラムを期待しているわけではありません。<code>arr</code> と
+      <code>for</code> の組み合わせで対応する方法 (いずれも既に学習済み) を考えてください。<a
+      href="lecture12.html#リストの扱いに関する補足①-for構文との組み合わせ">ヒント1</a>、<a
+      href="lecture12.html#演習2-目標時間-10分">ヒント2</a></p>
+      <div class="sourceCode" id="cb7" data-caption="演習1では期待していない解答"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb7-2"><a href="#cb7-2"></a>arr <span class="op">=</span> [ [<span class="dv">55</span>,<span class="dv">66</span>,<span class="dv">77</span>,<span class="dv">88</span>], {<span class="st">&#39;秀&#39;</span>:<span class="dv">5</span>, <span class="st">&#39;優&#39;</span>:<span class="dv">4</span>, <span class="st">&#39;良&#39;</span>:<span class="dv">3</span>, <span class="st">&#39;可&#39;</span>:<span class="dv">2</span>} ]</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="cf">assert</span> <span class="bu">type</span>(arr[<span class="dv">0</span>]) <span class="op">==</span> <span class="bu">list</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="cf">assert</span> <span class="bu">type</span>(arr[<span class="dv">1</span>]) <span class="op">==</span> <span class="bu">dict</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a>msg<span class="op">=</span><span class="st">&#39;&#39;&#39;</span><span class="op">\</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="st">arr[0][0] の内容は 55 です。</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="st">arr[0][1] の内容は 66 です。</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="st">arr[0][2] の内容は 77 です。</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="st">arr[0][3] の内容は 88 です。</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="st">arr[1][&#39;秀&#39;] の内容は 5 です。</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="st">arr[1][&#39;優&#39;] の内容は 4 です。</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="st">arr[1][&#39;良&#39;] の内容は 3 です。</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="st">arr[1][&#39;可&#39;] の内容は 2 です。</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="bu">print</span>(msg)</span></code></pre></div>
+      <h1 data-number="5" id="二次元リスト"><span class="header-section-number">5</span>
+      二次元リスト</h1>
+      <p><strong>C言語</strong> (および文法がよく似たArduino言語)
+      では、次のようなコードで「<strong>3行4列</strong>」の <strong><em>2次元配列</em></strong>
+      を扱うことができました。</p>
+      <div class="sourceCode" id="cb8"
+      data-caption="これはC言語プログラムです。Python環境では実行できません。"><pre
+      class="sourceCode numberSource c numberLines"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">){</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="dt">int</span> i<span class="op">,</span>j<span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="dt">int</span> mat<span class="op">[</span><span class="dv">3</span><span class="op">][</span><span class="dv">4</span><span class="op">]</span> <span class="op">=</span> <span class="op">{</span> <span class="op">{</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="dv">30</span><span class="op">,</span> <span class="dv">40</span><span class="op">},</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>                    <span class="op">{</span> <span class="dv">50</span><span class="op">,</span> <span class="dv">60</span><span class="op">,</span> <span class="dv">70</span><span class="op">,</span> <span class="dv">80</span><span class="op">},</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>                    <span class="op">{</span> <span class="dv">90</span><span class="op">,</span><span class="dv">100</span><span class="op">,</span><span class="dv">110</span><span class="op">,</span><span class="dv">120</span><span class="op">}</span> <span class="op">};</span>                   </span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="cf">for</span><span class="op">(</span>i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span><span class="dv">3</span><span class="op">;</span>i<span class="op">++){</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="cf">for</span><span class="op">(</span>j<span class="op">=</span><span class="dv">0</span><span class="op">;</span>j<span class="op">&lt;</span><span class="dv">4</span><span class="op">;</span>j<span class="op">++){</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>      printf<span class="op">(</span><span class="st">&quot;mat[</span><span class="sc">%d</span><span class="st">][</span><span class="sc">%d</span><span class="st">]=</span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span>i<span class="op">,</span>j<span class="op">,</span>mat<span class="op">[</span>i<span class="op">][</span>j<span class="op">]);</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>    <span class="op">}</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a>  <span class="op">}</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="op">}</span></span></code></pre></div>
+      <p>この「C言語プログラム」の実行結果は次のようになります。</p>
+      <pre><code>mat[0][0]=10
+mat[0][1]=20
+mat[0][2]=30
+mat[0][3]=40
+mat[1][0]=50
+mat[1][1]=60
+mat[1][2]=70
+mat[1][3]=80
+mat[2][0]=90
+mat[2][1]=100
+mat[2][2]=110
+mat[2][3]=120</code></pre>
+      <p>これと同等の「<strong>Pythonプログラム</strong>」は次のように記述することができます。なお、(1次元の)
+      リストの <strong>初期化</strong> (＝リストの長さや初期値の与え方) については <a
+      href="lecture08.html#リスト初期化と要素の参照">第08回講義</a> で既に学習済みです。</p>
+      <div class="sourceCode" id="cb10"
+      data-caption="2d-list.py（二次元リストの初期化と値の参照）"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="co"># mat: Matrix(行列) 2次元リストの初期化</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>mat <span class="op">=</span> [[<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>],</span>
+<span id="cb10-4"><a href="#cb10-4"></a>       [<span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>],</span>
+<span id="cb10-5"><a href="#cb10-5"></a>       [<span class="dv">90</span>,<span class="dv">100</span>,<span class="dv">110</span>,<span class="dv">120</span>]]</span>
+<span id="cb10-6"><a href="#cb10-6"></a></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="co"># row: Row(行)</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="cf">for</span> i,row <span class="kw">in</span> <span class="bu">enumerate</span>(mat):</span>
+<span id="cb10-9"><a href="#cb10-9"></a>  <span class="cf">for</span> j, e <span class="kw">in</span> <span class="bu">enumerate</span>(row):</span>
+<span id="cb10-10"><a href="#cb10-10"></a>    <span class="bu">print</span>(<span class="ss">f&#39;mat[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">][</span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">]=</span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <p>上記のプログラムが十分に理解できない場合、まずは次のように <span
+      class="masked">プログラムの途中に <code>print</code>
+      文を挿入するなど、自分で手を動かし、動作を確認・理解するように努めてください</span>。</p>
+      <div class="sourceCode" id="cb11"
+      data-caption="脳内で動作をトレースできないプログラムは print を挿入して解析"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="co"># mat: Matrix(行列)</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>mat <span class="op">=</span> [[<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>],</span>
+<span id="cb11-4"><a href="#cb11-4"></a>       [<span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>],</span>
+<span id="cb11-5"><a href="#cb11-5"></a>       [<span class="dv">90</span>,<span class="dv">100</span>,<span class="dv">110</span>,<span class="dv">120</span>]]</span>
+<span id="cb11-6"><a href="#cb11-6"></a></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="co"># row: Row(行)</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="cf">for</span> i,row <span class="kw">in</span> <span class="bu">enumerate</span>(mat): </span>
+<span id="cb11-9"><a href="#cb11-9"></a>  <span class="bu">print</span>(<span class="ss">f&#39;mat[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">]=</span><span class="sc">{</span>row<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># 追加：ループ変数 i と row の内容を確認</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>  <span class="co"># for j, e in enumerate(row):     # 不明な範囲はコメントアウト</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a>  <span class="co">#   print(f&#39;mat[{i}][{j}]={e}&#39;)   # 不明な範囲はコメントアウト</span></span></code></pre></div>
+      <ul>
+      <li>コメントアウト／アンコメントのショートカットは <code>[Ctrl]+[/]</code>
+      です。頻繁に使用するので定着させてください。</li>
+      </ul>
+      <div class="note type-tips">
+      <p><strong>enumerate を使用しない例</strong></p>
+      <p>enumerate を使用せずに、以下のように
+      C言語ライクに実装することもできます。どちらのスタイルで書かれていても読解できるようになっておいてください。</p>
+      <p>なお、<code>len()</code> と <code>range(len(...))</code> の組み合わせは、<a
+      href="lecture08.html#リストの要素数">第08回講義</a>で既に学習済みです。</p>
+      <div class="sourceCode" id="cb12" data-caption="2d-list-a.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb12-2"><a href="#cb12-2"></a>mat <span class="op">=</span> [[<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>],</span>
+<span id="cb12-3"><a href="#cb12-3"></a>       [<span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>],</span>
+<span id="cb12-4"><a href="#cb12-4"></a>       [<span class="dv">90</span>,<span class="dv">100</span>,<span class="dv">110</span>,<span class="dv">120</span>]]</span>
+<span id="cb12-5"><a href="#cb12-5"></a></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(mat)):</span>
+<span id="cb12-7"><a href="#cb12-7"></a>  <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(mat[i])):</span>
+<span id="cb12-8"><a href="#cb12-8"></a>    <span class="bu">print</span>(<span class="ss">f&#39;mat[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">][</span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">]=</span><span class="sc">{</span>mat[i][j]<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      </div>
+      <h3 data-number="5.0.1" id="二次元リストの定着確認1"><span
+      class="header-section-number">5.0.1</span> 二次元リストの定着確認1</h3>
+      <p>次のように2次元リスト <code>scores</code> が定義されているとする。</p>
+      <div class="sourceCode" id="cb13" data-caption="定着確認"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>scores <span class="op">=</span> [[<span class="dv">72</span>,<span class="dv">85</span>,<span class="dv">90</span>],</span>
+<span id="cb13-2"><a href="#cb13-2"></a>          [<span class="dv">68</span>,<span class="dv">77</span>,<span class="dv">81</span>]]</span></code></pre></div>
+      <p>以下の各問いに答えよ。</p>
+      <ul>
+      <li><code>scores</code> は何行何列の2次元リストか。
+      <ul>
+      <li><strong>答え</strong>：<span class="masked">2行3列</span></li>
+      </ul></li>
+      <li>値 <code>81</code> を取得する式を答えよ。
+      <ul>
+      <li><strong>答え</strong>：<span class="masked"><code>scores[1][2]</code></span></li>
+      </ul></li>
+      <li>値 <code>85</code> を <code>100</code> に書き換える文を答えよ。
+      <ul>
+      <li><strong>答え</strong>：<span class="masked"><code>scores[0][1] = 100</code></span></li>
+      </ul></li>
+      <li><code>len(scores)</code> の値を答えよ。また、その値が何を表しているか説明せよ。
+      <ul>
+      <li><code>len</code> は、<a href="lecture08.html#リストの要素数">第08回講義</a>
+      でリストと共に学習済みです。</li>
+      <li><strong>答え</strong>：<span class="masked">値は
+      <code>2</code>。外側のリストの要素数、つまり <code>scores</code>
+      の行数を表している。</span></li>
+      </ul></li>
+      <li><code>len(scores[0])</code> の値を答えよ。また、その値が何を表しているか説明せよ。
+      <ul>
+      <li><strong>答え</strong>：<span class="masked">値は
+      <code>3</code>。0行目のリストの要素数、つまり0行目の列数を表している。</span></li>
+      </ul></li>
+      </ul>
+      <h3 data-number="5.0.2" id="二次元リストの定着確認2"><span
+      class="header-section-number">5.0.2</span> 二次元リストの定着確認2</h3>
+      <p>次のプログラムを実行したとき、標準出力される内容を答えよ。</p>
+      <div class="sourceCode" id="cb14" data-caption="定着確認"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>mat <span class="op">=</span> [[<span class="dv">3</span>,<span class="dv">6</span>],</span>
+<span id="cb14-2"><a href="#cb14-2"></a>       [<span class="dv">9</span>,<span class="dv">12</span>],</span>
+<span id="cb14-3"><a href="#cb14-3"></a>       [<span class="dv">15</span>,<span class="dv">18</span>]]</span>
+<span id="cb14-4"><a href="#cb14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="cf">for</span> i,row <span class="kw">in</span> <span class="bu">enumerate</span>(mat):</span>
+<span id="cb14-6"><a href="#cb14-6"></a>  <span class="bu">print</span>(<span class="ss">f&#39;i=</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">, row=</span><span class="sc">{</span>row<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <ul>
+      <li><strong>答え</strong>：
+      <ul>
+      <li>1行目：<span class="masked"><code>i=0, row=[3, 6]</code></span></li>
+      <li>2行目：<span class="masked"><code>i=1, row=[9, 12]</code></span></li>
+      <li>3行目：<span class="masked"><code>i=2, row=[15, 18]</code></span></li>
+      </ul></li>
+      </ul>
+      <h2 data-number="5.1" id="c言語との違い"><span class="header-section-number">5.1</span>
+      C言語との違い</h2>
+      <p>C言語で2次元配列を構成した場合、<strong>行の要素数 (=列の長さ)
+      を全て同じにする必要</strong>
+      がありました。一方、Pythonの2次元リストでは、<strong>行ごとの要素数が異なっていても</strong>問題ありません。</p>
+      <p>次のプログラムを実行し、<strong>行ごとに要素数が異なっていても問題ないこと</strong>を確認してください。</p>
+      <div class="sourceCode" id="cb15"
+      data-caption="Pythonの2次元リストは行ごとに要素数が違っていても問題ない"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb15-2"><a href="#cb15-2"></a>arr2 <span class="op">=</span> [[<span class="dv">10</span>, <span class="dv">20</span>],          <span class="co"># 要素数2</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>        [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>],  <span class="co"># 要素数4</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>        [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]]      <span class="co"># 要素数3</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a></span>
+<span id="cb15-6"><a href="#cb15-6"></a><span class="cf">for</span> i,row <span class="kw">in</span> <span class="bu">enumerate</span>(arr2):</span>
+<span id="cb15-7"><a href="#cb15-7"></a>  <span class="cf">for</span> j, e <span class="kw">in</span> <span class="bu">enumerate</span>(row):</span>
+<span id="cb15-8"><a href="#cb15-8"></a>    <span class="bu">print</span>(<span class="ss">f&#39;arr2[</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">][</span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">]=</span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <h2 data-number="5.2" id="次元リストの様々な初期化の方法"><span
+      class="header-section-number">5.2</span> 2次元リストの様々な「初期化」の方法</h2>
+      <p>次の各プログラムは、いずれも最終的に同じ内容の2次元リスト <code>mat</code>
+      を作ります。ここでは、リストを作成して値を設定する一連の処理を、広い意味で「初期化」とよびます。どの書き方でも読み取れるようになっておいてください
+      (自分では使わない書き方でも、プロジェクトメンバーの誰かが使う可能性があります) 。</p>
+      <p>なお、<span
+      class="masked">どの方法で初期化するのが最善であるかは状況によって変わってきます</span>。また、第10回講義の
+      <a href="lecture10.html#リスト操作の負荷量の比較">リスト操作の負荷量の比較</a>
+      についても、再度確認しておいてください。</p>
+      <p>プログラムは眺めだけでは身に付かないので、少なくとも貼り付けして、実行してください。</p>
+      <div class="sourceCode" id="cb16" data-caption="list_init1.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>mat <span class="op">=</span> [[<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>],[<span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>]] <span class="co"># 行単位の改行は必須ではない</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="bu">print</span>(mat)</span></code></pre></div>
+      <div class="sourceCode" id="cb17" data-caption="list_init2.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>mat <span class="op">=</span> [] <span class="co"># 長さ0のリスト (空のリスト) を作成</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>mat.append([<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]) <span class="co"># 要素にリストを追加</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>mat.append([<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">60</span>])</span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="bu">print</span>(mat)</span></code></pre></div>
+      <div class="sourceCode" id="cb18" data-caption="list_init3.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>mat <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span><span class="dv">2</span>  <span class="co"># 長さ2のリストを作成。[1]*2 でも [None]*2 でもよい</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>mat[<span class="dv">0</span>] <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>] <span class="co"># 0番目の要素を上書き</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>mat[<span class="dv">1</span>] <span class="op">=</span> [<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">60</span>]</span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="bu">print</span>(mat)</span></code></pre></div>
+      <div class="sourceCode" id="cb19" data-caption="list_init4.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>mat <span class="op">=</span> [ [<span class="dv">0</span>]<span class="op">*</span><span class="dv">3</span>, [<span class="dv">0</span>]<span class="op">*</span><span class="dv">3</span> ]  <span class="co"># mat = [[0]*3]*2 とすると予期せぬ結果</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="co"># print(mat)</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>mat[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>mat[<span class="dv">0</span>][<span class="dv">1</span>] <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>mat[<span class="dv">0</span>][<span class="dv">2</span>] <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a>mat[<span class="dv">1</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">40</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a>mat[<span class="dv">1</span>][<span class="dv">1</span>] <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a>mat[<span class="dv">1</span>][<span class="dv">2</span>] <span class="op">=</span> <span class="dv">60</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a><span class="bu">print</span>(mat)</span></code></pre></div>
+      <div class="sourceCode" id="cb20" data-caption="list_init5.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>mat <span class="op">=</span> [ [<span class="dv">0</span>]<span class="op">*</span><span class="dv">3</span>, [<span class="dv">0</span>]<span class="op">*</span><span class="dv">3</span> ]  <span class="co"># mat = [[0]*3]*2 とすると予期せぬ結果</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>):</span>
+<span id="cb20-3"><a href="#cb20-3"></a>  mat[i<span class="op">//</span><span class="dv">3</span>][i<span class="op">%</span><span class="dv">3</span>] <span class="op">=</span> (i<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span><span class="dv">10</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="bu">print</span>(mat)</span></code></pre></div>
+      <p>特に <code>list_init4.py</code> において <code>mat = [[0]*3, [0]*3]</code> ではなく
+      <code>mat = [[0]*3]*2</code>
+      のように初期化すると、片方の行だけを書き換えたつもりでも、もう片方の行まで変化することがあります。<strong>実際にコードを書き換えて確認</strong>してください。なぜこのようなことが起きるのかが、今回の講義の中心です。</p>
+      <h1 data-number="6" id="浅いコピーと深いコピーに進む前の確認"><span
+      class="header-section-number">6</span> 「浅いコピーと深いコピー」に進む前の確認</h1>
+      <p>次のセクションの解説は、<strong>基本的な「変数」や「リスト」の扱いの理解を前提</strong>としています。以下の定着確認が解けない場合、解説を読んでも十分に理解することができません。その場合は、自分が理解できている段階まで戻って、もう一度学習し直してから進んでください。</p>
+      <h3 data-number="6.0.1" id="定着確認1"><span class="header-section-number">6.0.1</span>
+      定着確認1</h3>
+      <p>次のプログラムの実行結果 (標準出力される文字列) を答えよ。</p>
+      <div class="sourceCode" id="cb21" data-caption="定着確認1"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb21-2"><a href="#cb21-2"></a>a <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>b <span class="op">=</span> a</span>
+<span id="cb21-4"><a href="#cb21-4"></a></span>
+<span id="cb21-5"><a href="#cb21-5"></a>a <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a></span>
+<span id="cb21-7"><a href="#cb21-7"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># ここで出力される内容を答えよ。</span></span></code></pre></div>
+      <ul>
+      <li><strong>答え</strong>: <span class="masked"><code>a=20, b=10</code></span></li>
+      </ul>
+      <h3 data-number="6.0.2" id="定着確認2"><span class="header-section-number">6.0.2</span>
+      定着確認2</h3>
+      <p>次のプログラムの実行結果 (標準出力される文字列) を答えよ。</p>
+      <div class="sourceCode" id="cb22" data-caption="定着確認2"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb22-2"><a href="#cb22-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>]</span>
+<span id="cb22-3"><a href="#cb22-3"></a>a[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">50</span> </span>
+<span id="cb22-4"><a href="#cb22-4"></a></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># ここで出力される内容を答えよ。</span></span></code></pre></div>
+      <ul>
+      <li><strong>答え</strong>: <span class="masked"><code>a=[50, 20]</code></span></li>
+      </ul>
+      <h3 data-number="6.0.3" id="定着確認3"><span class="header-section-number">6.0.3</span>
+      定着確認3</h3>
+      <p>次のプログラムの実行結果 (標準出力される文字列) を答えよ。</p>
+      <div class="sourceCode" id="cb23" data-caption="定着確認3"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb23-2"><a href="#cb23-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>]</span>
+<span id="cb23-3"><a href="#cb23-3"></a>b <span class="op">=</span> a</span>
+<span id="cb23-4"><a href="#cb23-4"></a></span>
+<span id="cb23-5"><a href="#cb23-5"></a>a <span class="op">=</span> [<span class="dv">80</span>,<span class="dv">90</span>]</span>
+<span id="cb23-6"><a href="#cb23-6"></a></span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># ここで出力される内容を答えよ。</span></span></code></pre></div>
+      <ul>
+      <li><strong>答え</strong>: <span
+      class="masked"><code>a=[80, 90], b=[10, 20]</code></span></li>
+      </ul>
+      <h1 data-number="7" id="リストの浅いコピーと深いコピー"><span
+      class="header-section-number">7</span> リストの「浅いコピー」と「深いコピー」</h1>
+      <p>実用的なプログラム (例えば <a href="lecture11.html#課題04-自由課題">課題04</a> など)
+      を作成する場合、「リスト型」や「<a
+      href="lecture12.html#辞書-dict">辞書型</a>」の利用は必要不可欠となります。そして、それらを利用するにあたり、<strong>知っておかないと大きくハマるもの
+      (詰むもの)</strong> として <strong><em>浅いコピー</em></strong> と
+      <strong><em>深いコピー</em></strong> という概念があります。</p>
+      <p>また、それと密接に関連する概念として
+      <strong><em>参照</em></strong>、<strong><em>オブジェクトID</em></strong>、<strong><em>バインド
+      (束縛)</em></strong>、<strong><em>ミュータブル／イミュータブル</em></strong>
+      といったものがあります。</p>
+      <p>C言語の学習では「<strong>ポインタ</strong>」という概念/仕組みの壁を超えられずに脱落・挫折する人が多いことがよく知られています。同様にPythonの「<strong>浅いコピー/深いコピー</strong>」や「<strong>参照/バインドという仕組み</strong>」も
+      <strong><em>初学者にとって大きな壁</em></strong>
+      となります。一旦、理解してしまえば何ということもない概念・仕組みなのですが、初めて学ぶときには「非常に難解」「理解不能」という印象を受けると思います。しかし、ここの<strong>壁を超えて本質的な理解を得ないと、今後の開発や学習に多大な支障</strong>が生じることになります。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>先生が、C言語の学習では「ポインタ」という概念・仕組みの壁を超えられずに脱落・挫折する人が多い、と言っていたのですが、本当ですか？</p>
+      </blockquote>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>情報系学科に所属していてPythonを勉強中なんですが、先生から「浅いコピー/深いコピー」や「参照/バインド」を理解しないと、後で絶対に地獄を見ると脅されました💦実際のところ、これらを学ぶ必要性って本当にあるのでしょうか？</p>
+      </blockquote>
+      <p>ここから先は、多くの人にとって一度読んだだけでは理解しにくい内容です。数時間考えても整理できないことは珍しくありません。2・3日ほど時間を空けてから見直すことで、急に理解できることもあります。夏休み期間も活用し、少しずつ理解を深めてください。</p>
+      <p>取り組む際のポイントは <span class="masked">頭で悩む (考える)
+      だけではなくて「調べる」と「試す」をバランスよく組み合わせる</span> ことです。</p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>Python において「浅いコピー (シャローコピー) / 深いコピー (ディープコピー)
+      」や「参照の概念」は、初心者が2時間悩んで理解できなくても普通です。2・3日かけてやっと理解できることもあります。…と言われたのですが、そんなものですか？</p>
+      </blockquote>
+      <p>また、この講義資料だけではなく「ウェブ」や「YouTube」などの様々な資料や解説、生成AIなどもあわせて理解に努めてください。</p>
+      <ul>
+      <li><a href="https://www.youtube.com/results?search_query=python+浅いコピー">YouTube
+      (関連動画)</a></li>
+      </ul>
+      <div class="note type-tips">
+      <p><strong>アドバイス</strong></p>
+      <p>ここから先は、皆さんがこれまでの学習を通じて、頭の中に少しずつ築いてきた「プログラムの動作モデル」を、<strong>いったん壊して、より正確な形に再構築する</strong>
+      ような内容になります。</p>
+      <p>これは、例えば「昼と夜があるのは、太陽が地球の周りを動いているからだ」と考えている子どもに
+      <span
+      class="masked">「実際には、太陽が地球の周りを動いているのではなく、地球が自転しているために昼と夜が生じる」</span>
+      と理解してもらうことに似ています。</p>
+      <p>私たちの日常的な感覚では、「地面は平らで動いておらず、太陽のほうが空を移動している」と考えるほうが自然です。しかも、身近な範囲の出来事であれば、その理解でも大きな矛盾を感じることなく説明できてしまいます。そのため、<u>「実は地球のほうが動いている」と説明されても、直感に反するため、「意味が分からない」と考えることをやめてしまう人</u>
+      もいます。</p>
+      <p>これから扱う内容でも、同じようなことが起こります。これまでの理解でも簡単なプログラムは説明できていたため、<strong>新しい説明を聞いたときに、かえって分かりにくく感じるかもしれません</strong>。しかし、それは皆さんの理解が後退したのではなく、<strong>より正確で、より多くの現象を説明できる動作モデルへ移行している途中</strong>だからです。</p>
+      <p>最初からすべてを直感的に理解できなくても問題ありません。「意味不明」と思考を止めるのではなく、これまでの理解では何を説明できず、新しい考え方によって何が説明できるようになるのかを、ひとつずつ確認しながら乗り越えてください。</p>
+      </div>
+      <h2 data-number="7.1" id="理解のためのステップ1-出題編"><span
+      class="header-section-number">7.1</span> 理解のためのステップ1 ～出題編～</h2>
+      <p>次のプログラムを実行したときの <strong>第21行目の実行結果 (出力)</strong>
+      について考えてみてください。そのうえで実際にプログラムを実行し…</p>
+      <ul>
+      <li>自分の考えた実行結果 (出力)</li>
+      <li>実際の実行結果 (出力)</li>
+      </ul>
+      <p>…を比較してみてください。</p>
+      <div class="sourceCode" id="cb24" data-caption="step1-1.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb24-2"><a href="#cb24-2"></a></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="co"># a の初期化</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb24-5"><a href="#cb24-5"></a></span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="co"># b に a を代入 (ここがポイントです)</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a>b <span class="op">=</span> a</span>
+<span id="cb24-8"><a href="#cb24-8"></a></span>
+<span id="cb24-9"><a href="#cb24-9"></a><span class="co"># a と b の内容を確認</span></span>
+<span id="cb24-10"><a href="#cb24-10"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=[10, 20, 30]</span></span>
+<span id="cb24-11"><a href="#cb24-11"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; b=[10, 20, 30]</span></span>
+<span id="cb24-12"><a href="#cb24-12"></a></span>
+<span id="cb24-13"><a href="#cb24-13"></a><span class="cf">assert</span> a <span class="op">==</span> b   <span class="co"># a と b が「等しいこと」を念のために確認 </span></span>
+<span id="cb24-14"><a href="#cb24-14"></a></span>
+<span id="cb24-15"><a href="#cb24-15"></a><span class="co"># a のゼロオリジンで2番目の要素を変更</span></span>
+<span id="cb24-16"><a href="#cb24-16"></a>a[<span class="dv">2</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb24-17"><a href="#cb24-17"></a></span>
+<span id="cb24-18"><a href="#cb24-18"></a><span class="co"># a と b の内容を確認</span></span>
+<span id="cb24-19"><a href="#cb24-19"></a><span class="bu">print</span>(<span class="st">&#39;---&#39;</span>)</span>
+<span id="cb24-20"><a href="#cb24-20"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=[10, 20, -1]</span></span>
+<span id="cb24-21"><a href="#cb24-21"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; 🤔どのような出力がえられるか？</span></span></code></pre></div>
+      <p>実行してみると、次のような結果が得られたはずです。</p>
+      <p>この実行結果は、初心者にとっては <strong>予期しにくい現象</strong>
+      だと思います。<code>a[2] = -1</code> と、変数 <code>a</code>
+      だけを操作したように見えるのに、<code>b</code> から確認した内容まで変化しているためです。</p>
+      <pre><code>a=[10, 20, 30]
+b=[10, 20, 30]
+---
+a=[10, 20, -1]
+b=[10, 20, -1] 👈なぜ、ここも変化するの？第16行目で変数aしか操作してないのに...</code></pre>
+      <p>では、上記の <strong>第07行目</strong> の <code>b=a</code> を <code>b=[10,20,30]</code>
+      に書き換えて、再度、実行してみてください。今度は、脳内で予測したものと同じ結果が得られるはずです。</p>
+      <pre><code>a=[10, 20, 30]
+b=[10, 20, 30]
+---
+a=[10, 20, -1]
+b=[10, 20, 30]</code></pre>
+      <p><br></p>
+      <hr />
+      <p>「<strong>なぜ、このような結果の違いが生じるのか</strong>」について、ここから、<u>順を追ってじっくりと考え、丁寧に謎を解明</u>
+      していきます。</p>
+      <p><br></p>
+      <p>ここから先は、解説の1文1文を注意深く読んでください
+      (既に理解しており、仕組みを説明できる学生は流し読みでOKです)。</p>
+      <p>第一に「<strong>ここで不可解と感じること</strong>」は、上記の <code>step1-1.py</code> の
+      <strong>第16行目</strong> で、<span class="masked">変数 <code>a</code> を使って要素
+      <code>a[2]</code> だけを書き換えた</span> はずなのに、どういうわけか <span class="masked">変数
+      <code>b</code> から確認した内容まで変化していること</span> です。</p>
+      <p>このようなことは、少なくとも以下の <code>step1-2.py</code> のように、変数 <code>a</code>
+      に「リスト」ではなく <strong>「整数値」</strong> を代入していたケースでは起きていませんでした
+      (実際に実行して確かめてください)。</p>
+      <div class="sourceCode" id="cb27" data-caption="step1-2.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb27-2"><a href="#cb27-2"></a>a <span class="op">=</span> <span class="dv">30</span> <span class="co"># リストではなく整数値</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>b <span class="op">=</span> a</span>
+<span id="cb27-4"><a href="#cb27-4"></a></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="co"># a と b の内容を確認</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=30, b=30</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a></span>
+<span id="cb27-8"><a href="#cb27-8"></a><span class="cf">assert</span> a <span class="op">==</span> b   <span class="co"># a と b が「等しいこと」を念のために確認 </span></span>
+<span id="cb27-9"><a href="#cb27-9"></a></span>
+<span id="cb27-10"><a href="#cb27-10"></a><span class="co"># 変数 a に変更をくわえる</span></span>
+<span id="cb27-11"><a href="#cb27-11"></a>a <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb27-12"><a href="#cb27-12"></a></span>
+<span id="cb27-13"><a href="#cb27-13"></a><span class="co"># a と b の内容を確認</span></span>
+<span id="cb27-14"><a href="#cb27-14"></a><span class="bu">print</span>(<span class="st">&#39;---&#39;</span>)</span>
+<span id="cb27-15"><a href="#cb27-15"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=-1, b=30 (bは影響を受けずに30のまま)。</span></span></code></pre></div>
+      <p>実行結果は、次のようになるはずです。つまり、<strong>第11行目</strong> の
+      <code>a = -1</code> は、変数 <code>b</code> に対して<span
+      class="masked">影響を与えていないこと</span> が分かります。</p>
+      <pre><code>a=30, b=30
+---
+a=-1, b=30</code></pre>
+      <p>この違いを整理するために、以下の <code>step1-3.py</code> を使って実験します。整数の例では
+      <code>a = -1</code> と変数 <code>a</code> へ別の値を代入したのに対し、リストの例では
+      <code>a[0] = -1</code>
+      のようにリストの要素を書き換えている点にも注目してください。なぜ結果が異なるのかは、まだ説明できなくても構いません。実行結果を<strong>十分に検討・予想したうえで</strong>、実際に実行して確認してください。</p>
+      <div class="note type-senior">
+      <p><strong>中級者向け：ミュータブルとイミュータブル</strong></p>
+      <p>リストや辞書、集合は、作成後に内容を変更できる <strong>ミュータブル (mutable)</strong>
+      なオブジェクトです。一方、整数や文字列、タプルは、作成後にそのオブジェクト自体の内容を変更できない
+      <strong>イミュータブル (immutable)</strong>
+      なオブジェクトです。複数の変数名が同じオブジェクトと結びついたときの動作を理解するうえで、重要な分類です。</p>
+      </div>
+      <div class="sourceCode" id="cb29" data-caption="step1-3.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb29-2"><a href="#cb29-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb29-3"><a href="#cb29-3"></a>b <span class="op">=</span> a</span>
+<span id="cb29-4"><a href="#cb29-4"></a>c <span class="op">=</span> a</span>
+<span id="cb29-5"><a href="#cb29-5"></a>a[<span class="dv">0</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a>b[<span class="dv">1</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">2</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>c[<span class="dv">2</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">3</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># 出力はどうなるか</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># 出力はどうなるか</span></span>
+<span id="cb29-10"><a href="#cb29-10"></a><span class="bu">print</span>(<span class="ss">f&#39;c=</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># 出力はどうなるか</span></span></code></pre></div>
+      <p>上記 <code>step1-3.py</code> の<strong>第03行目以降</strong>を色々と書き換え
+      (例えば、<strong>第04行目</strong>を <code>c=a</code> から <code>c=b</code>
+      に書き換えるなどして)
+      、その挙動について考察してみたり、仮説を立ててみたりしてください。現段階では「<strong>なぜ、このような結果となるか</strong>」ではなく、まずは「<span
+      class="masked">(仕組みはブラックボックスでかまわないので、結果として)
+      どのようなことが生じるのか</span>」を推理してみてください。</p>
+      <p>また、次の <code>step1-4.py</code> のようにリスト <code>a</code> に対して
+      <code>pop()</code>
+      で「要素数を減らす操作」をするとどうなるか、確認してみてください。なお、<code>pop()</code> は
+      <a href="lecture10.html#リスト要素の削除">第10回講義</a> で学習済みです。</p>
+      <div class="sourceCode" id="cb30" data-caption="step1-4.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb30-2"><a href="#cb30-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb30-3"><a href="#cb30-3"></a>b <span class="op">=</span> a</span>
+<span id="cb30-4"><a href="#cb30-4"></a>c <span class="op">=</span> a</span>
+<span id="cb30-5"><a href="#cb30-5"></a>a.pop() <span class="co"># aを対象に末尾の要素を削除</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; [10,20]</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># 出力はどうなるか</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a><span class="bu">print</span>(<span class="ss">f&#39;c=</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># 出力はどうなるか</span></span></code></pre></div>
+      <h3 data-number="7.1.1" id="ステップ1の定着確認"><span
+      class="header-section-number">7.1.1</span> 「ステップ1」の定着確認</h3>
+      <p>次のプログラムの実行結果 (標準出力される文字列)
+      を答えよ。なお、<strong>現段階では「なぜ？」という仕組みを説明できる必要はありません</strong>。実行結果だけが答えられれば問題ありません。</p>
+      <div class="sourceCode" id="cb31" data-caption="「ステップ1」の定着確認(1)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb31-2"><a href="#cb31-2"></a>a <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>b <span class="op">=</span> a</span>
+<span id="cb31-4"><a href="#cb31-4"></a>a <span class="op">=</span> <span class="dv">90</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <ul>
+      <li><strong>答え</strong>: <span class="masked"><code>a=90, b=10</code></span></li>
+      </ul>
+      <p><br></p>
+      <div class="sourceCode" id="cb32" data-caption="「ステップ1」の定着確認(2)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb32-2"><a href="#cb32-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb32-3"><a href="#cb32-3"></a>b <span class="op">=</span> a</span>
+<span id="cb32-4"><a href="#cb32-4"></a>a[<span class="dv">2</span>] <span class="op">=</span> <span class="dv">90</span> </span>
+<span id="cb32-5"><a href="#cb32-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <ul>
+      <li><strong>答え</strong>: <span
+      class="masked"><code>a=[10, 20, 90], b=[10, 20, 90]</code></span></li>
+      </ul>
+      <p><br></p>
+      <div class="sourceCode" id="cb33" data-caption="「ステップ1」の定着確認(3)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb33-2"><a href="#cb33-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb33-3"><a href="#cb33-3"></a>b <span class="op">=</span> a</span>
+<span id="cb33-4"><a href="#cb33-4"></a>b[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">90</span> </span>
+<span id="cb33-5"><a href="#cb33-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <ul>
+      <li><strong>答え</strong>: <span
+      class="masked"><code>a=[10, 90, 30], b=[10, 90, 30]</code></span></li>
+      </ul>
+      <h2 data-number="7.2" id="理解のためのステップ2-出題編"><span
+      class="header-section-number">7.2</span> 理解のためのステップ2 ～出題編～</h2>
+      <p>(十分に手を動かして結果について分析すれば) 以下の <code>step2-1.py</code> の
+      <strong>第05行目以降にコードを追加し</strong>、変数 <code>a</code>
+      を使ってリストを操作すると…</p>
+      <ul>
+      <li><span class="masked">変数 <code>b</code> と変数 <code>c</code>
+      に対しても、同じ操作が連動して適用されたように見えるのではないか</span></li>
+      <li><span class="masked">実際には操作が連動したのではなく、変数
+      <code>a</code>、<code>b</code>、<code>c</code> が同じ実体を指しているのではないか</span>
+      <ul>
+      <li>つまり、Windowsファイルシステムの「ショートカット」のように、ひとつの実体に対して複数のアクセス手段を持っている状態になっているのではないか？</li>
+      </ul></li>
+      </ul>
+      <p>…といった仮説が立てられると思います。</p>
+      <div class="sourceCode" id="cb34" data-caption="step2-1.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb34-2"><a href="#cb34-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb34-3"><a href="#cb34-3"></a>b <span class="op">=</span> a</span>
+<span id="cb34-4"><a href="#cb34-4"></a>c <span class="op">=</span> a</span></code></pre></div>
+      <p>ところで、次の <code>step2-2.py</code>
+      のようなプログラムは試したでしょうか。結果を予測したうえで、実際に実行して確認してみてください。</p>
+      <div class="sourceCode" id="cb35" data-caption="step2-2.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb35-2"><a href="#cb35-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb35-3"><a href="#cb35-3"></a>b <span class="op">=</span> a</span>
+<span id="cb35-4"><a href="#cb35-4"></a>c <span class="op">=</span> a</span>
+<span id="cb35-5"><a href="#cb35-5"></a>a <span class="op">=</span> [<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>] <span class="co"># a[0]=60 や a.pop() のような操作ではない点に注意</span></span>
+<span id="cb35-6"><a href="#cb35-6"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; [60,70,80]</span></span>
+<span id="cb35-7"><a href="#cb35-7"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># 出力はどうなるか</span></span>
+<span id="cb35-8"><a href="#cb35-8"></a><span class="bu">print</span>(<span class="ss">f&#39;c=</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># 出力はどうなるか</span></span></code></pre></div>
+      <p>これにより <span class="masked">さらに混乱してきた</span> と思います。</p>
+      <h3 data-number="7.2.1" id="ステップ2の定着確認"><span
+      class="header-section-number">7.2.1</span> 「ステップ2」の定着確認</h3>
+      <p>次のプログラムの実行結果 (標準出力される文字列)
+      を答えよ。なお、<strong>現段階では「なぜ？」という仕組みを説明できる必要はありません</strong>。実行結果だけが答えられれば問題ありません。</p>
+      <div class="sourceCode" id="cb36" data-caption="「ステップ2」の定着確認(1)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb36-2"><a href="#cb36-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb36-3"><a href="#cb36-3"></a>b <span class="op">=</span> a</span>
+<span id="cb36-4"><a href="#cb36-4"></a>a <span class="op">=</span> [<span class="dv">90</span>,<span class="dv">80</span>,<span class="dv">70</span>]</span>
+<span id="cb36-5"><a href="#cb36-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <ul>
+      <li><strong>答え</strong>: <span
+      class="masked"><code>a=[90, 80, 70], b=[10, 20, 30]</code></span></li>
+      </ul>
+      <p><br></p>
+      <div class="sourceCode" id="cb37" data-caption="「ステップ2」の定着確認(2)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb37-2"><a href="#cb37-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb37-3"><a href="#cb37-3"></a>b <span class="op">=</span> a</span>
+<span id="cb37-4"><a href="#cb37-4"></a>b <span class="op">=</span> [<span class="dv">90</span>,<span class="dv">80</span>,<span class="dv">70</span>] <span class="co"># (1)とは、この行が違う</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <ul>
+      <li><strong>答え</strong>: <span
+      class="masked"><code>a=[10, 20, 30], b=[90, 80, 70]</code></span></li>
+      </ul>
+      <p><br></p>
+      <div class="sourceCode" id="cb38" data-caption="「ステップ2」の定着確認(3)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb38-2"><a href="#cb38-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb38-3"><a href="#cb38-3"></a>b <span class="op">=</span> a</span>
+<span id="cb38-4"><a href="#cb38-4"></a>a[<span class="dv">2</span>] <span class="op">=</span> <span class="dv">90</span> </span>
+<span id="cb38-5"><a href="#cb38-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <ul>
+      <li><strong>答え</strong>: <span class="masked"><code>a=[10, 20, 90], b=[10, 20, 90]</code>
+      ※<code>b</code>も影響を受けている</span></li>
+      </ul>
+      <p><br></p>
+      <div class="sourceCode" id="cb39" data-caption="「ステップ2」の定着確認(4)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb39-2"><a href="#cb39-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb39-3"><a href="#cb39-3"></a>b <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>] <span class="co"># (3)とは、この行が違う</span></span>
+<span id="cb39-4"><a href="#cb39-4"></a>a[<span class="dv">2</span>] <span class="op">=</span> <span class="dv">90</span> </span>
+<span id="cb39-5"><a href="#cb39-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <ul>
+      <li><strong>答え</strong>: <span class="masked"><code>a=[10, 20, 90], b=[10, 20, 30]</code>
+      ※<code>b</code>は影響を受けていない</span></li>
+      </ul>
+      <h2 data-number="7.3" id="理解のためのステップ3-出題編"><span
+      class="header-section-number">7.3</span> 理解のためのステップ3 ～出題編～</h2>
+      <p>ここまでの状況を整理してみます。</p>
+      <p>まず、以下の <code>step3-1a.py</code> や <code>step3-1b.py</code> のように変数
+      <code>a</code> に代入しているものが<strong>「整数型」や「文字列型」のとき</strong>
+      は直感に反しない動作となります。ここでは、念のために <code>assert</code> を使って
+      <code>a</code> と <code>b</code>
+      が「等しくないこと」も確認しています。以下のプログラムを実際に実行して結果を確認してください。</p>
+      <div class="sourceCode" id="cb40" data-caption="step3-1a.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb40-2"><a href="#cb40-2"></a>a <span class="op">=</span> <span class="dv">10</span> <span class="co"># aに代入するのは「整数型」</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>b <span class="op">=</span> a</span>
+<span id="cb40-4"><a href="#cb40-4"></a>a <span class="op">=</span> a<span class="op">+</span><span class="dv">1</span> <span class="co"># 変数 b は、この操作の影響を受けない</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a><span class="cf">assert</span> a <span class="op">!=</span> b</span>
+<span id="cb40-6"><a href="#cb40-6"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=11</span></span>
+<span id="cb40-7"><a href="#cb40-7"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; b=10</span></span></code></pre></div>
+      <div class="sourceCode" id="cb41" data-caption="step3-1b.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb41-2"><a href="#cb41-2"></a>a <span class="op">=</span> <span class="st">&#39;ABC&#39;</span> <span class="co"># aに代入するのは「文字列型」</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a>b <span class="op">=</span> a</span>
+<span id="cb41-4"><a href="#cb41-4"></a>a <span class="op">=</span> a<span class="op">+</span><span class="st">&#39;DEF&#39;</span> <span class="co"># 変数 b は、この操作の影響を受けない</span></span>
+<span id="cb41-5"><a href="#cb41-5"></a><span class="cf">assert</span> a <span class="op">!=</span> b</span>
+<span id="cb41-6"><a href="#cb41-6"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=ABCDEF</span></span>
+<span id="cb41-7"><a href="#cb41-7"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; b=ABC</span></span></code></pre></div>
+      <p><br></p>
+      <p>また、変数 <code>a</code> に代入しているものが「リスト」であっても、以下の
+      <code>step3-2a.py</code> のように <strong>第04行目</strong> で <code>a = [10,90,30]</code>
+      とした場合は直感どおりの動作 (＝ <span
+      class="masked">変数<code>b</code>は影響を受けていない結果</span> )
+      となります。実際に実行して結果を確認してください。</p>
+      <div class="sourceCode" id="cb42" data-caption="step3-2a.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb42-2"><a href="#cb42-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb42-3"><a href="#cb42-3"></a>b <span class="op">=</span> a</span>
+<span id="cb42-4"><a href="#cb42-4"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">90</span>,<span class="dv">30</span>]  <span class="co"># a[1]を90にするために a[1]=90 ではなく a=[10,90,30] を実行</span></span>
+<span id="cb42-5"><a href="#cb42-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; [10,90,30] </span></span>
+<span id="cb42-6"><a href="#cb42-6"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; [10,20,30] 影響を受けていない</span></span></code></pre></div>
+      <p>しかし、上記 <code>step3-2a.py</code> の <strong>第04行目</strong> を
+      <code>a = [10,90,30]</code> から <code>a[1]=90</code> に書き換え、以下の
+      <code>step3-2b.py</code> のようにすると…</p>
+      <div class="sourceCode" id="cb43" data-caption="step3-2b.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb43-2"><a href="#cb43-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb43-3"><a href="#cb43-3"></a>b <span class="op">=</span> a</span>
+<span id="cb43-4"><a href="#cb43-4"></a>a[<span class="dv">1</span>]<span class="op">=</span><span class="dv">90</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb43-6"><a href="#cb43-6"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <p>実行結果は、以下のようになります。</p>
+      <pre><code>a=[10, 90, 30]
+b=[10, 90, 30] 👈影響を受けている</code></pre>
+      <p>以上の動作は、一見すると「<code>a</code> に対する操作 (<code>a[1]=90</code>) が
+      <code>b</code> にも適用された」ように見えます。しかし、ここまでの実験からは「<code>a</code> と
+      <code>b</code> が同じ実体を指している」と考えるほうが、より自然に説明できそうです。</p>
+      <p><br></p>
+      <p>一方で、<code>step3-2b.py</code> の <strong>第03行目</strong> を <code>b=a</code> から
+      <code>b = [10,20,30]</code> にすれば、<code>a</code> と <code>b</code>
+      はそれぞれ別のリストを扱うようになります。</p>
+      <div class="sourceCode" id="cb45" data-caption="step3-2c.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb45-2"><a href="#cb45-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb45-3"><a href="#cb45-3"></a>b <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>] <span class="co"># ここを b=a から b=[10,20,30] に書き換えた</span></span>
+<span id="cb45-4"><a href="#cb45-4"></a>a[<span class="dv">1</span>]<span class="op">=</span><span class="dv">90</span></span>
+<span id="cb45-5"><a href="#cb45-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb45-6"><a href="#cb45-6"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <p>実行結果は、以下のようになります。</p>
+      <pre><code>a=[10, 90, 30]
+b=[10, 20, 30]</code></pre>
+      <p>以上のように Python
+      プログラムが振る舞うことは、<strong>どのように説明をつけることができるのでしょうか</strong>。</p>
+      <h3 data-number="7.3.1" id="ステップ3の定着確認"><span
+      class="header-section-number">7.3.1</span> 「ステップ3」の定着確認</h3>
+      <p>次のプログラムの実行結果 (標準出力される文字列)
+      を答えよ。なお、<strong>現段階では「なぜ？」という仕組みを説明できる必要はありません</strong>。実行結果だけが答えられれば問題ありません。</p>
+      <div class="sourceCode" id="cb47" data-caption="「ステップ3」の定着確認(1)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb47-2"><a href="#cb47-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb47-3"><a href="#cb47-3"></a>b <span class="op">=</span> a</span>
+<span id="cb47-4"><a href="#cb47-4"></a></span>
+<span id="cb47-5"><a href="#cb47-5"></a>b[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">90</span></span>
+<span id="cb47-6"><a href="#cb47-6"></a>a.append(<span class="dv">40</span>)</span>
+<span id="cb47-7"><a href="#cb47-7"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <ul>
+      <li><code>append()</code> は<a
+      href="lecture08.html#リストにおける要素の書き換えと追加">第08回講義</a>で既に学習済み。</li>
+      <li><strong>答え</strong>: <span
+      class="masked"><code>a=[10, 90, 30, 40], b=[10, 90, 30, 40]</code></span>。<span
+      class="masked">仮説: <code>a</code>と<code>b</code>は同一の実体を指し示している？</span></li>
+      </ul>
+      <p><br></p>
+      <div class="sourceCode" id="cb48" data-caption="「ステップ3」の定着確認(2)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb48-2"><a href="#cb48-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb48-3"><a href="#cb48-3"></a>b <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb48-4"><a href="#cb48-4"></a></span>
+<span id="cb48-5"><a href="#cb48-5"></a>b[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">90</span></span>
+<span id="cb48-6"><a href="#cb48-6"></a>a.append(<span class="dv">40</span>)</span>
+<span id="cb48-7"><a href="#cb48-7"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <ul>
+      <li><strong>答え</strong>: <span
+      class="masked"><code>a=[10, 20, 30, 40], b=[10, 90, 30]</code></span>。<span
+      class="masked"><code>a</code> と <code>b</code>
+      は、それぞれ別のリストを参照している。</span></li>
+      </ul>
+      <h2 data-number="7.4" id="理解のためのステップ4-解答編"><span
+      class="header-section-number">7.4</span> 理解のためのステップ4 ～解答編～</h2>
+      <p>ここまでに確認した動作は、「変数そのものがリストを内部に持っている」のではなく、「変数名がオブジェクトと結びついている」と考えることで説明できます。ここから、その考え方を順に整理します。</p>
+      <h3 data-number="7.4.1" id="pythonにおけるオブジェクト"><span
+      class="header-section-number">7.4.1</span> 1. Pythonにおけるオブジェクト</h3>
+      <p>Pythonでは、プログラムで扱う値を <strong><em>オブジェクト</em></strong>
+      とよびます。例えば、整数 <code>10</code>、文字列 <code>'ABC'</code>、リスト
+      <code>[10,20,30]</code>、真偽値 <code>True</code> は、いずれもオブジェクトです。</p>
+      <div class="note type-senior">
+      <p><strong>中級者向け：Pythonでは関数もオブジェクト</strong></p>
+      <p>Pythonでは、関数も変数に代入したり、関数の引数として渡したりできます。このような値として扱える関数を、第一級オブジェクトとよびます。</p>
+      </div>
+      <h3 data-number="7.4.2" id="参照とは"><span class="header-section-number">7.4.2</span> 2.
+      「参照」とは</h3>
+      <p>Pythonでは、変数名を使って、その変数名と結びついているオブジェクトを操作します。この「変数名が、どのオブジェクトと結びついているか」という関係を、この資料では
+      <strong><em>参照</em></strong> とよびます。</p>
+      <div class="balloon char-01 face-02 tone-yellow">
+      <p><strong>参照のイメージ</strong></p>
+      <p>参照は、難しく考えずに「変数名とオブジェクトを結びつける、目に見えないつながり」と考えてください。</p>
+      <p>例えば、ある1冊のノートを <code>a</code> という名前で管理しているとします。そこで
+      <code>b = a</code>
+      としても、同じ内容のノートがもう1冊作られるわけではありません。その1冊のノートを、<code>a</code>
+      と <code>b</code> のどちらの名前でも扱えるようになります。</p>
+      <p>一方の名前を使ってノートの内容を書き換えれば、もう一方の名前で確認したときにも、書き換え後の内容が見えます。変更が一方から他方へ伝わったのではなく、最初から同じ1冊を扱っているためです。</p>
+      <p>同じように <code>b = a</code> を実行すると、<code>a</code> と <code>b</code>
+      は同じオブジェクトを参照します。ここでオブジェクトそのものはコピーされていません。</p>
+      </div>
+      <h3 data-number="7.4.3" id="代入とバインド"><span class="header-section-number">7.4.3</span>
+      3. 代入とバインド</h3>
+      <p>プログラミング初学者に対して <code>a = 10</code> を、次のように説明することがあります。</p>
+      <blockquote>
+      <p><code>a</code> という箱に <code>10</code> という値を入れる</p>
+      </blockquote>
+      <p>この「箱」の説明は入門段階では便利ですが、<code>b = a</code>
+      としたリストの動作を説明するには不十分です。「箱の中身が、そのまま別の箱へ複製される」と誤解しやすいためです。</p>
+      <p><strong>(単純化した内部モデルの図解)</strong></p>
+      <figure>
+      <img src="figs/13/ref-01.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>ここからは、次のように考えてください。</p>
+      <ul>
+      <li><code>a = 10</code>：変数名 <code>a</code> を、整数 <code>10</code>
+      を表すオブジェクトと結びつける</li>
+      <li><code>b = a</code>：変数名 <code>b</code> を、<code>a</code>
+      と同じオブジェクトと結びつける</li>
+      </ul>
+      <p>このように、<strong>変数名とオブジェクトを結びつけること</strong>を <strong><em>バインド
+      (束縛)</em></strong> と表現します。<code>b = a</code> では、<code>b</code> が <code>a</code>
+      と同じオブジェクトにバインドされます。</p>
+      <p><strong>(より適切な内部モデルの図解)</strong></p>
+      <figure>
+      <img src="figs/13/ref-02.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p>バインドについては、<a
+      href="lecture02.html#変数の埋め込み">第02回講義</a>でも触れていました。</p>
+      <div class="note type-senior">
+      <p><strong>中級者向け：代入とバインド</strong></p>
+      <p>Pythonの代入文は、名前をオブジェクトにバインドします。ただし、入門段階で「変数へ値を代入する」という表現を使っても、通常は問題ありません。この資料では、共有や再代入の違いを明確にしたい場面で「バインド」という言葉を使います。</p>
+      </div>
+      <h3 data-number="7.4.4" id="id-で参照先を確認する"><span
+      class="header-section-number">7.4.4</span> 4. <code>id()</code> で参照先を確認する</h3>
+      <p>プログラム実行中の各オブジェクトには、<strong><em>オブジェクトID</em></strong>
+      という識別値があります。あるオブジェクトが存在している間、そのIDは変化せず、同時に存在する別のオブジェクトとは重複しません。組込み関数の
+      <code>id()</code> を使うと、この値を確認できます。</p>
+      <p>次の例では、<code>a</code> と <code>b</code>
+      が同じリストを参照しているため、<code>id(a)</code> と <code>id(b)</code>
+      は同じ値になります。</p>
+      <div class="sourceCode" id="cb49" data-caption="オブジェクトIDの確認(1)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb49-2"><a href="#cb49-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb49-3"><a href="#cb49-3"></a>b <span class="op">=</span> a</span>
+<span id="cb49-4"><a href="#cb49-4"></a><span class="bu">print</span>(<span class="ss">f&#39;変数 a が参照するオブジェクトのID = </span><span class="sc">{</span><span class="bu">id</span>(a)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb49-5"><a href="#cb49-5"></a><span class="bu">print</span>(<span class="ss">f&#39;変数 b が参照するオブジェクトのID = </span><span class="sc">{</span><span class="bu">id</span>(b)<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <p>実行結果の一例を示します。IDは実行するたびに変化します。</p>
+      <pre><code>変数 a が参照するオブジェクトのID = 132664295951936
+変数 b が参照するオブジェクトのID = 132664295951936</code></pre>
+      <p>一方、次の例では、同じ値を持つリストを別々に作成しています。そのため、<code>id(a)</code> と
+      <code>id(b)</code> は異なる値になります。</p>
+      <div class="sourceCode" id="cb51" data-caption="オブジェクトIDの確認(2)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb51-2"><a href="#cb51-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb51-3"><a href="#cb51-3"></a>b <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb51-4"><a href="#cb51-4"></a><span class="bu">print</span>(<span class="ss">f&#39;変数 a が参照するオブジェクトのID = </span><span class="sc">{</span><span class="bu">id</span>(a)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb51-5"><a href="#cb51-5"></a><span class="bu">print</span>(<span class="ss">f&#39;変数 b が参照するオブジェクトのID = </span><span class="sc">{</span><span class="bu">id</span>(b)<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+      <pre><code>変数 a が参照するオブジェクトのID = 132664650495168
+変数 b が参照するオブジェクトのID = 132663523312768</code></pre>
+      <p>ここで、<u><strong>値が等しいことと、同じオブジェクトであることは区別</strong></u>してください。</p>
+      <ul>
+      <li><code>a == b</code>：値が等しいかを調べる</li>
+      <li><code>id(a) == id(b)</code>：同じオブジェクトを参照しているかをIDで確認する</li>
+      </ul>
+      <div class="note type-senior">
+      <p><strong>中級者向け：参照とオブジェクトIDは別物</strong></p>
+      <p>「参照」と、<code>id()</code> が返す「オブジェクトID」は別物です。<code>id()</code>
+      はオブジェクトの同一性を表す整数値を返しますが、変数がその整数値を直接格納しているわけではありません。また、オブジェクトが破棄された後、そのIDが別のオブジェクトに再利用される可能性があります。</p>
+      </div>
+      <h3 data-number="7.4.5" id="具体的なプログラムで解説①"><span
+      class="header-section-number">7.4.5</span> 具体的なプログラムで解説①</h3>
+      <p>次のプログラムを使って動作を具体的に解説していきます。</p>
+      <div class="sourceCode" id="cb53" data-caption="step4-1.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb53-2"><a href="#cb53-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb53-3"><a href="#cb53-3"></a>b <span class="op">=</span> a</span>
+<span id="cb53-4"><a href="#cb53-4"></a>a[<span class="dv">1</span>]<span class="op">=</span><span class="dv">40</span></span>
+<span id="cb53-5"><a href="#cb53-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=[10, 40, 30]</span></span>
+<span id="cb53-6"><a href="#cb53-6"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; b=[10, 40, 30]</span></span></code></pre></div>
+      <p><strong>第02行目</strong> : リストリテラル <code>[10,20,30]</code>
+      を評価してリストオブジェクトを作成し、変数名 <code>a</code>
+      をそのリストにバインドする。リストの各要素も、整数オブジェクトへの参照を持っている。</p>
+      <p><strong>第03行目</strong> : 変数名 <code>b</code> を、<code>a</code>
+      が参照しているものと同じリストオブジェクトにバインドする。リストは複製されていない。この結果、<code>id(a) == id(b)</code>
+      は <code>True</code> になる。</p>
+      <figure>
+      <img src="figs/13/ref-04.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong>第04行目</strong> : <code>a</code> が参照するリストの1番目の要素を、整数
+      <code>40</code> への参照に置き換える。<code>a</code> と <code>b</code>
+      は同じリストを参照しているため、この変更は <code>b</code> から見ても確認できる。</p>
+      <figure>
+      <img src="figs/13/ref-05.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong>第05行目</strong> : 変数 <code>a</code>
+      が参照しているリストオブジェクトの値を表示する。</p>
+      <p><strong>第06行目</strong> : 変数 <code>b</code>
+      が参照しているリストオブジェクトの値を表示する。これは <code>a</code>
+      の参照先と同じオブジェクトである。</p>
+      <p>以上の解釈・説明によって、<strong>第06行目</strong>の出力が <code>b=[10, 40, 30]</code>
+      となることが自然に説明できました。</p>
+      <h3 data-number="7.4.6" id="具体的なプログラムで解説②"><span
+      class="header-section-number">7.4.6</span> 具体的なプログラムで解説②</h3>
+      <p>次のプログラムを使って動作を具体的に解説していきます。</p>
+      <div class="sourceCode" id="cb54" data-caption="step4-2.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb54-2"><a href="#cb54-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb54-3"><a href="#cb54-3"></a>b <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]  <span class="co"># ここを書き換えた</span></span>
+<span id="cb54-4"><a href="#cb54-4"></a>a[<span class="dv">1</span>]<span class="op">=</span><span class="dv">40</span></span>
+<span id="cb54-5"><a href="#cb54-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=[10, 40, 30]</span></span>
+<span id="cb54-6"><a href="#cb54-6"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; b=[10, 20, 30] # ここの結果が異なる</span></span></code></pre></div>
+      <p><strong>第02行目</strong> : リストオブジェクト <code>[10,20,30]</code>
+      (ID:<code>XXXXXXX</code>) を作成し、変数名 <code>a</code> をそのリストにバインドする。</p>
+      <p><strong>第03行目</strong> : 別のリストオブジェクト <code>[10,20,30]</code>
+      (ID:<code>ZZZZZZZ</code>) を作成し、変数名 <code>b</code>
+      をそのリストにバインドする。このリストは <strong>第02行目</strong>
+      で作成されたリストとは別物なので、<code>id(a) != id(b)</code> となる。</p>
+      <figure>
+      <img src="figs/13/ref-06.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong>第04行目</strong> : <code>a</code> が参照するリストの1番目の要素を、整数
+      <code>40</code> への参照に置き換える。<code>b</code>
+      は別のリストを参照しているため影響を受けない。</p>
+      <figure>
+      <img src="figs/13/ref-07.png" alt="img" />
+      <figcaption aria-hidden="true">img</figcaption>
+      </figure>
+      <p><strong>第05行目</strong> : 変数 <code>a</code>
+      が参照しているリストオブジェクトの値を表示する。</p>
+      <p><strong>第06行目</strong> : 変数 <code>b</code> が参照している、<code>a</code>
+      の参照先とは別のリストオブジェクトの値を表示する。</p>
+      <p>以上の解釈・説明によって、<strong>第06行目</strong>の出力が <code>b=[10, 20, 30]</code>
+      となることが自然に説明できました。</p>
+      <div class="note type-senior">
+      <p><strong>中級者向け：整数や文字列のIDには深入りしない</strong></p>
+      <p>整数や文字列などのイミュータブルなオブジェクトは、処理系の最適化によって再利用されることがあります。そのため、同じ値を持つ整数のIDが同じ場合も、異なる場合もあります。<strong>値が等しいかを調べる目的</strong>では、<code>id()</code>
+      ではなく <code>==</code>
+      を使用してください。今回の学習では、変更可能なリスト本体のIDに注目します。</p>
+      </div>
+      <h3 data-number="7.4.7" id="具体的なプログラムで解説③"><span
+      class="header-section-number">7.4.7</span> 具体的なプログラムで解説③</h3>
+      <p>次のプログラムを使って動作を具体的に解説していきます。</p>
+      <div class="sourceCode" id="cb55" data-caption="step4-3.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb55-2"><a href="#cb55-2"></a>a <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb55-3"><a href="#cb55-3"></a>b <span class="op">=</span> a</span>
+<span id="cb55-4"><a href="#cb55-4"></a>a <span class="op">=</span> a<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb55-5"><a href="#cb55-5"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=11</span></span>
+<span id="cb55-6"><a href="#cb55-6"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; b=10</span></span></code></pre></div>
+      <p><strong>第02行目</strong> : 変数名 <code>a</code> を、整数 <code>10</code>
+      を表すオブジェクトにバインドする。</p>
+      <p><strong>第03行目</strong> : 変数名 <code>b</code> を、<code>a</code>
+      と同じ整数オブジェクトにバインドする。</p>
+      <p><strong>第04行目</strong> : <code>a</code> が参照している整数 <code>10</code> に
+      <code>1</code> を加えた結果 <code>11</code> を求め、変数名 <code>a</code>
+      をその結果のオブジェクトにバインドし直す。<code>b</code> の参照先は変わらない。</p>
+      <p><strong>第05行目</strong> : 変数 <code>a</code>
+      が参照している整数オブジェクトの値を表示する。</p>
+      <p><strong>第06行目</strong> : 変数 <code>b</code>
+      が参照している整数オブジェクトの値を表示する。</p>
+      <h3 data-number="7.4.8" id="ステップ4の定着確認1"><span
+      class="header-section-number">7.4.8</span> 「ステップ4」の定着確認1</h3>
+      <p>次のプログラムを実行したとき、各 <code>print</code>
+      関数によって標準出力される値を答えよ。</p>
+      <div class="sourceCode" id="cb56" data-caption="ステップ4の定着確認"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb56-2"><a href="#cb56-2"></a></span>
+<span id="cb56-3"><a href="#cb56-3"></a>a <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb56-4"><a href="#cb56-4"></a>b <span class="op">=</span> a</span>
+<span id="cb56-5"><a href="#cb56-5"></a><span class="bu">print</span>(<span class="bu">id</span>(a)<span class="op">==</span><span class="bu">id</span>(b)) <span class="co"># 問題1</span></span>
+<span id="cb56-6"><a href="#cb56-6"></a></span>
+<span id="cb56-7"><a href="#cb56-7"></a>b <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb56-8"><a href="#cb56-8"></a><span class="bu">print</span>(<span class="bu">id</span>(a)<span class="op">==</span><span class="bu">id</span>(b)) <span class="co"># 問題2</span></span>
+<span id="cb56-9"><a href="#cb56-9"></a></span>
+<span id="cb56-10"><a href="#cb56-10"></a><span class="bu">print</span>(a<span class="op">==</span>b) <span class="co"># 問題3</span></span>
+<span id="cb56-11"><a href="#cb56-11"></a></span>
+<span id="cb56-12"><a href="#cb56-12"></a>b[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">90</span></span>
+<span id="cb56-13"><a href="#cb56-13"></a></span>
+<span id="cb56-14"><a href="#cb56-14"></a><span class="bu">print</span>(a<span class="op">==</span>b) <span class="co"># 問題4</span></span></code></pre></div>
+      <ul>
+      <li>問題1の答え : <span class="masked">True</span></li>
+      <li>問題2の答え : <span class="masked">False</span></li>
+      <li>問題3の答え : <span class="masked">True</span></li>
+      <li>問題4の答え : <span class="masked">False</span></li>
+      </ul>
+      <p><br></p>
+      <p>次のプログラムを実行したとき、各 <code>print</code>
+      関数によって標準出力される値を答えよ。</p>
+      <div class="sourceCode" id="cb57" data-caption="ステップ4の定着確認"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb57-2"><a href="#cb57-2"></a></span>
+<span id="cb57-3"><a href="#cb57-3"></a>a <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb57-4"><a href="#cb57-4"></a>b <span class="op">=</span> [] <span class="co"># 空のリスト</span></span>
+<span id="cb57-5"><a href="#cb57-5"></a>b.append(<span class="dv">10</span>)</span>
+<span id="cb57-6"><a href="#cb57-6"></a>b.append(<span class="dv">20</span>)</span>
+<span id="cb57-7"><a href="#cb57-7"></a>b.append(<span class="dv">30</span>)</span>
+<span id="cb57-8"><a href="#cb57-8"></a><span class="bu">print</span>(<span class="bu">id</span>(a)<span class="op">==</span><span class="bu">id</span>(b)) <span class="co"># 問題1</span></span>
+<span id="cb57-9"><a href="#cb57-9"></a><span class="bu">print</span>(a<span class="op">==</span>b)         <span class="co"># 問題2</span></span>
+<span id="cb57-10"><a href="#cb57-10"></a></span>
+<span id="cb57-11"><a href="#cb57-11"></a>a <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb57-12"><a href="#cb57-12"></a>c <span class="op">=</span> []</span>
+<span id="cb57-13"><a href="#cb57-13"></a><span class="cf">for</span> x <span class="kw">in</span> a:</span>
+<span id="cb57-14"><a href="#cb57-14"></a>  c.append(x)</span>
+<span id="cb57-15"><a href="#cb57-15"></a><span class="bu">print</span>(<span class="bu">id</span>(a)<span class="op">==</span><span class="bu">id</span>(c)) <span class="co"># 問題3</span></span>
+<span id="cb57-16"><a href="#cb57-16"></a><span class="bu">print</span>(<span class="bu">id</span>(b)<span class="op">==</span><span class="bu">id</span>(c)) <span class="co"># 問題4</span></span>
+<span id="cb57-17"><a href="#cb57-17"></a><span class="bu">print</span>(a<span class="op">==</span>c)         <span class="co"># 問題5</span></span>
+<span id="cb57-18"><a href="#cb57-18"></a><span class="bu">print</span>(b<span class="op">==</span>c)         <span class="co"># 問題6</span></span></code></pre></div>
+      <ul>
+      <li>問題1の答え : <span class="masked">False</span></li>
+      <li>問題2の答え : <span class="masked">True</span></li>
+      <li>問題3の答え : <span class="masked">False</span></li>
+      <li>問題4の答え : <span class="masked">False</span></li>
+      <li>問題5の答え : <span class="masked">True</span></li>
+      <li>問題6の答え : <span class="masked">True</span></li>
+      </ul>
+      <h2 data-number="7.5" id="理屈は分かったものの不便ではないか"><span
+      class="header-section-number">7.5</span> 理屈は分かったものの不便ではないか</h2>
+      <p>プログラムのなかで、あるリストを複製して、それを少しだけ変更して使いたい場合があります
+      (当然ながら、複製元には影響を与えずに) 。そのようなとき、<code>b = a</code>
+      では目的を達成できません。<span class="masked"><code>b = a</code>
+      はリストのコピーではなく、<code>a</code> と <code>b</code>
+      が同じリストを参照する代入</span>だからです。</p>
+      <p>リストの各要素を別のリストへ移す方法のひとつが、次のプログラムです。</p>
+      <div class="sourceCode" id="cb58" data-caption="copy1.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb58-2"><a href="#cb58-2"></a>a <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb58-3"><a href="#cb58-3"></a></span>
+<span id="cb58-4"><a href="#cb58-4"></a>b <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span><span class="bu">len</span>(a) <span class="co"># aと同じ要素数でbを初期化</span></span>
+<span id="cb58-5"><a href="#cb58-5"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)): <span class="co"># 要素を1個1個コピー</span></span>
+<span id="cb58-6"><a href="#cb58-6"></a>  b[i]<span class="op">=</span>a[i]</span>
+<span id="cb58-7"><a href="#cb58-7"></a></span>
+<span id="cb58-8"><a href="#cb58-8"></a><span class="cf">assert</span> a<span class="op">==</span>b          <span class="co"># オブジェクトの値は同じだが</span></span>
+<span id="cb58-9"><a href="#cb58-9"></a><span class="cf">assert</span> <span class="bu">id</span>(a)<span class="op">!=</span><span class="bu">id</span>(b)  <span class="co"># オブジェクトとしては別物</span></span>
+<span id="cb58-10"><a href="#cb58-10"></a></span>
+<span id="cb58-11"><a href="#cb58-11"></a>b[<span class="dv">1</span>]<span class="op">=</span><span class="dv">10</span>  <span class="co"># 複製したものを部分変更</span></span>
+<span id="cb58-12"><a href="#cb58-12"></a></span>
+<span id="cb58-13"><a href="#cb58-13"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=[10, 20, 30]</span></span>
+<span id="cb58-14"><a href="#cb58-14"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; b=[10, 10, 30] # 複製先だけが変更されている</span></span></code></pre></div>
+      <p>ただし、上記の <code>copy1.py</code>
+      が複製するのはリストの外側だけです。要素にリストや辞書が含まれている場合、その内側のオブジェクトへの参照は共有されます。</p>
+      <div class="note type-tips">
+      <p><strong>入れ子を含まないリストの複製には <code>copy()</code> が簡潔</strong></p>
+      <p>リストの外側だけを複製したい場合は、通常、<code>copy()</code>
+      メソッドを使うのが簡潔です。手作業のループより意図が伝わりやすく、一般に高速です。</p>
+      <p>以下の3つは、いずれも新しい外側のリストを作ります。</p>
+      <div class="sourceCode" id="cb59" data-caption="append() を使った複製"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb59-2"><a href="#cb59-2"></a></span>
+<span id="cb59-3"><a href="#cb59-3"></a>arr <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb59-4"><a href="#cb59-4"></a>cloned_arr <span class="op">=</span> []</span>
+<span id="cb59-5"><a href="#cb59-5"></a><span class="cf">for</span> a <span class="kw">in</span> arr:</span>
+<span id="cb59-6"><a href="#cb59-6"></a>  cloned_arr.append(a)</span>
+<span id="cb59-7"><a href="#cb59-7"></a></span>
+<span id="cb59-8"><a href="#cb59-8"></a><span class="bu">print</span>(cloned_arr) <span class="co"># =&gt; [10, 20, 30]</span></span>
+<span id="cb59-9"><a href="#cb59-9"></a><span class="bu">print</span>(<span class="bu">id</span>(arr)<span class="op">==</span><span class="bu">id</span>(cloned_arr)) <span class="co"># =&gt; False</span></span></code></pre></div>
+      <div class="sourceCode" id="cb60" data-caption="要素数を確保してから代入する複製"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb60-2"><a href="#cb60-2"></a></span>
+<span id="cb60-3"><a href="#cb60-3"></a>arr <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb60-4"><a href="#cb60-4"></a>cloned_arr <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span><span class="bu">len</span>(arr)</span>
+<span id="cb60-5"><a href="#cb60-5"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)):</span>
+<span id="cb60-6"><a href="#cb60-6"></a>  cloned_arr[i] <span class="op">=</span> arr[i]</span>
+<span id="cb60-7"><a href="#cb60-7"></a></span>
+<span id="cb60-8"><a href="#cb60-8"></a><span class="bu">print</span>(cloned_arr) <span class="co"># =&gt; [10, 20, 30]</span></span>
+<span id="cb60-9"><a href="#cb60-9"></a><span class="bu">print</span>(<span class="bu">id</span>(arr)<span class="op">==</span><span class="bu">id</span>(cloned_arr)) <span class="co"># =&gt; False</span></span></code></pre></div>
+      <div class="sourceCode" id="cb61" data-caption="copy() メソッドを使った複製（推奨）"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb61-2"><a href="#cb61-2"></a></span>
+<span id="cb61-3"><a href="#cb61-3"></a>arr <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb61-4"><a href="#cb61-4"></a>cloned_arr <span class="op">=</span> arr.copy() <span class="co"># 注目</span></span>
+<span id="cb61-5"><a href="#cb61-5"></a><span class="bu">print</span>(cloned_arr) <span class="co"># =&gt; [10, 20, 30]</span></span>
+<span id="cb61-6"><a href="#cb61-6"></a><span class="bu">print</span>(<span class="bu">id</span>(arr)<span class="op">==</span><span class="bu">id</span>(cloned_arr)) <span class="co"># =&gt; False</span></span></code></pre></div>
+      <p>ただし、<code>.copy()</code> は <strong><em>浅いコピー</em></strong>
+      です。ネストされたリストなどを含む場合、内側のオブジェクトへの参照は共有されます。</p>
+      </div>
+      <p>例えば、内側のリストまで独立させたい場合、次の <code>copy1-a1.py</code> や
+      <code>copy1-a2.py</code>
+      では目的を達成できません。どちらも外側だけを複製する浅いコピーだからです。</p>
+      <div class="sourceCode" id="cb62"
+      data-caption="copy1-a1.py 意図する処理ができていない例 (1)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb62-2"><a href="#cb62-2"></a>a <span class="op">=</span> [[<span class="dv">10</span>,<span class="dv">20</span>],[<span class="dv">30</span>,<span class="dv">40</span>]] <span class="co"># 2次元リスト</span></span>
+<span id="cb62-3"><a href="#cb62-3"></a></span>
+<span id="cb62-4"><a href="#cb62-4"></a><span class="co"># 外側だけを複製する浅いコピー</span></span>
+<span id="cb62-5"><a href="#cb62-5"></a>b <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span><span class="bu">len</span>(a)</span>
+<span id="cb62-6"><a href="#cb62-6"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
+<span id="cb62-7"><a href="#cb62-7"></a>  b[i]<span class="op">=</span>a[i]</span>
+<span id="cb62-8"><a href="#cb62-8"></a></span>
+<span id="cb62-9"><a href="#cb62-9"></a>b[<span class="dv">1</span>][<span class="dv">0</span>]<span class="op">=</span><span class="dv">10</span>  <span class="co"># 複製したものを部分変更</span></span>
+<span id="cb62-10"><a href="#cb62-10"></a></span>
+<span id="cb62-11"><a href="#cb62-11"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=[[10, 20], [10, 40]] # 複製元も影響を受けた</span></span>
+<span id="cb62-12"><a href="#cb62-12"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; b=[[10, 20], [10, 40]]</span></span></code></pre></div>
+      <div class="sourceCode" id="cb63"
+      data-caption="copy1-a2.py 意図する処理ができていない例 (2)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb63-2"><a href="#cb63-2"></a>a <span class="op">=</span> [[<span class="dv">10</span>,<span class="dv">20</span>],[<span class="dv">30</span>,<span class="dv">40</span>]] <span class="co"># 2次元リスト</span></span>
+<span id="cb63-3"><a href="#cb63-3"></a></span>
+<span id="cb63-4"><a href="#cb63-4"></a><span class="co"># 外側だけを複製する浅いコピー</span></span>
+<span id="cb63-5"><a href="#cb63-5"></a>b <span class="op">=</span> a.copy()</span>
+<span id="cb63-6"><a href="#cb63-6"></a></span>
+<span id="cb63-7"><a href="#cb63-7"></a>b[<span class="dv">1</span>][<span class="dv">0</span>]<span class="op">=</span><span class="dv">10</span>  <span class="co"># 複製したものを部分変更</span></span>
+<span id="cb63-8"><a href="#cb63-8"></a></span>
+<span id="cb63-9"><a href="#cb63-9"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=[[10, 20], [10, 40]] # 複製元も影響を受けた</span></span>
+<span id="cb63-10"><a href="#cb63-10"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; b=[[10, 20], [10, 40]]</span></span></code></pre></div>
+      <p>今回のように構造が決まっている2次元リストなら、次の <code>copy1-b.py</code>
+      のように内側のリストまでループで複製できます。</p>
+      <div class="sourceCode" id="cb64" data-caption="copy1-b.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb64-2"><a href="#cb64-2"></a>a <span class="op">=</span> [[<span class="dv">10</span>,<span class="dv">20</span>],[<span class="dv">30</span>,<span class="dv">40</span>]]</span>
+<span id="cb64-3"><a href="#cb64-3"></a></span>
+<span id="cb64-4"><a href="#cb64-4"></a><span class="co"># 内側のリストも複製する</span></span>
+<span id="cb64-5"><a href="#cb64-5"></a>b <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span><span class="bu">len</span>(a)</span>
+<span id="cb64-6"><a href="#cb64-6"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
+<span id="cb64-7"><a href="#cb64-7"></a>  b[i] <span class="op">=</span> [<span class="dv">0</span>]<span class="op">*</span><span class="bu">len</span>(a[i])</span>
+<span id="cb64-8"><a href="#cb64-8"></a>  <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a[i])):</span>
+<span id="cb64-9"><a href="#cb64-9"></a>    b[i][j]<span class="op">=</span>a[i][j]</span>
+<span id="cb64-10"><a href="#cb64-10"></a></span>
+<span id="cb64-11"><a href="#cb64-11"></a>b[<span class="dv">1</span>][<span class="dv">0</span>]<span class="op">=</span><span class="dv">10</span>  <span class="co"># 複製したものを部分変更</span></span>
+<span id="cb64-12"><a href="#cb64-12"></a></span>
+<span id="cb64-13"><a href="#cb64-13"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=[[10, 20], [30, 40]] </span></span>
+<span id="cb64-14"><a href="#cb64-14"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; b=[[10, 20], [10, 40]] # 複製先だけが変更されている</span></span></code></pre></div>
+      <p>しかし、これは<strong>階層が増えてくると明らかに面倒です</strong>
+      (バグの温床にもなります)。</p>
+      <p>このようなときは <code>copy</code> モジュールを使用し、以下の <code>copy2.py</code>
+      のように記述します。<code>copy.deepcopy()</code>
+      は、2次元・3次元リストや辞書を含む構造を再帰的にコピーしてくれます。</p>
+      <div class="sourceCode" id="cb65" data-caption="copy2.py"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb65-2"><a href="#cb65-2"></a><span class="im">import</span> copy <span class="co"># copy.deepcopy() を使うために必要</span></span>
+<span id="cb65-3"><a href="#cb65-3"></a></span>
+<span id="cb65-4"><a href="#cb65-4"></a>a <span class="op">=</span> [[<span class="dv">10</span>,<span class="dv">20</span>],[<span class="dv">30</span>,<span class="dv">40</span>]]</span>
+<span id="cb65-5"><a href="#cb65-5"></a>b <span class="op">=</span> copy.deepcopy(a) <span class="co"># この1行で深いコピー</span></span>
+<span id="cb65-6"><a href="#cb65-6"></a></span>
+<span id="cb65-7"><a href="#cb65-7"></a>b[<span class="dv">1</span>][<span class="dv">0</span>]<span class="op">=</span><span class="dv">10</span>  <span class="co"># 複製したものを部分変更</span></span>
+<span id="cb65-8"><a href="#cb65-8"></a></span>
+<span id="cb65-9"><a href="#cb65-9"></a><span class="bu">print</span>(<span class="ss">f&#39;a=</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; a=[[10, 20], [30, 40]]</span></span>
+<span id="cb65-10"><a href="#cb65-10"></a><span class="bu">print</span>(<span class="ss">f&#39;b=</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; b=[[10, 20], [10, 40]]</span></span></code></pre></div>
+      <p>ここまでに登場した3種類の操作を整理します。</p>
+      <div class="note type-tips">
+      <p><strong>代入・浅いコピー・深いコピーの違い</strong></p>
+      <ul>
+      <li><code>b = a</code>：<strong>コピーしない</strong>。<code>a</code> と <code>b</code>
+      は同じオブジェクトを参照する。</li>
+      <li><code>b = a.copy()</code>：<strong><em>浅いコピー (Shallow
+      Copy)</em></strong>。外側のリストだけを新しく作り、各要素の参照をコピーする。</li>
+      <li><code>b = copy.deepcopy(a)</code>：<strong><em>深いコピー (Deep
+      Copy)</em></strong>。入れ子になったオブジェクトもたどり、必要な範囲を再帰的にコピーする。</li>
+      </ul>
+      <p>この3つを混同しないことが、今回の最重要ポイントです。</p>
+      </div>
+      <div class="note type-senior">
+      <p><strong>中級者向け：深いコピーでも全オブジェクトのIDが変わるとは限らない</strong></p>
+      <p><code>deepcopy()</code>
+      は、整数や文字列などのイミュータブルなオブジェクトまで必ず複製するわけではありません。また、独自クラスはコピー方法をカスタマイズできます。深いコピーは「含まれるすべてのオブジェクトを無条件に別IDにする操作」ではなく、複合オブジェクトを再帰的にコピーする操作として理解してください。</p>
+      </div>
+      <h3 data-number="7.5.1" id="ステップ4の定着確認2"><span
+      class="header-section-number">7.5.1</span> 「ステップ4」の定着確認2</h3>
+      <p>次のプログラムを実行したとき、各 <code>print</code>
+      関数によって標準出力される値を答えよ。</p>
+      <div class="sourceCode" id="cb66" data-caption="ステップ4の定着確認(1)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb66-2"><a href="#cb66-2"></a></span>
+<span id="cb66-3"><a href="#cb66-3"></a>a <span class="op">=</span> [[<span class="dv">10</span>,<span class="dv">20</span>],[<span class="dv">30</span>,<span class="dv">40</span>]]</span>
+<span id="cb66-4"><a href="#cb66-4"></a>b <span class="op">=</span> []</span>
+<span id="cb66-5"><a href="#cb66-5"></a></span>
+<span id="cb66-6"><a href="#cb66-6"></a><span class="cf">for</span> row <span class="kw">in</span> a:</span>
+<span id="cb66-7"><a href="#cb66-7"></a>  b.append(row)</span>
+<span id="cb66-8"><a href="#cb66-8"></a><span class="bu">print</span>(<span class="bu">id</span>(a)<span class="op">==</span><span class="bu">id</span>(b)) <span class="co"># 問題1</span></span>
+<span id="cb66-9"><a href="#cb66-9"></a><span class="bu">print</span>(a<span class="op">==</span>b)         <span class="co"># 問題2</span></span>
+<span id="cb66-10"><a href="#cb66-10"></a></span>
+<span id="cb66-11"><a href="#cb66-11"></a>a.append([<span class="dv">50</span>,<span class="dv">60</span>])</span>
+<span id="cb66-12"><a href="#cb66-12"></a><span class="bu">print</span>(b)            <span class="co"># 問題3</span></span>
+<span id="cb66-13"><a href="#cb66-13"></a></span>
+<span id="cb66-14"><a href="#cb66-14"></a>a[<span class="dv">0</span>].append(<span class="dv">25</span>)</span>
+<span id="cb66-15"><a href="#cb66-15"></a><span class="bu">print</span>(b)            <span class="co"># 問題4</span></span>
+<span id="cb66-16"><a href="#cb66-16"></a></span>
+<span id="cb66-17"><a href="#cb66-17"></a><span class="bu">print</span>(<span class="bu">id</span>(a[<span class="dv">0</span>]) <span class="op">==</span> <span class="bu">id</span>(b[<span class="dv">0</span>]))  <span class="co"># 問題5</span></span></code></pre></div>
+      <ul>
+      <li>問題1の答え : <span class="masked">False</span></li>
+      <li>問題2の答え : <span class="masked">True</span></li>
+      <li>問題3の答え : <span class="masked"><code>[[10, 20], [30, 40]]</code></span></li>
+      <li>問題4の答え : <span class="masked"><code>[[10, 20, 25], [30, 40]]</code></span></li>
+      <li>問題5の答え : <span class="masked">True</span></li>
+      </ul>
+      <p><br></p>
+      <p>次のプログラムを実行したとき、各 <code>print</code>
+      関数によって標準出力される値を答えよ。</p>
+      <div class="sourceCode" id="cb67" data-caption="ステップ4の定着確認(2)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb67-2"><a href="#cb67-2"></a></span>
+<span id="cb67-3"><a href="#cb67-3"></a>a <span class="op">=</span> [[<span class="dv">10</span>,<span class="dv">20</span>],[<span class="dv">30</span>,<span class="dv">40</span>]]</span>
+<span id="cb67-4"><a href="#cb67-4"></a>b <span class="op">=</span> a.copy()</span>
+<span id="cb67-5"><a href="#cb67-5"></a></span>
+<span id="cb67-6"><a href="#cb67-6"></a><span class="bu">print</span>(<span class="bu">id</span>(a)<span class="op">==</span><span class="bu">id</span>(b)) <span class="co"># 問題1</span></span>
+<span id="cb67-7"><a href="#cb67-7"></a><span class="bu">print</span>(a<span class="op">==</span>b)         <span class="co"># 問題2</span></span>
+<span id="cb67-8"><a href="#cb67-8"></a></span>
+<span id="cb67-9"><a href="#cb67-9"></a>a.append([<span class="dv">50</span>,<span class="dv">60</span>])</span>
+<span id="cb67-10"><a href="#cb67-10"></a><span class="bu">print</span>(b)            <span class="co"># 問題3</span></span>
+<span id="cb67-11"><a href="#cb67-11"></a></span>
+<span id="cb67-12"><a href="#cb67-12"></a>a[<span class="dv">0</span>].append(<span class="dv">25</span>)</span>
+<span id="cb67-13"><a href="#cb67-13"></a><span class="bu">print</span>(b)            <span class="co"># 問題4</span></span>
+<span id="cb67-14"><a href="#cb67-14"></a></span>
+<span id="cb67-15"><a href="#cb67-15"></a><span class="bu">print</span>(<span class="bu">id</span>(a[<span class="dv">0</span>]) <span class="op">==</span> <span class="bu">id</span>(b[<span class="dv">0</span>]))  <span class="co"># 問題5</span></span></code></pre></div>
+      <ul>
+      <li>問題1の答え : <span class="masked">False</span></li>
+      <li>問題2の答え : <span class="masked">True</span></li>
+      <li>問題3の答え : <span class="masked"><code>[[10, 20], [30, 40]]</code></span></li>
+      <li>問題4の答え : <span class="masked"><code>[[10, 20, 25], [30, 40]]</code></span></li>
+      <li>問題5の答え : <span class="masked">True</span></li>
+      </ul>
+      <p><br></p>
+      <p>次のプログラムを実行したとき、各 <code>print</code>
+      関数によって標準出力される値を答えよ。</p>
+      <div class="sourceCode" id="cb68" data-caption="ステップ4の定着確認(3)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb68-2"><a href="#cb68-2"></a><span class="im">import</span> copy</span>
+<span id="cb68-3"><a href="#cb68-3"></a></span>
+<span id="cb68-4"><a href="#cb68-4"></a>a <span class="op">=</span> [[<span class="dv">10</span>,<span class="dv">20</span>],[<span class="dv">30</span>,<span class="dv">40</span>]]</span>
+<span id="cb68-5"><a href="#cb68-5"></a>b <span class="op">=</span> copy.deepcopy(a)</span>
+<span id="cb68-6"><a href="#cb68-6"></a></span>
+<span id="cb68-7"><a href="#cb68-7"></a><span class="bu">print</span>(<span class="bu">id</span>(a)<span class="op">==</span><span class="bu">id</span>(b)) <span class="co"># 問題1</span></span>
+<span id="cb68-8"><a href="#cb68-8"></a><span class="bu">print</span>(a<span class="op">==</span>b)         <span class="co"># 問題2</span></span>
+<span id="cb68-9"><a href="#cb68-9"></a></span>
+<span id="cb68-10"><a href="#cb68-10"></a>a.append([<span class="dv">50</span>,<span class="dv">60</span>])</span>
+<span id="cb68-11"><a href="#cb68-11"></a><span class="bu">print</span>(b)            <span class="co"># 問題3</span></span>
+<span id="cb68-12"><a href="#cb68-12"></a></span>
+<span id="cb68-13"><a href="#cb68-13"></a>a[<span class="dv">0</span>].append(<span class="dv">25</span>)</span>
+<span id="cb68-14"><a href="#cb68-14"></a><span class="bu">print</span>(b)            <span class="co"># 問題4</span></span>
+<span id="cb68-15"><a href="#cb68-15"></a></span>
+<span id="cb68-16"><a href="#cb68-16"></a><span class="bu">print</span>(<span class="bu">id</span>(a[<span class="dv">0</span>]) <span class="op">==</span> <span class="bu">id</span>(b[<span class="dv">0</span>]))  <span class="co"># 問題5</span></span></code></pre></div>
+      <ul>
+      <li>問題1の答え : <span class="masked">False</span></li>
+      <li>問題2の答え : <span class="masked">True</span></li>
+      <li>問題3の答え : <span class="masked"><code>[[10, 20], [30, 40]]</code></span></li>
+      <li>問題4の答え : <span class="masked"><code>[[10, 20], [30, 40]]</code></span></li>
+      <li>問題5の答え : <span class="masked">False</span></li>
+      </ul>
+      <p><br></p>
+      <p>次のプログラムを実行したとき、各 <code>print</code>
+      関数によって標準出力される値を答えよ。</p>
+      <div class="sourceCode" id="cb69" data-caption="ステップ4の定着確認(4)"><pre
+      class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
+<span id="cb69-2"><a href="#cb69-2"></a></span>
+<span id="cb69-3"><a href="#cb69-3"></a>a <span class="op">=</span> [[<span class="dv">10</span>,<span class="dv">20</span>],[<span class="dv">30</span>,<span class="dv">40</span>]]</span>
+<span id="cb69-4"><a href="#cb69-4"></a>b <span class="op">=</span> a</span>
+<span id="cb69-5"><a href="#cb69-5"></a></span>
+<span id="cb69-6"><a href="#cb69-6"></a><span class="bu">print</span>(<span class="bu">id</span>(a)<span class="op">==</span><span class="bu">id</span>(b)) <span class="co"># 問題1</span></span>
+<span id="cb69-7"><a href="#cb69-7"></a><span class="bu">print</span>(a<span class="op">==</span>b)         <span class="co"># 問題2</span></span>
+<span id="cb69-8"><a href="#cb69-8"></a></span>
+<span id="cb69-9"><a href="#cb69-9"></a>a.append([<span class="dv">50</span>,<span class="dv">60</span>])</span>
+<span id="cb69-10"><a href="#cb69-10"></a><span class="bu">print</span>(b)            <span class="co"># 問題3</span></span>
+<span id="cb69-11"><a href="#cb69-11"></a></span>
+<span id="cb69-12"><a href="#cb69-12"></a>a[<span class="dv">0</span>].append(<span class="dv">25</span>)</span>
+<span id="cb69-13"><a href="#cb69-13"></a><span class="bu">print</span>(b)            <span class="co"># 問題4</span></span>
+<span id="cb69-14"><a href="#cb69-14"></a></span>
+<span id="cb69-15"><a href="#cb69-15"></a><span class="bu">print</span>(<span class="bu">id</span>(a[<span class="dv">0</span>]) <span class="op">==</span> <span class="bu">id</span>(b[<span class="dv">0</span>]))  <span class="co"># 問題5</span></span></code></pre></div>
+      <ul>
+      <li>問題1の答え : <span class="masked">True</span></li>
+      <li>問題2の答え : <span class="masked">True</span></li>
+      <li>問題3の答え : <span class="masked"><code>[[10, 20], [30, 40], [50, 60]]</code></span></li>
+      <li>問題4の答え : <span
+      class="masked"><code>[[10, 20, 25], [30, 40], [50, 60]]</code></span></li>
+      <li>問題5の答え : <span class="masked">True</span></li>
+      </ul>
+      <p><br></p>
+      <p><strong><i class="fa-solid fa-comment-dots fa-flip-horizontal"></i>プロンプト例</strong></p>
+      <blockquote>
+      <p>Pythonにおいて、リスト（特に多次元リスト）の浅いコピーと深いコピー、参照について、正しく理解できているか不安があります。理解度を確認するための問題を作成してください。リストの
+      <code>copy()</code> メソッド、<code>copy</code> モジュールの
+      <code>deepcopy()</code>、組込み関数の <code>id()</code> についても理解を確認したいです。</p>
+      </blockquote>
+      <!-- ---------------------------------------- -->
+    </main>
+
+    <footer class="markdown-body">
+      <p><a href="https://takeshiwada1980.github.io/Programming1-2026/">講義資料のIndexに移動</a></p>
+    </footer>
+
+    <script>
+      window.onload = function () {
+        // ナビゲーション関連
+        let openBtn = document.getElementsByClassName("openbtn")[0];
+        let navPnl = document.getElementById("g-nav");
+        openBtn.onclick = () => {
+          openBtn.classList.toggle("active");
+          navPnl.classList.toggle("panelactive");
+        };
+
+        let items = navPnl.getElementsByTagName("a");
+        Array.from(items).forEach((item) => {
+          item.onclick = () => {
+            openBtn.classList.toggle("active");
+            navPnl.classList.toggle("panelactive");
+          };
+        });
+
+        // マスク処理
+        let maskedSpans = document.getElementsByClassName("masked");
+        Array.from(maskedSpans).forEach((span) => {
+          span.onclick = () => {
+            span.classList.toggle("open");
+          };
+        });
+
+        // 吹き出しコンポーネントの補完
+        function updateBalloonFrame(body) {
+          var svg = body.querySelector(":scope > .balloon-frame");
+          var path = body.querySelector(":scope > .balloon-frame .balloon-frame-shape");
+          if (!svg || !path) return;
+
+          var rect = body.getBoundingClientRect();
+          var style = getComputedStyle(body);
+          var width = Math.max(1, Math.ceil(rect.width));
+          var height = Math.max(1, Math.ceil(rect.height));
+
+          var stroke = parseFloat(style.getPropertyValue("--balloon-stroke-width")) || 2;
+          var radius = parseFloat(style.getPropertyValue("--balloon-radius")) || 18;
+          var tailWidth = parseFloat(style.getPropertyValue("--balloon-tail-width")) || 26;
+          var tailTop = parseFloat(style.getPropertyValue("--balloon-tail-top")) || 18;
+          var tailBase = parseFloat(style.getPropertyValue("--balloon-tail-base")) || 20;
+          var tailTipInset =
+            parseFloat(style.getPropertyValue("--balloon-tail-tip-inset")) || 3;
+          var s2 = stroke * 0.5;
+          var left = tailWidth + s2;
+          var top = s2;
+          var right = width - s2;
+          var bottom = height - s2;
+          var safeRadius = Math.min(radius, (right - left) * 0.5, (bottom - top) * 0.5);
+          var baseTop = Math.max(
+            top + safeRadius + 4,
+            Math.min(bottom - safeRadius - tailBase - 4, tailTop),
+          );
+          var baseBottom = Math.min(bottom - safeRadius - 4, baseTop + tailBase);
+          var tipX = Math.max(s2, tailTipInset);
+          var tipY = (baseTop + baseBottom) * 0.5;
+          var d = [
+            "M",
+            left + safeRadius,
+            top,
+            "H",
+            right - safeRadius,
+            "A",
+            safeRadius,
+            safeRadius,
+            0,
+            0,
+            1,
+            right,
+            top + safeRadius,
+            "V",
+            bottom - safeRadius,
+            "A",
+            safeRadius,
+            safeRadius,
+            0,
+            0,
+            1,
+            right - safeRadius,
+            bottom,
+            "H",
+            left + safeRadius,
+            "A",
+            safeRadius,
+            safeRadius,
+            0,
+            0,
+            1,
+            left,
+            bottom - safeRadius,
+            "V",
+            baseBottom,
+            "L",
+            tipX,
+            tipY,
+            "L",
+            left,
+            baseTop,
+            "V",
+            top + safeRadius,
+            "A",
+            safeRadius,
+            safeRadius,
+            0,
+            0,
+            1,
+            left + safeRadius,
+            top,
+            "Z",
+          ].join(" ");
+
+          svg.setAttribute("viewBox", "0 0 " + width + " " + height);
+          path.setAttribute("d", d);
+        }
+
+        document.querySelectorAll("div.balloon").forEach(function (div) {
+          if (div.querySelector(":scope > .balloon-body")) return;
+
+          var hasContent = Array.from(div.childNodes).some(function (node) {
+            return node.nodeType !== Node.TEXT_NODE || node.textContent.trim() !== "";
+          });
+          if (!hasContent) return;
+
+          var classNames = Array.from(div.classList);
+          var charClass = classNames.find(function (name) {
+            return /^char-\d\d/.test(name) && name.length === 7;
+          });
+          var faceClass = classNames.find(function (name) {
+            return /^face-\d\d/.test(name) && name.length === 7;
+          });
+
+          var contentNodes = Array.from(div.childNodes);
+          var body = document.createElement("div");
+          body.className = "balloon-body";
+
+          var frame = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg",
+          );
+          frame.setAttribute("aria-hidden", "true");
+          frame.classList.add("balloon-frame");
+
+          var framePath = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "path",
+          );
+          framePath.classList.add("balloon-frame-shape");
+          frame.appendChild(framePath);
+
+          var bubble = document.createElement("div");
+          bubble.className = "balloon-bubble";
+
+          var content = document.createElement("div");
+          content.className = "balloon-content";
+          contentNodes.forEach(function (node) {
+            content.appendChild(node);
+          });
+
+          bubble.appendChild(content);
+          body.appendChild(frame);
+          body.appendChild(bubble);
+
+          if (charClass && faceClass) {
+            var figure = document.createElement("div");
+            figure.className = "balloon-figure";
+
+            var avatar = document.createElement("div");
+            avatar.className = "balloon-avatar";
+
+            var image = document.createElement("img");
+            var avatarBasePath = "figs/balloon/" + charClass + "/" + faceClass;
+            var triedGifAvatar = false;
+            image.src = avatarBasePath + ".png";
+            image.alt = "";
+            image.loading = "lazy";
+            image.decoding = "async";
+            image.addEventListener("error", function () {
+              if (!triedGifAvatar) {
+                triedGifAvatar = true;
+                image.src = avatarBasePath + ".gif";
+                return;
+              }
+
+              div.classList.add("balloon-no-avatar");
+              if (figure.parentNode) {
+                figure.remove();
+              }
+            });
+
+            avatar.appendChild(image);
+            figure.appendChild(avatar);
+            div.appendChild(figure);
+          } else {
+            div.classList.add("balloon-no-avatar");
+          }
+
+          div.appendChild(body);
+          updateBalloonFrame(body);
+
+          if (window.ResizeObserver) {
+            var observer = new ResizeObserver(function () {
+              updateBalloonFrame(body);
+            });
+            observer.observe(body);
+          }
+        });
+
+        // data-startfrom 属性の行番号カウンタのリセット
+        document.querySelectorAll("div.sourceCode").forEach(function (div) {
+          var startFrom = div.getAttribute("data-startfrom");
+          if (startFrom != null) {
+            div.style.counterReset = "pg-line " + (startFrom - 1);
+          }
+        });
+
+        // コピーボタンの追加
+        document.querySelectorAll("div.sourceCode").forEach(function (div) {
+          var btn = document.createElement("button");
+          btn.className = "copy-btn";
+          btn.title = "コードをコピー";
+          btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+          btn.addEventListener("click", function () {
+            var codeEl = div.querySelector("code");
+            if (!codeEl) return;
+            navigator.clipboard.writeText(codeEl.innerText).then(function () {
+              btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+              setTimeout(function () {
+                btn.innerHTML = '<i class="fa-regular fa-copy"></i>';
+              }, 1500);
+            });
+          });
+          div.appendChild(btn);
+        });
+
+      };
+    </script>
+  </body>
+</html>
