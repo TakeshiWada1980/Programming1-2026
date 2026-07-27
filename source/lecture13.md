@@ -8,6 +8,11 @@ var:
 
 ## 準備・案内
 
+- 課題04 (自由課題) の作品共有
+  - [OneDrive](https://omunet-my.sharepoint.com/:t:/g/personal/z21707r_omu_ac_jp/IQBhp19q8lXhTqQoaHzm1ckpAeDRSUeP54e0TqVBgaDNvUk?e=UrS1U8) (学内のみ)
+  - 指定されたファイル名、共有設定、構成 ([テンプレート](https://colab.research.google.com/drive/1uol10dRtUxc8O6eks9Fn2JZxxhXoUSfi?usp=sharing)に示すプログラムの「タイトル」や「説明」を指定の書式で記述) となっていない場合、減点となります。内容完成の期日までに修正しておいてください。
+    - ***内容の完成期限*** : **2026年8月9日(日) 23:00** 
+
 - [Google Colab](https://colab.research.google.com/?hl=ja) にログイン、もしくは、ローカル環境の [Jupyter](lecture09.html#ノートブックの新規作成と実行) を起動し、`PG1-第13回講義.ipynb` という名前でノートブックを作成しておいてください。
   - 今回の演習の実装例（解答例）は [こちら](https://colab.research.google.com/drive/1S7bCgfahcmEHN09lLhQoxBuyBE30Sbj6?usp=sharing) を参照してください。
 
