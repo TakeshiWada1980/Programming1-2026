@@ -2,6 +2,7 @@
 .claude
 
 kadai3/
+local/
 
 package.json
 pnpm-lock.yaml
