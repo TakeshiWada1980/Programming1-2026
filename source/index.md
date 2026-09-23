@@ -1,12 +1,17 @@
 ---
 var:
   header-title: "2026-2I プログラミング1 (通年) 講義資料"
-  header-date: "前期 月曜 3時限"
+  header-date: "後期 金曜 2時限"
 ---
 
 # 2I-プログラミング1
 
 ## 講義資料 INDEX
+
+
+### 後期
+
+- 第15回講義 09月25日 (金)&ensp;[資料](lecture15.html) &ensp; <font size="-1">Git/GitHub 2, HTML/CSS, GitHubPages</font>
 
 ### 前期
 
@@ -31,10 +36,6 @@ var:
 🍉夏休み🍉
 
 - 第14回講義 09月14日 (月)&ensp;[資料](lecture14.html)&ensp; **_小テスト5_** <font size="-1">git/GitHub 1</font>
-
-### 後期
-
-- 第15回講義 09月25日 (金)&ensp;資料 &ensp; <font size="-1">Git/GitHub 2, HTML/CSS, GitHubPages</font>
 
 
 ---

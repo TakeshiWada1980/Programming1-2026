@@ -15,6 +15,9 @@ var:
 - **課題04** (GoogleColab.で動作するプログラムの自由制作) の作品共有
   - [OneDrive](https://omunet-my.sharepoint.com/:t:/g/personal/z21707r_omu_ac_jp/IQBhp19q8lXhTqQoaHzm1ckpAeDRSUeP54e0TqVBgaDNvUk?e=UrS1U8) (学内のみ)
 
+- 課題05-学習記録⑤の入力期限は 16日(水) までです。忘れずに記入してください。
+    - 09/03(木) ～ 09/09(水) の取組み $\to$ [課題05-学習記録⑤](https://forms.office.com/r/S2285bMAP9) <font size="-1">入力期間 09/10 ～ 09/16</font>
+
 ### 今回の講義の概要
 
 今回の講義では ❶ **Git** (ギット) のインストール、❷ VS Codeを使った **GitHub** リポジトリ (=リモートリポジトリ) の新規作成、❸ 変更内容のコミット操作・プッシュ操作、❹ GitHub を用いたソースコードの公開について取り上げます。
