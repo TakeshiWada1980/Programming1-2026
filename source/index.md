@@ -12,6 +12,7 @@ var:
 ### 後期
 
 - 第15回講義 09月25日 (金)&ensp;[資料](lecture15.html) &ensp; <font size="-1">Git/GitHub 2, HTML/CSS, GitHubPages</font>
+- 第16回講義 10月02日 (金)&ensp;[資料](lecture16.html) &ensp; **_小テスト6_** <font size="-1">Git/GitHub 3, チーム開発</font>
 
 ### 前期
 
