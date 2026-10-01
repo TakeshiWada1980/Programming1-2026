@@ -7,6 +7,9 @@ local/
 package.json
 pnpm-lock.yaml
 
+.agents/
+.codex-docx-review
+
 docs/balloon-demo.html
 source/balloon-demo.md
 
