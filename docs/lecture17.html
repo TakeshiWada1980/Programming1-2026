@@ -248,7 +248,7 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
 <span id="cb2-5"><a href="#cb2-5"></a></span>
 <span id="cb2-6"><a href="#cb2-6"></a><span class="co"># 演習1</span></span>
 <span id="cb2-7"><a href="#cb2-7"></a>a <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="bu">print</span>(<span class="ss">f&#39;a = </span><span class="sc">{</span><span class="va">None</span><span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="bu">print</span>(<span class="ss">f&#39;a = </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">&#39;</span>)</span>
 <span id="cb2-9"><a href="#cb2-9"></a></span>
 <span id="cb2-10"><a href="#cb2-10"></a><span class="co"># 演習2</span></span>
 <span id="cb2-11"><a href="#cb2-11"></a><span class="co"># ここで何らかの操作を実施</span></span>
@@ -256,7 +256,7 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
 <span id="cb2-13"><a href="#cb2-13"></a></span>
 <span id="cb2-14"><a href="#cb2-14"></a><span class="co"># 演習3</span></span>
 <span id="cb2-15"><a href="#cb2-15"></a>b <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="bu">print</span>(<span class="ss">f&#39;b = </span><span class="sc">{</span><span class="va">None</span><span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="bu">print</span>(<span class="ss">f&#39;b = </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">&#39;</span>)</span></code></pre></div>
       <p><strong>演習1</strong>: <strong>第07行目</strong>で <code>arr3</code> の要素「31」を変数
       <code>a</code> に取得してください。</p>
       <p><strong>演習2</strong>: <strong>第11行目</strong>で <code>arr3</code>
@@ -359,30 +359,32 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       (コピー)」する場合には、その特性の違いに注意して「<strong>浅いコピー (Shallow
       copy)</strong>」と「<strong>深いコピー (Deep
       copy)</strong>」を使い分ける必要がありました。</p>
+      <p>なお、<code>arr11 = arr10</code>
+      はコピーではなく、<strong>同じリストへの参照を代入</strong>する操作です。浅いコピーでは外側のリストを新しく作成しますが、要素への参照は共有します。次の例では、<strong>内側のリストの要素</strong>を書き換えて、深いコピーとの違いを確認します。</p>
       <div class="sourceCode" id="cb6" data-caption="list-06.py"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> copy</span>
 <span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># ■■ 浅いコピー ■■ </span></span>
-<span id="cb6-5"><a href="#cb6-5"></a>arr10 <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
-<span id="cb6-6"><a href="#cb6-6"></a>arr11 <span class="op">=</span> arr10  <span class="co"># 浅いコピー </span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>arr11[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;A&#39;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># ■■ 浅いコピー ■■</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>arr10 <span class="op">=</span> [[<span class="dv">10</span>,<span class="dv">20</span>],[<span class="dv">30</span>,<span class="dv">40</span>]]</span>
+<span id="cb6-6"><a href="#cb6-6"></a>arr11 <span class="op">=</span> copy.copy(arr10)  <span class="co"># 外側のリストだけをコピー</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>arr11[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;A&#39;</span></span>
 <span id="cb6-8"><a href="#cb6-8"></a><span class="bu">print</span>(<span class="st">&#39;浅いコピー&#39;</span>)</span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="bu">print</span>(<span class="ss">f&#39;arr10 = </span><span class="sc">{</span>arr10<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; arr10 = [&#39;A&#39;, 20, 30] ← !!!</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="bu">print</span>(<span class="ss">f&#39;arr11 = </span><span class="sc">{</span>arr11<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; arr11 = [&#39;A&#39;, 20, 30]</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="bu">print</span>(<span class="ss">f&#39;arr10 = </span><span class="sc">{</span>arr10<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; arr10 = [[&#39;A&#39;, 20], [30, 40]] ← !!!</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="bu">print</span>(<span class="ss">f&#39;arr11 = </span><span class="sc">{</span>arr11<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; arr11 = [[&#39;A&#39;, 20], [30, 40]]</span></span>
 <span id="cb6-11"><a href="#cb6-11"></a></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="co"># ■■ 深いコピー ■■ </span></span>
-<span id="cb6-13"><a href="#cb6-13"></a>arr10 <span class="op">=</span> [<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>]</span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="co"># ■■ 深いコピー ■■</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>arr10 <span class="op">=</span> [[<span class="dv">10</span>,<span class="dv">20</span>],[<span class="dv">30</span>,<span class="dv">40</span>]]</span>
 <span id="cb6-14"><a href="#cb6-14"></a>arr11 <span class="op">=</span> copy.deepcopy(arr10)  <span class="co"># 深いコピー</span></span>
-<span id="cb6-15"><a href="#cb6-15"></a>arr11[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;A&#39;</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a>arr11[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;A&#39;</span></span>
 <span id="cb6-16"><a href="#cb6-16"></a><span class="bu">print</span>(<span class="st">&#39;深いコピー&#39;</span>)</span>
-<span id="cb6-17"><a href="#cb6-17"></a><span class="bu">print</span>(<span class="ss">f&#39;arr10 = </span><span class="sc">{</span>arr10<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; arr10 = [10, 20, 30] ← :D</span></span>
-<span id="cb6-18"><a href="#cb6-18"></a><span class="bu">print</span>(<span class="ss">f&#39;arr11 = </span><span class="sc">{</span>arr11<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; arr11 = [&#39;A&#39;, 20, 30]</span></span></code></pre></div>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="bu">print</span>(<span class="ss">f&#39;arr10 = </span><span class="sc">{</span>arr10<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; arr10 = [[10, 20], [30, 40]] ← :D</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a><span class="bu">print</span>(<span class="ss">f&#39;arr11 = </span><span class="sc">{</span>arr11<span class="sc">}</span><span class="ss">&#39;</span>) <span class="co"># =&gt; arr11 = [[&#39;A&#39;, 20], [30, 40]]</span></span></code></pre></div>
       <div class="balloon char-01 face-04 tone-blue">
       <p><code>:D</code> は海外でよく使われる顔文字です (顔を90度傾けてみてください)。</p>
       </div>
       <p>この「浅いコピー」と「深いコピー」の違いは <span
-      class="masked">リストに限らず「辞書」や「クラス」でも同様に起きます</span>。理解が難しい概念ですが、避けては通れないのでどこかの段階ではしっかりと理解してください。</p>
+      class="masked">リストに限らず「辞書」や「クラスのインスタンス」でも同様に起きます</span>。理解が難しい概念ですが、避けては通れないのでどこかの段階ではしっかりと理解してください。</p>
       <h1 data-number="3" id="タプル型-tuple"><span class="header-section-number">3</span> タプル型
       (Tuple)</h1>
       <p>Python には <strong>リスト (List)</strong> に似て非なる型として <strong><em>タプル
@@ -392,9 +394,10 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       タプルは変更不可</h2>
       <p>リストは <code>a=[20,30]</code> のように「<strong>角括弧
       (大括弧)</strong>」で初期化していたのに対して、タプルは <code>tpl=(20,30)</code>
-      のように「<strong>丸括弧</strong>」で初期化します。次のプログラムを実行して確認してください
-      (変数名を型名と同じ <code>tuple</code> にしたり、ファイル名を <code>tuple.py</code>
-      にすると機能しないので注意してください) 。</p>
+      のように「<strong>丸括弧とカンマ</strong>」で初期化します。実際にタプルを構成するのはカンマであり、1要素の場合は
+      <code>(20,)</code> のように記述します (<code>(20)</code>
+      は整数です)。次のプログラムを実行して確認してください (変数名を <code>tuple</code>
+      にすると組み込みの <code>tuple()</code> が隠れるため、別の変数名を使ってください) 。</p>
       <div class="sourceCode" id="cb7" data-caption="「リストの初期化」と「タプルの初期化」"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb7-2"><a href="#cb7-2"></a>arr <span class="op">=</span> [<span class="dv">20</span>,<span class="dv">30</span>]    <span class="co"># [ ] により「リスト型」として初期化される</span></span>
@@ -405,6 +408,7 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       <p>先に解説したように
       <strong>タプルは、初期化後に要素を変更したり</strong>、<code>append()</code>
       <strong>メソッドで要素を追加したりすることはできません</strong>。</p>
+      <p>ただし、変更できないのはタプルの要素への参照や要素数です。要素がリストなどの変更可能なオブジェクトの場合、そのオブジェクトの中身は変更できます。</p>
       <div class="sourceCode" id="cb8" data-caption="タプルは要素の変更ができない"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb8-2"><a href="#cb8-2"></a>tpl <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">30</span>)</span>
@@ -433,7 +437,7 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       のような変更ができるのは何故ですか？</p>
       </blockquote>
       <div class="note type-tips">
-      <p><strong>リストとタプルは関数の引数として (ほとんどのケースで) 互換性がある</strong></p>
+      <p><strong>シーケンスを受け取る関数では、リストとタプルの両方を利用できる場合がある</strong></p>
       <p><a href="lecture08.html#ランダム処理とリストの組み合わせ">第08回講義</a> で学んだように
       <code>random.choices</code> は、引数 <code>weights</code> で与えた確率に従って、ランダムに
       <code>k</code>
@@ -450,7 +454,7 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       </div>
       <h2 data-number="3.2" id="タプルを利用する価値はあるのか"><span
       class="header-section-number">3.2</span> タプルを利用する価値はあるのか</h2>
-      <p>タプルを採用することで「<strong>その値が変更不可であること</strong>」を明示できます。初期化以降、プログラムの途中で要素を変更することや
+      <p>タプルを採用することで「<strong>要素の入れ替えや追加・削除が不可であること</strong>」を明示できます。初期化以降、プログラムの途中で要素を変更することや
       <span class="masked">要素の追加や削除をすること</span>
       を意図しないケースでは、<strong>リスト型ではなくタプル型を使用することが望まれます</strong>。特にチーム開発では、タプル型にしておくことで
       <span class="masked">要素の変更を想定していないこと </span>、<span
@@ -460,6 +464,8 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       (dict型・連想配列型)</strong>
       の「<strong>キー</strong>」に使用できる点が挙げられます。もし、辞書型について忘れてしまった学生がいれば
       <a href="lecture12.html#辞書-dict">第12回講義</a> を再読してください。</p>
+      <p>ただし、キーにできるのは
+      <strong>すべての要素がハッシュ可能なタプル</strong>です。文字列や整数を要素とする以下の例は利用できますが、リストや辞書を要素に含むタプルはキーにできません。</p>
       <p>まずは文字列を辞書型のキーに利用する例 (復習) を以下に示します。</p>
       <div class="sourceCode" id="cb13" data-caption="(復習) 文字列を辞書型のキーに利用する"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
@@ -552,9 +558,9 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       <p><strong><em>NumPy</em></strong> (<strong>ナンパイ</strong>) は <strong>Numerical
       Python</strong> の略称で <span class="masked">Pythonの数値計算のためのライブラリ
       (モジュール)</span>
-      です。数値計算や科学技術計算に関連する「計算」や「処理」を<strong>簡潔なコードで記述可能</strong>で、またライブラリの本体が
+      です。数値計算や科学技術計算に関連する「計算」や「処理」を<strong>簡潔なコードで記述可能</strong>で、また多くの数値計算処理が
       <span
-      class="masked">「C言語」で実装されていることから</span>、<strong>非常に高速な処理が可能</strong>なことが特長になっています。</p>
+      class="masked">「C言語」などで実装されていることから</span>、<strong>非常に高速な処理が可能</strong>なことが特長になっています。</p>
       <p>また、NumPy
       は、その他の様々なPythonライブラリでも内部的に使用されており、それらライブラリとデータをやり取りするときには
       (=<span class="masked">引数として与えたり、戻り値として受け取ったりするときには</span>)、NumPy
@@ -573,11 +579,13 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       <p>(ローカルPCの Jupyter を利用している場合)</p>
       <pre><code>pip install numpy</code></pre>
       <div class="note type-caution">
-      <p><strong>常に最新版の pip を使用すること</strong></p>
-      <p>久しぶりに pip を実行する場合は、以下のコマンドで pip
-      を<strong>最新版にアップグレード</strong>してください。少しでもバージョンが古いと正常動作しないことがあります。詳しくは、第09回講義の<a
-      href="lecture09.html#pipの基本">pipの基本</a>を再読してください。</p>
+      <p><strong>古い pip でインストールに問題が起きた場合</strong></p>
+      <p>pip は常に最新版である必要はありませんが、古い pip
+      では新しいパッケージ形式に対応できない場合があります。インストールに問題が起きた場合は、以下のコマンドを実行し、pip
+      を<strong>アップグレード</strong>してください。</p>
       <pre><code>python -m pip install --upgrade pip</code></pre>
+      <p>詳しくは、第09回講義の<a
+      href="lecture09.html#pipの基本">pipの基本</a>を再読してください。</p>
       </div>
       <p>NumPy
       がインストールされた環境では、次のようにライブラリを読み込みます。<strong>慣例的に</strong>
@@ -598,9 +606,9 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       30 \\ \end{bmatrix},\ \ \  
       B=\begin{bmatrix} 10 &amp; 20 &amp; 10 \\ 20 &amp; 10 &amp; 10 \\ \end{bmatrix}\]</span></p>
       <p>先ほど「<a
-      href="#繰返し構文と組み合わせたリストの操作">繰返し構文と組み合わせたリストの操作</a>」のセクションの「演習」で、同じ計算をしてもらいましたが、それよりも<strong>格段に直感的で簡潔なコードになっていること</strong>が分かると思います。また、ここでは実感がないと思いますが
-      NumPy を使ったほうが <span class="masked">
-      実行にかかる時間も格段に短く</span>なっています。</p>
+      href="#繰返し構文と組み合わせたリストの操作">繰返し構文と組み合わせたリストの操作</a>」のセクションの「演習」で、同じ計算をしてもらいましたが、それよりも<strong>格段に直感的で簡潔なコードになっていること</strong>が分かると思います。処理時間は配列の大きさや処理内容に依存し、小さな配列では
+      NumPy が速いとは限りません。後述の「<a
+      href="#numpyを活用した高速計算">NumPyを活用した高速計算</a>」で、大きな配列を使って処理時間を比較します。</p>
       <p><strong>第06行目</strong> のように NumPy では行列 (ベクトル) は <code>ndarray</code> という
       <strong>型 (データ構造)</strong>
       で扱います。「データ分析」や「画像処理」「可視化」「機械学習」などのライブラリを使うときは
@@ -683,11 +691,13 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       </ul>
       <h2 data-number="4.4" id="ブロードキャスト"><span class="header-section-number">4.4</span>
       ブロードキャスト</h2>
-      <p>NumPy には <strong>ブロードキャスト</strong> (形状の自動変換)
-      という機能があります。これは「<strong>形状が異なる行列同士の四則演算</strong>」や「<strong>行列とスカラーの加算・減算</strong>」の際に自動で適用される機能になります。</p>
+      <p>NumPy には <strong>ブロードキャスト</strong> (形状を合わせて要素ごとに演算する仕組み)
+      という機能があります。これは「<strong>形状が異なる配列同士の要素ごとの四則演算</strong>」や「<strong>行列とスカラーの加算・減算</strong>」の際に自動で適用される機能になります。配列同士では、形状を末尾の次元から比較し、対応するサイズが「同じ」か「どちらかが1」の場合に適用できます
+      (存在しない次元はサイズ1として扱います)。この条件を満たさない場合はエラーになります。</p>
       <p>例えば、次のような「<strong>行列からスカラーを減じる計算</strong>」は数学的には通常許されませんが、NumPy
-      では<strong>ブロードキャスト機能により可能</strong>になります。この例では、スカラー値の「3」がブロードキャストにより、<strong>2行3列の行列に自動変換</strong>
-      されて計算が行われます。</p>
+      では<strong>ブロードキャスト機能により可能</strong>になります。この例では、スカラー値の「3」が
+      <strong>2行3列の各要素に対応する値として扱われて</strong>
+      計算が行われます。実際に「3」を並べた行列を作成するわけではありません。</p>
       <p><span class="math display">\[ \begin{bmatrix} 3 &amp; 4 &amp; 5 \\ 6 &amp; 7 &amp; 8 \\
       \end{bmatrix} - 3 \]</span></p>
       <p>つまり、NumPy では、<strong>自動的に次のように解釈されて計算</strong>されます。</p>
@@ -773,16 +783,19 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       <p>NumPy の <code>ndarray</code>
       型は、Python標準のリスト型と違い、次のような制約があるので注意してください。</p>
       <ul>
-      <li><code>ndarray</code>
-      は「<strong>同じデータ型の要素</strong>」で構成する必要があります。異なるデータ型の要素を混在させることはできません。</li>
-      <li><code>ndarray</code>
-      は作成後、そのサイズを変更することができません。要素の追加や削除をしたい場合、新しい
-      <code>ndarray</code> を作成する必要があります。</li>
-      <li><code>ndarray</code>
-      は、各次元ごとに同じサイズを持つ配列のみが扱えます。<code>[[10,20,30], [40,50], [60]]</code>
-      のように各行の長さが違うような配列
+      <li><code>ndarray</code> の各要素は「<strong>共通のデータ型
+      (<code>dtype</code>)</strong>」で格納されます。例えば整数と浮動小数点数が混在するリストから作成すると、通常は浮動小数点数に統一されます。ただし、<code>dtype=object</code>
+      の配列では異なる型の Pythonオブジェクトを格納できます。</li>
+      <li><code>ndarray</code> には、リストの <code>append()</code>
+      のように末尾へ要素を追加するメソッドはありません。<code>np.append()</code> や
+      <code>np.delete()</code>
+      は新しい配列を返します。ただし、配列がメモリを所有していることなどの条件を満たせば、<code>ndarray.resize()</code>
+      で要素数を変更することは可能です。</li>
+      <li>通常の2次元の数値配列では、各行の長さ (列数)
+      は同じになります。<code>[[10,20,30], [40,50], [60]]</code> のように各行の長さが違う配列
       (=「<strong>ジャグ配列</strong>」や「<strong>不規則配列</strong>」という)
-      を扱うことはできません。</li>
+      は、そのまま2次元の数値配列にはできません。ただし、<code>dtype=object</code>
+      を指定して、各行のリストを要素に持つ1次元配列として格納することはできます。</li>
       </ul>
       <h2 data-number="4.7" id="ndarray型の初期化"><span class="header-section-number">4.7</span>
       ndarray型の初期化</h2>
@@ -804,8 +817,10 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       <p><strong>0.00</strong> から <strong>3.00</strong> まで <strong>0.25</strong> 刻みの値
       (=<strong>等差数列</strong>) を得たいときは <code>np.arange()</code> の「第1引数(開始値)」に
       <code>0.00</code>、「第2引数(終了値(未満))」に <code>3.01</code>、「第3引数(間隔・等差)」に
-      <code>0.25</code> を与えます。なお、リストを生成する <code>range()</code> では <span
-      class="masked">「間隔」を小数値で与えること</span>ができませんでした。</p>
+      <code>0.25</code> を与えます。なお、整数の列を表す <code>range</code> オブジェクトを生成する
+      <code>range()</code> では <span
+      class="masked">「間隔」を小数値で与えること</span>ができませんでした。リストが必要な場合は
+      <code>list(range(...))</code> とします。</p>
       <div class="sourceCode" id="cb30" data-caption="np.arange() による初期化"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb30-2"><a href="#cb30-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -819,10 +834,11 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
 [0.   0.25 0.5  0.75 1.   1.25 1.5  1.75 2.   2.25 2.5  2.75 3.  ]</code></pre>
       <h3 data-number="4.7.2" id="np.linspace-による初期化"><span
       class="header-section-number">4.7.2</span> np.linspace() による初期化</h3>
-      <p>np.linspace() では「<strong>開始値 (以上)</strong>」と「<strong>終了値
-      (以下)</strong>」と「分割数」を与えて <code>ndarray</code>
-      型を生成することができます。例えば「0.00」以上「3.00」以下の範囲を13等分 (結果的には0.25刻み)
-      にする場合は次のようにします。</p>
+      <p><code>np.linspace()</code>
+      では「<strong>開始値</strong>」と「<strong>終了値</strong>」と「<strong>要素数</strong>」を与えて
+      <code>ndarray</code>
+      型を生成することができます。デフォルトでは両端の値を含みます。例えば「0.00」以上「3.00」以下の範囲を12等分し、両端を含む13個の値
+      (0.25刻み) を生成する場合は次のようにします。</p>
       <div class="sourceCode" id="cb32" data-caption="np.linspace() による初期化"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb32-2"><a href="#cb32-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -886,7 +902,7 @@ class="toc-section-number">8</span> GoogleColab の ノートブックを GitHub
       <div class="sourceCode" id="cb36" data-caption="数学関数の数値計算"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb36-2"><a href="#cb36-2"></a><span class="im">import</span>  numpy <span class="im">as</span> np</span>
-<span id="cb36-3"><a href="#cb36-3"></a>x <span class="op">=</span> np.linspace(<span class="fl">0.0</span>,<span class="fl">1.0</span>,<span class="dv">11</span>) <span class="co"># 0.0 から 1.0 の範囲を11等分</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>x <span class="op">=</span> np.linspace(<span class="fl">0.0</span>,<span class="fl">1.0</span>,<span class="dv">11</span>) <span class="co"># 0.0 から 1.0 の範囲を10等分し、両端を含む11個の値を生成</span></span>
 <span id="cb36-4"><a href="#cb36-4"></a><span class="bu">print</span>(<span class="ss">f&#39;x = </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">&#39;</span>)</span>
 <span id="cb36-5"><a href="#cb36-5"></a></span>
 <span id="cb36-6"><a href="#cb36-6"></a>y <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">3</span> <span class="co"># ブロードキャストによる計算</span></span>
@@ -929,8 +945,8 @@ y = [3.  3.2  3.4  3.6  3.8  4.   4.2  4.4  4.6  4.8  5. ]</code></pre>
 <span id="cb38-10"><a href="#cb38-10"></a>fig,ax <span class="op">=</span> plt.subplots(dpi<span class="op">=</span><span class="dv">120</span>)</span>
 <span id="cb38-11"><a href="#cb38-11"></a><span class="co"># ax.plot(x,y)</span></span>
 <span id="cb38-12"><a href="#cb38-12"></a>ax.scatter(x,y,marker<span class="op">=</span><span class="st">&#39;o&#39;</span>,s<span class="op">=</span><span class="dv">15</span>,alpha<span class="op">=</span><span class="fl">0.5</span>) <span class="co"># x と y を与えて丸を描画</span></span>
-<span id="cb38-13"><a href="#cb38-13"></a>ax.axhline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>) <span class="co"># y=0 に太線を描画</span></span>
-<span id="cb38-14"><a href="#cb38-14"></a>ax.axvline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>) <span class="co"># x=0 に太線を描画</span></span>
+<span id="cb38-13"><a href="#cb38-13"></a>ax.axhline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>) <span class="co"># y=0 に線を描画</span></span>
+<span id="cb38-14"><a href="#cb38-14"></a>ax.axvline(<span class="dv">0</span>,c<span class="op">=</span><span class="st">&#39;black&#39;</span>,lw<span class="op">=</span><span class="fl">0.5</span>) <span class="co"># x=0 に線を描画</span></span>
 <span id="cb38-15"><a href="#cb38-15"></a>ax.grid() <span class="co"># グリッドの表示</span></span>
 <span id="cb38-16"><a href="#cb38-16"></a>plt.show()</span></code></pre></div>
       <p>このプログラムでは、特に <strong>第12行目</strong> で「<code>ndarray</code> 型の
@@ -1017,8 +1033,7 @@ y = [3.  3.2  3.4  3.6  3.8  4.   4.2  4.4  4.6  4.8  5. ]</code></pre>
       <p>実行結果の一例を示します。</p>
       <pre><code>60.3 ms ± 835 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 7.78 ms ± 664 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)</code></pre>
-      <p>この結果から、NumPyを使用した場合、配列の平均値を計算する時間が格段に短くなっていることが分かります。これは
-      NumPy ライブラリが「C言語」で実装されており、そこで計算が実行されているためです。</p>
+      <p>この結果から、NumPyを使用した場合、配列の平均値を計算する時間が格段に短くなっていることが分かります。これは、数値配列に対する計算が「C言語」などで実装された処理で実行され、Pythonオブジェクトのリストを使う場合の処理負担を減らせるためです。</p>
       <p><code>60.3 ms ± 835 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)</code>
       は、「このプログラム (当該行の文) は平均して 60.3 ミリ秒で実行され 835マイクロ秒
       の標準偏差があります。この計測は 7回 の試行で行われ、各試行は 10回
