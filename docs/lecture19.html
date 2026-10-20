@@ -286,8 +286,8 @@ class="toc-section-number">6</span> 大学編入試の問題に挑戦 (1)</a></l
       <div class="note type-tips">
       <p><strong>第一級オブジェクト</strong></p>
       <p>Python
-      では、関数も数値や文字列などと同じように、変数に代入したり、他の関数の引数として渡したりできます。このように扱えるものを「**第一級オブジェクト
-      (First-class Object)」と呼ばれます。</p>
+      では、関数も数値や文字列などと同じように、変数に代入したり、他の関数の引数として渡したりできます。このように扱えるものを「<strong>第一級オブジェクト</strong>
+      (First-class Object)」と呼びます。</p>
       </div>
       <div class="prompts">
       <ul>
@@ -752,8 +752,11 @@ class="toc-section-number">6</span> 大学編入試の問題に挑戦 (1)</a></l
 <span id="cb29-4"><a href="#cb29-4"></a>fn <span class="op">=</span> <span class="st">&#39;score-1.csv&#39;</span></span>
 <span id="cb29-5"><a href="#cb29-5"></a>df <span class="op">=</span> pd.read_csv(fn,encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="co"># &#39;score-1.csv&#39; を読み込み</span></span>
 <span id="cb29-6"><a href="#cb29-6"></a><span class="bu">print</span>(df.dtypes)</span></code></pre></div>
-      <p>実行結果は次のようになるはずです (実際に実行して確認してください) 。最終行の
+      <p>実行結果は次のようになります (実際に実行して確認してください) 。最終行の
       <code>dtype: object</code> は無視して構いません。</p>
+      <p>なお、本資料の型の表示例は Pandas 2.x の標準設定に基づいています。Pandas 3.0
+      以降では、文字列を含む列の型が <code>object</code> ではなく <code>str</code>
+      と表示されますが、以下の処理は同じように進められます。</p>
       <pre><code>ID      int64
 氏名     object
 性別     object
@@ -764,11 +767,9 @@ class="toc-section-number">6</span> 大学編入試の問題に挑戦 (1)</a></l
 社会    float64
 備考     object
 dtype: object</code></pre>
-      <p>列の要素に「<strong>文字列</strong>」が含まれる場合、型は <code>object</code>
-      になります。列のうち「<strong>氏名</strong>」「<strong>性別</strong>」「<strong>備考</strong>」に加えて
+      <p>この表示例では、文字列を含む「<strong>氏名</strong>」「<strong>性別</strong>」「<strong>備考</strong>」に加えて
       <span class="masked">「欠」という文字列を含む「数学」</span> も <code>object</code>
-      となっています。<code>object</code>
-      に対しては、算術演算や、合計・平均などの統計処理ができません。</p>
+      となっています。「数学」の列を数値として集計するには、文字列の「欠」を欠損値に置き換え、列の型を数値型に変換する必要があります。</p>
       <p>また、列要素のすべてが「<strong>整数</strong>」に変換できる場合、型は <code>int64</code>
       になります。これは「<strong>64ビットの整数型</strong>」を意味しており <span
       class="math inline">\(-2^{63}\)</span> から <span class="math inline">\(2^{63}-1\)</span>
@@ -778,13 +779,12 @@ dtype: object</code></pre>
       <p>列要素に「<strong>実数値 (小数)</strong>」を含む場合、型は <code>float64</code>
       になります。「<strong>社会</strong>」の列には「洞木 ヒカリ」の成績 <code>90.5</code>
       を含むため <code>float64</code> となります。</p>
-      <p>繰返しになりますが、<span
-      class="masked">列内に整数型と浮動小数点数型を混在させること</span> はできません。型が
-      <code>float64</code> の場合、整数値であっても <code>90.0</code>
-      のように小数部のついた表示となります。</p>
+      <p>このような数値の列では、整数と小数が混ざっていると、<span class="masked">小数を扱える
+      <code>float64</code> 型に統一</span> されます。型が <code>float64</code>
+      の場合、整数値であっても <code>90.0</code> のように小数部のついた表示となります。</p>
       </div>
       <p>DataFrame に対して、各種操作 (列同士の計算などを含む)
-      をするためには、不適切な値の修正をして、型を統一しておく必要があります。これらの処理を
+      をするためには、不適切な値を修正したり、計算対象の列を数値型に変換したりしておく必要があります。これらの処理を
       <strong><em>前処理</em></strong> (<strong>Preprocessing</strong>) と言います。</p>
       <h2 data-number="5.3" id="準備-インデックスの設定"><span
       class="header-section-number">5.3</span> 準備: インデックスの設定</h2>
@@ -894,11 +894,13 @@ dtype: object</code></pre>
       <h2 data-number="5.5" id="前処理-型の変換"><span class="header-section-number">5.5</span>
       前処理: 型の変換</h2>
       <p>現状で「国語」「英語」「理科」の型は <code>int64</code>、「社会」の型は
-      <code>float64</code>、「数学」の型は <code>object</code>
-      のようにバラバラです。この状態では「5科目の合計点」などを適切に求めることができません。そのため、これらの列の「型」を全て
-      <code>float64</code> に変換します。なお、これらは 成績 (得点) なので <code>int64</code>
-      のほうが適切ですが <span class="masked"><code>int64</code> では <code>NaN</code>
-      を扱えない</span> ため、<code>float64</code> に変換します。</p>
+      <code>float64</code> ですが、「数学」はまだ文字列を含む列の型 (<code>object</code>、Pandas 3.0
+      以降では <code>str</code>)
+      になっています。「5科目の合計点」などを求めるために、まず「数学」を数値型に変換する必要があります。ここでは扱いを分かりやすくするため、5科目の型を全て
+      <code>float64</code> にそろえます。なお、<code>int64</code> と <code>float64</code>
+      の列同士は、そのままでも計算できますが <span class="masked"><code>int64</code> では
+      <code>NaN</code> を扱えない</span> ため、欠損値を含む「数学」には <code>float64</code>
+      を使います。</p>
       <p>型の変換には <code>astype</code> メソッドを利用します (<code>astype</code> には
       <code>inplace</code>
       オプションはありません)。また、以降の処理で「<strong>ID</strong>」と「<strong>備考</strong>」の列は不要なので、ここで<strong>削除</strong>
@@ -1196,6 +1198,9 @@ dtype: object</code></pre>
       <code>mean</code> の他に、最大値を求める <code>max</code> メソッド、最小値を求める
       <code>min</code> メソッド、<span class="masked">中央値</span> を求める <code>median</code>
       メソッドなどがあります。</p>
+      <p>なお、<code>sum</code> や <code>mean</code> は、標準では欠損値 (<code>NaN</code>)
+      を除外して計算します。そのため、数学が欠損値の「綾波
+      レイ」の平均点は、残りの4科目の平均になります。</p>
       <hr />
       <p><strong>第10行目</strong>
       では「<strong>60点未満の科目数</strong>」をカウントしています。この部分は、やや複雑なので
@@ -1225,6 +1230,8 @@ dtype: object</code></pre>
       の合計を求めています。<code>sum</code> や <code>mean</code>
       などのメソッドで、<code>True</code> は「1」、<code>False</code>
       は「0」として扱われます。これにより、欠点科目数のカウントができています。</p>
+      <p>ここで、<code>NaN &lt; 60</code> は <code>False</code>
+      になるため、この例では欠損値は欠点科目数に含めません。</p>
       <hr />
       <ul>
       <li><p><strong>演習1</strong>: <code>集計処理.py</code> の第08行目を <code>sum(axis=1)</code>
@@ -1260,6 +1267,8 @@ dtype: object</code></pre>
       <code>df2</code> という DataFrameオブジェクト を作成・整形出力する例です。ここでは
       <code>lambda p: '合格' if p &gt;=60 else '不合格'</code>
       という条件式を含んだ「ラムダ式」を利用しています。</p>
+      <p>ただし、欠損値 (<code>NaN</code>) に対する <code>p &gt;= 60</code> の比較結果も
+      <code>False</code> になるため、この例では欠損値も「不合格」になります。</p>
       <div class="sourceCode" id="cb47" data-caption="合格・不合格.py"><pre
       class="sourceCode numberSource python numberLines"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a><span class="op">%</span>reset <span class="op">-</span>f</span>
 <span id="cb47-2"><a href="#cb47-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -1277,7 +1286,8 @@ dtype: object</code></pre>
       <figcaption aria-hidden="true">img</figcaption>
       </figure>
       <p>なお <code>print(df2.dtypes)</code> を実行すると次のようになります (各列の型が
-      <code>float64</code> から <code>object</code> (文字列) になっていることが確認できます)。</p>
+      <code>float64</code> から、文字列を含む列の型である <code>object</code>、Pandas 3.0 以降では
+      <code>str</code> になっていることが確認できます)。</p>
       <pre><code>国語    object
 数学    object
 英語    object
@@ -1362,8 +1372,9 @@ dtype: object</code></pre>
       <p>実際の試験ではPC（各種言語の実行・開発環境）を使用することはできません（紙と鉛筆、頭だけを用いて解答する必要があります）。しかし、<strong>入試勉強として取り組む際には</strong>、単に問題を眺めて挑むのではなく
       <span
       class="masked">PCを使って実際に手を動かしてコーディング・実行し、それを通じて理解を深め、思考力を鍛えること</span>
-      を<strong>強く推奨</strong>します。上記の問題であれば <strong>第19行目</strong>
-      の周辺に、ループ毎の変数値を出力する文を追加することは非常に効果的です。</p>
+      を<strong>強く推奨</strong>します。上記の問題であれば <strong>第16行目の直後</strong>
+      (<code>for</code> 文のブロック内)
+      に、ループ毎の変数値を出力する文を追加することは非常に効果的です。</p>
       <div class="balloon char-01 face-02 tone-yellow">
       <p>C言語の実行開発については、昨年度の「<strong>情報1</strong>」の第10回講義で紹介しているように
       <a href="https://paiza.io/ja">Paiza.IO</a>

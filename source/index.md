@@ -15,7 +15,9 @@ var:
 - 第16回講義 10月02日 (金)&ensp;[資料](lecture16.html) &ensp; **_小テスト6_** <font size="-1">Git/GitHub 3, チーム開発</font>
 - 第17回講義 10月09日 (金)&ensp;[資料](lecture17.html) &ensp; <font size="-1">リスト (復習), タプル, Numpy</font>
 - 第18回講義 10月16日 (金)&ensp;[資料](lecture18.html) &ensp; **_課題06_** <font size="-1">論理演算, テキストファイルの入出力, シリアライズとデシリアライズ</font>
-- 第19回講義 10月23日 (金)&ensp;資料 <font size="-1">ラムダ式, map, Pandas入門</font>
+- 第19回講義 10月23日 (金)&ensp;[資料](lecture19.html)  &ensp; <font size="-1">ラムダ式, map, Pandas入門</font>
+- 第20回講義 10月30日 (金)&ensp;資料  &ensp; <font size="-1">NumPy, ベクトルと行列の計算, 幾何変換 (移動・拡大縮小・回転)</font>
+
 
 ### 前期
 
