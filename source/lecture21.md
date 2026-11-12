@@ -90,9 +90,9 @@ $$ 256\times256\times256 = 16,777,216$$
 
 2年後期の「メディアデザイン入門」でも学んでいるように、色の表現としては「**HSV色モデル**」もあります。HSVは「**色相 (Hue)**」「**彩度 (Saturation)**」「**明度 (Value)**」の3つの要素の組み合わせで色を表現します。
 
-- **色相**: 色の種類を表し、赤、黄、緑、青など色彩の違いを示します。色相は円状に配置され、0度 (赤) から 360度 (赤) の範囲で表されます。OpenCV では `0` (赤) から `255` (赤) の 1バイト (8ビット) の範囲にマッピングされます。
+- **色相**: 色の種類を表し、赤、黄、緑、青など色彩の違いを示します。色相は円状に配置され、0度 (赤) から 360度 (赤) の範囲で表されます。OpenCV で8ビット画像を `cv2.COLOR_BGR2HSV` で変換すると、色相は `0` から `179` の整数値になります。`cv2.COLOR_BGR2HSV_FULL` を使う場合は `0` から `255` になります。
 - **彩度**: 色の「**鮮やか**」さを表し、0％（無彩色）から100％（純色）までの範囲で示されます。OpenCV では `0` から `255` の整数値にマッピングされます。
-- **明度**: 色の「**明るさ**」を表し、0％（完全な黒）から100％（完全な白）までの範囲で示されます。OpenCV では `0` から `255` の整数値にマッピングされます。
+- **明度**: 色の「**明るさ**」を表し、0％（黒）から100％までの範囲で示されます。明度が100％のとき、彩度が0％なら白になります。鮮やかな赤も明度は100％です。OpenCV では `0` から `255` の整数値にマッピングされます。
 
 「**肌色の検出**」のような画像処理タスクでは、RGBモデルよりも、HSVモデルが特に有効です。肌色 (=ペールオレンジ、ベージュ) は特定の色相 (Hue) の範囲にあるため、HSVモデルであれば主に色相の情報を使って比較的容易に肌色を検出することができます。
 
@@ -296,7 +296,7 @@ shape => (480, 640)
 
 ### 画像の表示
 
-OpenCV では `cv2.imshow` 関数により、以下の画像のように **ウィンドウ** を立ち上げて画像を表示させることができます。しかし、この `cv2.imshow` は **GUI 関連の処理** を含むため <span class="masked">ローカルに構築した Jupyter環境 や GoogleColab環境 では利用すること</span> ができません。また、プログラム終了とともにウィンドウも消えるため、あとから画像を確認したいような場合にも適しません (画像処理の前後を比較したい場合などに非常に不便です)。
+OpenCV では `cv2.imshow` 関数により、以下の画像のように **ウィンドウ** を立ち上げて画像を表示させることができます。`cv2.imshow` を使うには、Python を実行する環境で **GUI のウィンドウを開けること** が必要です。ローカルの Jupyter環境 では環境の構成によって利用できます。GoogleColab環境 では **表示方法4** を使ってください。また、プログラム終了とともにウィンドウも消えるため、あとから画像を確認したいような場合にも適しません (画像処理の前後を比較したい場合などに非常に不便です)。
 
 ![img](figs/21/cv-img-show-01.png)
 
@@ -305,7 +305,7 @@ OpenCV では `cv2.imshow` 関数により、以下の画像のように **ウ�
 
 #### 表示方法1
 
-`cv2.imshow` を使ってウィンドウに画像を表示する方法です。この方法は **Jupyter環境 や GoogleColab環境 では使用できません**。この方法では、ウィンドウが閉じられるまで**プログラムをブロック**します。つまり、<span class="masked">ウィンドウが閉じられるまで `my_imshow` 関数以降のプログラムが実行されません</span>。
+`cv2.imshow` を使ってウィンドウに画像を表示する方法です。この授業では、**ローカルPCの VS Code のターミナルから実行**してください。この方法では、ウィンドウが閉じられるまで**プログラムをブロック**します。つまり、<span class="masked">ウィンドウが閉じられるまで `my_imshow` 関数以降のプログラムが実行されません</span>。
 
 実際に試してみてください。特に、ウィンドウが閉じられるまで[ほげほげ](https://www.google.com/search?q=ほげほげ)という文字列が出力されない (=**プログラムがブロックされること**) を確認してください。
 
@@ -330,7 +330,7 @@ print('ほげほげ')
 
 #### 表示方法2
 
-この方法も **Jupyter環境 や GoogleColab環境 では使用できません**。**_方法1_** との違いは「**プログラムがブロックされないこと**」と「<span class="masked">プログラムが終了してもウィンドウが残っていること</span>」です。
+この授業では、この方法も **ローカルPCの VS Code のターミナルから実行**してください。**_方法1_** との違いは「**プログラムがブロックされないこと**」と「<span class="masked">プログラムが終了してもウィンドウが残っていること</span>」です。
 
 ```python{.numberLines caption="show_img_2.py (表示方法2)"}
 import cv2
@@ -368,7 +368,7 @@ import matplotlib.pyplot as plt  # 要import
 
 def my_imshow(img):
   if img.ndim == 2:
-    plt.imshow(img,cmap='gray')
+    plt.imshow(img, cmap='gray', vmin=0, vmax=255)
   else:
     tmp = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
     plt.imshow(tmp)
@@ -393,7 +393,7 @@ print('ほげほげ')
 def my_imshow(img):
   fig, ax = plt.subplots()
   if img.ndim == 2:
-    ax.imshow(img, cmap='gray')
+    ax.imshow(img, cmap='gray', vmin=0, vmax=255)
   else:
     tmp = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     ax.imshow(tmp)
@@ -671,7 +671,7 @@ assert img2.dtype == np.uint8
 
 変更されているのは **第16行目** となります。ここで `img[:,:,0]` は `img[0:480,0:640,0]` の省略表記になります。スライスについて、いまいち分からないという場合は「[numpy スライス 解説](https://www.google.com/search?q=numpy+スライス+解説)」などで検索して解説記事を読んでください。
 
-なお、**第16行目** の計算には小数が含まれるため、計算結果の ndarrayオブジェクト の要素の型 (`dtype`) は `float64` になります。`dtype` が `float64` の ndarrayオブジェクト は `cv2.imshow` で画像として表示ができません。そのため **第18行目** で 要素の型 (`dtype`) を `uint8` に変換しています。
+なお、**第16行目** の計算には小数が含まれるため、計算結果の ndarrayオブジェクト の要素の型 (`dtype`) は `float64` になります。`cv2.imshow` は `float64` の画像では `0` を黒、`1` を白として表示します。この計算結果の画素値は `0` から `255` の範囲なので、そのまま表示すると明るい部分が白くつぶれます。そこで **第18行目** で `uint8` に変換し、`0` から `255` を黒から白までの明るさとして表示できるようにしています。
 
 **演習1**: `img[:,:,0]` を `img[0:480,0:640,0]` のように書き換え、同様に `img[:,:,1]` と `img[:,:,2]` も書き換え、問題なく動作することを確認せよ。
 
@@ -740,7 +740,7 @@ assert tmp.dtype == np.float64
 img2 = np.clip(tmp,0,255).astype(np.uint8)
 ```
 
-上記の **第01行目** では **正規分布** (「情報1」の第12回講義を参照) に従うノイズを発生させて `img2` に加算しています。`np.random.normal` で生成される多次元配列は `dtype` が `np.float64` です。そのため、**第02行目** でアサート文で確認しているように `tmp` の `dtype` も `np.float64` になります。このままでは**画像として利用できない**ので、**第03行目**で、最小値を0、最大値を255 にクリップして、さらに `astype` メソッドで型を `np.uint8` に変換しています。
+上記の **第01行目** では **正規分布** (「情報1」の第12回講義を参照) に従うノイズを発生させて `img2` に加算しています。`np.random.normal` で生成される多次元配列は `dtype` が `np.float64` です。そのため、**第02行目** でアサート文で確認しているように `tmp` の `dtype` も `np.float64` になります。8ビット画像の画素値として使うため、**第03行目**で、最小値を0、最大値を255 にクリップして、さらに `astype` メソッドで型を `np.uint8` に変換しています。
 
 - ウェブ検索「[NumPy clip](https://www.google.com/search?q=numpy+clip)」
 - ウェブ検索「[NumPy astype](https://www.google.com/search?q=numpy+astype)」
@@ -763,7 +763,6 @@ PCに接続されたカメラから撮影した画像を ndarrayオブジェク�
 
 ```python{.numberLines caption="camera_1.py カメラから画像を取得して表示・保存"}
 import cv2
-import numpy as np
 import time
 from datetime import datetime as dt
 
@@ -794,16 +793,16 @@ for i in range(3,0,-1):
 
 # カメラ映像を取得して img に格納。成否を ret に格納
 ret, img = cap.read()
-assert type(ret) == bool
-assert type(img) == np.ndarray
 
 # キャプチャした画像を表示・保存
 if ret:
   print(f'撮影ッ!!')
   my_imshow(img)
   fn = dt.now().strftime('photo-%Y%m%d-%H%M%S.jpg')
-  cv2.imwrite(fn,img)
-  print(f'写真を {fn} に保存しました。')
+  if cv2.imwrite(fn, img):
+    print(f'写真を {fn} に保存しました。')
+  else:
+    print(f'写真を {fn} に保存できませんでした。')
 else:
   print('カメラから画像を取得できませんでした。')
 
@@ -811,13 +810,13 @@ else:
 cap.release()
 ```
 
-**第19行目** の `cv2.VideoCapture(0)` の引数 (この例では `0`) では、接続するカメラを選択しています。例えば、PCにフロントカメラとリアカメラがあって `cv2.VideoCapture(0)` では使いたいほうのカメラが利用できない場合は、`cv2.VideoCapture(1)` を指定します。同様に、USBカメラなどを接続していて、そちらに切り替えたい場合は、引数の数値を変えることで切り替えが可能になります。存在しないカメラを指定した場合は、**第23行目** の例外処理により、プログラムが強制終了します。
+**第18行目** の `cv2.VideoCapture(0)` の引数 (この例では `0`) では、接続するカメラを選択しています。例えば、PCにフロントカメラとリアカメラがあって `cv2.VideoCapture(0)` では使いたいほうのカメラが利用できない場合は、`cv2.VideoCapture(1)` を指定します。同様に、USBカメラなどを接続していて、そちらに切り替えたい場合は、引数の数値を変えることで切り替えが可能になります。存在しないカメラを指定した場合は、**第22行目** の例外処理により、プログラムが強制終了します。
 
-**第27行目** では、カメラ側でのオートフォーカスや、自動明るさ調整をカメラにさせるために仮撮影をしています。カメラの種類によっては、**第27行目** を実行しなくても (コメントアウトしてしまっても) 問題ありません。
+**第26行目** では、カメラ側でのオートフォーカスや、自動明るさ調整をカメラにさせるために仮撮影をしています。カメラの種類によっては、**第26行目** を実行しなくても (コメントアウトしてしまっても) 問題ありません。
 
-もし、撮影した画像に対して画像処理を行いたい場合は、**第38行目** 以降に `img` に対する処理を記述します。
+もし、撮影した画像に対して画像処理を行いたい場合は、`if ret:` の中で、`my_imshow(img)` の前に `img` に対する処理を記述します。
 
-**演習**: **第27行目** をコメントアウトした場合の結果について確認せよ。
+**演習**: **第26行目** をコメントアウトした場合の結果について確認せよ。
 
 <div class="note type-senior">
 **ローカルPCのJupyter環境で実行**
@@ -827,10 +826,9 @@ cap.release()
 ```python{.numberLines caption="camera_1.ipynb カメラから画像を取得して表示・保存 (Jupyter版)"}
 %reset -f
 import cv2
-import numpy as np
 import time
 from datetime import datetime as dt
-from IPython.display import Image   # 要import
+from IPython.display import Image, display
 
 # PCに接続されているカメラと接続
 cap = cv2.VideoCapture(0)
@@ -847,30 +845,28 @@ for i in range(3,0,-1):
 
 # カメラ映像を取得して img に格納。成否を ret に格納
 ret, img = cap.read()
-assert type(ret) == bool
-assert type(img) == np.ndarray
 
 # キャプチャした画像を表示・保存
-fn = 'dummy.jpg'
 if ret:
   print(f'撮影ッ!!')
   fn = dt.now().strftime('photo-%Y%m%d-%H%M%S.jpg')
-  cv2.imwrite(fn,img)
-  print(f'写真を {fn} に保存しました。')
+  if cv2.imwrite(fn, img):
+    print(f'写真を {fn} に保存しました。')
+    display(Image(filename=fn))  # 出力セルに表示
+  else:
+    print(f'写真を {fn} に保存できませんでした。')
 else:
   print('カメラから画像を取得できませんでした。')
 
 # カメラと接続を解除 (カメラリソースの解放)
 cap.release()
-
-Image(open(fn,'rb').read()) # 出力セルに表示
 ```
 
 </div>
 
 ### カメラから連続的に画像を取得して処理
 
-カメラから連続的に画像を取得して処理したい場合は、次のようにプログラムを構成します (このプログラムは Jupyter環境では動作しません)。
+カメラから連続的に画像を取得して処理したい場合は、次のようにプログラムを構成します (この授業では、ローカルPCの VS Code のターミナルから実行してください)。
 
 ```python{.numberLines caption="camera_2.py カメラから連続的に画像を取得して処理"}
 import numpy as np

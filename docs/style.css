@@ -259,15 +259,17 @@ div.sourceCode {
   counter-reset: pg-line;
 }
 
-div.sourceCode[data-caption]::before {
+div.sourceCode > .code-caption {
   font-family:
     "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
     Courier, monospace;
   display: block;
   padding-left: 20px;
+  padding-right: 2.5em;
   background: var(--code-pg-foreground);
   color: var(--code-pg-background);
-  content: attr(data-caption);
+  cursor: text;
+  user-select: text;
 }
 
 /* ------- プログラムコード::行番号 ------- */
@@ -1233,6 +1235,62 @@ code span.al {
 /* その他 */
 code span.ot {
   color: #24292e;
+}
+
+/* ------- Bash: 濃紺背景用の配色 ------- */
+
+/* Pandoc は言語クラスを外側の div ではなく pre/code に付ける。 */
+div.sourceCode:has(> pre.bash) {
+  --code-pg-background: #012456;
+  --code-pg-foreground: #f1f5f9;
+  --code-ln-foreground: #a6b8cf;
+}
+
+div.sourceCode:has(> pre.bash) > .code-caption {
+  background: #071a35;
+  color: var(--code-pg-foreground);
+}
+
+div.sourceCode:has(> pre.bash) .copy-btn {
+  color: var(--code-pg-foreground);
+  opacity: 0.8;
+}
+
+div.sourceCode:has(> pre.bash) .copy-btn:is(:hover, :focus-visible) {
+  opacity: 1;
+}
+
+.markdown-body pre.bash code span {
+  color: var(--code-pg-foreground);
+}
+
+.markdown-body pre.bash code :is(.kw, .cf, .dt, .im, .at, .pp) {
+  color: #c4b5fd;
+}
+
+.markdown-body pre.bash code :is(.fu, .bu, .ex, .wa) {
+  color: #fde68a;
+}
+
+.markdown-body pre.bash code :is(.st, .ss, .vs, .ch, .sc) {
+  color: #a7f3d0;
+}
+
+.markdown-body pre.bash code .va {
+  color: #7dd3fc;
+}
+
+.markdown-body pre.bash code :is(.dv, .fl, .bn, .cn) {
+  color: #fdba74;
+}
+
+.markdown-body pre.bash code :is(.co, .do, .an, .cv, .in),
+.markdown-body pre.bash code > span > a {
+  color: var(--code-ln-foreground);
+}
+
+.markdown-body pre.bash code :is(.er, .al) {
+  color: #fda4af;
 }
 
 /* ------- ナビゲーション ------- */

@@ -107,5 +107,16 @@
     });
   }
 
+  function setupCodeCaptions() {
+    document.querySelectorAll("div.sourceCode[data-caption]").forEach((block) => {
+      if (block.querySelector(":scope > .code-caption")) return;
+      const caption = document.createElement("div");
+      caption.className = "code-caption";
+      caption.textContent = block.getAttribute("data-caption");
+      block.prepend(caption);
+    });
+  }
+
+  setupCodeCaptions();
   setupPrompts();
 })();
