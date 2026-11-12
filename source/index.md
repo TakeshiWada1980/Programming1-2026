@@ -17,8 +17,10 @@ var:
 - 第18回講義 10月16日 (金)&ensp;[資料](lecture18.html) &ensp; **_課題06_** <font size="-1">論理演算, テキストファイルの入出力, シリアライズとデシリアライズ</font>
 - 第19回講義 10月23日 (金)&ensp;[資料](lecture19.html) &ensp; <font size="-1">ラムダ式, map, Pandas入門</font>
 - 第20回講義 10月30日 (金)&ensp;[資料](lecture20.html) &ensp; <font size="-1">NumPy, ベクトルと行列の計算, 幾何変換 (移動・拡大縮小・回転)</font>
-- 第21回講義 11月13日 (金)&ensp;資料 &ensp; **_小テスト7_** <font size="-1">OpenCV による画像処理の基礎</font>
+- 第21回講義 11月13日 (金)&ensp;[資料](lecture21.html) &ensp; **_小テスト7_** <font size="-1">OpenCV による画像処理の基礎</font>
 - 補講 (オンデマンド) 11月14日 (土) &ensp;[資料](additional02.html)&ensp;
+- ～後期中間試験期間～
+- 第22回講義 12月04日(金)&ensp;資料&ensp; <font size="-1">PyGame, OpenCV, 開発環境構築</font>
 
 ### 前期
 
