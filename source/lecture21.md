@@ -12,32 +12,24 @@ var:
 
 - 今回「**小テスト❼**」を実施します。鉛筆と消しゴムを準備してください。
 - 後期中間の成績は **_小テスト❻・❼_** と **_課題06_** で評価します。
-  - シラバス記載のように、課題 **7割**、小テスト **3割** で評価します。
+  - シラバス記載のように、課題「**7割**」、小テスト「**3割**」で評価します。
 
-- [課題06](lecture18.html#課題06-ポートフォリオ制作) (ポートフォリオ) の[作品共有](https://omunet-my.sharepoint.com/:t:/g/personal/z21707r_omu_ac_jp/EcJwJ2lr6IxFozn_2lk7m6MB6PySj6NiE7ZfZXXHDbLnXQ?e=gVwSVv) <font size="-1">(学内のみ)</font>
+- [課題06](lecture18.html#課題06-ポートフォリオ制作) (ポートフォリオ) の [作品共有](https://omunet-my.sharepoint.com/:t:/g/personal/z21707r_omu_ac_jp/IQDC6QyXroEtTqpZ6Iz8GdDQAXyHAs3t6JGkZQvUPfEy4VA?e=CxhF07) <font size="-1">(学内のみ)</font>
   - 未提出の学生は、直ちに提出してください。11月19日 (木) 17時を過ぎると受付終了して「0点」で評価確定です。
 
 ### 今回講義の達成目標
 
-今回の講義では [OpenCV](https://ja.wikipedia.org/wiki/OpenCV) を利用した**画像処理の基礎**について学びます。
+今回の講義では [OpenCV](https://ja.wikipedia.org/wiki/OpenCV) を利用した「**画像処理の基礎**」について学びます。
 
-- OpenCV における画像データの扱いについて理解し、その画像の基本情報を確認できる。
-- スライス機能を利用して画像データに対する初歩的な操作ができる。
-- OpenCV からカメラ画像を取得することができる。
-
-### プログラミング3の作品共有
-
-3年後期の[プログラミング3](https://takeshiwada1980.github.io/Programming3-2025/)(ウェブアプリ開発)の **_課題1_** **オリジナルTodoアプリの開発** の学生作品を共有します。ウェブ系のエンジニアを目指す学生は、授業を待たずに先取りして学んでください。
-
-- [2025-PG3-課題1](https://omunet-my.sharepoint.com/:t:/g/personal/z21707r_omu_ac_jp/EbU8myRl3IJJny0f_QNRyHIBanMY_sgtuBABoS0nf1rszg?e=7J9XuH)(OneDrive学内のみ)
-  - 上段が **アプリ本体** のURL、下段が **Readme** のURLです。
-  - データはブラウザのローカルストレージに保存される仕組みなので、<u>入力した内容は他者に見られることはありません</u>。タスクの追加、内容の変更、削除など、<span class="masked">自由に操作していただいて問題ありません (＝他のユーザが影響を受けることはありません)</span>。ブラウザを閉じても保存したデータは消えないため、継続的に利用可能です。
+1. OpenCV における画像データの扱いについて理解し、その画像の基本情報を確認できる。
+2. スライス機能を利用して画像データに対する初歩的な操作ができる。
+3. OpenCV からカメラ画像を取得することができる。
 
 ### 参考: データ処理と可視化の例
 
-前回、前々回で学んだ <span class="masked">numpy、pandas、matplotlib</span> の組み合わせの応用例として[Ambient](https://ambidata.io/)からダウンロードしたCSV (=<span class="masked">Comma Separated Values</span>) を対象とした **データ処理** と **可視化 (グラフ化)** のサンプルを共有しておきます。
+前回、前々回で学んだ <span class="masked">numpy、pandas、matplotlib</span> の組み合わせの応用例として [Ambient](https://ambidata.io/) からダウンロードしたCSV (=<span class="masked">Comma Separated Values</span>) を対象とした **データ処理** と **可視化 (グラフ化)** のサンプルを共有しておきます。
 
-- [AmbientからDLしたCSVの描画](https://colab.research.google.com/drive/1R5wXpQ5gCRdxLjQ6ZIRLOE7RwXFZwvY_?usp=sharing)@Colab.
+- [AmbientからDLしたCSVの描画](https://colab.research.google.com/drive/1R5wXpQ5gCRdxLjQ6ZIRLOE7RwXFZwvY_?usp=sharing) @Colab.
 
 ## コンピュータにおける画像の扱いについて
 
@@ -47,33 +39,51 @@ var:
 
 コンピュータで扱う画像の「形式」には、大きく分けて <span class="masked">ラスター形式 (ビットマップ形式)</span> と <span class="masked">ベクター形式</span> があります。
 
-**ラスター形式 (ビットマップ形式)** は、**格子状に配置したピクセル (点) の集合として表現した形式**で、各ピクセルの色や透明度の集合として構成されます。写真などの複雑な画像にも適した形式となっています。具体的なフォーマットとしては[JPEG](https://ja.wikipedia.org/wiki/JPEG),[PNG](https://ja.wikipedia.org/wiki/Portable_Network_Graphics),[HEIF/HEIC](https://ja.wikipedia.org/wiki/High_Efficiency_Image_File_Format),[GIF](https://ja.wikipedia.org/wiki/Graphics_Interchange_Format),[BMP](https://ja.wikipedia.org/wiki/Windows_bitmap)などがあります。
+**ラスター形式 (ビットマップ形式)** は、**格子状に配置したピクセル (点) の集合として表現した形式**で、各ピクセルの色や透明度の集合として構成されます。写真などの複雑な画像にも適した形式となっています。具体的なフォーマットとしては [JPEG](https://ja.wikipedia.org/wiki/JPEG), [PNG](https://ja.wikipedia.org/wiki/Portable_Network_Graphics), [HEIF/HEIC](https://ja.wikipedia.org/wiki/High_Efficiency_Image_File_Format) , [GIF](https://ja.wikipedia.org/wiki/Graphics_Interchange_Format) , [BMP](https://ja.wikipedia.org/wiki/Windows_bitmap) などがあります。
 
 ![img](figs/21/bitmap-01.png)
 
-**ベクター形式** は、点、線、図形などを定義した**幾何学的な形状情報**（例えば、図形の頂点座標や線幅、端点の形状などの情報）で構成される形式で、<span class="masked">拡大や縮小などの操作をしても画質が劣化しないこと</span> が特徴となっています。そのため、主に「**CAD図面**」や「**テクニカルイラスト**」などに使われる形式となっています。また、「フォント」もベクター形式のデータと言えます。具体的なフォーマットとしては[SVG](https://ja.wikipedia.org/wiki/Scalable_Vector_Graphics),[PDF](https://ja.wikipedia.org/wiki/Portable_Document_Format),[EPS](https://ja.wikipedia.org/wiki/Encapsulated_PostScript),[AI](https://ja.wikipedia.org/wiki/Adobe_Illustrator)などがあります。
+**ベクター形式** は、点、線、図形などを定義した**幾何学的な形状情報**（例えば、図形の頂点座標や線幅、端点の形状などの情報）で構成される形式で、<span class="masked">拡大や縮小などの操作をしても画質が劣化しないこと</span> が特徴となっています。そのため、主に「**CAD図面**」や「**テクニカルイラスト**」などに使われる形式となっています。また、「フォント」もベクター形式のデータと言えます。具体的なフォーマットとしては [SVG](https://ja.wikipedia.org/wiki/Scalable_Vector_Graphics) , [PDF](https://ja.wikipedia.org/wiki/Portable_Document_Format) , [EPS](https://ja.wikipedia.org/wiki/Encapsulated_PostScript) , [AI](https://ja.wikipedia.org/wiki/Adobe_Illustrator) などがあります。
 
-なお、ベクター形式であっても**実際にディスプレイに表示する際にはコンピュータの内部でラスター画像（ピクセルベース）に変換** されています。この変換のことを <span class="masked">ラスタライゼーション</span> といいます。
+::: {.balloon .char-01 .face-05 .tone-blue}
+ベクター形式であっても**実際にディスプレイに表示する際にはコンピュータの内部でラスター画像（ピクセルベース）に変換** されています。この変換のことを「ラスタライゼーション」といいます。
+:::
 
 <div class="note type-tips">
 **代表的なラスター形式の画像フォーマット**
 
 - **JPEG** (**Joint Photographic Experts Group**): 高い圧縮率を持った <span class="masked">不可逆圧縮</span> 形式の画像データです。写真などの保存に使用されます。一方で、アルファチャンネル (透明度) をサポートせず、圧縮による <span class="masked">品質劣化</span> も生じることからロゴやアイコン、テクニカルイラスト、スクリーンショットなどの保存形式として向いていません。様々なOSやアプリ、デバイスで広くサポートされており、ウェブでは標準的な画像形式のひとつになっています。
-- **PNG** (**Portable Network Graphics**): 高い圧縮率を持った <span class="masked">可逆圧縮</span> 形式の画像データです。JPEGとは逆で、アルファチャンネルをサポートして、圧縮による品質劣化がないため、ロゴやアイコン、テクニカルイラスト、スクリーンショットなどの保存形式に適しています。一方で、高画素の写真を PNG 形式にすると <span class="masked">ファイルサイズが非常に大きくなる</span> ので注意が必要です。例えば、縦6000px、横4000px の[写真](figs/21/photo-01.jpg) を PNG形式で保存すると、ファイルサイズが 55MB超 になりますが、JPEGの場合は高品質・低圧縮の設定で 16.5MB、低品質・高圧縮の設定で 2.5MB になります (具体的なファイルサイズは、元の画像が持っている情報量によって大きく変化します)。JPEGと同様にウェブでは標準的な画像形式のひとつになっています。
+- **PNG** (**Portable Network Graphics**): 高い圧縮率を持った <span class="masked">可逆圧縮</span> 形式の画像データです。JPEGとは逆で、アルファチャンネルをサポートして、圧縮による品質劣化がないため、ロゴやアイコン、テクニカルイラスト、スクリーンショットなどの保存形式に適しています。一方で、高画素の写真を PNG 形式にすると <span class="masked">ファイルサイズが非常に大きくなる</span> ので注意が必要です。例えば、縦6000px、横4000px の [写真](figs/21/photo-01.jpg) を PNG形式で保存すると、ファイルサイズが 55MB超 になりますが、JPEGの場合は高品質・低圧縮の設定で 16.5MB、低品質・高圧縮の設定で 2.5MB になります (具体的なファイルサイズは、元の画像が持っている情報量によって大きく変化します)。JPEGと同様にウェブでは標準的な画像形式のひとつになっています。
 - **HEIF/HEIC** (**High Efficiency Image File Format / High Efficiency Image Coding**): 比較的新しいファイル形式で、高画質を維持した高圧縮（不可逆圧縮）が可能で、ファイルサイズを <span class="masked">同品質の JPEG の半分程度</span> に抑えることができます。iPhone や iPad で写真撮影したときのデフォルトの保存形式となっています。またアルファチャンネルもサポートします。ただし、JPEG や PNG と比較するとサポートしている OS・アプリ、デバイスが少ないという現状です。実際、<span class="masked">OpenCV (4.12.0) も、HEIF/HEIC の読込みには対応していません</span>。また、ウェブの標準的な画像形式ではありません (ウェブページに使用することは避けてください)。
 </div>
 
+
+#### 定着確認
+
+- JPEG、PNG、SVG を「ラスター形式」または「ベクター形式」に分類せよ。
+  - **答え**: <span class="masked">ラスター形式はJPEGとPNG、ベクター形式はSVG。</span>
+- 背景を透明にしたロゴをラスター画像として保存する場合、JPEGとPNGのどちらが適しているか。理由も答えよ。
+  - **答え**: <span class="masked">PNG。透明度を表すアルファチャンネルをサポートしているため。</span>
+- ベクター画像をラスター画像に変換する処理を何というか答えよ。
+  - **答え**:<span class="masked">ラスタライゼーション</span>
+
 ### ラスター形式における色情報の管理
 
-ラスター形式の画像において「カラー画像」の表現には、**RGB色モデル** (RGBカラーモデル) が一般的に用いられます。このモデルでは「**赤 (Red)**」「**緑 (Green)**」「**青 (Blue)**」という <span class="masked">光の三原色</span> の輝度 (光の強度) の組み合わせで、様々な「色」をつくりだします。一般に「**フルカラー**」と呼ばれる画像では、各色の輝度を **8ビット** (=**1バイト**) 、つまり `0` から `255` までの **256諧調** で表現して、その組み合わせとして **約1670万色** を表現 (発色) します。
+ラスター形式の画像において「カラー画像」の表現には、**RGB色モデル** (RGBカラーモデル) が一般的に用いられます。このモデルでは「**赤 (Red)**」「**緑 (Green)**」「**青 (Blue)**」という <span class="masked">光の三原色</span> の輝度 (光の強度) の組み合わせで、様々な「色」をつくりだします。一般に「**フルカラー**」と呼ばれる画像では、各色の輝度を **8ビット** (=**1バイト**) 、つまり `0` から `255` までの **256階調** で表現して、その組み合わせとして **約1670万色** を表現 (発色) します。
 
 $$ 256\times256\times256 = 16,777,216$$ 
 
-このようなことから、圧縮せずにカラー画像を扱う場合、**1ピクセルにつき「3バイト」**の情報が必要になります。また、256諧調の <span class="masked">グレースケール画像</span> では、**1ピクセルにつき「1バイト」**の情報が必要になります。
+::: {.balloon .char-01 .face-02 .tone-yellow}
+このようなことから、圧縮せずに「カラー画像」を扱う場合、**1ピクセルにつき「3バイト」**の情報が必要になります。また、256階調の「グレースケール画像」では、**1ピクセルにつき「1バイト」**の情報が必要になります。
+:::
 
-なお、多くの場合、カラー画像は「**RGB (赤・緑・青)**」の順に輝度を並べて色情報を扱いますが、OpenCV においては[とある理由](https://www.google.com/search?q=opencv+bgr+なぜ) から<span class="masked">「BGR (青・緑・赤)」</span> という順 (RGBとは**逆順**) に並べて色情報を管理しています。この点には十分に注意してください。
+なお、多くの場合、カラー画像は「**RGB (赤・緑・青)**」の順に輝度を並べて色情報を扱いますが、OpenCV においては [とある理由](https://www.google.com/search?q=opencv+bgr+なぜ) から<span class="masked">「BGR (青・緑・赤)」</span> という順 (RGBとは**逆順**) に並べて色情報を管理しています。この点には十分に注意してください。
 
 ![img](figs/21/color-RGB-01.png)
+
+:::prompts
+- 通常、カラー画像は「RGB」の順番で色情報を管理するのに、OpenCV では「BGR」という順序で色情報を管理しているのですか。
+:::
 
 <div class="note type-senior">
 **HSV色モデル**
@@ -84,22 +94,41 @@ $$ 256\times256\times256 = 16,777,216$$
 - **彩度**: 色の「**鮮やか**」さを表し、0％（無彩色）から100％（純色）までの範囲で示されます。OpenCV では `0` から `255` の整数値にマッピングされます。
 - **明度**: 色の「**明るさ**」を表し、0％（完全な黒）から100％（完全な白）までの範囲で示されます。OpenCV では `0` から `255` の整数値にマッピングされます。
 
-<span class="masked">肌色の検出</span>のような画像処理タスクでは、RGBモデルよりも、HSVモデルが特に有効です。肌色 (=<span class="masked">ペールオレンジ、ベージュ</span>) は特定の色相 (Hue) の範囲にあるため、HSVモデルであれば主に色相の情報を使って比較的容易に肌色を検出することができます。以下は、OpenCVでHSVモデルをベースに、HSVの範囲フィルタによって「肌色抽出」を実行した例です。床や机などの似た色が多いなかで、概ね肌色を検出できていることが分かると思います。なお、以下の[左側画像](figs/21/classroom.jpg)は[Bing Image Creator](https://www.bing.com/create)により作成しています。
+「**肌色の検出**」のような画像処理タスクでは、RGBモデルよりも、HSVモデルが特に有効です。肌色 (=ペールオレンジ、ベージュ) は特定の色相 (Hue) の範囲にあるため、HSVモデルであれば主に色相の情報を使って比較的容易に肌色を検出することができます。
+
+以下は、<u>OpenCV で HSV モデルをベースに、HSV の範囲フィルタによって「肌色抽出」を実行した例</u>です。床や机などの似た色が多いなかで、概ね肌色を検出できていることが分かると思います。
 
 ![img](figs/21/image-processing-01.jpg)
 
-なお、「HSVモデル」と「RGBモデル」は相互変換可能であり、OpenCVを含めて一般的な画像処理ソフトでは両方のモデルをサポートしています。
+なお、「HSVモデル」と「RGBモデル」は相互変換可能であり、OpenCV を含めて一般的な画像処理ソフトでは両方のモデルをサポートしています。
 </div>
+
+#### 定着確認
+
+- RGB色モデルで使う光の三原色を、RGBの順に答えよ。
+  - **答え**: <span class="masked">赤、緑、青。</span>
+- RGBの各色を8ビットで表すとき、各色の輝度は何段階で表せるか。また、値の範囲を答えよ。
+  - **答え**: <span class="masked">256段階。値の範囲は `0` から `255`。</span>
+- 赤・緑・青をそれぞれ256段階で表すとき、組み合わせで何色を表せるか。式も示せ。
+  - **答え**: <span class="masked">`256 × 256 × 256 = 16,777,216` 色。</span>
+- 各成分を8ビットで表すとき、圧縮していないRGBカラー画像とグレースケール画像では、1ピクセルにつきそれぞれ何バイト必要か。
+  - **答え**: <span class="masked">RGBカラー画像は3バイト、グレースケール画像は1バイト。</span>
+- OpenCVのカラー画像で、あるピクセルの値が `[0, 0, 255]` だった。このピクセルは何色か。成分の並び順も答えよ。
+  - **答え**: <span class="masked">赤。成分はBGR（青・緑・赤）の順に並ぶ。</span>
+- HSVのH・S・Vは、色の種類・鮮やかさ・明るさのどれに対応するか。それぞれの名称とともに答えよ。
+  - **答え**: <span class="masked">H は色相 (Hue、色の種類)、S は彩度 (Saturation、鮮やかさ)、V は明度 (Value、明るさ)。</span>
+- 肌色を検出する例では、HSV のどの成分を主に利用するか。理由も答えよ。
+  - **答え**: <span class="masked">色相 (Hue)。肌色に対応する色相が特定の範囲にあるため。</span>
 
 ## OpenCVを利用した画像処理
 
-OpenCV を利用した「画像処理」の基礎について学んでいきます。ここで学んだ内容は「知能情報実験実習1」の後期テーマのなかでも使用します。
+OpenCV を利用した「画像処理」の基礎について学んでいきます。ここで学んだ内容は次年度の「知能情報実験実習1」の前期テーマのなかでも使用します。
 
 ### OpenCVとは
 
 **OpenCV**（**Open Source Computer Vision Library**）は <span class="masked">「画像処理」</span> と <span class="masked">「コンピュータビジョン」</span> に特化したオープンソースの**ライブラリ**です。1999年に **Intel** によって開発され、**リアルタイムでの高速画像処理を可能にするために最適化**されています。また、その「汎用性」と「拡張性」により幅広いプラットフォームで使用できる点にも特徴があります。
 
-OpenCVは、本科目で学んでいる Python の他、**C++** や **Java** などの **様々なプログラミング言語** に対応しており、また、Windows、Linux、Mac OSといった主要 OS、[Raspberry Pi](https://ja.wikipedia.org/wiki/Raspberry_Pi)や[NVIDIA Jetson](https://ja.wikipedia.org/wiki/NVIDIA_Jetson) などのアーキテクチャにも対応しています。このため「**組込みシステム**」や「IoTデバイス」でも使用されることがあります。
+OpenCVは、本科目で学んでいる Python の他、**C++** や **Java** などの **様々なプログラミング言語** に対応しており、また、Windows、Linux、Mac OSといった主要 OS、[Raspberry Pi](https://ja.wikipedia.org/wiki/Raspberry_Pi) や [NVIDIA Jetson](https://ja.wikipedia.org/wiki/NVIDIA_Jetson) などのアーキテクチャにも対応しています。このため「**組込みシステム**」や「IoTデバイス」でも使用されることがあります。
 
 <div class="note type-tips">
 **組込みシステムとは**
@@ -125,39 +154,55 @@ OpenCV の「基礎」を習得しておくことは、3年生以降に開講さ
 
 ### ライブラリのインストール
 
-[OpenCV](https://pypi.org/project/opencv-python/)は、Pythonの標準ライブラリには含まれていませんが、<u>GoogleColab環境にはデフォルトでインストールされています</u>。
+[OpenCV](https://pypi.org/project/opencv-python/) は、Pythonの標準ライブラリには含まれていませんが、<u>GoogleColab環境にはデフォルトでインストールされています</u>。
 
 
 GoogleColabのコードセルで以下の Linuxコマンド を実行することで、インストールされている OpenCV のバージョン情報の確認ができます。なお、`grep` は <span class="masked">指定した文字列を含む行を表示</span> するための Linuxコマンド です。
 
-```
+```bash
 !pip list | grep opencv
 ```
 
-2025年11月20時点での実行結果は、次のようになります。`opencv-python` が標準パッケージで、`opencv-contrib-python` は標準パッケージに加えて各種追加モジュールも含んだパッケージになります。また`opencv-python-headless` は <span class="masked">GUI関連の機能を含まないパッケージ</span> になります。 
+2026年11月12日時点での実行結果は、次のようになります。`opencv-python` が標準パッケージで、`opencv-contrib-python` は標準パッケージに加えて各種追加モジュールも含んだパッケージになります。また`opencv-python-headless` は <span class="masked">GUI関連の機能を含まないパッケージ</span> になります。
 
 ```
-opencv-contrib-python                    4.12.0.88
-opencv-python                            4.12.0.88
-opencv-python-headless                   4.12.0.88
+opencv-contrib-python                 4.14.0.94
+opencv-python                         5.0.0.93
+opencv-python-headless                5.0.0.93
 ```
 
 ![img](figs/21/colab-01.png)
 
+
+:::prompts
+- Python ライブラリ (パッケージ) として利用可能な `opencv-python` と `opencv-python-headless`、`opencv-contrib-python` の違い、使い分けを教えてください。
+:::
+
 #### ローカル開発環境のセットアップ
 
-ローカル環境では **手動で OpenCV をインストールする必要** があります。Python の仮想環境を有効化し、pip を最新版にアップグレードしてから、OpenCV をインストールしてください。**今回の講義ではローカル環境も利用するため** **_全員がインストール_** してください。環境構築の詳細は[**第09回講義**](lecture09.html#vs-codeを使ったpythonプログラムの開発の流れ)を参照してください。
+ローカル環境では **手動で OpenCV をインストールする必要** があります。適当なプロジェクトフォルダ (たとえば `OpenCV` など) を作成し、Python の仮想環境を有効化し、pip を最新版にアップグレードしてから、OpenCV をインストールしてください。
 
-```
+**今回の講義ではローカル環境も利用するため** **_全員がインストール_** してください。環境構築の詳細は [**第09回講義**](lecture09.html#vs-codeを使ったpythonプログラムの開発の流れ) を参照してください。
+
+```bash
 python -m venv .venv
+```
+
+```bash
 .venv/Scripts/Activate.ps1
+```
+
+```bash
 python -m pip install --upgrade pip
+```
+
+```bash
 pip install opencv-python
 ```
 
-Windows環境 (PowerShell) では、以下のコマンドで特定パッケージ (ライブラリ) のバージョンを確認できます。
+Windows 環境 (PowerShell) では、以下のコマンドで特定パッケージ (ライブラリ) のバージョンを確認できます。
 
-```
+```bash
 pip list | Select-String "opencv"
 ```
 
@@ -165,7 +210,7 @@ pip list | Select-String "opencv"
 
 プロジェクトのトップに `check_cv2_ver.py` というファイルを作成して、以下のプログラムを貼付けて実行し、ライブラリが適切にインストールできたかを確認してください。
 
-- プログラムの実行方法は[第09回講義](lecture09.html#pythonファイルの実行)で学習済みです。なお、仮想環境の読み込みのタイミングによっては失敗することがあります。その場合は、再実行してください。
+- プログラムの実行方法は [第09回講義](lecture09.html#pythonファイルの実行) で学習済みです。なお、仮想環境の読み込みのタイミングによっては失敗することがあります。その場合は、再実行してください。
 
 ```python{.numberLines caption="check_cv2_ver.py (cv2ライブラリのインストール確認)"}
 import cv2
@@ -175,7 +220,7 @@ print("OpenCV version:", cv2.__version__)
 次のような出力が得られれば問題ありません。
 
 ```
-OpenCV version: 4.12.0
+OpenCV version: 5.0.0
 ```
 
 ### 画像の読込みとデータ型の確認
@@ -184,13 +229,13 @@ Python から OpenCV を利用する場合の特徴として、**画像データ
 
 具体的には、**横640px**、**縦480px**の「**カラー画像**」は `shape` が `(480,640,3)` のndarrayオブジェクト、簡単に言えば <span class="masked">3次元配列</span> となります。ここで、<span class="masked">`(640,480,3)` ではなく `(480,640,3)`</span> であることに注意してください (順番に注意してください)。
 
-また「**グレースケール画像**」は `shape` が `(480,640)` の ndarrayオブジェクト、簡単に言えば「**2次元配列**」となります。
+また「**グレースケール画像**」は `shape` が `(480,640)` の ndarra yオブジェクト、簡単に言えば「**2次元配列**」となります。
 
-実際に、**ローカル環境 (非Jupyter環境)** で、これらを確認してみます。次の画像 [img-01.jpg](figs/21/img-01.jpg) をダウンロードして、プログラムと同じにフォルダに配置してください。この画像は **横640px**、**縦480px** のJPEG形式のカラー画像になります。
+実際に、**ローカル環境 (非Jupyter環境)** で、これらを確認してみます。次の画像 [img-01.jpg](figs/21/img-01.jpg) をダウンロードして、プログラムと同じフォルダに配置してください。この画像は **横640px**、**縦480px** のJPEG形式のカラー画像になります。
 
 ![img](figs/21/img-01.jpg)
 
-なお、[**第19回講義**](lecture19.html#csvファイルの読込み)で学んだように、次のようなプログラムで **ウェブからファイルをダウンロードしてカレントフォルダに保存すること** もできます (GoogleColab環境では、この方法のほうが便利です)。
+なお、[**第19回講義**](lecture19.html#csvファイルの読込み) で学んだように、次のようなプログラムで **ウェブからファイルをダウンロードしてカレントフォルダに保存すること** もできます (GoogleColab環境では、この方法のほうが便利です)。
 
 - 実行前に、VSCode のターミナルから `pip install requests` を実行し、[requestsライブラリ](https://pypi.org/project/requests/)をインストールしておく必要があります。
 
@@ -198,7 +243,7 @@ Python から OpenCV を利用する場合の特徴として、**画像データ
 import requests 
 
 fn = 'img-01.jpg'
-url = 'https://takeshiwada1980.github.io/Programming1-2025/figs/21/img-01.jpg'
+url = 'https://takeshiwada1980.github.io/Programming1-2026/figs/21/img-01.jpg'
 res = requests.get(url)
 
 if res.status_code != 200:
@@ -236,7 +281,7 @@ shape => (480, 640, 3)
 
 ここで `dtype` の `uint8` は「**符号なし8ビット整数 (Unsigned 8-bit Integer)**」を意味します。この `uint8` 型では **0 から 255 までの整数値** を使うことができます。
 
-次に「**グレースケール画像**」の場合にどのようになるかを試してみます。OpenCV では `cv2.imread` 関数でファイルからデータを読み込む際に、引数で「カラー形式を指定」できます。ここでは、グレースケール画像として読み込むために、第2引数に ` cv2.IMREAD_GRAYSCALE` を指定します。先のプログラムの **第04行目** を `img = cv2.imread(fn,cv2.IMREAD_GRAYSCALE)` に書き換えてプログラムを実行してみてください。
+次に「**グレースケール画像**」の場合にどのようになるかを試してみます。OpenCV では `cv2.imread` 関数でファイルからデータを読み込む際に、引数で「カラー形式を指定」できます。ここでは、グレースケール画像として読み込むために、第2引数に `cv2.IMREAD_GRAYSCALE` を指定します。先のプログラムの **第04行目** を `img = cv2.imread(fn,cv2.IMREAD_GRAYSCALE)` に書き換えてプログラムを実行してみてください。
 
 実行結果は次のようになります。
 
@@ -338,7 +383,7 @@ print('ほげほげ')
 
 ![img](figs/21/cv-img-show-04.png)
 
-なお、この方法では Matplotlib の知識とスキルがあれば、以下のように <span class="masked">分析や考察に役立つ情報を付与</span> **した画像**を出力することもできます (これは論文や報告書を作成する際に非常に有用です)。
+なお、この方法では Matplotlib の知識とスキルがあれば、以下のように <span class="masked">分析や考察に役立つ情報を付与した画像</span> を出力することもできます (これは論文や報告書を作成する際に非常に有用です)。
 
 ![img](figs/21/cv-img-show-05.png)
 
@@ -361,7 +406,7 @@ def my_imshow(img):
 
 #### 表示方法4
 
-この方法は **GoogleColab環境だけ** で利用できる方法です。**第06行目** が `cv2.imshow` ではなく `cv2_imshow` となっていること、**第03行目** のようなインポートが必要なことに注意してください。
+この方法は **GoogleColab環境だけ** で利用できる方法です。**第07行目** が `cv2.imshow` ではなく `cv2_imshow` となっていること、**第04行目** のようなインポートが必要なことに注意してください。
 
 ```python{.numberLines caption="show_img_4.py (表示方法4)"}
 # GoogleColab Only
@@ -377,13 +422,17 @@ cv2_imshow(img)
 
 この方法は **GoogleColab環境** および **Jupyter環境** だけで利用できる方法です。画像を一時ファイルに保存して、それを読込み、`IPython.display.Image` を使って「出力セル」に表示させる方法です。**GoogleColab環境** では、`cv2_imshow` を使ったほうが処理が高速であり、この方法を使用するメリットはありません。
 
-```python{.numberLines caption="show_img_5.py (表示方法5)"}
+```python{.numberLines caption="show_img_5.ipynb (表示方法5)"}
 %reset -f
 import cv2
 from IPython.display import Image   # 要import
 
 img = cv2.imread('img-01.jpg')
-cv2.imwrite('tmp.jpg',img)          # 'tmp.jpg' に保存
+if img is not None:
+  ok = cv2.imwrite('tmp.jpg', img)
+  print(f"保存結果: {ok}")
+else:
+  print("画像の読み込みに失敗しました")
 Image(open('tmp.jpg','rb').read())  # 'tmp.jpg' を出力セルに表示
 ```
 ---
@@ -407,7 +456,7 @@ img = cv2.flip(img, 1)              # 左右反転
 cv2.imwrite('img-01-flip.jpg', img)  # 保存処理
 ```
 
-このプログラムを実行すると、次のような画像 `img-01-flip.jpg` が出力されます。また、**第07行目**を `cv2.imwrite('img-01-flip.png',img)` とすれば <span class="masked">PNG形式</span> の画像が出力されます。その他、出力可能な画像形式については[リファレンス](https://docs.opencv.org/4.12.0/d4/da8/group__imgcodecs.html#ga8ac397bd09e48851665edbe12aa28f25)を参照してください。
+このプログラムを実行すると、次のような画像 `img-01-flip.jpg` が出力されます。また、**第08行目**を `cv2.imwrite('img-01-flip.png',img)` とすれば <span class="masked">PNG形式</span> の画像が出力されます。その他、出力可能な画像形式については[リファレンス](https://docs.opencv.org/4.12.0/d4/da8/group__imgcodecs.html#ga8ac397bd09e48851665edbe12aa28f25)を参照してください。
 
 ![img](figs/21/img-01-flip.jpg)
 
@@ -461,8 +510,8 @@ img = cv2.imread(fn)
 if img is None:
   raise ValueError(f'Failed to load image: {fn}')
 
-for x in range(130, 219):
-  for y in range(210, 229):
+for x in range(130, 220):
+  for y in range(210, 230):
     img[y, x, 0] = 0  # B
     img[y, x, 1] = 0  # G
     img[y, x, 2] = 0  # R
@@ -470,7 +519,7 @@ for x in range(130, 219):
 # ■■ img を表示する処理を追加 ■■
 ```
 
-上記のプログラムは、二重ループによって指定範囲のピクセルを黒色に書き換えています。しかし、このようなループを使って多数のデータを書き換えるような処理は、Pythonの特性上、<span class="masked">非常に時間がかることが知られています</span>。
+上記のプログラムは、二重ループによって指定範囲のピクセルを黒色に書き換えています。しかし、このようなループを使って多数のデータを書き換えるような処理は、Pythonの特性上、<span class="masked">非常に時間がかかることが知られています</span>。
 
 そこで、次のように NumPy の「**スライス**」と「**ブロードキャスト機能**」を組み合わせる方法が推奨されています。スライスについては[第12回講義](lecture12.html#リストの扱いに関する補足③-スライス)を参照、ブロードキャスト機能については[第20回講義](lecture20.html#移動)を参照してください。
 
@@ -624,7 +673,7 @@ assert img2.dtype == np.uint8
 
 なお、**第16行目** の計算には小数が含まれるため、計算結果の ndarrayオブジェクト の要素の型 (`dtype`) は `float64` になります。`dtype` が `float64` の ndarrayオブジェクト は `cv2.imshow` で画像として表示ができません。そのため **第18行目** で 要素の型 (`dtype`) を `uint8` に変換しています。
 
-**演習1**: `img[:,:,0]` を `img[0:480,0:640,0]` ように書き換え、同様に `img[:,:,1]` と `img[:,:,2]` も書き換え、問題なく動作することを確認せよ。
+**演習1**: `img[:,:,0]` を `img[0:480,0:640,0]` のように書き換え、同様に `img[:,:,1]` と `img[:,:,2]` も書き換え、問題なく動作することを確認せよ。
 
 **演習2**: BGRの係数 (重み) を、すべて `0.3` とした場合の結果と比較せよ。また、係数を適当に変えて、その結果について確認せよ。
 
@@ -646,7 +695,7 @@ assert arr3.dtype == np.uint8
 print(f'arr1+ arr2 = arr3 =\n{arr3}')
 ```
 
-**演習4**: 上記の **演習3** でオーバーフローが生じると仮定する。このとき、加算結果が 255 を越える場合は、その値を `uint8` の最大値である 255 に制限したい。どのようにすればよいかを考え、また、ウェブ検索やChatGPTなどを利用して解決せよ (**調べた方法や提案された方法は、実際に試して確認すること**)。
+**演習4**: 上記の **演習3** でオーバーフローが生じると仮定する。このとき、加算結果が 255 を超える場合は、その値を `uint8` の最大値である 255 に制限したい。どのようにすればよいかを考え、また、ウェブ検索やChatGPTなどを利用して解決せよ (**調べた方法や提案された方法は、実際に試して確認すること**)。
 
 **解答例1**: <span class="masked">`arr3 = np.where(arr1.astype(int) + arr2.astype(int) > 255, 255, arr1 + arr2)`</span>
 
@@ -693,8 +742,8 @@ img2 = np.clip(tmp,0,255).astype(np.uint8)
 
 上記の **第01行目** では **正規分布** (「情報1」の第12回講義を参照) に従うノイズを発生させて `img2` に加算しています。`np.random.normal` で生成される多次元配列は `dtype` が `np.float64` です。そのため、**第02行目** でアサート文で確認しているように `tmp` の `dtype` も `np.float64` になります。このままでは**画像として利用できない**ので、**第03行目**で、最小値を0、最大値を255 にクリップして、さらに `astype` メソッドで型を `np.uint8` に変換しています。
 
-- ウェブ検索「[NumPy clip](https://www.google.com/search?q=numpy+cllip)」
-- ウェブ検索「[Numpy astype](https://www.google.com/search?q=numpy+astype)」
+- ウェブ検索「[NumPy clip](https://www.google.com/search?q=numpy+clip)」
+- ウェブ検索「[NumPy astype](https://www.google.com/search?q=numpy+astype)」
 
 ![img](figs/21/img-01-noise.jpg)
 
@@ -712,7 +761,7 @@ OpenCV では、**PCに内蔵もしくは外部接続したカメラに接続し
 
 PCに接続されたカメラから撮影した画像を ndarrayオブジェクト として取得、表示、保存するサンプルプログラムは次のようになります。ファイルから読み込んだ画像も、カメラから読み込んだ画像も、同様に **ndarrayオブジェクト (NumPyの3次元配列) として操作や処理** をすることができます。
 
-```python{.numberLines caption="カメラから画像を取得して表示・保存"}
+```python{.numberLines caption="camera_1.py カメラから画像を取得して表示・保存"}
 import cv2
 import numpy as np
 import time
@@ -743,7 +792,7 @@ for i in range(3,0,-1):
   print(f'撮影{i}秒前...')
   time.sleep(1)
 
-# カメラ映像を取得して img に格納。成功の可否を ret に格納
+# カメラ映像を取得して img に格納。成否を ret に格納
 ret, img = cap.read()
 assert type(ret) == bool
 assert type(img) == np.ndarray
@@ -775,7 +824,7 @@ cap.release()
 
 先述のように、カメラ関連の処理を GoogleColab環境 で実行することはできませんが、ローカルPCに構築した Jupyter環境であれば実行可能です。開発段階では Jupyter環境 のほうが便利なことが多いです。
 
-```python{.numberLines caption="カメラから画像を取得して表示・保存 (Jupyter版)"}
+```python{.numberLines caption="camera_1.ipynb カメラから画像を取得して表示・保存 (Jupyter版)"}
 %reset -f
 import cv2
 import numpy as np
@@ -796,7 +845,7 @@ for i in range(3,0,-1):
   print(f'撮影{i}秒前...')
   time.sleep(1)
 
-# カメラ映像を取得して img に格納。成功の可否を ret に格納
+# カメラ映像を取得して img に格納。成否を ret に格納
 ret, img = cap.read()
 assert type(ret) == bool
 assert type(img) == np.ndarray
@@ -823,7 +872,7 @@ Image(open(fn,'rb').read()) # 出力セルに表示
 
 カメラから連続的に画像を取得して処理したい場合は、次のようにプログラムを構成します (このプログラムは Jupyter環境では動作しません)。
 
-```python{.numberLines caption="カメラから連続的に画像を取得して処理"}
+```python{.numberLines caption="camera_2.py カメラから連続的に画像を取得して処理"}
 import numpy as np
 import cv2
 
@@ -839,7 +888,7 @@ wn = 'Capture'  # ウィンドウの識別名の設定
 # 無限ループ
 while True:
 
-  # カメラ映像を取得して img に格納。成功の可否を ret に格納
+  # カメラ映像を取得して img に格納。成否を ret に格納
   ret, img = cap.read()
 
   if not ret:
